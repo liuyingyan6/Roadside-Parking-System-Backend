@@ -1,4 +1,4 @@
-package com.woniuxy.operator.config;
+package com.woniuxy.operator.config.redis;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
