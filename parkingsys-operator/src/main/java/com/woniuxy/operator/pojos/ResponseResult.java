@@ -19,7 +19,7 @@ public class ResponseResult<T> {
     // 业务状态码的描述
     private String msg;
     // 响应给前端的数据
-    private T datas;
+    private T data;
 
     public static ResponseResult ok(){
         return new ResponseResult(200,"ok",null);
