@@ -1,9 +1,12 @@
 package com.woniuxy.operator.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.woniuxy.operator.pojos.ResponseResult;
+import com.woniuxy.operator.entity.CarVO;
+import com.woniuxy.operator.vo.PageVO;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import com.woniuxy.operator.entity.Car;
+
 import com.woniuxy.operator.service.ICarService;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,5 +27,13 @@ public class CarController {
     public CarController(ICarService carServiceImpl){
         this.carServiceImpl = carServiceImpl;
     }
+    @GetMapping("/carList")
+    public ResponseResult getCar(Integer pageSize,Integer pageNum,String key){
+        Page<CarVO> page = Page.of(pageNum,pageSize);
+        Page<CarVO> pv = carServiceImpl.getCarList(page,key);
+        return ResponseResult.ok(pv);
+    }
+
+
 
 }

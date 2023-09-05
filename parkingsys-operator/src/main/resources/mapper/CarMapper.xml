@@ -1,5 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.woniuxy.operator.mapper.CarMapper">
+    <select id="getCar" resultType="CarVO">
+        SELECT car.car_number,car_type.car_type_name,`user`.user_name,
+               `order`.create_time
+        FROM car,`order`,car_type,`user`
+        WHERE car.id=`order`.car_id AND car.car_type=car_type.id AND car.user_id=`user`.id
+            <if test="carNumber != null">
+                AND car_number = #{carNumber}
+            </if>
+        GROUP BY car_number
+    </select>
+
+    <select id="getCarOrderCount" resultType="Integer">
+        -- 查询已缴费未缴费订单总数量
+        SELECT  COUNT(*) AS ouder_count
+        FROM `order`,car
+        where car.id=`order`.car_id AND car_number=#{carNumber}
+    </select>
+
+    <select id="getNotPayAmount" resultType="BigDecimal">
+        -- 查询未缴费订单金额
+        SELECT SUM(order_amount) AS not_pay_amount
+        FROM car,`order`
+        where `order`.`status`=1 AND car.id=`order`.car_id AND car_number=#{carNumber}
+    </select>
+
+    <select id="getNotPayCount" resultType="Integer">
+        -- 查询未缴费订单数量
+        SELECT COUNT(*) AS not_pay_count
+        FROM car,`order`
+        where `order`.`status`=1 AND car.id=`order`.car_id AND car_number=#{carNumber}
+    </select>
+
+    <select id="getPayAmount" resultType="BigDecimal">
+        -- 查询消费金额
+        SELECT SUM(order_amount) AS not_pay_amount
+        FROM car,`order`
+        where `order`.`status`=0 AND car.id=`order`.car_id AND car_number=#{carNumber}
+    </select>
 
 </mapper>
