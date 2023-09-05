@@ -1,10 +1,10 @@
 server:
   port: 9090
-  host: 192.168.200.130
+  host: 192.168.2.28
 spring:
   datasource:
     druid:
-      url: jdbc:mysql://localhost:3306/wn_parking?useSSL=false&charaterEncode=utf-8&serverTimezone=GMT%2B8
+      url: jdbc:mysql://${server.host}:3306/wn_parking?useSSL=false&charaterEncode=utf-8&serverTimezone=GMT%2B8
       username: root
       password: root
       initial-size: 5 #初始化连接数
