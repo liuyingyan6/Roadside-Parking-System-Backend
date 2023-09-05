@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author woniuxy
- * @since 2023-09-02
+ * @since 2023-09-05
  */
 public interface IRoleService extends IService<Role> {
 

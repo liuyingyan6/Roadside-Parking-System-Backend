@@ -1,5 +1,7 @@
 package com.woniuxy.operator.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import java.util.Date;
 import io.swagger.annotations.ApiModel;
@@ -14,7 +16,7 @@ import lombok.ToString;
  * </p>
  *
  * @author woniuxy
- * @since 2023-09-02
+ * @since 2023-09-05
  */
 @Getter
 @Setter
@@ -24,6 +26,7 @@ public class Manager implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+      @TableId(value = "id", type = IdType.AUTO)
       private Long id;
 
       @ApiModelProperty("登录账号")

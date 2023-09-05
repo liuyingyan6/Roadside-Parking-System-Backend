@@ -16,7 +16,7 @@ import lombok.ToString;
  * </p>
  *
  * @author woniuxy
- * @since 2023-09-02
+ * @since 2023-09-05
  */
 @Getter
 @Setter
@@ -28,7 +28,7 @@ public class Car implements Serializable {
 
       @ApiModelProperty("自增主键")
         @TableId(value = "id", type = IdType.AUTO)
-      private Long id;
+      private Integer id;
 
       @ApiModelProperty("车牌号码")
       private String carNumber;

@@ -1,5 +1,7 @@
 package com.woniuxy.operator.controller;
 
+import com.woniuxy.operator.pojos.ResponseResult;
+import com.woniuxy.operator.vo.PermissionMenuVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -13,10 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
  * </p>
  *
  * @author woniuxy
- * @since 2023-09-02
+ * @since 2023-09-05
  */
 @RestController
-@RequestMapping("/url-permission")
+@RequestMapping("/urlPermission")
 public class UrlPermissionController {
 
     private final IUrlPermissionService urlPermissionServiceImpl;
@@ -25,4 +27,19 @@ public class UrlPermissionController {
         this.urlPermissionServiceImpl = urlPermissionServiceImpl;
     }
 
+    /**
+     * 根据id查询权限
+     */
+    @GetMapping("/findPermission/{id}")
+    public ResponseResult findPermission(@PathVariable("id") Long managerId) {
+        List<PermissionMenuVO> list = urlPermissionServiceImpl.listByManagerId(managerId);
+        return ResponseResult.ok(list);
+    }
+
+    // home左边框，根据用户id进行权限分配可以看到哪些
+    // @GetMapping("/findPermission")
+    // public ResponseResult findPermission(Long managerId){
+    //     List<PermissionMenuVO> permissions = urlPermissionServiceImpl.listByManagerId(managerId);
+    //     return ResponseResult.ok(permissions);
+    // }
 }

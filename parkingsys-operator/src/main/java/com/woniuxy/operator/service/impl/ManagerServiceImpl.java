@@ -6,6 +6,7 @@ import com.woniuxy.operator.entity.Manager;
 import com.woniuxy.operator.mapper.ManagerMapper;
 import com.woniuxy.operator.service.IManagerService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
@@ -16,7 +17,7 @@ import org.springframework.util.StringUtils;
  * </p>
  *
  * @author woniuxy
- * @since 2023-09-02
+ * @since 2023-09-05
  */
 @Service
 public class ManagerServiceImpl extends ServiceImpl<ManagerMapper, Manager> implements IManagerService {

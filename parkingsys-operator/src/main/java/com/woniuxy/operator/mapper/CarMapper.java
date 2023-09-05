@@ -14,7 +14,7 @@ import java.util.Map;
  * </p>
  *
  * @author woniuxy
- * @since 2023-09-02
+ * @since 2023-09-05
  */
 @Mapper
 public interface CarMapper extends BaseMapper<Car> {

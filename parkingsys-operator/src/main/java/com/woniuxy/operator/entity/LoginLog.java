@@ -5,9 +5,7 @@ import java.io.Serializable;
 import java.util.Date;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 /**
  * <p>
@@ -15,13 +13,15 @@ import lombok.ToString;
  * </p>
  *
  * @author woniuxy
- * @since 2023-09-02
+ * @since 2023-09-05
  */
 @Getter
 @Setter
 @ToString
   @TableName("login_log")
 @ApiModel(value = "LoginLog对象", description = "")
+@AllArgsConstructor
+@NoArgsConstructor
 public class LoginLog implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -40,6 +40,12 @@ public class LoginLog implements Serializable {
 
       @ApiModelProperty("逻辑删除")
       private Integer logicDelete;
+
+      @ApiModelProperty("地址")
+      private String location;
+
+      @ApiModelProperty("浏览器")
+      private String browser;
 
 
 }
