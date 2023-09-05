@@ -9,6 +9,7 @@ import com.woniuxy.operator.mapper.OrderMapper;
 import com.woniuxy.operator.service.IOrderService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
+import com.woniuxy.operator.vo.OrderVO;
 import com.woniuxy.operator.vo.PageVO;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +34,11 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     }
 
 
+    @Override
+    public List<OrderVO> findAll() {
+
+        return orderMapper.findAll();
+    }
 
     @Override
     public PageVO<OrderDTO> findAllPage(Integer pageNum, Integer pageSize, OrderDTO orderDto) {
@@ -47,4 +53,8 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         pageVO.setRecords(allPage.getRecords());
         return pageVO;
     }
+
+
+
+
 }

@@ -1,6 +1,7 @@
 package com.woniuxy.operator.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import java.util.Date;
@@ -38,15 +39,20 @@ public class Manager implements Serializable {
       @ApiModelProperty("管理员姓名")
       private String name;
 
+
       @ApiModelProperty("账户是否锁定（1-锁定，0-未锁定）")
       private String locked;
 
+      @TableField("create_time")
       @ApiModelProperty("创建时间")
       private Date createTime;
 
+
+  @TableField("update_time")
       @ApiModelProperty("修改时间")
       private Date updateTime;
 
+  @TableField("logic_delete")
       @ApiModelProperty("逻辑删除 1（true）已删除， 0（false）未删除")
       private Integer logicDelete;
 

@@ -1,5 +1,6 @@
 package com.woniuxy.operator.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.util.Date;
@@ -28,16 +29,17 @@ public class LoginLog implements Serializable {
 
       private Integer id;
 
+      @TableField("user_id")
     private Long userId;
 
       @ApiModelProperty("0-登录，1-退出")
       private Integer log;
 
     private String ip;
-
+    @TableField("create_time")
       @ApiModelProperty("日志创建时间")
       private Date createTime;
-
+    @TableField("logic_delete")
       @ApiModelProperty("逻辑删除")
       private Integer logicDelete;
 
