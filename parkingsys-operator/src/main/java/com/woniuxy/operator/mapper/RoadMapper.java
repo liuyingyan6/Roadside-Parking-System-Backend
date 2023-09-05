@@ -1,6 +1,6 @@
 package com.woniuxy.operator.mapper;
 import org.apache.ibatis.annotations.Mapper;
-import com.woniuxy.operator.entity.ParkingAi;
+import com.woniuxy.operator.entity.Road;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -9,9 +9,9 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author woniuxy
- * @since 2023-09-02
+ * @since 2023-09-05
  */
 @Mapper
-public interface ParkingAiMapper extends BaseMapper<ParkingAi> {
+public interface RoadMapper extends BaseMapper<Road> {
 
 }

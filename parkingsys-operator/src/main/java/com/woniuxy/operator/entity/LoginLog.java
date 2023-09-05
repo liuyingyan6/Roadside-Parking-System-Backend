@@ -15,7 +15,7 @@ import lombok.ToString;
  * </p>
  *
  * @author woniuxy
- * @since 2023-09-02
+ * @since 2023-09-05
  */
 @Getter
 @Setter
@@ -40,6 +40,12 @@ public class LoginLog implements Serializable {
 
       @ApiModelProperty("逻辑删除")
       private Integer logicDelete;
+
+      @ApiModelProperty("地址")
+      private String location;
+
+      @ApiModelProperty("浏览器")
+      private String browser;
 
 
 }

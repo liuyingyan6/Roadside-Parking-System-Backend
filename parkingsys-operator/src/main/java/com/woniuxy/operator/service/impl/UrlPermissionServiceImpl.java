@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * </p>
  *
  * @author woniuxy
- * @since 2023-09-02
+ * @since 2023-09-05
  */
 @Service
 public class UrlPermissionServiceImpl extends ServiceImpl<UrlPermissionMapper, UrlPermission> implements IUrlPermissionService {

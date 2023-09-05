@@ -1,6 +1,6 @@
 package com.woniuxy.operator.service;
 
-import com.woniuxy.operator.entity.ParkingAi;
+import com.woniuxy.operator.entity.Road;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author woniuxy
- * @since 2023-09-02
+ * @since 2023-09-05
  */
-public interface IParkingAiService extends IService<ParkingAi> {
+public interface IRoadService extends IService<Road> {
 
 }

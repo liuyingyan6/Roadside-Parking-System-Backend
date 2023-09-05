@@ -15,7 +15,7 @@ import lombok.ToString;
  * </p>
  *
  * @author woniuxy
- * @since 2023-09-02
+ * @since 2023-09-05
  */
 @Getter
 @Setter
@@ -25,8 +25,17 @@ public class Order implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+      @ApiModelProperty("订单id")
+        private Long id;
+
       @ApiModelProperty("订单编号")
-      private String id;
+      private String orderNumber;
+
+      @ApiModelProperty("巡检员id")
+      private Long inspectorId;
+
+      @ApiModelProperty("路段id")
+      private Long roadId;
 
       @ApiModelProperty("车辆id")
       private Long carId;
@@ -39,6 +48,9 @@ public class Order implements Serializable {
 
       @ApiModelProperty("0-支付宝，1-微信")
       private Integer payType;
+
+      @ApiModelProperty("泊车号id")
+      private Long parkingId;
 
     private Date createTime;
 

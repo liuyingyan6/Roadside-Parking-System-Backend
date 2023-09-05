@@ -16,7 +16,7 @@ import lombok.ToString;
  * </p>
  *
  * @author woniuxy
- * @since 2023-09-02
+ * @since 2023-09-05
  */
 @Getter
 @Setter
@@ -48,17 +48,20 @@ public class User implements Serializable {
       @ApiModelProperty("用户邮箱")
       private String email;
 
+      @ApiModelProperty("车辆id")
+      private Long carId;
+
+      @ApiModelProperty("微信绑定 0 1")
+      private Integer vx;
+
       @ApiModelProperty("创建时间")
       private Date createTime;
 
       @ApiModelProperty("修改时间")
       private Date updateTime;
 
-      @ApiModelProperty("车辆id")
-      private Long carId;
-
-      @ApiModelProperty("登录时间")
-      private Date loginTime;
+      @ApiModelProperty("禁用")
+      private Integer logicDelete;
 
 
 }

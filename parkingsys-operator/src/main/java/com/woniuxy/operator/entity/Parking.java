@@ -14,7 +14,7 @@ import lombok.ToString;
  * </p>
  *
  * @author woniuxy
- * @since 2023-09-02
+ * @since 2023-09-05
  */
 @Getter
 @Setter
@@ -24,25 +24,37 @@ public class Parking implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer id;
+      @ApiModelProperty("车位内部id")
+      private Long id;
 
-      @ApiModelProperty("地址")
-      private Integer chinaId;
+      @ApiModelProperty("路段id")
+      private Long roadId;
 
-      @ApiModelProperty("停车场名字")
+      @ApiModelProperty("用户id")
+      private Long userId;
+
+      @ApiModelProperty("地磁id")
+      private Integer geomagneticId;
+
+      @ApiModelProperty("车位编号，类似A-112")
+      private String number;
+
+      @ApiModelProperty("车位名称")
       private String name;
 
-      @ApiModelProperty("建枚举类，0-全天收费")
-      private Integer chargingType;
+      @ApiModelProperty("0有车，1无车，2未激活")
+      private Integer status;
 
-      @ApiModelProperty("车位数")
-      private Integer parkingCount;
+      @ApiModelProperty("备注")
+      private String remarks;
 
-    private Date createTime;
+      @ApiModelProperty("激活时间")
+      private Date createTime;
 
     private Date updateTime;
 
-    private Integer logicDelete;
+      @ApiModelProperty("逻辑删除")
+      private Integer logicDelete;
 
 
 }
