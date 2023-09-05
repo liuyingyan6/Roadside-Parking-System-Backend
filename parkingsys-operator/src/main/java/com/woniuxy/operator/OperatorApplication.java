@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Description: OperatorApplication
  * @Version 1.0
  */
-@MapperScan("com.woniuxy.operator.mapper")
 @SpringBootApplication
+@MapperScan("com.woniuxy.operator.mapper")
 public class OperatorApplication {
     public static void main(String[] args) {
         SpringApplication.run(OperatorApplication.class,args);

@@ -53,5 +53,5 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true #尊重驼峰命名规则
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  type-aliases-package: com.woniuxy.operator.entity
+  type-aliases-package: com.woniuxy.operator.entity,com.woniuxy.operator.vo
 

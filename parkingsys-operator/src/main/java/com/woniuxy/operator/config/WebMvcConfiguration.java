@@ -27,6 +27,6 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
         List<String> whiteList = new ArrayList<>();
         //以后：swagger，druid 的一些请求，也需要放行
         Collections.addAll(whiteList,"/manager/login","/token/refresh","/**/druid/**");
-        registry.addInterceptor(loginInterceptor()).addPathPatterns("/**").excludePathPatterns(whiteList);
+//        registry.addInterceptor(loginInterceptor()).addPathPatterns("/**").excludePathPatterns(whiteList);
     }
 }
