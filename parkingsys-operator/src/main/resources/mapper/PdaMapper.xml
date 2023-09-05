@@ -1,5 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.woniuxy.operator.mapper.PdaMapper">
-
+    <select id="selectPageByKeyword" resultType="com.woniuxy.operator.vo.PdaVO">
+        select pda.id, pda.name, road.name, inspector.name, pda.`status`, pda.create_time
+        from pda,
+        road,
+        inspector
+        <where>
+            pda.road_id = road.id
+            and inspector.pda_id = pda.id
+        </where>
+        <if test="pdaName!=null and pdaName!=''">
+            and pda.name = #{pdaName}
+        </if>
+        <if test="inspectorName!=null and inspectorName!=''">
+            and inspector.name = #{inspectorName}
+        </if>
+        <if test="roadName!=null and roadName!=''">
+            and road.name = #{roadName}
+        </if>
+        limit #{skipRow},#{pageSize}
+    </select>
+    <select id="selectTotalCount" resultType="Long">
+        select count(0)
+        from pda,
+        road,
+        inspector
+        <where>
+            pda.road_id = road.id
+            and inspector.pda_id = pda.id
+        </where>
+        <if test="pdaName!=null and pdaName!=''">
+            and pda.name = #{pdaName}
+        </if>
+        <if test="inspectorName!=null and inspectorName!=''">
+            and inspector.name = #{inspectorName}
+        </if>
+        <if test="roadName!=null and roadName!=''">
+            and road.name = #{roadName}
+        </if>
+    </select>
 </mapper>
