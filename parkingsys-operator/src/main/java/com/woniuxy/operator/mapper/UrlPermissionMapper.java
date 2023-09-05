@@ -3,6 +3,8 @@ import org.apache.ibatis.annotations.Mapper;
 import com.woniuxy.operator.entity.UrlPermission;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
+import java.util.List;
+
 /**
  * <p>
  * 菜单和接口权限定义 Mapper 接口
@@ -14,4 +16,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 @Mapper
 public interface UrlPermissionMapper extends BaseMapper<UrlPermission> {
 
+    List<UrlPermission> listByManagerId(Long managerId);
 }

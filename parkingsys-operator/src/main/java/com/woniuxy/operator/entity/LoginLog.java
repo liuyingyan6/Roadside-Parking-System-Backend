@@ -5,9 +5,7 @@ import java.io.Serializable;
 import java.util.Date;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 /**
  * <p>
@@ -22,6 +20,8 @@ import lombok.ToString;
 @ToString
   @TableName("login_log")
 @ApiModel(value = "LoginLog对象", description = "")
+@AllArgsConstructor
+@NoArgsConstructor
 public class LoginLog implements Serializable {
 
     private static final long serialVersionUID = 1L;

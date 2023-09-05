@@ -1,5 +1,6 @@
 package com.woniuxy.operator.controller;
 
+import com.woniuxy.operator.pojos.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -23,6 +24,12 @@ public class OperationLogController {
 
     public OperationLogController(IOperationLogService operationLogServiceImpl){
         this.operationLogServiceImpl = operationLogServiceImpl;
+    }
+
+    @GetMapping("/list")
+    public ResponseResult list(){
+        List<OperationLog> list = operationLogServiceImpl.list();
+        return ResponseResult.ok(list);
     }
 
 }
