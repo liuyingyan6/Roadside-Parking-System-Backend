@@ -17,4 +17,6 @@ import java.util.List;
 public interface IUrlPermissionService extends IService<UrlPermission> {
 
     List<PermissionMenuVO> listByManagerId(Long managerId);
+
+    List<PermissionMenuVO> findAll();
 }

@@ -27,6 +27,13 @@ public class UrlPermissionController {
         this.urlPermissionServiceImpl = urlPermissionServiceImpl;
     }
 
+    // 授权弹框：查询所有的权限数据
+    @GetMapping("/all")
+    public ResponseResult findAll(){
+        List<PermissionMenuVO> list = urlPermissionServiceImpl.findAll();
+        return ResponseResult.ok(list);
+    }
+
     /**
      * 根据id查询权限
      */

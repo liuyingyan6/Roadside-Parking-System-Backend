@@ -2,6 +2,10 @@ package com.woniuxy.operator.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -36,10 +40,13 @@ public class Magnetometer implements Serializable {
       @ApiModelProperty("地磁状态：0-在线，1-离线，2-未激活")
       private Integer status;
 
+    @TableField(fill = FieldFill.INSERT)
     private Date createTime;
 
+    @TableField(fill = FieldFill.UPDATE)
     private Date updateTime;
 
+    @TableLogic
     private Integer logicDelete;
 
 
