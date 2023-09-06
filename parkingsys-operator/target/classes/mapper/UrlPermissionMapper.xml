@@ -2,15 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.woniuxy.operator.mapper.UrlPermissionMapper">
 
-    <select id="listByManagerId" resultType="com.woniuxy.operator.entity.UrlPermission">
-        SELECT
-            up.*
-        FROM
-            url_permission up,manager_role mr,role_url_permission rup,role r
-        WHERE 1=1
-          and up.id = rup.url_permission_id
-          and rup.role_id = r.id
-          and mr.role_id = r.id
-          AND mr.manager_id = #{id}
+    <resultMap id="permissionmap" type="UrlPermission" autoMapping="true">
+        <result property="parentId" column="parent_id"></result>
+    </resultMap>
+    <select id="listByManagerId" resultMap="permissionmap">
+        select up.* from t_url_permission as up,t_role_url_permission as rup,t_manager_role as mr
+        where mr.role_id = rup.role_id and rup.url_permission_id = up.id and mr.manager_id = #{id}
     </select>
+
 </mapper>

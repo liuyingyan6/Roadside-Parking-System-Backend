@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
  * </p>
  *
  * @author woniuxy
- * @since 2023-09-05
+ * @since 2023-09-02
  */
 @Service
 public class UrlPermissionServiceImpl extends ServiceImpl<UrlPermissionMapper, UrlPermission> implements IUrlPermissionService {

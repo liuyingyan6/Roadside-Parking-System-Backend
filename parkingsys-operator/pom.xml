@@ -79,6 +79,14 @@
             <artifactId>ip2region</artifactId>
             <version>2.6.5</version>
         </dependency>
+        
+        <!-- MyBatis的分页插件 -->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.4.4</version>
+        </dependency>
+
     </dependencies>
 
 </project>

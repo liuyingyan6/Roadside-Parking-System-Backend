@@ -32,6 +32,6 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
                 "/**/druid/**",
                 "/urlPermission/**",
                 "/roleUrlPermission/**");
-        registry.addInterceptor(loginInterceptor()).addPathPatterns("/**").excludePathPatterns(whiteList);
+//        registry.addInterceptor(loginInterceptor()).addPathPatterns("/**").excludePathPatterns(whiteList);
     }
 }
