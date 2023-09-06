@@ -1,7 +1,7 @@
 package com.woniuxy.operator.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.io.Serializable;
 import java.util.Date;
 import io.swagger.annotations.ApiModel;
@@ -16,7 +16,7 @@ import lombok.ToString;
  * </p>
  *
  * @author woniuxy
- * @since 2023-09-02
+ * @since 2023-09-05
  */
 @Getter
 @Setter
@@ -48,17 +48,23 @@ public class User implements Serializable {
       @ApiModelProperty("用户邮箱")
       private String email;
 
-      @ApiModelProperty("创建时间")
-      private Date createTime;
-
-      @ApiModelProperty("修改时间")
-      private Date updateTime;
-
       @ApiModelProperty("车辆id")
       private Long carId;
 
-      @ApiModelProperty("登录时间")
-      private Date loginTime;
+      @ApiModelProperty("微信绑定 0 1")
+      private Integer vx;
+
+      @ApiModelProperty("创建时间")
+      @TableField(fill = FieldFill.INSERT)
+      private Date createTime;
+
+      @ApiModelProperty("修改时间")
+      @TableField(fill = FieldFill.UPDATE)
+      private Date updateTime;
+
+      @ApiModelProperty("禁用")
+      @TableLogic
+      private Integer logicDelete;
 
 
 }

@@ -29,9 +29,10 @@ public class CodeGenerator {
                 }).strategyConfig(builder -> {
                     builder.entityBuilder().enableLombok(); // 允许使用Lombok注解
                     builder.controllerBuilder().enableHyphenStyle().enableRestStyle();
-                    builder.addInclude("car", "china", "login_log", "manager"
+                    builder.addInclude("car", "car_type" ,"charge","china", "clock_in","inspector",
+                                        "inspector_feedback", "login_log","magnetometer","manager"
                                         ,"manager_role", "operation_log", "order",
-                                        "parking","parking_ai","role","role_url_permission",
+                                        "parking","pda","road","role","role_url_permission",
                                         "url_permission","user","user_feedback"); // 设置需要生成的表名
                             // .addTablePrefix("t_"); // 设置过滤表前缀
                 })

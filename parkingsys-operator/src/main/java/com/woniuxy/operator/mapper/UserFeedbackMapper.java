@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author woniuxy
- * @since 2023-09-02
+ * @since 2023-09-05
  */
 @Mapper
 public interface UserFeedbackMapper extends BaseMapper<UserFeedback> {
