@@ -7,6 +7,7 @@ import java.util.Date;
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -25,6 +26,7 @@ import lombok.ToString;
 @Setter
 @ToString
 @ApiModel(value = "Order对象", description = "")
+@TableName(value = "t_order")
 public class Order implements Serializable {
 
     private static final long serialVersionUID = 1L;
