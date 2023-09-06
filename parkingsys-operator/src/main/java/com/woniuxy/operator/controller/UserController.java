@@ -34,8 +34,8 @@ public class UserController {
 
 
     //用户——分页
-    @GetMapping("/findPage")
-    public ResponseResult findPage(Integer pageNum, Integer pageSize,  UserDTO userDTO) {
+    @PostMapping("/findPage/{pageNum}/{pageSize}")
+    public ResponseResult findPage(@PathVariable("pageNum") Integer pageNum, @PathVariable("pageSize") Integer pageSize,  @RequestBody UserDTO userDTO) {
         Page<User> page = Page.of(pageNum-1,pageSize);
         PageVO<UserVO> vo = userServiceImpl.findPage(page,userDTO);
         return ResponseResult.ok(vo);
