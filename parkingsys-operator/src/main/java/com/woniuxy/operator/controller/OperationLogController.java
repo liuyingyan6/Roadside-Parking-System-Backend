@@ -1,5 +1,7 @@
 package com.woniuxy.operator.controller;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.woniuxy.operator.entity.LoginLog;
 import com.woniuxy.operator.pojos.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,10 +28,10 @@ public class OperationLogController {
         this.operationLogServiceImpl = operationLogServiceImpl;
     }
 
-    @GetMapping("/list")
-    public ResponseResult list(){
-        List<OperationLog> list = operationLogServiceImpl.list();
-        return ResponseResult.ok(list);
+    @GetMapping("/getPage")
+    public ResponseResult getPage(Integer pageNum, Integer pageSize) {
+        Page<OperationLog> page = operationLogServiceImpl.page(Page.of(pageNum, pageSize));
+        return ResponseResult.ok(page);
     }
 
 }

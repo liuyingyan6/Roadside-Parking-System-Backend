@@ -2,6 +2,7 @@ package com.woniuxy.operator.service;
 
 import com.woniuxy.operator.entity.Pda;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.woniuxy.operator.vo.PageVO;
 
 /**
  * <p>
@@ -13,4 +14,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IPdaService extends IService<Pda> {
 
+    PageVO getPageByKeyword(Integer pageNum, Integer pageSize, String pdaName, String inspectorName, String roadName);
 }
