@@ -25,5 +25,5 @@ public interface OrderMapper extends BaseMapper<Order> {
     List<OrderVO> findAll();
 
     //自定义分页
-    IPage<OrderDTO> findAllPage(@Param("page") Page page, @Param("orderDTO") OrderDTO orderDTO);
+    List<OrderVO> findAllPage( @Param("orderDTO") OrderDTO orderDTO);
 }

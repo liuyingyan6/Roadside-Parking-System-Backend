@@ -1,11 +1,10 @@
 package com.woniuxy.operator.controller;
 
-import cn.afterturn.easypoi.excel.ExcelExportUtil;
-import cn.afterturn.easypoi.excel.ExcelImportUtil;
-import cn.afterturn.easypoi.excel.entity.ExportParams;
-import cn.afterturn.easypoi.excel.entity.ImportParams;
 
+import cn.afterturn.easypoi.excel.ExcelExportUtil;
+import cn.afterturn.easypoi.excel.entity.ExportParams;
 import cn.hutool.poi.excel.ExcelUtil;
+import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.dto.OrderDTO;
 import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.vo.OrderVO;
@@ -50,7 +49,7 @@ public class OrderController {
                                @Param("pageSize") Integer pageSize,
                                @Param("orderDto") OrderDTO orderDto) {
         //封装分页请求对象
-        PageVO<OrderDTO> pageVO = orderServiceImpl.findAllPage(pageNum, pageSize, orderDto);
+        PageInfo<OrderVO> pageVO = orderServiceImpl.findPage(pageNum, pageSize, orderDto);
         return ResponseResult.ok(pageVO);
     }
 

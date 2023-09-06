@@ -1,6 +1,7 @@
 package com.woniuxy.operator.vo;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -15,8 +16,6 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class PageVO<T> {
-    private long pageNum; // 当前页
-    private long pageSize;    // 每页大小
     private Long total;// 总记录数
     private List<T> records;// 查询结果
 }

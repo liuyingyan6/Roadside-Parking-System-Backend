@@ -2,7 +2,9 @@ package com.woniuxy.operator.service.impl;
 
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.dto.OrderDTO;
 import com.woniuxy.operator.entity.Order;
 import com.woniuxy.operator.mapper.OrderMapper;
@@ -10,7 +12,6 @@ import com.woniuxy.operator.service.IOrderService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
 import com.woniuxy.operator.vo.OrderVO;
-import com.woniuxy.operator.vo.PageVO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -41,20 +42,13 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     }
 
     @Override
-    public PageVO<OrderDTO> findAllPage(Integer pageNum, Integer pageSize, OrderDTO orderDto) {
-//        List<OrderDTO> orderDTOList = orderMapper.findAllPage(pageNum, pageSize, orderDto);
-        Page<OrderDTO>page=new Page<>(pageNum,pageSize);
-        PageVO<OrderDTO>pageVO=new PageVO<>();
-        pageVO.setPageNum(page.getCurrent());
-        pageVO.setPageSize(page.getSize());
-        IPage<OrderDTO> allPage = orderMapper.findAllPage(page, orderDto);
+    public PageInfo<OrderVO> findPage(Integer pageNum, Integer pageSize, OrderDTO orderDto) {
+        PageHelper.startPage(pageNum, pageSize);
 
-        pageVO.setTotal(allPage.getTotal());
-        pageVO.setRecords(allPage.getRecords());
-        return pageVO;
+        List<OrderVO> orderVOList = orderMapper.findAllPage(orderDto);
+
+        return new PageInfo<>(orderVOList);
     }
-
-
 
 
 }

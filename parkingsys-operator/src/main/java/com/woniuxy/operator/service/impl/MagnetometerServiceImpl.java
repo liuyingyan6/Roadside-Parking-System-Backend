@@ -1,7 +1,5 @@
 package com.woniuxy.operator.service.impl;
 
-import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.woniuxy.operator.entity.Magnetometer;
 import com.woniuxy.operator.mapper.MagnetometerMapper;
 import com.woniuxy.operator.service.IMagnetometerService;
@@ -9,8 +7,6 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.woniuxy.operator.vo.MagnetometerVO;
 import com.woniuxy.operator.vo.PageVO;
 import org.springframework.stereotype.Service;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.StringUtils;
 
 import java.util.List;
 
