@@ -1,8 +1,7 @@
 package com.woniuxy.operator.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.io.Serializable;
 import java.util.Date;
 import io.swagger.annotations.ApiModel;
@@ -37,10 +36,13 @@ public class ClockIn implements Serializable {
       @ApiModelProperty("考勤状态0-未考勤，1-正常打卡")
       private Integer clockInStatus;
 
+    @TableField(fill = FieldFill.INSERT)
     private Date createTime;
 
+    @TableField(fill = FieldFill.UPDATE)
     private Date updateTime;
 
+    @TableLogic
     private Integer logicDelete;
 
 

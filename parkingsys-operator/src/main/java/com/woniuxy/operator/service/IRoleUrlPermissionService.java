@@ -1,5 +1,6 @@
 package com.woniuxy.operator.service;
 
+import com.woniuxy.operator.dto.AuthorizationDTO;
 import com.woniuxy.operator.entity.RoleUrlPermission;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +14,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IRoleUrlPermissionService extends IService<RoleUrlPermission> {
 
+    void roleAuthorization(AuthorizationDTO authorizationDTO);
 }

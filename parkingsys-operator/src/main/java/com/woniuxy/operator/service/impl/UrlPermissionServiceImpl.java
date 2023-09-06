@@ -41,6 +41,13 @@ public class UrlPermissionServiceImpl extends ServiceImpl<UrlPermissionMapper, U
         return getPermissionMenuVOS(permissions);
     }
 
+    // 授权弹窗：询所有权限
+    @Override
+    public List<PermissionMenuVO> findAll() {
+        List<UrlPermission> permissions = urlPermissionMapper.selectList(null);
+        return getPermissionMenuVOS(permissions);//将集合的数据，转换的树形数据
+    }
+
     // 抽取的查找一级菜单二级菜单的方法
     private List<PermissionMenuVO> getPermissionMenuVOS(List<UrlPermission> permissions) {
         //先过滤一级菜单
