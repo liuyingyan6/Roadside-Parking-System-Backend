@@ -17,9 +17,6 @@
         <where>
             m.parking_id = p.id
             and p.road_id = r.id
-            <if test="magnetometerId!=null">
-                and m.id = #{magnetometerId}
-            </if>
             <if test="magnetometerName!=null and magnetometerName!=''">
                 and m.name like concat('%', #{magnetometerName}, '%')
             </if>
@@ -38,9 +35,6 @@
         <where>
             m.parking_id = p.id
             and p.road_id = r.id
-            <if test="magnetometerId!=null">
-                and m.id = #{magnetometerId}
-            </if>
             <if test="magnetometerName!=null and magnetometerName!=''">
                 and m.name like concat('%', #{magnetometerName}, '%')
             </if>

@@ -20,12 +20,10 @@ import java.util.List;
 public interface MagnetometerMapper extends BaseMapper<Magnetometer> {
     List<MagnetometerVO> selectPageByKeyword(@Param("skipRow") Integer skipRow,
                                              @Param("pageSize") Integer pageSize,
-                                             @Param("magnetometerId") Integer magnetometerId,
                                              @Param("magnetometerName") String magnetometerName,
                                              @Param("roadName") String roadName);
 
-    Long selectTotalCount(@Param("magnetometerId") Integer magnetometerId,
-                          @Param("magnetometerName") String magnetometerName,
+    Long selectTotalCount(@Param("magnetometerName") String magnetometerName,
                           @Param("roadName") String roadName);
 
 }

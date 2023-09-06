@@ -3,11 +3,13 @@ package com.woniuxy.operator.controller;
 import cn.hutool.core.date.DateTime;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.woniuxy.operator.entity.Magnetometer;
 import com.woniuxy.operator.entity.Parking;
 import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.service.IMagnetometerService;
 import com.woniuxy.operator.service.IParkingService;
+import com.woniuxy.operator.vo.PageVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -62,7 +64,9 @@ public class MagnetometerLogController {
     }
 
     @GetMapping("/getPageById")
-    public ResponseResult list(Integer id) {
-        return ResponseResult.ok(magnetometerLogServiceImpl.list(new QueryWrapper<MagnetometerLog>().eq("magnetometer_id", id)));
+    public ResponseResult getPageById(Integer pageNum, Integer pageSize,Integer id) {
+        Page<MagnetometerLog> pageData = new Page<>(pageNum, pageSize);
+        Page<MagnetometerLog> page = magnetometerLogServiceImpl.page(pageData, new QueryWrapper<MagnetometerLog>().eq("magnetometer_id", id));
+        return ResponseResult.ok(page);
     }
 }

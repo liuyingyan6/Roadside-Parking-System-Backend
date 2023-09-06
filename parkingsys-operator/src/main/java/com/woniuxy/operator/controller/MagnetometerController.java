@@ -67,8 +67,8 @@ public class MagnetometerController {
     }
 
     @GetMapping("/getPageByKeyword")
-    public ResponseResult getPageByKeyword(Integer pageNum, Integer pageSize, Integer magnetometerId, String magnetometerName, String roadName) {
-        PageVO pageVO = magnetometerServiceImpl.getPageByKeyword(pageNum, pageSize, magnetometerId, magnetometerName, roadName);
+    public ResponseResult getPageByKeyword(Integer pageNum, Integer pageSize, String magnetometerName, String roadName) {
+        PageVO pageVO = magnetometerServiceImpl.getPageByKeyword(pageNum, pageSize, magnetometerName, roadName);
         return ResponseResult.ok(pageVO);
     }
 

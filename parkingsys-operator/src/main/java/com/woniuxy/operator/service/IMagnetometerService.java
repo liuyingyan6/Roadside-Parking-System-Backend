@@ -16,5 +16,5 @@ import com.woniuxy.operator.vo.PageVO;
  */
 public interface IMagnetometerService extends IService<Magnetometer> {
 
-    PageVO getPageByKeyword(Integer pageNum, Integer pageSize, Integer magnetometerId, String magnetometerName, String roadName);
+    PageVO getPageByKeyword(Integer pageNum, Integer pageSize, String magnetometerName, String roadName);
 }

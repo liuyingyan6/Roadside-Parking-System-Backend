@@ -32,9 +32,9 @@ public class MagnetometerServiceImpl extends ServiceImpl<MagnetometerMapper, Mag
     }
 
     @Override
-    public PageVO getPageByKeyword(Integer pageNum, Integer pageSize, Integer magnetometerId, String magnetometerName, String roadName) {
-        List<MagnetometerVO> list = magnetometerMapper.selectPageByKeyword((pageNum - 1) * pageSize, pageSize, magnetometerId, magnetometerName, roadName);
-        Long total = magnetometerMapper.selectTotalCount(magnetometerId, magnetometerName, roadName);
-        return new PageVO(total,list);
+    public PageVO getPageByKeyword(Integer pageNum, Integer pageSize, String magnetometerName, String roadName) {
+        List<MagnetometerVO> list = magnetometerMapper.selectPageByKeyword((pageNum - 1) * pageSize, pageSize, magnetometerName, roadName);
+        Long total = magnetometerMapper.selectTotalCount(magnetometerName, roadName);
+        return new PageVO(total, list);
     }
 }
