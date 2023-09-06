@@ -37,7 +37,7 @@ public class LoginLogAdvice {
         HttpServletRequest request = sra.getRequest();
 
         // 获取方法的返回结果
-        TokenVO datas = (TokenVO) result.getDatas();
+        TokenVO datas = (TokenVO) result.getData();
 
         String ip = IPUtil.getIpAddress(request); // 获取ip，如果用localhost发请求会得到ip：0:0:0:0:0:0:0:1
         String location = IPUtil.getCityInfoByFile(ip);

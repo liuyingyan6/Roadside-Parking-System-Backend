@@ -3,6 +3,8 @@ package com.woniuxy.operator.entity;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+
+import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -21,6 +23,7 @@ import lombok.ToString;
 @Setter
 @ToString
   @ApiModel(value = "Order对象", description = "")
+@TableName("t_order")
 public class Order implements Serializable {
 
     private static final long serialVersionUID = 1L;
