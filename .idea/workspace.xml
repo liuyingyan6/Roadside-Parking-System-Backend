@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ba0f919d-268b-45ca-acdd-487ab603c4fa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_2_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_5_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_2_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_2_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_9_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_20.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_5_10_14__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_5_10_14__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-generator/parkingsys-generator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-generator/parkingsys-generator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-generator/target/classes/templates/controller.java.vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-generator/target/classes/templates/entity.java.vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-generator/target/classes/templates/mapper.java.vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-generator/target/classes/templates/serviceImpl.java.vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/parkingsys-operator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/parkingsys-operator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/advice/LoginLogAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/advice/LoginLogAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/config/mp/MybatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/config/mp/MybatisPlusConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/config/redis/BloomFilterConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/config/redis/BloomFilterConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/CarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/entity/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/entity/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/ICarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/ICarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/CarServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/CarServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/resources/mapper/CarMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/resources/mapper/CarMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/OperatorApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/OperatorApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/config/MybatisPlusConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/config/RedisConfigure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/config/SwaggerConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/config/WebMvcConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/config/WebMvcConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/CarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/CarController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/LoginLogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/LoginLogController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/OperationLogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/OperationLogController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/ParkingAiController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/RoleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/RoleUrlPermissionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/RoleUrlPermissionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/UrlPermissionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/UrlPermissionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/Car.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/LoginLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/LoginLog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/Manager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/ManagerRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/ManagerRole.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/OperationLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/OperationLog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/Parking.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/Parking.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/ParkingAi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/RoleUrlPermission.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/RoleUrlPermission.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/UrlPermission.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/UrlPermission.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/UserFeedback.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/entity/UserFeedback.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/mapper/ParkingAiMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/mapper/UrlPermissionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/mapper/UrlPermissionMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/pojos/ResponseResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/pojos/ResponseResult.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/ICarService.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/ICarService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/IParkingAiService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/IRoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/IRoleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/IRoleUrlPermissionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/IRoleUrlPermissionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/IUrlPermissionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/IUrlPermissionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/CarServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/CarServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/ManagerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/ManagerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/ParkingAiServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/RoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/RoleServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/RoleUrlPermissionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/RoleUrlPermissionServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/UrlPermissionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/UrlPermissionServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/mapper/CarMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/mapper/CarMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/mapper/ParkingAiMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/mapper/UrlPermissionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/mapper/UrlPermissionMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys.iml" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="developer" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\maven" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../apache-maven-3.9.0" />
+        <option name="useMavenConfig" value="true" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.9.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2UxSaMLtRbt53bFfSiVHkLc2f60" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/mycode/p3/parkingsys1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "project.propCompiler",
+    "spring.configuration.checksum": "6e2244b83667a3dd8a1fa5cc8795037f"
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OperatorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="parkingsys-operator" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.woniuxy.operator.OperatorApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.woniuxy.operator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.OperatorApplication" />
+        <item itemvalue="Spring Boot.OperatorApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ba0f919d-268b-45ca-acdd-487ab603c4fa" name="Changes" comment="" />
+      <created>1693879800505</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1693879800505</updated>
+      <workItem from="1693879802428" duration="329000" />
+      <workItem from="1693880144157" duration="328000" />
+      <workItem from="1693880546129" duration="48000" />
+      <workItem from="1693880651571" duration="17799000" />
+      <workItem from="1693982596924" duration="12303000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
