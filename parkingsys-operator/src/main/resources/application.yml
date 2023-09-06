@@ -1,5 +1,6 @@
 server:
   port: 9090
+  host: 192.168.200.130
 spring:
   datasource:
     druid:
@@ -31,18 +32,19 @@ spring:
         deny: #设置黑名单
       aop-patterns: com.woniuxy.operator.* #监控url请求路径
   redis:
-    host: 192.168.200.130
+    host: ${server.host}
     port: 6379
     database: 0
     password: philredis
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
   elasticsearch:
-    uris: http://192.168.200.130:9200 #配置ES的连接地址
+    uris: http://${server.host}:9200 #配置ES的连接地址
 jwt:
   signature: woniu
   accessTime: 5 #短令牌有效期 单位：分钟

@@ -1,4 +1,4 @@
-package com.woniuxy.operator.config;
+package com.woniuxy.operator.config.swagger;
 
 
 import org.springframework.context.annotation.Bean;
