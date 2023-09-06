@@ -29,7 +29,7 @@ public class CodeGenerator {
                 }).strategyConfig(builder -> {
                     builder.entityBuilder().enableLombok(); // 允许使用Lombok注解
                     builder.controllerBuilder().enableHyphenStyle().enableRestStyle();
-                    builder.addInclude("department"); // 设置需要生成的表名
+                    builder.addInclude("inspector_road"); // 设置需要生成的表名
                             // .addTablePrefix("t_"); // 设置过滤表前缀
                 })
                 .execute();

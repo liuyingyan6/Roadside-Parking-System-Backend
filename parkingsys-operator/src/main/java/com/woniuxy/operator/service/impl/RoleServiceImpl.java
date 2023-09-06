@@ -16,6 +16,8 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务实现类
@@ -62,5 +64,11 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements IR
                         .eq(RoleUrlPermission::getRoleId,id));
         //删除自己
         roleMapper.deleteById(id);
+    }
+
+    @Override
+    public List<Role> findAll() {
+        List<Role> roles = roleMapper.selectList(null);
+        return roles;
     }
 }
