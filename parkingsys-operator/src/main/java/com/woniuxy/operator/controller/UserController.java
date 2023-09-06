@@ -1,5 +1,4 @@
 package com.woniuxy.operator.controller;
-
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.woniuxy.operator.dto.UserDTO;
 import com.woniuxy.operator.pojos.ResponseResult;
@@ -31,37 +30,32 @@ public class UserController {
         this.userServiceImpl = userServiceImpl;
     }
 
-
+    //用户——导出
 
     //用户——分页
     @PostMapping("/findPage/{pageNum}/{pageSize}")
-    public ResponseResult findPage(@PathVariable("pageNum") Integer pageNum, @PathVariable("pageSize") Integer pageSize,  @RequestBody UserDTO userDTO) {
+    public ResponseResult findPage(@PathVariable("pageNum") Integer pageNum,
+                                   @PathVariable("pageSize") Integer pageSize,
+                                   @RequestBody UserDTO userDTO) {
         Page<User> page = Page.of(pageNum-1,pageSize);
         PageVO<UserVO> vo = userServiceImpl.findPage(page,userDTO);
         return ResponseResult.ok(vo);
     }
 
-    //用户——修改
-    @PostMapping("/update")
-    private ResponseResult update(@RequestBody User user){
-        userServiceImpl.updateById(user);
-        return ResponseResult.ok();
-    }
-
-
 
     //用户——删除
-    @GetMapping ("/delete")
-    private ResponseResult delete(User user){
-        userServiceImpl.removeById(user);
-        return ResponseResult.ok();
+    @PutMapping("/update")
+    public ResponseResult update(@RequestBody User user){
+        Integer num;
+        if (user.getState()!=1){
+            user.setState(1);
+            num=1;
+        }else {
+            user.setState(0);
+            num=0;
+        }
+        userServiceImpl.updateById(user);
+        return ResponseResult.ok(user.getState());
     }
 
-
-    //用户——添加
-    @PostMapping("add")
-    private ResponseResult add(@RequestBody User user){
-        userServiceImpl.save(user);
-        return ResponseResult.ok();
-    }
 }

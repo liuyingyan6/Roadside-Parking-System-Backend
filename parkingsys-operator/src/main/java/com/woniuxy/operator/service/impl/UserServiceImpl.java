@@ -14,6 +14,7 @@ import com.woniuxy.operator.service.IUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.woniuxy.operator.vo.PageVO;
 import com.woniuxy.operator.vo.UserVO;
+import io.swagger.models.auth.In;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -41,6 +42,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         this.carMapper = carMapper;
         this.orderMapper = orderMapper;
     }
+
+
+
 
     @Override
     public PageVO<UserVO> findPage(Page page, UserDTO userDTO) {
@@ -75,5 +79,18 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         }).collect(Collectors.toList());
 
         return  PageVO.<UserVO>builder().records(collect).total((long) collect.size()).build();
+    }
+
+    @Override
+    public Integer updateState(User user) {
+        Integer num;
+        if (user.getState()!=1){
+            user.setState(1);
+            num=1;
+        }else {
+            user.setState(0);
+            num=0;
+        }
+        return num;
     }
 }
