@@ -37,7 +37,7 @@ public class LoginLogAdvice {
         HttpServletRequest request = sra.getRequest();
 
         // 获取方法的返回结果
-        TokenVO datas = (TokenVO) result.getDatas();
+        TokenVO data = (TokenVO) result.getData();
 
         String ip = IPUtil.getIpAddress(request); // 获取ip，如果用localhost发请求会得到ip：0:0:0:0:0:0:0:1
         String location = IPUtil.getCityInfoByFile(ip);
@@ -45,7 +45,7 @@ public class LoginLogAdvice {
         System.out.println("browser = " + browser);
         String[] infos = browser.split("/");
         browser = infos[0];
-        LoginLog loginLog = new LoginLog(null, datas.getId(), 0, ip, DateTime.now(),0,location,browser); // 登录日志实体类
+        LoginLog loginLog = new LoginLog(null, data.getId(), 0, ip, DateTime.now(),0,location,browser); // 登录日志实体类
         iLoginLogService.save(loginLog); // 保存登录成功日志
     }
 
