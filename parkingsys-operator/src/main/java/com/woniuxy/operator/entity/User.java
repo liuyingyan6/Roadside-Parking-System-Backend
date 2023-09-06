@@ -1,7 +1,7 @@
 package com.woniuxy.operator.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.io.Serializable;
 import java.util.Date;
 import io.swagger.annotations.ApiModel;
@@ -55,12 +55,15 @@ public class User implements Serializable {
       private Integer vx;
 
       @ApiModelProperty("创建时间")
+      @TableField(fill = FieldFill.INSERT)
       private Date createTime;
 
       @ApiModelProperty("修改时间")
+      @TableField(fill = FieldFill.UPDATE)
       private Date updateTime;
 
       @ApiModelProperty("禁用")
+      @TableLogic
       private Integer logicDelete;
 
 
