@@ -3,6 +3,7 @@ package com.woniuxy.operator.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.alibaba.excel.annotation.ExcelProperty;
 import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -28,15 +29,19 @@ public class Pda implements Serializable {
 
     @ApiModelProperty("pda编号")
     @TableId(value = "id", type = IdType.AUTO)
+    @ExcelProperty("编号")
     private Long id;
 
     @ApiModelProperty("设备名称")
+    @ExcelProperty("设备名称")
     private String name;
 
     @ApiModelProperty("所属路段id")
+    @ExcelProperty("所属路段id")
     private Long roadId;
 
     @ApiModelProperty("设备状态：1-在线，0-离线")
+    @ExcelProperty("设备状态：1-在线，0-离线")
     private Integer status;
 
     @TableField(fill = FieldFill.INSERT)

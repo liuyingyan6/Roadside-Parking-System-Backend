@@ -1,5 +1,6 @@
 package com.woniuxy.operator.controller;
 
+import com.woniuxy.operator.pojos.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -25,4 +26,9 @@ public class RoadController {
         this.roadServiceImpl = roadServiceImpl;
     }
 
+
+    @GetMapping("/list")
+    public ResponseResult list() {
+        return ResponseResult.ok(roadServiceImpl.list());
+    }
 }

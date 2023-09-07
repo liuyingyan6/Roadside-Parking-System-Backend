@@ -18,13 +18,8 @@ import java.util.List;
  */
 @Mapper
 public interface PdaMapper extends BaseMapper<Pda> {
-    List<PdaVO> selectPageByKeyword(@Param("skipRow") Integer skipRow,
-                                    @Param("pageSize") Integer pageSize,
-                                    @Param("pdaName") String pdaName,
-                                    @Param("inspectorName") String inspectorName,
-                                    @Param("roadName") String roadName);
+    List<PdaVO> selectByKeyword(@Param("pdaName") String pdaName,
+                                @Param("inspectorName") String inspectorName,
+                                @Param("roadName") String roadName);
 
-    Long selectTotalCount(@Param("pdaName") String pdaName,
-                          @Param("inspectorName") String inspectorName,
-                          @Param("roadName") String roadName);
 }

@@ -3,10 +3,13 @@ package com.woniuxy.operator.controller;
 import cn.hutool.core.date.DateTime;
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.support.ExcelTypeEnum;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.entity.Magnetometer;
 import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.vo.MagnetometerVO;
 import com.woniuxy.operator.vo.PageVO;
+import com.woniuxy.operator.vo.PdaVO;
 import lombok.SneakyThrows;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +18,8 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.woniuxy.operator.entity.Pda;
@@ -53,7 +58,7 @@ public class PdaController {
     @PostMapping("/fileAdd")
     public ResponseResult fileAdd(@RequestPart("file") MultipartFile file) {
         List<Pda> list = EasyExcel.read(file.getInputStream())
-                .head(Magnetometer.class)
+                .head(Pda.class)
                 .sheet()
                 .doReadSync();
         //如果是真实项目，需要对提交上来的数据进行校验
@@ -69,12 +74,16 @@ public class PdaController {
 
     @GetMapping("/getPageByKeyword")
     public ResponseResult getPageByKeyword(Integer pageNum, Integer pageSize, String pdaName, String inspectorName, String roadName) {
-        PageVO pageVO = pdaServiceImpl.getPageByKeyword(pageNum, pageSize, pdaName, inspectorName, roadName);
+        PageHelper.startPage(pageNum, pageSize);
+        List<PdaVO> list = pdaServiceImpl.getByKeyword(pdaName, inspectorName, roadName);
+        PageInfo pageInfo = new PageInfo(list);
+        PageVO<PdaVO> pageVO = new PageVO(pageInfo.getTotal(), pageInfo.getList());
         return ResponseResult.ok(pageVO);
     }
 
     @PutMapping("/update")
     public ResponseResult update(@RequestBody Pda pda) {
+        pda.setUpdateTime(DateTime.now());
         pdaServiceImpl.updateById(pda);
         return ResponseResult.ok();
     }
@@ -83,13 +92,30 @@ public class PdaController {
     @GetMapping("/export")
     public void export(HttpServletResponse response) throws IOException {
         setExcelRespProp(response, "pda信息");
-        List<Pda> list = pdaServiceImpl.list();
+        List<PdaVO> list = pdaServiceImpl.getByKeyword("","","");
+        List<String> excludeColumnFiledNames = Arrays.asList("roadId","inspectorId"); // 指定要忽略的属性名
         EasyExcel.write(response.getOutputStream())
-                .head(Pda.class)
+                .head(PdaVO.class)
+                .excludeColumnFiledNames(excludeColumnFiledNames) // 指定要忽略的属性
                 .excelType(ExcelTypeEnum.XLSX)
                 .sheet("sheet1")
                 .doWrite(list);
     }
+
+
+    @GetMapping("/exportTemplate")
+    public void exportTemplate(HttpServletResponse response) throws IOException {
+        setExcelRespProp(response, "pda导入模版");
+        List<Pda> list = new ArrayList<>(); // 创建一个空的列表作为模板数据
+        List<String> excludeColumnFiledNames = Arrays.asList("createTime","updateTime","logicDelete"); // 指定要忽略的属性名
+        EasyExcel.write(response.getOutputStream())
+                .head(Pda.class)
+                .excludeColumnFiledNames(excludeColumnFiledNames) // 指定要忽略的属性
+                .excelType(ExcelTypeEnum.XLSX)
+                .sheet("sheet1")
+                .doWrite(list);
+    }
+
 
     /**
      * 设置excel下载响应头属性
