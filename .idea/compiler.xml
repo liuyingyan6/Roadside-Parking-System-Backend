@@ -14,6 +14,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="parking-common" target="1.8" />
+      <module name="parking-oss" target="1.8" />
       <module name="parkingsys" target="1.8" />
       <module name="parkingsys-generator" target="1.8" />
       <module name="parkingsys-operator" target="1.8" />

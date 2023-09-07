@@ -47,7 +47,7 @@ spring:
     uris: http://${server.host}:9200 #配置ES的连接地址
 jwt:
   signature: woniu
-  accessTime: 5 #短令牌有效期 单位：分钟
+  accessTime: 60 #短令牌有效期 单位：分钟
   refreshTime: 7 #长令牌有效期 单位：天
 mybatis-plus:
   configuration:

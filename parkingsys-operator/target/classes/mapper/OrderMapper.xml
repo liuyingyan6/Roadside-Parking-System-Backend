@@ -2,4 +2,46 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.woniuxy.operator.mapper.OrderMapper">
 
+
+
+    <select id="findAllPage" resultType="com.woniuxy.operator.vo.OrderVO">
+        SELECT
+        o.*,
+        pa.number AS parking_number,
+        ins.name AS inspector_name ,
+        ro.`name` AS road_name,
+        car.`car_number`
+        FROM
+        `t_order` o
+        left JOIN
+        parking pa ON o.parking_id = pa.id
+        left JOIN
+        inspector ins ON o.inspector_id = ins.id
+        left JOIN
+        road ro ON o.road_id = ro.id
+        left JOIN
+        car  ON o.`car_id` = car.id
+        <where>
+            <if test="orderDTO.orderNumber !=null and orderDTO.orderNumber !=''">
+                o.order_number = #{orderNumber}
+            </if>
+        </where>
+
+    </select>
+    <select id="findAll" resultType="com.woniuxy.operator.vo.OrderVO">
+        SELECT o.*,
+               pa.number        AS parking_number,
+               ins.name         AS inspector_name,
+               ro.`name`        AS road_name,
+               car.`car_number` AS carNumber
+        FROM `t_order` o
+                 left JOIN
+             parking pa ON o.parking_id = pa.id
+                 left JOIN
+             inspector ins ON o.inspector_id = ins.id
+                 left JOIN
+             road ro ON o.road_id = ro.id
+                 left JOIN
+             car ON o.`car_id` = car.id
+    </select>
 </mapper>
