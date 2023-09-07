@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2023-09-06
  */
 @RestController
-@RequestMapping("/inspector-road")
+@RequestMapping("/inspectorRoad")
 public class InspectorRoadController {
 
     private final IInspectorRoadService inspectorRoadServiceImpl;

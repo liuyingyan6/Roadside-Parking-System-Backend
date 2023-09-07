@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2023-09-05
  */
 @RestController
-@RequestMapping("/manager-role")
+@RequestMapping("/managerRole")
 public class ManagerRoleController {
 
     private final IManagerRoleService managerRoleServiceImpl;

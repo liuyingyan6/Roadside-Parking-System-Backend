@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2023-09-05
  */
 @RestController
-@RequestMapping("/login-log")
+@RequestMapping("/loginLog")
 public class LoginLogController {
 
     private final ILoginLogService loginLogServiceImpl;
