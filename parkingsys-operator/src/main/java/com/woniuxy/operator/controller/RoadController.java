@@ -2,6 +2,7 @@ package com.woniuxy.operator.controller;
 
 import com.woniuxy.operator.dto.RoadDTO;
 import com.woniuxy.operator.entity.Road;
+import com.woniuxy.operator.entity.User;
 import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.vo.PageVO;
 import io.swagger.annotations.ApiOperation;
@@ -51,5 +52,22 @@ public class RoadController {
     public ResponseResult deleteRoad(@PathVariable("id") Long id) {
         roadServiceImpl.removeById(id);
         return ResponseResult.ok();
+    }
+
+    /**
+     * 禁用功能
+     */
+    @PutMapping("/update")
+    public ResponseResult update(@RequestBody Road road){
+        Integer num;
+        if (road.getState()!=1){
+            road.setState(1);
+            num=1;
+        }else {
+            road.setState(0);
+            num=0;
+        }
+        roadServiceImpl.updateById(road);
+        return ResponseResult.ok(road.getState());
     }
 }

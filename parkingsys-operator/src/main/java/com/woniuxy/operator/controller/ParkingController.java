@@ -7,14 +7,7 @@ import com.woniuxy.operator.entity.Parking;
 import com.woniuxy.operator.service.IParkingService;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * <p>
- *  前端控制器
- * </p>
- *
- * @author woniuxy
- * @since 2023-09-05
- */
+
 @RestController
 @RequestMapping("/parking")
 public class ParkingController {
@@ -25,4 +18,11 @@ public class ParkingController {
         this.parkingServiceImpl = parkingServiceImpl;
     }
 
+    /**
+     * 统计车位数
+     */
+    @GetMapping("/count")
+    public int parkingCount(@RequestParam Integer id){
+        return parkingServiceImpl.parkingCount(id);
+    }
 }

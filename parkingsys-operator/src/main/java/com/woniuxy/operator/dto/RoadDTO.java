@@ -13,13 +13,12 @@ import java.util.Date;
 public class RoadDTO {
     private Long id;
     private String name;
+    private Integer state;
 
     private Long chargeId;
     private String chargingRule;
-
     private Long chinaId;
     private String chinaName;
-
     private Long inspectorId;
     private String inspectorName;
 

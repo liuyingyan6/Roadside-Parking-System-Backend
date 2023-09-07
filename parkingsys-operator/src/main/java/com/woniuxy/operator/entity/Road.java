@@ -35,6 +35,12 @@ public class Road implements Serializable {
     @ApiModelProperty("路段名称")
     private String name;
 
+    @ApiModelProperty("路段状态（0-正常，1-禁用）")
+    private Integer state;
+
+    @ApiModelProperty("路段车位数")
+    private Integer parkingCount;
+
     @ApiModelProperty("限制车位数")
     private Integer parkingLimit;
 

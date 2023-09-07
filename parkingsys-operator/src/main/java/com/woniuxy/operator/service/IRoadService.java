@@ -9,6 +9,5 @@ import com.woniuxy.operator.vo.PageVO;
 public interface IRoadService extends IService<Road> {
 
     PageVO<RoadDTO> findByPage(Integer current, Integer size, RoadDTO roadDTO);
-
     void saveRoad(RoadDTO roadDTO);
 }
