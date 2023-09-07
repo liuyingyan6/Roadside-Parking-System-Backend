@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2023-09-05
  */
 @RestController
-@RequestMapping("/magnetometer-log")
+@RequestMapping("/magnetometerLog")
 public class MagnetometerLogController {
 
     private final IMagnetometerLogService magnetometerLogServiceImpl;

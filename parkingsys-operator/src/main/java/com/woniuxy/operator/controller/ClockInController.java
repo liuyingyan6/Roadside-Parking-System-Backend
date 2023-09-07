@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2023-09-05
  */
 @RestController
-@RequestMapping("/clock-in")
+@RequestMapping("/clockIn")
 public class ClockInController {
 
     private final IClockInService clockInServiceImpl;

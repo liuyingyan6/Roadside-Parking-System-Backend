@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2023-09-05
  */
 @RestController
-@RequestMapping("/operation-log")
+@RequestMapping("/operationLog")
 public class OperationLogController {
 
     private final IOperationLogService operationLogServiceImpl;
