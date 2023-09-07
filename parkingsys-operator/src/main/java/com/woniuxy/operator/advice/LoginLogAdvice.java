@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 @Component
 public class LoginLogAdvice {
     @Autowired
-    ILoginLogService iLoginLogService;
+    private ILoginLogService iLoginLogService;
 
     @Pointcut(value = "execution(* com.woniuxy.operator.controller.ManagerController.login(..))")
     public void loginPointCut() {
