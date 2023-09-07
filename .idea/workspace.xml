@@ -4,14 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c62f2fd-38ae-4d1e-89c5-9340771697b0" name="Changes" comment="Merge branch 'developer' into 刘展鹏&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/LoginLogController.class&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/OperationLogController.class&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/OrderController.class&#10;#&#9;parkingsys-operator/target/classes/mapper/OrderMapper.xml">
+    <list default="true" id="9c62f2fd-38ae-4d1e-89c5-9340771697b0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/parking-common/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parking-common/src/main/java/com/woniuxy/common/ResponseResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parking-common/src/main/java/com/woniuxy/common/handler/Asserts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parking-common/src/main/java/com/woniuxy/common/handler/BusinessEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parking-common/src/main/java/com/woniuxy/common/handler/BusinessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parking-common/src/main/java/com/woniuxy/common/handler/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parking-common/src/main/java/com/woniuxy/common/handler/IErrorCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parking-oss/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parking-oss/src/main/java/com/woniuxy/OssApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parking-oss/src/main/java/com/woniuxy/config/cors/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parking-oss/src/main/java/com/woniuxy/controller/OSSController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parking-oss/src/main/java/com/woniuxy/entity/FileInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parking-oss/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/resources/mapper/InformationMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/advice/LoginLogAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/advice/LoginLogAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-generator/src/main/java/com/woniuxy/generator/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-generator/src/main/java/com/woniuxy/generator/CodeGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/LoginLogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/LoginLogController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/OperationLogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/OperationLogController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/OrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/mapper/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/mapper/OrderMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +35,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -29,10 +50,50 @@
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75"
+    "RequestMappingsPanelWidth1": "75",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "E:/idea/parkingsys/parking-oss/src/main/java/com/woniuxy",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.38505748"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\idea\parkingsys\parking-oss\src\main\java\com\woniuxy" />
+      <recent name="E:\idea\parkingsys\parking-common\src\main\java\com\woniuxy\common" />
+      <recent name="E:\idea\parkingsys\parking-oss\src\main\resources" />
+      <recent name="E:\idea\parkingsys\parking-oss\src\main\java" />
+      <recent name="E:\idea\parkingsys\parkingsys-operator\src\main\resources\mapper" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.woniuxy.common" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.OperatorApplication">
+    <configuration name="CodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.woniuxy.generator.CodeGenerator" />
+      <module name="parkingsys-generator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.woniuxy.generator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="OperatorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="parkingsys-operator" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.woniuxy.operator.OperatorApplication" />
@@ -46,13 +107,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OssApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="parking-oss" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.woniuxy.OssApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.woniuxy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.CodeGenerator" />
+      <item itemvalue="Spring Boot.OssApplication (1)" />
+      <item itemvalue="Spring Boot.OperatorApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.OperatorApplication" />
+        <item itemvalue="Spring Boot.OssApplication (1)" />
+        <item itemvalue="Application.CodeGenerator" />
       </list>
     </recent_temporary>
   </component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Merge branch 'developer' into 刘展鹏&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/LoginLogController.class&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/OperationLogController.class&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/OrderController.class&#10;#&#9;parkingsys-operator/target/classes/mapper/OrderMapper.xml">
+      <created>1694060741268</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1694060741269</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge branch 'developer' into 刘展鹏&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/LoginLogController.class&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/OperationLogController.class&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/OrderController.class&#10;#&#9;parkingsys-operator/target/classes/mapper/OrderMapper.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'developer' into 刘展鹏&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/LoginLogController.class&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/OperationLogController.class&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/OrderController.class&#10;#&#9;parkingsys-operator/target/classes/mapper/OrderMapper.xml" />
   </component>
 </project>
