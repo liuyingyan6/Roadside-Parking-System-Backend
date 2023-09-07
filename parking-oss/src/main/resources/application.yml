@@ -1,0 +1,11 @@
+# tomcat的配置
+server:
+  port: 8020
+
+alibaba:
+  cloud:
+    access-key: LTAI5t66sDtCc4pJeXMZNcxJ #密钥的key
+    secret-key: U1WJJnqXAPPeR8mOf1R60mj6lyPqjT #密钥的key
+    oss:
+      endpoint: oss-cn-guangzhou.aliyuncs.com #外网路径
+  bucket: liu-demo #桶的名称

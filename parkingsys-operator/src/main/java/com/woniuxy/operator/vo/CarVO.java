@@ -6,6 +6,8 @@ import org.elasticsearch.search.DocValueFormat;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Date;
+
 @Data
 public class CarVO {
     private String carNumber;
@@ -15,7 +17,7 @@ public class CarVO {
     private Integer notPayCount;
     private BigDecimal orderAmount;
     private BigDecimal NotPayAmount;
-    private LocalDateTime createTime;
-    private LocalDateTime updateTime;
+    private Date createTime;
+    private Date updateTime;
 
 }

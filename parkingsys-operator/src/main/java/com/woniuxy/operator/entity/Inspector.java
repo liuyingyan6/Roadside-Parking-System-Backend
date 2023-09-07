@@ -30,11 +30,20 @@ public class Inspector implements Serializable {
 
       private Long id;
 
-      @ApiModelProperty("巡检员名称")
-      private String name;
+    @ApiModelProperty("巡检员名称")
+    private String name;
+    @ApiModelProperty("巡检员手机号")
+    private String phone;
 
-      @ApiModelProperty("设备id")
-      private Long pdaId;
+
+    @ApiModelProperty("巡检员状态")
+    private Integer state;
+
+    @ApiModelProperty("执勤表id")
+    private Long clockInId;
+
+    @ApiModelProperty("设备id")
+    private Long pdaId;
 
       @ApiModelProperty("地址id")
       private Long chinaId;

@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.*;
 
 import java.io.Serializable;
 import java.util.Date;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -33,8 +34,14 @@ public class ClockIn implements Serializable {
       @ApiModelProperty("巡检员名字")
       private String inspectorId;
 
-      @ApiModelProperty("考勤状态0-未考勤，1-正常打卡")
-      private Integer clockInStatus;
+    @ApiModelProperty("考勤状态0-未考勤，1-正常打卡")
+    private Integer clockInStatus;
+
+    @ApiModelProperty("上班时间")
+    private Date dutyTime;
+
+    @ApiModelProperty("下班时间")
+    private Date closingTime;
 
     @TableField(fill = FieldFill.INSERT)
     private Date createTime;

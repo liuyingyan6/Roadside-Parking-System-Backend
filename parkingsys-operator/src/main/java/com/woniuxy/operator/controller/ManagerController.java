@@ -1,10 +1,14 @@
 package com.woniuxy.operator.controller;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.woniuxy.operator.dto.ManagerDTO;
+import com.woniuxy.operator.entity.UrlPermission;
 import com.woniuxy.operator.handler.Asserts;
 import com.woniuxy.operator.handler.BusinessEnum;
 import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.util.TokenUtil;
+import com.woniuxy.operator.vo.ManagerVO;
+import com.woniuxy.operator.vo.PageVO;
 import com.woniuxy.operator.vo.TokenVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -52,6 +56,13 @@ public class ManagerController {
         String accessToken = TokenUtil.createAccessToken(accessTime, manager, signature, request);
         String refreshToken = TokenUtil.createRefreshToken(refreshTime, manager, signature, request);
         return  ResponseResult.ok(new TokenVO(accessToken,refreshToken,manager.getId(),manager.getAccount()));
+    }
+
+    @GetMapping("/all")
+    public ResponseResult getAll(Integer pageSize,Integer pageNum,String account){
+        Page<ManagerVO> page = Page.of(pageNum,pageSize);
+        Page<ManagerVO> managerVOS = managerServiceImpl.getAll(page,account);
+        return ResponseResult.ok(managerVOS);
     }
 
 }

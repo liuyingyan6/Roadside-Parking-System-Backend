@@ -49,6 +49,13 @@ public class RoleController {
         return ResponseResult.ok();
     }
 
+    // 查询全部
+    @GetMapping("/all")
+    public ResponseResult all(){
+        List<Role> list = roleServiceImpl.findAll();
+        return ResponseResult.ok(list);
+    }
+
     // 分页加载表单数据&查询
     @GetMapping("/findAll2Page")
     public ResponseResult findAll2Page(Integer pageNum, Integer pageSize, String name){
