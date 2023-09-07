@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Data
 public class MagnetometerVO {
-    private Integer magnetometerId;
+    private Integer id;
     private String magnetometerName;
     private String roadName;
     private String parkingName;

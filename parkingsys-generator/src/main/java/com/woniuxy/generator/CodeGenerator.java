@@ -21,19 +21,15 @@ public class CodeGenerator {
                     builder.author("woniuxy") // 设置作者
                             .enableSwagger() // 开启 swagger 模式
                             .fileOverride() // 覆盖已生成文件
-                            .dateType(DateType.ONLY_DATE).disableOpenDir().outputDir("D:\\code\\java"); // 指定输出目录
+                            .dateType(DateType.ONLY_DATE).disableOpenDir().outputDir("E:\\mybatisGenerator"); // 指定输出目录
                 }).packageConfig(builder -> {
                     builder.parent("com.woniuxy.operator") // 设置父包名
                             .moduleName(null) // 设置父包模块名
-                            .pathInfo(Collections.singletonMap(OutputFile.xml, "D:\\code\\resources\\mapper")); // 设置mapperXml生成路径
+                            .pathInfo(Collections.singletonMap(OutputFile.xml, "E:\\mybatisGenerator")); // 设置mapperXml生成路径
                 }).strategyConfig(builder -> {
                     builder.entityBuilder().enableLombok(); // 允许使用Lombok注解
                     builder.controllerBuilder().enableHyphenStyle().enableRestStyle();
-                    builder.addInclude("car", "car_type" ,"charge","china", "clock_in","inspector",
-                                        "inspector_feedback", "login_log","magnetometer","manager"
-                                        ,"manager_role", "operation_log", "order",
-                                        "parking","pda","road","role","role_url_permission",
-                                        "url_permission","user","user_feedback"); // 设置需要生成的表名
+                    builder.addInclude("information"); // 设置需要生成的表名
                             // .addTablePrefix("t_"); // 设置过滤表前缀
                 })
                 .execute();

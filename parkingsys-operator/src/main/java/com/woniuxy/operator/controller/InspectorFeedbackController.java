@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2023-09-05
  */
 @RestController
-@RequestMapping("/inspector-feedback")
+@RequestMapping("/inspectorFeedback")
 public class InspectorFeedbackController {
 
     private final IInspectorFeedbackService inspectorFeedbackServiceImpl;
