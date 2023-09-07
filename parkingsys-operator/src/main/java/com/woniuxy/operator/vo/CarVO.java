@@ -1,4 +1,4 @@
-package com.woniuxy.operator.entity;
+package com.woniuxy.operator.vo;
 
 import lombok.Data;
 import org.elasticsearch.search.DocValueFormat;

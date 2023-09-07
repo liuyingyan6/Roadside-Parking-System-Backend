@@ -1,15 +1,12 @@
 package com.woniuxy.operator.service.impl;
 
-import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-
 import com.woniuxy.operator.entity.Car;
 import com.woniuxy.operator.mapper.CarMapper;
 import com.woniuxy.operator.service.ICarService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.woniuxy.operator.entity.CarVO;
+import com.woniuxy.operator.vo.CarVO;
+import com.woniuxy.operator.vo.CarOrderVO;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -48,5 +45,23 @@ public class CarServiceImpl extends ServiceImpl<CarMapper, Car> implements ICarS
         });
         return list;
 
+    }
+
+    @Override
+    public List<CarOrderVO> getCarOrderList(String carNumber) {
+        List<CarOrderVO> carOrderList = carMapper.getCarOrderList(carNumber);
+        return carOrderList;
+    }
+
+    @Override
+    public void liftCar(Integer carId,Integer userId) {
+        carMapper.liftCar(carId);
+        carMapper.liftUser(userId);
+    }
+
+    @Override
+    public Car getCarInfo(String carNumber) {
+       Car car= carMapper.getCarInfo(carNumber);
+        return car;
     }
 }

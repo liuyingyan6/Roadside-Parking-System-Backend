@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.woniuxy.operator.mapper.CarMapper">
-    <select id="getCar" resultType="CarVO">
+    <select id="getCar" resultType="com.woniuxy.operator.vo.CarVO">
         SELECT car.car_number,car_type.car_type_name,`user`.user_name,
                t_order.create_time
         FROM car,t_order,car_type,`user`
@@ -46,6 +46,38 @@
         SELECT SUM(order_amount) AS not_pay_amount
         FROM car,t_order
         where t_order.`status`=0 AND car.id=t_order.car_id AND car_number=#{carNumber}
+    </select>
+
+    <select id="getCarOrderList" resultType="com.woniuxy.operator.vo.CarOrderVO">
+        SELECT
+            car.car_number,
+            t_order.order_number,
+            t_order.create_time,
+            t_order.order_amount,
+            t_order.`status`,
+            t_order.pay_type
+        FROM
+            car,
+            t_order
+        WHERE
+            car.id = t_order.car_id AND car.car_number=#{carNumber}
+    </select>
+
+    <update id="liftCar">
+        UPDATE `user`
+        SET `user`.car_id=NULL
+        WHERE `user`.id=#{userId}
+    </update>
+    <update id="liftUser">
+        UPDATE car
+        SET car.user_id=NULL
+        WHERE car.id=#{carId}
+    </update>
+
+    <select id="getCarInfo" resultType="Car">
+        SELECT *
+        FROM car
+        where car.car_number=#{carNumber}
     </select>
 
 </mapper>

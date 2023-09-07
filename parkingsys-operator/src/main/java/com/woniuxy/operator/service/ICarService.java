@@ -1,10 +1,9 @@
 package com.woniuxy.operator.service;
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.entity.Car;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.woniuxy.operator.entity.CarVO;
+import com.woniuxy.operator.vo.CarVO;
+import com.woniuxy.operator.vo.CarOrderVO;
 
 import java.util.List;
 
@@ -20,4 +19,10 @@ public interface ICarService extends IService<Car> {
 
 
     List<CarVO> getAll(String key);
+
+    List<CarOrderVO> getCarOrderList(String carNumber);
+
+    void liftCar(Integer carId,Integer userId);
+
+    Car getCarInfo(String carNumber);
 }

@@ -3,12 +3,12 @@ package com.woniuxy.operator.controller;
 
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.support.ExcelTypeEnum;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.woniuxy.operator.entity.Car;
 import com.woniuxy.operator.pojos.ResponseResult;
-import com.woniuxy.operator.entity.CarVO;
-import com.woniuxy.operator.vo.PageVO;
+import com.woniuxy.operator.vo.CarVO;
+import com.woniuxy.operator.vo.CarOrderVO;
 import lombok.SneakyThrows;
 import org.springframework.web.bind.annotation.*;
 
@@ -73,6 +73,27 @@ public class CarController {
                 .replaceAll("\\+", "%20");
         response.setHeader("Content-disposition",
                 "attachment;filename*=utf-8''" + fileName + ".xlsx");
+    }
+
+    @GetMapping("/carOrderList")
+    public ResponseResult getCarOrderList(Integer pageSize,Integer pageNum,String carNumber){
+        PageHelper.startPage(pageNum,pageSize);
+        List<CarOrderVO> carOrderList = carServiceImpl.getCarOrderList(carNumber);
+        PageInfo<CarOrderVO> pageInfo = new PageInfo<>(carOrderList);
+        return ResponseResult.ok(pageInfo);
+    }
+
+    @PostMapping("/lift")
+    public ResponseResult lift(@RequestParam("carId") Integer carId,@RequestParam("userId") Integer userId){
+        carServiceImpl.liftCar(carId,userId);
+        return ResponseResult.ok();
+
+    }
+
+    @GetMapping("/getCarInfo")
+    public ResponseResult getCarInfo(String carNumber){
+       Car car = carServiceImpl.getCarInfo(carNumber);
+       return ResponseResult.ok(car);
     }
 
 
