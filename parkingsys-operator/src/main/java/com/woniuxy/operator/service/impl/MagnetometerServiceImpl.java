@@ -1,5 +1,7 @@
 package com.woniuxy.operator.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.entity.Magnetometer;
 import com.woniuxy.operator.mapper.MagnetometerMapper;
 import com.woniuxy.operator.service.IMagnetometerService;
@@ -28,9 +30,8 @@ public class MagnetometerServiceImpl extends ServiceImpl<MagnetometerMapper, Mag
     }
 
     @Override
-    public PageVO getPageByKeyword(Integer pageNum, Integer pageSize, String magnetometerName, String roadName) {
-        List<MagnetometerVO> list = magnetometerMapper.selectPageByKeyword((pageNum - 1) * pageSize, pageSize, magnetometerName, roadName);
-        Long total = magnetometerMapper.selectTotalCount(magnetometerName, roadName);
-        return new PageVO(total, list);
+    public List<MagnetometerVO> getByKeyword(String magnetometerName, String roadName) {
+        List<MagnetometerVO> list = magnetometerMapper.selectByKeyword(magnetometerName, roadName);
+        return list;
     }
 }
