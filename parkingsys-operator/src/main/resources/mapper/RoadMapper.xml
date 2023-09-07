@@ -2,4 +2,31 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.woniuxy.operator.mapper.RoadMapper">
 
+    <select id="selectRoadDTOPage" resultType="com.woniuxy.operator.dto.RoadDTO">
+        SELECT r.id,
+        r.name,
+        r.charge_id,
+        cr.charging_rule,
+        r.china_id,
+        c.name,
+        r.inspector_id,
+        i.name,
+        r.parking_limit,
+        r.create_time
+        FROM road r
+        LEFT JOIN charge cr ON r.charge_id = cr.id
+        LEFT JOIN inspector i ON r.inspector_id = i.id
+        LEFT JOIN china c ON r.china_id = c.id
+        <where>
+            <if test="name!= null and name!=''">
+                AND r.name LIKE CONCAT('%'#{name}'%')
+            </if>
+            <if test="chargingRule!= null and chargingRule!=''">
+                AND cr.charging_rule LIKE CONCAT('%'#{chargingRule}'%')
+            </if>
+            <if test="inspectorName!=null and inspectorName!=''">
+                AND i.inspector_name LIKE CONCAT('%'#{inspectorName}'%')
+            </if>
+        </where>
+    </select>
 </mapper>

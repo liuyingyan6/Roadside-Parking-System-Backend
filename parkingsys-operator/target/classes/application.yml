@@ -1,12 +1,13 @@
 server:
   port: 9090
-  host: 192.168.200.130
+  host: 192.168.209.129
+
 spring:
   datasource:
     druid:
       url: jdbc:mysql://localhost:3306/wn_parking?useSSL=false&charaterEncode=utf-8&serverTimezone=GMT%2B8
       username: root
-      password: root
+      password: 123456
       initial-size: 5 #初始化连接数
       max-active: 50 #最大连接数
       max-wait: 6000 #获得连接的超时时间
