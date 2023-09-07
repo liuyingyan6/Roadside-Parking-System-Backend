@@ -11,6 +11,8 @@
     <modules>
         <module>parkingsys-generator</module>
         <module>parkingsys-operator</module>
+        <module>parking-common</module>
+        <module>parking-oss</module>
     </modules>
 
     <properties>
