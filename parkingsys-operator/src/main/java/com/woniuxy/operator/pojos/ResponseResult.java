@@ -25,8 +25,8 @@ public class ResponseResult<T> {
         return new ResponseResult(200,"ok",null);
     }
 
-    public static <T> ResponseResult ok(T datas){
-        return new ResponseResult(200,"ok",datas);
+    public static <T> ResponseResult ok(T data){
+        return new ResponseResult(200,"ok",data);
     }
 
     /**

@@ -31,7 +31,8 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
                 "/token/refresh",
                 "/**/druid/**",
                 "/urlPermission/**",
-                "/roleUrlPermission/**");
-//        registry.addInterceptor(loginInterceptor()).addPathPatterns("/**").excludePathPatterns(whiteList);
+                "/roleUrlPermission/**",
+                "/manager/**");
+        // registry.addInterceptor(loginInterceptor()).addPathPatterns("/**").excludePathPatterns(whiteList);
     }
 }

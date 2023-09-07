@@ -16,7 +16,6 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class PageVO<T> {
-
-    private Long total;
-    private List<T> records;
+    private Long total;// 总记录数
+    private List<T> records;// 查询结果
 }

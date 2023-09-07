@@ -5,6 +5,8 @@ import com.woniuxy.operator.entity.Role;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.woniuxy.operator.vo.PageVO;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务类
@@ -18,4 +20,6 @@ public interface IRoleService extends IService<Role> {
     PageVO<Role> findAll2Page(Page<Role> page, String name);
 
     void deleteRole(Long id);
+
+    List<Role> findAll();
 }
