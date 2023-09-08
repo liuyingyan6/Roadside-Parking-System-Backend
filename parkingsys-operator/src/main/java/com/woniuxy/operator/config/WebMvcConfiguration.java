@@ -10,11 +10,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * @Description: WebMvcConfiguration
- * @Date 2023/8/10 19:35
- * @Version 1.0
- */
 @Configuration
 public class WebMvcConfiguration implements WebMvcConfigurer {
 

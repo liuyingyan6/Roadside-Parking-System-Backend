@@ -1,10 +1,10 @@
 server:
   port: 9090
-  host: 192.168.200.130
+  host: 192.168.1.50
 spring:
   datasource:
     druid:
-      url: jdbc:mysql://localhost:3306/wn_parking?useSSL=false&charaterEncode=utf-8&serverTimezone=GMT%2B8
+      url: jdbc:mysql://localhost:3306/wn_parking?charaterEncode=utf8&serverTimezone=GMT%2B8
       username: root
       password: root
       initial-size: 5 #初始化连接数
@@ -22,36 +22,23 @@ spring:
         enabled: true #开启德鲁伊的web监控
         url-pattern: /*
         exclusions: /druid/*,*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,*.html
-      stat-view-servlet:
-        enabled: true #德鲁伊的web监控界面
-        url-pattern: /druid/* #http://localhost:8080/druid/
-        reset-enable: false #不需要重置SQL数据
-        login-username: admin
-        login-password: 123456
-        allow: #设置白名单
-        deny: #设置黑名单
-      aop-patterns: com.woniuxy.operator.* #监控url请求路径
   redis:
     host: ${server.host}
     port: 6379
     database: 0
-    password: philredis
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
-
   jackson:
-    date-format: yyyy-MM-dd HH:mm:ss
-    time-zone: GMT+8
+    date-format: yyyy-MM-dd
   elasticsearch:
-    uris: http://${server.host}:9200 #配置ES的连接地址
-jwt:
-  signature: woniu
-  accessTime: 60 #短令牌有效期 单位：分钟
-  refreshTime: 7 #长令牌有效期 单位：天
+    uris: http://${server.host}:9200
 mybatis-plus:
   configuration:
-    map-underscore-to-camel-case: true #尊重驼峰命名规则
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  type-aliases-package: com.woniuxy.operator.entity
-
+    map-underscore-to-camel-case: true #不尊重驼峰命名规则
+  type-aliases-package: com.woniuxy.operator.entity ,com.woniuxy.operator.vo
+jwt:
+  signature: Ken
+  accessTime: 5 #短令牌有效时间,单位:分钟
+  refreshTime: 7 #长令牌有效时间,单位:天

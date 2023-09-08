@@ -6,6 +6,7 @@ import cn.afterturn.easypoi.excel.entity.ExportParams;
 import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.dto.OrderDTO;
 import com.woniuxy.operator.pojos.ResponseResult;
+import com.woniuxy.operator.vo.CountOrderVO;
 import com.woniuxy.operator.vo.OrderVO;
 import lombok.SneakyThrows;
 import org.apache.ibatis.annotations.Param;
@@ -39,6 +40,16 @@ public class OrderController {
 
     public OrderController(IOrderService orderServiceImpl) {
         this.orderServiceImpl = orderServiceImpl;
+    }
+
+    // 资金流水
+    @GetMapping("/countOrder")
+    public ResponseResult countOrder(@RequestParam("startTime") String startTime,
+                                     @RequestParam("endTime") String endTime,
+                                     @RequestParam("pageNum") Integer pageNum,
+                                     @RequestParam("pageSize") Integer pageSize){
+        CountOrderVO countOrderVO = orderServiceImpl.countOrder(startTime,endTime,pageNum,pageSize);
+        return ResponseResult.ok(countOrderVO);
     }
 
     @GetMapping("/page")
@@ -78,33 +89,7 @@ public class OrderController {
         workbook.write(outputStream);
     }
 
-    //    public void exportExcel(HttpServletResponse response) {
-//        try {
-//            // 设置响应编码
-//            response.setCharacterEncoding("utf-8");
-//            // 设置响应头 content-disposition
-//            response.setHeader("content-disposition", "attachment;filename=order.xlsx");
-//
-//            // 调用业务层获取所有需要导出的数据
-//            List<OrderVO> orderVOS = orderServiceImpl.findAll();
-//
-//            // 创建导出参数
-//            ExportParams exportParams = new ExportParams("订单列表", "订单数据");
-//
-//            // 使用导出工具类导出
-//            Workbook workbook = ExcelExportUtil.exportExcel(exportParams, OrderVO.class, orderVOS);
-//
-//            // 获取输出流
-//            try (ServletOutputStream outputStream = response.getOutputStream()) {
-//                // 将Excel文件写到响应的输出流中
-//                workbook.write(outputStream);
-//            }
-//
-//        } catch (Exception e) {
-//            // 处理异常，可以返回错误信息或记录日志
-//            e.printStackTrace();
-//        }
-//    }
+
     @GetMapping("findAll")
     public ResponseResult findAll() {
         List<OrderVO> all = orderServiceImpl.findAll();
