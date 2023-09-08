@@ -57,8 +57,6 @@
         where t_order.`status` = 0
           AND car.id = t_order.car_id
           AND car_number = #{carNumber}
-        FROM car,t_order
-        where t_order.`status`=0 AND car.id=t_order.car_id AND car_number=#{carNumber}
     </select>
 
     <select id="getCarOrderList" resultType="com.woniuxy.operator.vo.CarOrderVO">
