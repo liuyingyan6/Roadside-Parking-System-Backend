@@ -4,7 +4,7 @@
 
     <resultMap id="userMap" type="com.woniuxy.operator.vo.UserVO" autoMapping="true"></resultMap>
 
-
+    <select id="findAllPage" resultType="com.woniuxy.operator.dto.UserDTO"></select>
 
 
 </mapper>

@@ -4,10 +4,6 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/**
- * @Description: OperatorApplication
- * @Version 1.0
- */
 @SpringBootApplication
 @MapperScan("com.woniuxy.operator.mapper")
 public class OperatorApplication {

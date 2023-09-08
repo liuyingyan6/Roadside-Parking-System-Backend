@@ -12,16 +12,6 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 
-/**
- * <p>
- *
- * </p>
- *
- * @author woniuxy
- * @since 2023-09-05
- */
-@Getter
-@Setter
 @ToString
 @TableName("login_log")
 @ApiModel(value = "LoginLog对象", description = "")
