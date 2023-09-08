@@ -6,6 +6,7 @@ import cn.afterturn.easypoi.excel.entity.ExportParams;
 import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.dto.OrderDTO;
 import com.woniuxy.operator.pojos.ResponseResult;
+import com.woniuxy.operator.vo.CountOrderVO;
 import com.woniuxy.operator.vo.OrderVO;
 import lombok.SneakyThrows;
 import org.apache.ibatis.annotations.Param;
@@ -39,6 +40,16 @@ public class OrderController {
 
     public OrderController(IOrderService orderServiceImpl) {
         this.orderServiceImpl = orderServiceImpl;
+    }
+
+    // 资金流水
+    @GetMapping("/countOrder")
+    public ResponseResult countOrder(@RequestParam("startTime") String startTime,
+                                     @RequestParam("endTime") String endTime,
+                                     @RequestParam("pageNum") Integer pageNum,
+                                     @RequestParam("pageSize") Integer pageSize){
+        CountOrderVO countOrderVO = orderServiceImpl.countOrder(startTime,endTime,pageNum,pageSize);
+        return ResponseResult.ok(countOrderVO);
     }
 
     @GetMapping("/page")
