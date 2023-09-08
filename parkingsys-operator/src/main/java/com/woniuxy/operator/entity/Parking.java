@@ -44,7 +44,7 @@ public class Parking implements Serializable {
     @ApiModelProperty("备注")
     private String remarks;
 
-    @ApiModelProperty("激活时间")
+    @ApiModelProperty("创建时间")
     @TableField(fill = FieldFill.INSERT)
     private Date createTime;
 
