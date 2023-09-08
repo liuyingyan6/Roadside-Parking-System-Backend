@@ -13,7 +13,7 @@ public class ParkingDTO {
     private String number;
     private String name;
 
-    private Integer geomagneticId;
+    private Integer magnetometerId;
     private String pdaName;
     private Date pdaTime;
 

@@ -30,7 +30,7 @@ public class Parking implements Serializable {
     private Long userId;
 
     @ApiModelProperty("地磁id")
-    private Integer geomagneticId;
+    private Integer magnetometerId;
 
     @ApiModelProperty("车位编号，类似A-112")
     private String number;

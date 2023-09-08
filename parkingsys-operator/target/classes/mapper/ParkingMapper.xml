@@ -8,7 +8,7 @@
         g.name as pdaName,
         g.create_time as pdaTime
         FROM parking p
-        LEFT JOIN pda g ON p.pda_id = g.id
+        LEFT JOIN pda g ON p.magnetometer_id = g.id
         <where>
             <if test="name!= null and name!=''">
                 AND p.name LIKE CONCAT('%',#{name},'%')
