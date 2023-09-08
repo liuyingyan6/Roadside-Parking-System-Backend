@@ -5,6 +5,10 @@ import java.util.Date;
 
 import com.alibaba.excel.annotation.ExcelProperty;
 import com.alibaba.excel.annotation.write.style.ColumnWidth;
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
@@ -29,6 +33,7 @@ public class Magnetometer implements Serializable {
 
     @ApiModelProperty("地磁编号")
     @ExcelProperty("地磁编号")
+    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     @ApiModelProperty("地磁名称")
@@ -45,13 +50,14 @@ public class Magnetometer implements Serializable {
 
     @ExcelProperty("创建时间")
     @ColumnWidth(10)
+    @TableField(fill = FieldFill.INSERT)
     private Date createTime;
 
     @ExcelProperty("更新时间")
     @ColumnWidth(10)
+    @TableField(fill = FieldFill.UPDATE)
     private Date updateTime;
 
-//    @ExcelProperty("逻辑删除")
     private Integer logicDelete;
 
 

@@ -9,42 +9,39 @@
         o.*,
         pa.number AS parking_number,
         ins.name AS inspector_name ,
-        ro.`name` AS road_name,
+        ro.`road_name` AS road_name,
         car.`car_number`
         FROM
         `t_order` o
-        INNER JOIN
+        left JOIN
         parking pa ON o.parking_id = pa.id
-        INNER JOIN
+        left JOIN
         inspector ins ON o.inspector_id = ins.id
-        INNER JOIN
+        left JOIN
         road ro ON o.road_id = ro.id
-        INNER JOIN
+        left JOIN
         car  ON o.`car_id` = car.id
         <where>
-
             <if test="orderDTO.orderNumber !=null and orderDTO.orderNumber !=''">
-                o.order_number = #{orderNumber}
+                o.order_number = #{orderDTO.orderNumber}
             </if>
         </where>
 
     </select>
     <select id="findAll" resultType="com.woniuxy.operator.vo.OrderVO">
-        SELECT
-            o.*,
-            pa.number AS parking_number,
-            ins.name AS inspector_name ,
-            ro.`name` AS road_name,
-            car.`car_number` AS carNumber
-        FROM
-            `t_order` o
-                INNER JOIN
-            parking pa ON o.parking_id = pa.id
-                INNER JOIN
-            inspector ins ON o.inspector_id = ins.id
-                INNER JOIN
-            road ro ON o.road_id = ro.id
-                INNER JOIN
-            car  ON o.`car_id` = car.id
+        SELECT o.*,
+               pa.number        AS parking_number,
+               ins.name         AS inspector_name,
+               ro.`name`        AS road_name,
+               car.`car_number` AS carNumber
+        FROM `t_order` o
+                 left JOIN
+             parking pa ON o.parking_id = pa.id
+                 left JOIN
+             inspector ins ON o.inspector_id = ins.id
+                 left JOIN
+             road ro ON o.road_id = ro.id
+                 left JOIN
+             car ON o.`car_id` = car.id
     </select>
 </mapper>

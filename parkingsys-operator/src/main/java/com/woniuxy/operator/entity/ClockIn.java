@@ -37,11 +37,11 @@ public class ClockIn implements Serializable {
     @ApiModelProperty("考勤状态0-未考勤，1-正常打卡")
     private Integer clockInStatus;
 
-    @ApiModelProperty("上班时间")
-    private Date dutyTime;
+    @ApiModelProperty("执勤天数")
+    private Long attendanceDay;
 
-    @ApiModelProperty("下班时间")
-    private Date closingTime;
+    @ApiModelProperty("请假天数")
+    private Long leaveDays;
 
     @TableField(fill = FieldFill.INSERT)
     private Date createTime;
@@ -51,6 +51,11 @@ public class ClockIn implements Serializable {
 
     @TableLogic
     private Integer logicDelete;
+
+    @ApiModelProperty("正常天数")
+    private Long NormalDays;
+
+    private Long roadId;
 
 
 }

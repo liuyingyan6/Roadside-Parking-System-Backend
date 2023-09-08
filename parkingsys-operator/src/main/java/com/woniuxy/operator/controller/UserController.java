@@ -11,14 +11,6 @@ import com.woniuxy.operator.entity.User;
 import com.woniuxy.operator.service.IUserService;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * <p>
- *  前端控制器
- * </p>
- *
- * @author woniuxy
- * @since 2023-09-05
- */
 @RestController
 @RequestMapping("/user")
 @CrossOrigin

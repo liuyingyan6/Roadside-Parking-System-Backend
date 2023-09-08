@@ -1,5 +1,7 @@
 package com.woniuxy.operator.entity;
 
+
+import com.alibaba.excel.annotation.ExcelProperty;
 import com.baomidou.mybatisplus.annotation.*;
 
 import java.io.Serializable;
@@ -26,23 +28,29 @@ public class Car implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+      @ExcelProperty("编号")
       @ApiModelProperty("自增主键")
         @TableId(value = "id", type = IdType.AUTO)
       private Integer id;
 
+  @ExcelProperty("车牌号码")
       @ApiModelProperty("车牌号码")
       private String carNumber;
 
+  @ExcelProperty("车牌类型")
       @ApiModelProperty("车牌类型")
       private Integer carType;
 
+  @ExcelProperty("用户id")
       @ApiModelProperty("用户id")
       private Long userId;
 
+  @ExcelProperty("创建时间")
       @ApiModelProperty("创建时间")
       @TableField(fill = FieldFill.INSERT)
       private Date createTime;
 
+  @ExcelProperty("更新时间")
       @ApiModelProperty("更新时间")
       @TableField(fill = FieldFill.UPDATE)
       private Date updateTime;

@@ -48,8 +48,9 @@ public class Inspector implements Serializable {
       @ApiModelProperty("地址id")
       private Long chinaId;
 
-      @ApiModelProperty("路段id")
-      private Long roadId;
+//      @TableField("road_id")
+//      @ApiModelProperty("路段id")
+//      private Long roadId;
 
     @TableField(fill = FieldFill.INSERT)
     private Date createTime;

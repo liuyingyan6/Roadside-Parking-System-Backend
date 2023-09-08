@@ -29,9 +29,8 @@ public class PdaServiceImpl extends ServiceImpl<PdaMapper, Pda> implements IPdaS
     }
 
     @Override
-    public PageVO getPageByKeyword(Integer pageNum, Integer pageSize, String pdaName, String inspectorName, String roadName) {
-        List<PdaVO> list = pdaMapper.selectPageByKeyword(pageNum, pageSize, pdaName, inspectorName, roadName);
-        Long total = pdaMapper.selectTotalCount(pdaName, inspectorName, roadName);
-        return new PageVO(total, list);
+    public List<PdaVO> getByKeyword(String pdaName, String inspectorName, String roadName) {
+        List<PdaVO> list = pdaMapper.selectByKeyword(pdaName, inspectorName, roadName);
+        return list;
     }
 }
