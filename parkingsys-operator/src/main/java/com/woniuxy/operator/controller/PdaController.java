@@ -93,7 +93,7 @@ public class PdaController {
     public void export(HttpServletResponse response) throws IOException {
         setExcelRespProp(response, "pda信息");
         List<PdaVO> list = pdaServiceImpl.getByKeyword("","","");
-        List<String> excludeColumnFiledNames = Arrays.asList("roadId","inspectorId"); // 指定要忽略的属性名
+        List<String> excludeColumnFiledNames = Arrays.asList("inspectorId"); // 指定要忽略的属性名
         EasyExcel.write(response.getOutputStream())
                 .head(PdaVO.class)
                 .excludeColumnFiledNames(excludeColumnFiledNames) // 指定要忽略的属性
