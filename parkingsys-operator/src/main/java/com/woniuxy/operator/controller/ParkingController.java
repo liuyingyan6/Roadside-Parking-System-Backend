@@ -1,5 +1,6 @@
 package com.woniuxy.operator.controller;
 
+import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.dto.ParkingDTO;
 import com.woniuxy.operator.dto.RoadDTO;
 import com.woniuxy.operator.pojos.ResponseResult;
@@ -14,7 +15,14 @@ import com.woniuxy.operator.entity.Parking;
 import com.woniuxy.operator.service.IParkingService;
 import org.springframework.web.bind.annotation.RestController;
 
-
+/**
+ * <p>
+ * 前端控制器
+ * </p>
+ *
+ * @author woniuxy
+ * @since 2023-09-05
+ */
 @RestController
 @RequestMapping("/parking")
 public class ParkingController {
@@ -25,6 +33,10 @@ public class ParkingController {
         this.parkingServiceImpl = parkingServiceImpl;
     }
 
+    @GetMapping("/list")
+    public ResponseResult list() {
+        return ResponseResult.ok(parkingServiceImpl.list());
+    }
     /**
      * 分页查询
      */

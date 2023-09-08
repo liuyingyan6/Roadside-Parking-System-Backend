@@ -10,10 +10,11 @@ import java.net.UnknownHostException;
 public class IPUtil {
     /**
      * 获取ip地址
+     *
      * @param request request对象
      * @return 返回对应IP地址
      */
-    public static String getIpAddress(HttpServletRequest request){
+    public static String getIpAddress(HttpServletRequest request) {
         String ipAddress = null;
         try {
             ipAddress = request.getHeader("X-Forwarded-For");
@@ -34,48 +35,22 @@ public class IPUtil {
             }
             if (ipAddress == null || ipAddress.length() == 0 || "unknown".equalsIgnoreCase(ipAddress)) {
                 ipAddress = request.getRemoteAddr();
+
+                // 添加条件判断，如果IP地址为"localhost"或"0:0:0:0:0:0:0:1"或"::1"，则设置ipAddress为"127.0.0.1"
+                if ("localhost".equalsIgnoreCase(ipAddress) || "0:0:0:0:0:0:0:1".equals(ipAddress) || "::1".equals(ipAddress)) {
+                    ipAddress = "127.0.0.1";
+                }
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return ipAddress;
     }
 
-    public static String getIpAddr(HttpServletRequest request) {
-        String ipAddress = null;
-        try {
-            ipAddress = request.getHeader("x-forwarded-for");
-            if (ipAddress == null || ipAddress.length() == 0 || "unknown".equalsIgnoreCase(ipAddress)) {
-                ipAddress = request.getHeader("Proxy-Client-IP");
-            }
-            if (ipAddress == null || ipAddress.length() == 0 || "unknown".equalsIgnoreCase(ipAddress)) {
-                ipAddress = request.getHeader("WL-Proxy-Client-IP");
-            }
-            if (ipAddress == null || ipAddress.length() == 0 || "unknown".equalsIgnoreCase(ipAddress)) {
-                ipAddress = request.getRemoteAddr();
-                if (ipAddress.equals("127.0.0.1")) {
-                    InetAddress inet = null;
-                    try {
-                        inet = InetAddress.getLocalHost();
-                    } catch (UnknownHostException e) {
-                        e.printStackTrace();
-                    }
-                    ipAddress = inet.getHostAddress();
-                }
-            }
-            if (ipAddress != null && ipAddress.length() > 15) {
-                if (ipAddress.indexOf(",") > 0) {
-                    ipAddress = ipAddress.substring(0, ipAddress.indexOf(","));
-                }
-            }
-        } catch (Exception e) {
-            ipAddress = "";
-        }
-        return ipAddress;
-    }
 
     /**
      * 获取ip属地(文件扫描)
+     *
      * @param ip IP地址
      * @return 返回地址
      */

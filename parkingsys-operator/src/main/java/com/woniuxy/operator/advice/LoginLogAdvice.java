@@ -16,11 +16,11 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 
-//@Aspect
-//@Component
+@Aspect
+@Component
 public class LoginLogAdvice {
     @Autowired
-    private ILoginLogService iLoginLogService;
+    ILoginLogService iLoginLogService;
 
     @Pointcut(value = "execution(* com.woniuxy.operator.controller.ManagerController.login(..))")
     public void loginPointCut() {
@@ -39,10 +39,8 @@ public class LoginLogAdvice {
         // 获取方法的返回结果
         TokenVO data = (TokenVO) result.getData();
 
-//String ip = IPUtil.getIpAddress(request);
-//获取ip，如果用localhost发请求会得到ip：0:0:0:0:0:0:0:1
-        String ip = IPUtil.getIpAddr(request);
-//String ip = request.getRemoteAddr();
+        String ip = IPUtil.getIpAddress(request); // 获取ip
+//        String ip = request.getRemoteAddr();
         String location = IPUtil.getCityInfoByFile(ip);
         String userAgent = request.getHeader("User-Agent");
         String browserName = getBrowserName(userAgent);
