@@ -9,11 +9,20 @@ import com.woniuxy.operator.entity.Car;
 import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.vo.CarOrderVO;
 import com.woniuxy.operator.vo.CarVO;
+import lombok.Data;
 import lombok.SneakyThrows;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.Date;
 import java.util.List;
 
 import com.woniuxy.operator.service.ICarService;
@@ -85,10 +94,9 @@ public class CarController {
     }
 
     @PostMapping("/lift")
-    public ResponseResult lift(@RequestParam("carId") Integer carId,@RequestParam("userId") Integer userId){
-        carServiceImpl.liftCar(carId,userId);
+    public ResponseResult lift(@RequestParam Integer carId, @RequestParam Long userId) {
+        carServiceImpl.liftCar(carId, userId);
         return ResponseResult.ok();
-
     }
 
     @GetMapping("/getCarInfo")
@@ -96,7 +104,14 @@ public class CarController {
        Car car = carServiceImpl.getCarInfo(carNumber);
        return ResponseResult.ok(car);
     }
+    @GetMapping("/getTime")
+    public ResponseResult getTime(@RequestParam("startDate") String startDate,@RequestParam("endDate") String endDate) throws ParseException {
+        System.out.println("startDate = " + startDate);
+        System.out.println("endDate = " + endDate);
 
+        List<String> list = carServiceImpl.getTime(startDate, endDate);
+        return ResponseResult.ok(list);
+    }
 
 
 }

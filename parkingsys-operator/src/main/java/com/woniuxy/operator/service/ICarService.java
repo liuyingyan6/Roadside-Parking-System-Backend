@@ -6,6 +6,7 @@ import com.woniuxy.operator.vo.CarVO;
 import com.woniuxy.operator.vo.CarVO;
 import com.woniuxy.operator.vo.CarOrderVO;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -23,7 +24,9 @@ public interface ICarService extends IService<Car> {
 
     List<CarOrderVO> getCarOrderList(String carNumber);
 
-    void liftCar(Integer carId,Integer userId);
+    void liftCar(Integer carId,Long userId);
 
     Car getCarInfo(String carNumber);
+
+    List<String> getTime(String startDate,String endDate);
 }

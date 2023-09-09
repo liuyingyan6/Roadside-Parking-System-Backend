@@ -10,9 +10,16 @@
         <module name="parkingsys-operator" />
         <module name="parking-oss" />
         <module name="parkingsys-generator" />
-        <module name="parkingsys-user" />
         <module name="parking-common" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="parking-common" target="1.8" />
+      <module name="parking-oss" target="1.8" />
+      <module name="parkingsys" target="1.8" />
+      <module name="parkingsys-generator" target="1.8" />
+      <module name="parkingsys-operator" target="1.8" />
+      <module name="parkingsys-oss" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

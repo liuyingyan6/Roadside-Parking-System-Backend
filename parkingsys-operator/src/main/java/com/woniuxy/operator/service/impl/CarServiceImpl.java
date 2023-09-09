@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -58,7 +59,7 @@ public class CarServiceImpl extends ServiceImpl<CarMapper, Car> implements ICarS
     }
 
     @Override
-    public void liftCar(Integer carId,Integer userId) {
+    public void liftCar(Integer carId,Long userId) {
         carMapper.liftCar(carId);
         carMapper.liftUser(userId);
     }
@@ -67,5 +68,12 @@ public class CarServiceImpl extends ServiceImpl<CarMapper, Car> implements ICarS
     public Car getCarInfo(String carNumber) {
        Car car= carMapper.getCarInfo(carNumber);
         return car;
+    }
+
+    @Override
+    public List<String> getTime(String start, String end) {
+       List<String> list= carMapper.getTime(start,end);
+        System.out.println("list = " + list);
+        return list;
     }
 }
