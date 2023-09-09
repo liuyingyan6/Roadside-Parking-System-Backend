@@ -1,5 +1,6 @@
 package com.woniuxy.operator.dto;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 
 /**
@@ -18,4 +19,5 @@ public class ManagerRoleDTO {
     private String password;
     private String telephone;
     private Long roleId;
+    private Long departmentId;
 }

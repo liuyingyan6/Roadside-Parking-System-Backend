@@ -11,6 +11,7 @@
             <if test="account !=null and account !=''">
                 m.account = #{account}
             </if>
+            AND m.logic_delete != 1
         </where>
 
     </select>

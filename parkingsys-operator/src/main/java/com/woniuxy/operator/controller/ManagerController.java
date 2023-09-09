@@ -70,24 +70,62 @@ public class ManagerController {
                                  @Param("account") String account){
 
         System.out.println("account=============" + account);
-        // Page<ManagerVO> page = Page.of(pageNum,pageSize);
         PageInfo<ManagerVO> managerVOS = managerServiceImpl.getAll(pageSize,pageNum,account);
         System.out.println(managerVOS.getList());
         return ResponseResult.ok(managerVOS);
     }
 
+    @DeleteMapping("/delete/{account}")
+    public ResponseResult deleteRole(@PathVariable("account") String account){
+        System.out.println("account========"+account);
+        System.out.println("getClass========"+account.getClass());
+
+        Manager one = managerServiceImpl.getOne(Wrappers.lambdaQuery(Manager.class)
+                .eq(Manager::getAccount, account));
+
+        managerRoleServiceImpl.remove(Wrappers.lambdaUpdate(ManagerRole.class)
+                .eq(ManagerRole::getManagerId, one.getId()));
+
+        managerServiceImpl.remove(Wrappers.lambdaUpdate(Manager.class)
+                .eq(Manager::getAccount,account));
+
+        return ResponseResult.ok();
+    }
+
+    @PostMapping("/update")
+    public ResponseResult updateManager(@RequestBody ManagerRoleDTO managerRoleDTO){
+        System.out.println("managerRoleDTO============="+managerRoleDTO);
+        System.out.println("getDepartmentId类型============="+managerRoleDTO.getDepartmentId().getClass());
+
+        managerServiceImpl.update(Wrappers.lambdaUpdate(Manager.class)
+                .eq(Manager::getAccount, managerRoleDTO.getAccount())
+                .set(Manager::getPassword,managerRoleDTO.getPassword())
+                .set(Manager::getTelephone,managerRoleDTO.getTelephone())
+                .set(Manager::getDepartmentId,managerRoleDTO.getDepartmentId()));
+
+        Manager one = managerServiceImpl.getOne(Wrappers.lambdaQuery(Manager.class)
+                .eq(Manager::getAccount, managerRoleDTO.getAccount()));
+
+        managerRoleServiceImpl.update(Wrappers.lambdaUpdate(ManagerRole.class)
+                .eq(ManagerRole::getManagerId, one.getId())
+                .set(ManagerRole::getRoleId,managerRoleDTO.getRoleId()));
+        return ResponseResult.ok();
+    }
+
     @PostMapping("/add")
     public ResponseResult addManager(@RequestBody ManagerRoleDTO managerRoleDTO){
-        System.out.println(managerRoleDTO);
+        System.out.println("managerRoleDTO ==============="+managerRoleDTO);
+        System.out.println("getDepartmentId的类型============"+managerRoleDTO.getDepartmentId().getClass());
 
         Manager manager = new Manager();
         manager.setName(managerRoleDTO.getName());
         manager.setAccount(managerRoleDTO.getAccount());
         manager.setPassword(managerRoleDTO.getPassword());
         manager.setTelephone(managerRoleDTO.getTelephone());
-        manager.setDepartmentId(1L);
+        manager.setDepartmentId(managerRoleDTO.getDepartmentId());
         managerServiceImpl.save(manager);
-        Manager one = managerServiceImpl.getOne(Wrappers.lambdaQuery(Manager.class).eq(Manager::getAccount, managerRoleDTO.getAccount()));
+        Manager one = managerServiceImpl.getOne(Wrappers.lambdaQuery(Manager.class)
+                .eq(Manager::getAccount, managerRoleDTO.getAccount()));
         ManagerRole managerRole = new ManagerRole();
         managerRole.setManagerId(one.getId());
         managerRole.setRoleId(managerRoleDTO.getRoleId());

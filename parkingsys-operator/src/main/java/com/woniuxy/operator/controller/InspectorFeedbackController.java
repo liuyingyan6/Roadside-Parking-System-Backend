@@ -39,9 +39,12 @@ public class InspectorFeedbackController {
         return ResponseResult.ok(page);
     }
 
-    @PostMapping("/handleFeedback/{fId}")
+    @PostMapping("/handleFeedback/{fId}/{information}")
     public ResponseResult handleFeedback(@PathVariable("fId") Integer fId,
-                                         @RequestBody String information) {
+                                         @PathVariable String information) {
+
+        System.out.println("information============"+information);
+        System.out.println("getClass============"+information.getClass());
 
         inspectorFeedbackServiceImpl.saveFeedback(fId,information);
         return ResponseResult.ok();
