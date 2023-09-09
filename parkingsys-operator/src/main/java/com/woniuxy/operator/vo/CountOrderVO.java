@@ -17,6 +17,8 @@ import java.util.List;
 @NoArgsConstructor
 public class CountOrderVO {
 
+    private Long total;// 总记录数
+
     private BigDecimal TotalAmount;
 
     private BigDecimal RefundAmount;

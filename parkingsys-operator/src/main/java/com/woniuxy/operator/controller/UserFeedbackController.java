@@ -1,5 +1,11 @@
 package com.woniuxy.operator.controller;
 
+import com.github.pagehelper.PageInfo;
+import com.woniuxy.operator.dto.InspectorDTO;
+import com.woniuxy.operator.dto.UserDTO;
+import com.woniuxy.operator.pojos.ResponseResult;
+import com.woniuxy.operator.vo.InspectorVO;
+import com.woniuxy.operator.vo.UserFeedbackVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -24,5 +30,13 @@ public class UserFeedbackController {
     public UserFeedbackController(IUserFeedbackService userFeedbackServiceImpl){
         this.userFeedbackServiceImpl = userFeedbackServiceImpl;
     }
+    @PostMapping("/findPage/{pageNum}/{pageSize}")
+    public ResponseResult findPage(
+            @PathVariable("pageNum") Integer pageNum,
+            @PathVariable("pageSize") Integer pageSize,
+            @RequestBody UserDTO userDTO) {
 
+        PageInfo<UserFeedbackVO> page = userFeedbackServiceImpl.findPage(pageNum, pageSize, userDTO);
+        return ResponseResult.ok(page);
+    }
 }

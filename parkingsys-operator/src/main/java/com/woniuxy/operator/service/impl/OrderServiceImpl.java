@@ -55,11 +55,10 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 
     // 资金流水
     @Override
-    public CountOrderVO countOrder(String startTime, String endTime,Integer pageNum, Integer pageSize) {
-
+    public CountOrderVO countOrder(String startTime, String endTime, Integer pageNum, Integer pageSize) {
         CountOrderVO countOrderVO = new CountOrderVO();
 
-        Page<Order> page = new Page<>(pageNum,pageSize);
+        Page<Order> page = new Page<>(pageNum, pageSize);
 
         // 分页查询时间范围内的所有订单
         IPage<Order> orderPage = orderMapper.selectPage(page, new QueryWrapper<Order>()
@@ -68,15 +67,16 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 
         List<Order> orders = orderPage.getRecords();
         countOrderVO.setOrderList(orders);
+        countOrderVO.setTotal(orderPage.getTotal());
 
         BigDecimal totalAmount = BigDecimal.ZERO; // 总入账
         BigDecimal refundAmount = BigDecimal.ZERO; // 总出账
 
         for (Order order : orders) {
-            if (order.getStatus() == 0){
+            if (order.getStatus() == 0) {
                 totalAmount = totalAmount.add(order.getOrderAmount()); // 累加满足条件的订单金额
             }
-            if (order.getStatus() == 3){
+            if (order.getStatus() == 3) {
                 refundAmount = refundAmount.add(order.getOrderAmount()); // 累加满足条件的订单金额
             }
         }

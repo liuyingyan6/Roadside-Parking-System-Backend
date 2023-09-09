@@ -4,7 +4,14 @@
 
     <select id="getAll" resultType="com.woniuxy.operator.vo.ManagerVO">
         SELECT m.account,d.department_name,m.telephone,m.status,m.create_time
-        FROM manager m ,department d where m.department_id=d.id
+        FROM manager m
+            LEFT JOIN department d
+                ON m.department_id=d.id
+        <where>
+            <if test="account !=null and account !=''">
+                m.account = #{account}
+            </if>
+        </where>
 
     </select>
 

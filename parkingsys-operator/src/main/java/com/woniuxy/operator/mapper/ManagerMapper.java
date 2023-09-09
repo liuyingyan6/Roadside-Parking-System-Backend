@@ -1,8 +1,10 @@
 package com.woniuxy.operator.mapper;
+import com.woniuxy.operator.dto.OrderDTO;
 import com.woniuxy.operator.vo.ManagerVO;
 import org.apache.ibatis.annotations.Mapper;
 import com.woniuxy.operator.entity.Manager;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -17,5 +19,5 @@ import java.util.List;
 @Mapper
 public interface ManagerMapper extends BaseMapper<Manager> {
 
-    List<ManagerVO> getAll();
+    List<ManagerVO> getAll(@Param("account") String account);
 }

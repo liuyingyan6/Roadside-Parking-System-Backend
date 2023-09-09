@@ -2,4 +2,34 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.woniuxy.operator.mapper.InspectorFeedbackMapper">
 
+    <select id="findPage" resultType="com.woniuxy.operator.vo.InspectorFeedbackVO">
+        SELECT
+            f.feedback_id,
+            i.`name`,
+            i.phone,
+            p.magnetometer_id,
+            p.number,
+            f.create_time,
+            f.state,
+            f.update_time
+        FROM
+            inspector_feedback f
+                LEFT JOIN inspector i
+                          ON f.inspector_id = i.id
+                LEFT JOIN parking p
+                          ON f.parking_id = p.id
+        <where>
+            <if test="inspectorDTO.name!=null and inspectorDTO.name!=''">
+                AND i.name LIKE CONCAT(#{inspectorDTO.name},'%')
+            </if>
+
+            <if test="inspectorDTO.phone!=null and inspectorDTO.phone!=''">
+                AND i.phone LIKE CONCAT (#{inspectorDTO.phone},'%')
+            </if>
+
+            <if test="inspectorDTO.state!=null">
+                AND f.state = #{inspectorDTO.state}
+            </if>
+        </where>
+    </select>
 </mapper>

@@ -1,7 +1,12 @@
 package com.woniuxy.operator.mapper;
+import com.woniuxy.operator.dto.InspectorDTO;
+import com.woniuxy.operator.vo.InspectorFeedbackVO;
 import org.apache.ibatis.annotations.Mapper;
 import com.woniuxy.operator.entity.InspectorFeedback;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * <p>
@@ -14,4 +19,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 @Mapper
 public interface InspectorFeedbackMapper extends BaseMapper<InspectorFeedback> {
 
+    List<InspectorFeedbackVO> findPage(@Param("inspectorDTO") InspectorDTO inspectorDTO);
 }

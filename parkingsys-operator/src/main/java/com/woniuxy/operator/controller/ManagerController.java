@@ -1,19 +1,22 @@
 package com.woniuxy.operator.controller;
 
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.dto.ManagerDTO;
-import com.woniuxy.operator.entity.UrlPermission;
+import com.woniuxy.operator.dto.ManagerRoleDTO;
+import com.woniuxy.operator.entity.ManagerRole;
 import com.woniuxy.operator.handler.Asserts;
 import com.woniuxy.operator.handler.BusinessEnum;
 import com.woniuxy.operator.pojos.ResponseResult;
+import com.woniuxy.operator.service.IManagerRoleService;
 import com.woniuxy.operator.util.TokenUtil;
 import com.woniuxy.operator.vo.ManagerVO;
-import com.woniuxy.operator.vo.PageVO;
 import com.woniuxy.operator.vo.TokenVO;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
-import java.util.List;
+
 import java.util.Objects;
 
 import com.woniuxy.operator.entity.Manager;
@@ -36,8 +39,11 @@ public class ManagerController {
 
     private final IManagerService managerServiceImpl;
 
-    public ManagerController(IManagerService managerServiceImpl){
+    private final IManagerRoleService managerRoleServiceImpl;
+
+    public ManagerController(IManagerService managerServiceImpl, IManagerRoleService managerRoleServiceImpl){
         this.managerServiceImpl = managerServiceImpl;
+        this.managerRoleServiceImpl = managerRoleServiceImpl;
     }
 
     @Value("${jwt.signature}")
@@ -59,10 +65,34 @@ public class ManagerController {
     }
 
     @GetMapping("/all")
-    public ResponseResult getAll(Integer pageSize,Integer pageNum,String account){
-        Page<ManagerVO> page = Page.of(pageNum,pageSize);
-        Page<ManagerVO> managerVOS = managerServiceImpl.getAll(page,account);
+    public ResponseResult getAll(@Param("pageNum") Integer pageNum,
+                                 @Param("pageSize") Integer pageSize,
+                                 @Param("account") String account){
+
+        System.out.println("account=============" + account);
+        // Page<ManagerVO> page = Page.of(pageNum,pageSize);
+        PageInfo<ManagerVO> managerVOS = managerServiceImpl.getAll(pageSize,pageNum,account);
+        System.out.println(managerVOS.getList());
         return ResponseResult.ok(managerVOS);
+    }
+
+    @PostMapping("/add")
+    public ResponseResult addManager(@RequestBody ManagerRoleDTO managerRoleDTO){
+        System.out.println(managerRoleDTO);
+
+        Manager manager = new Manager();
+        manager.setName(managerRoleDTO.getName());
+        manager.setAccount(managerRoleDTO.getAccount());
+        manager.setPassword(managerRoleDTO.getPassword());
+        manager.setTelephone(managerRoleDTO.getTelephone());
+        manager.setDepartmentId(1L);
+        managerServiceImpl.save(manager);
+        Manager one = managerServiceImpl.getOne(Wrappers.lambdaQuery(Manager.class).eq(Manager::getAccount, managerRoleDTO.getAccount()));
+        ManagerRole managerRole = new ManagerRole();
+        managerRole.setManagerId(one.getId());
+        managerRole.setRoleId(managerRoleDTO.getRoleId());
+        managerRoleServiceImpl.save(managerRole);
+        return ResponseResult.ok();
     }
 
 }
