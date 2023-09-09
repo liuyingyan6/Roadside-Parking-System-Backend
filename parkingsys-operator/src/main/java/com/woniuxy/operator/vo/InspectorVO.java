@@ -21,7 +21,9 @@ public class InspectorVO {
     private Integer state;
 
     private String roadName;
+    private String timePeriod;
 
+    private String orderPercentage;
     private Date dutyTime;
     private Date closingTime;
 

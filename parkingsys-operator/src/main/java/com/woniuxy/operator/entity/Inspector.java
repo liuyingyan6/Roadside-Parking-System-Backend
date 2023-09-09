@@ -38,7 +38,8 @@ public class Inspector implements Serializable {
 
     @ApiModelProperty("巡检员状态")
     private Integer state;
-
+    @ApiModelProperty("执勤表id")
+    private Long chargeId;
     @ApiModelProperty("执勤表id")
     private Long clockInId;
 

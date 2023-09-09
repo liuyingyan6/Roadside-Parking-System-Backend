@@ -94,12 +94,17 @@
             <groupId>com.alibaba</groupId>
             <artifactId>easyexcel</artifactId>
             <version>3.0.5</version>
-        </dependency><!-- MyBatis的分页插件 -->
+        </dependency>
+        <!-- MyBatis的分页插件 -->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper-spring-boot-starter</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>com.woniuxy</groupId>
+            <artifactId>parking-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>

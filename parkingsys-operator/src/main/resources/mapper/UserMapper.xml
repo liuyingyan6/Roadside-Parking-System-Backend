@@ -5,6 +5,4 @@
     <resultMap id="userMap" type="com.woniuxy.operator.vo.UserVO" autoMapping="true"></resultMap>
 
 
-
-
 </mapper>
