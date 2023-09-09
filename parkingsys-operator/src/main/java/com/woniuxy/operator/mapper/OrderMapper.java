@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.woniuxy.operator.dto.OrderDTO;
 import com.woniuxy.operator.vo.OrderVO;
+import com.woniuxy.operator.vo.RevenueVO;
 import org.apache.ibatis.annotations.Mapper;
 import com.woniuxy.operator.entity.Order;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
@@ -25,5 +26,7 @@ public interface OrderMapper extends BaseMapper<Order> {
     List<OrderVO> findAll();
 
     //自定义分页
-    List<OrderVO> findAllPage( @Param("orderDTO") OrderDTO orderDTO);
+    List<OrderVO> findAllPage(@Param("orderDTO") OrderDTO orderDTO);
+
+    List<RevenueVO> selectRevenueInfo();
 }

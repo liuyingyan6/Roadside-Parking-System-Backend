@@ -3,11 +3,11 @@ package com.woniuxy.operator.controller;
 
 import cn.afterturn.easypoi.excel.ExcelExportUtil;
 import cn.afterturn.easypoi.excel.entity.ExportParams;
+import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.dto.OrderDTO;
 import com.woniuxy.operator.pojos.ResponseResult;
-import com.woniuxy.operator.vo.CountOrderVO;
-import com.woniuxy.operator.vo.OrderVO;
+import com.woniuxy.operator.vo.*;
 import lombok.SneakyThrows;
 import org.apache.ibatis.annotations.Param;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -47,8 +47,8 @@ public class OrderController {
     public ResponseResult countOrder(@RequestParam("startTime") String startTime,
                                      @RequestParam("endTime") String endTime,
                                      @RequestParam("pageNum") Integer pageNum,
-                                     @RequestParam("pageSize") Integer pageSize){
-        CountOrderVO countOrderVO = orderServiceImpl.countOrder(startTime,endTime,pageNum,pageSize);
+                                     @RequestParam("pageSize") Integer pageSize) {
+        CountOrderVO countOrderVO = orderServiceImpl.countOrder(startTime, endTime, pageNum, pageSize);
         return ResponseResult.ok(countOrderVO);
     }
 
@@ -96,4 +96,12 @@ public class OrderController {
         return ResponseResult.ok(all);
     }
 
+    @GetMapping("/getRevenueInfo")
+    public ResponseResult getRevenueInfo(Integer pageNum, Integer pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<RevenueVO> list = orderServiceImpl.getRevenueInfo();
+        PageInfo pageInfo = new PageInfo(list);
+        PageVO pageVO = new PageVO(pageInfo.getTotal(), pageInfo.getList());
+        return ResponseResult.ok(pageVO);
+    }
 }

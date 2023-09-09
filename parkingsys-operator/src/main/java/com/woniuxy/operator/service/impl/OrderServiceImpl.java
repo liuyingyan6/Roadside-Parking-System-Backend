@@ -14,6 +14,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
 import com.woniuxy.operator.vo.CountOrderVO;
 import com.woniuxy.operator.vo.OrderVO;
+import com.woniuxy.operator.vo.RevenueVO;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -55,11 +56,11 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 
     // 资金流水
     @Override
-    public CountOrderVO countOrder(String startTime, String endTime,Integer pageNum, Integer pageSize) {
+    public CountOrderVO countOrder(String startTime, String endTime, Integer pageNum, Integer pageSize) {
 
         CountOrderVO countOrderVO = new CountOrderVO();
 
-        Page<Order> page = new Page<>(pageNum,pageSize);
+        Page<Order> page = new Page<>(pageNum, pageSize);
 
         // 分页查询时间范围内的所有订单
         IPage<Order> orderPage = orderMapper.selectPage(page, new QueryWrapper<Order>()
@@ -73,10 +74,10 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         BigDecimal refundAmount = BigDecimal.ZERO; // 总出账
 
         for (Order order : orders) {
-            if (order.getStatus() == 0){
+            if (order.getStatus() == 0) {
                 totalAmount = totalAmount.add(order.getOrderAmount()); // 累加满足条件的订单金额
             }
-            if (order.getStatus() == 3){
+            if (order.getStatus() == 3) {
                 refundAmount = refundAmount.add(order.getOrderAmount()); // 累加满足条件的订单金额
             }
         }
@@ -85,6 +86,11 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         countOrderVO.setRefundAmount(refundAmount); // 将总出账set进countOrderVO中
 
         return countOrderVO;
+    }
+
+    @Override
+    public List<RevenueVO> getRevenueInfo() {
+        return orderMapper.selectRevenueInfo();
     }
 
 

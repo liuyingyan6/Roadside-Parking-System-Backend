@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.woniuxy.operator.mapper.OrderMapper">
-
-
-
     <select id="findAllPage" resultType="com.woniuxy.operator.vo.OrderVO">
         SELECT
         o.*,
@@ -28,6 +25,7 @@
         </where>
 
     </select>
+
     <select id="findAll" resultType="com.woniuxy.operator.vo.OrderVO">
         SELECT o.*,
                pa.number        AS parking_number,
@@ -43,5 +41,28 @@
              road ro ON o.road_id = ro.id
                  left JOIN
              car ON o.`car_id` = car.id
+    </select>
+
+    <select id="selectRevenueInfo" resultType="com.woniuxy.operator.vo.RevenueVO">
+        SELECT t1.date, COALESCE(t1.orderCount, 0) AS orderCount, COALESCE(t1.revenue, 0) AS revenue,
+               COALESCE(t2.refundOrderCount, 0) AS refundOrderCount, COALESCE(t2.refundAmount, 0) AS refundAmount,
+               COALESCE(t3.userIncreaseCount, 0) AS userIncreaseCount
+        FROM (
+                 SELECT DATE(create_time) AS date, COUNT(*) AS orderCount, SUM(order_amount) AS revenue
+        FROM `order`
+        GROUP BY DATE(create_time)
+            ) t1
+            LEFT JOIN (
+        SELECT DATE(create_time) AS date, COUNT(*) AS refundOrderCount, SUM(order_amount) AS refundAmount
+        FROM `order`
+        WHERE status = 4
+        GROUP BY DATE(create_time)
+            ) t2 ON t1.date = t2.date
+            LEFT JOIN (
+            SELECT DATE(create_time) AS date, COUNT(*) AS userIncreaseCount
+            FROM user
+            GROUP BY DATE(create_time)
+            ) t3 ON t1.date = t3.date
+        ORDER BY t1.date DESC
     </select>
 </mapper>

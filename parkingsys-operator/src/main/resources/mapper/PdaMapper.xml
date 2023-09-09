@@ -24,4 +24,5 @@
             </if>
         </where>
         GROUP BY pda.id, inspector.id
-    </select></mapper>
+    </select>
+</mapper>
