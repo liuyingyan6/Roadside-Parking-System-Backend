@@ -30,27 +30,27 @@ public class Car implements Serializable {
 
       @ExcelProperty("编号")
       @ApiModelProperty("自增主键")
-        @TableId(value = "id", type = IdType.AUTO)
+      @TableId(value = "id", type = IdType.AUTO)
       private Integer id;
 
-  @ExcelProperty("车牌号码")
+      @ExcelProperty("车牌号")
       @ApiModelProperty("车牌号码")
       private String carNumber;
 
-  @ExcelProperty("车牌类型")
+      @ExcelProperty("车牌类型")
       @ApiModelProperty("车牌类型")
       private Integer carType;
 
-  @ExcelProperty("用户id")
+      @ExcelProperty("用户id")
       @ApiModelProperty("用户id")
       private Long userId;
 
-  @ExcelProperty("创建时间")
+      @ExcelProperty("创建时间")
       @ApiModelProperty("创建时间")
       @TableField(fill = FieldFill.INSERT)
       private Date createTime;
 
-  @ExcelProperty("更新时间")
+      @ExcelProperty("更新时间")
       @ApiModelProperty("更新时间")
       @TableField(fill = FieldFill.UPDATE)
       private Date updateTime;
