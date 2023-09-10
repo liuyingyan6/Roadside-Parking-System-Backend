@@ -4,6 +4,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @Description: AuthorizationDTO
@@ -19,14 +20,10 @@ public class InspectorVO {
     private String phone;
 
     private Integer state;
-
-    private String roadName;
+    private String password;
+    private List<InspectorRoadVO> inspectorRoadVO;
     private String timePeriod;
-
     private String orderPercentage;
-    private Date dutyTime;
-    private Date closingTime;
-
     private Date createTime;
 
 }

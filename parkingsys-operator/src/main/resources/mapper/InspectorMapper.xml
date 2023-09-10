@@ -5,13 +5,12 @@
     <select id="findPage" resultType="com.woniuxy.operator.vo.InspectorVO">
         SELECT
         i.*,
-        r.NAME road_name,
-        c. time_period
+        c.time_period
         FROM
         inspector_road ir
-        INNER JOIN inspector i ON ir.inspector_id = i.id
-        INNER JOIN road r ON ir.road_id = r.id
-        INNER JOIN charge c on i.charge_id = c.id
+        LEFT JOIN inspector i ON ir.inspector_id = i.id
+        LEFT JOIN charge c ON i.charge_id = c.id
+
         <where>
             <if test="inspectorDTO.roadName!=null and inspectorDTO.roadName!=''">
                 AND r.name LIKE CONCAT(#{inspectorDTO.roadName}, '%')
@@ -23,5 +22,6 @@
                 AND i.phone LIKE CONCAT(#{inspectorDTO.phone}, '%')
             </if>
         </where>
+        GROUP BY i.id
     </select>
 </mapper>

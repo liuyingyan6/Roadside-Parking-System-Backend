@@ -44,7 +44,7 @@ public class Road implements Serializable {
     private Long chargeId;
 
     @ApiModelProperty("路段名称")
-    private String name;
+    private String roadName;
 
     @ApiModelProperty("限制车位数")
     private Integer parkingLimit;

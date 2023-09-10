@@ -3,6 +3,8 @@ package com.woniuxy.operator.service;
 import com.woniuxy.operator.entity.Road;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务类
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IRoadService extends IService<Road> {
 
+    List<Road> findAllByRoadName(String roadName);
 }
