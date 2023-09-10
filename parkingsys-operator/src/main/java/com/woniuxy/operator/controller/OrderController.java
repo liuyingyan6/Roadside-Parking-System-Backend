@@ -14,6 +14,9 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.web.bind.annotation.*;
 
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import com.woniuxy.operator.entity.Order;
@@ -96,12 +99,17 @@ public class OrderController {
         return ResponseResult.ok(all);
     }
 
-    @GetMapping("/getRevenueInfo")
-    public ResponseResult getRevenueInfo(Integer pageNum, Integer pageSize) {
-        PageHelper.startPage(pageNum, pageSize);
-        List<RevenueVO> list = orderServiceImpl.getRevenueInfo();
-        PageInfo pageInfo = new PageInfo(list);
-        PageVO pageVO = new PageVO(pageInfo.getTotal(), pageInfo.getList());
-        return ResponseResult.ok(pageVO);
+    @GetMapping("/getRevenueInfoByKeyword")
+    public ResponseResult getRevenueInfoByKeyword(@RequestParam(required = false) String roadId,
+                                         @RequestParam(required = false) String startDate,
+                                         @RequestParam(required = false) String endDate) {
+        List<RevenueVO> list = orderServiceImpl.getRevenueInfo(roadId, startDate, endDate);
+        return ResponseResult.ok(list);
+    }
+    @GetMapping("/getOrderConversionVOByKeyword")
+    public ResponseResult getOrderConversionVOByKeyword(@RequestParam(required = false) String roadId,
+                                                        @RequestParam(required = false) String startDate,
+                                                        @RequestParam(required = false) String endDate) {
+        return ResponseResult.ok(orderServiceImpl.getOrderConversionVOByKeyword(roadId, startDate, endDate));
     }
 }

@@ -5,11 +5,9 @@ import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.dto.OrderDTO;
 import com.woniuxy.operator.entity.Order;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.woniuxy.operator.vo.CountOrderVO;
-import com.woniuxy.operator.vo.OrderVO;
-import com.woniuxy.operator.vo.PageVO;
-import com.woniuxy.operator.vo.RevenueVO;
+import com.woniuxy.operator.vo.*;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -29,5 +27,7 @@ public interface IOrderService extends IService<Order> {
 
     CountOrderVO countOrder(String startTime, String endTime, Integer pageNum, Integer pageSize);
 
-    List<RevenueVO> getRevenueInfo();
+    List<RevenueVO> getRevenueInfo(String roadId, String startDate, String endDate);
+
+    OrderConversionVO getOrderConversionVOByKeyword(String roadId, String startDate, String endDate);
 }

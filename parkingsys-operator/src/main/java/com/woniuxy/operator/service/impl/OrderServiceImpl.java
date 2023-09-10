@@ -13,11 +13,13 @@ import com.woniuxy.operator.service.IOrderService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
 import com.woniuxy.operator.vo.CountOrderVO;
+import com.woniuxy.operator.vo.OrderConversionVO;
 import com.woniuxy.operator.vo.OrderVO;
 import com.woniuxy.operator.vo.RevenueVO;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 
 
@@ -89,8 +91,13 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     }
 
     @Override
-    public List<RevenueVO> getRevenueInfo() {
-        return orderMapper.selectRevenueInfo();
+    public List<RevenueVO> getRevenueInfo(String roadId, String startDate, String endDate) {
+        return orderMapper.selectRevenueInfo(roadId, startDate, endDate);
+    }
+
+    @Override
+    public OrderConversionVO getOrderConversionVOByKeyword(String roadId, String startDate, String endDate) {
+        return orderMapper.selectOrderConversionVOByKeyword(roadId, startDate, endDate);
     }
 
 

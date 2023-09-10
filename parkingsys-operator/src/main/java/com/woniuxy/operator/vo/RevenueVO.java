@@ -13,5 +13,7 @@ public class RevenueVO {
     private BigDecimal revenue;
     private Integer refundOrderCount;
     private BigDecimal refundAmount;
+    private Integer abnormalOrderCount;
+    private BigDecimal abnormalAmount;
     private Integer userIncreaseCount;
 }
