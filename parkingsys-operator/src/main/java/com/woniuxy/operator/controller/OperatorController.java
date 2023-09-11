@@ -1,18 +1,16 @@
 package com.woniuxy.operator.controller;
 
 import cn.hutool.core.date.DateTime;
-import cn.hutool.db.sql.Wrapper;
 import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.dto.OperatorDTO;
 import com.woniuxy.operator.entity.Magnetometer;
 import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.service.IRoadService;
 import com.woniuxy.operator.vo.OperatorVO;
-import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import com.woniuxy.operator.entity.Operator;
 import com.woniuxy.operator.service.IOperatorService;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>

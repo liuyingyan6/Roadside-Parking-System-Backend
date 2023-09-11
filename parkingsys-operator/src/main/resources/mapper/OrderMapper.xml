@@ -55,27 +55,27 @@
         FROM (
         SELECT DATE (create_time) AS date, COUNT(order_number) AS order_count, SUM(order_amount) AS revenue,
         COUNT(DISTINCT car_id) AS user_increase_count
-        FROM `order`
+        FROM `t_order`
         <where>
             <if test="startDate!=null and startDate!='' and endDate!=null and endDate!=''">
                 DATE (create_time) BETWEEN #{startDate} AND #{endDate}
             </if>
             <if test="roadId!=null and roadId!=''">
-                AND `order`.road_id = #{roadId}
+                AND `t_order`.road_id = #{roadId}
             </if>
         </where>
         GROUP BY DATE (create_time)
         ) t1
         LEFT JOIN (
         SELECT DATE (create_time) AS date, COUNT(order_number) AS refund_order_count, SUM(order_amount) AS refund_amount
-        FROM `order`
+        FROM `t_order`
         <where>
             status IN (3,4)
             <if test="startDate!=null and startDate!='' and endDate!=null and endDate!=''">
                 AND DATE (create_time) BETWEEN #{startDate} AND #{endDate}
             </if>
             <if test="roadId!=null and roadId!=''">
-                AND `order`.road_id = #{roadId}
+                AND `t_order`.road_id = #{roadId}
             </if>
         </where>
         GROUP BY DATE (create_time)
@@ -84,14 +84,14 @@
         LEFT JOIN (
         SELECT DATE (create_time) AS date, COUNT(order_number) AS abnormal_order_count, SUM(order_amount) AS
         abnormal_amount
-        FROM `order`
+        FROM `t_order`
         <where>
             status = 5
             <if test="startDate!=null and startDate!='' and endDate!=null and endDate!=''">
                 AND DATE (create_time) BETWEEN #{startDate} AND #{endDate}
             </if>
             <if test="roadId!=null and roadId!=''">
-                AND `order`.road_id = #{roadId}
+                AND `t_order`.road_id = #{roadId}
             </if>
         </where>
         GROUP BY DATE (create_time)
@@ -107,13 +107,13 @@
         COUNT(DISTINCT t3.order_number) AS valid_order_count,
         COUNT(DISTINCT t4.order_number) AS paid_order_count
         FROM
-        `order`
+        `t_order`
         <where>
             <if test="startDate!=null and startDate!='' and endDate!=null and endDate!=''">
                 DATE (create_time) BETWEEN #{startDate} AND #{endDate}
             </if>
             <if test="roadId!=null and roadId!=''">
-                AND `order`.road_id = #{roadId}
+                AND `t_order`.road_id = #{roadId}
             </if>
         </where>
         AS t1
@@ -122,14 +122,14 @@
         create_time AS date,
         order_number
         FROM
-        `order`
+        `t_order`
         <where>
             STATUS IN (1, 2, 3, 4, 5)
             <if test="startDate!=null and startDate!='' and endDate!=null and endDate!=''">
                 AND DATE (create_time) BETWEEN #{startDate} AND #{endDate}
             </if>
             <if test="roadId!=null and roadId!=''">
-                AND `order`.road_id = #{roadId}
+                AND `t_order`.road_id = #{roadId}
             </if>
         </where>
         ) AS t2 ON t1.create_time = t2.date
@@ -138,14 +138,14 @@
         create_time AS date,
         order_number
         FROM
-        `order`
+        `t_order`
         <where>
             STATUS IN (1, 2, 5)
             <if test="startDate!=null and startDate!='' and endDate!=null and endDate!=''">
                 DATE (create_time) BETWEEN #{startDate} AND #{endDate}
             </if>
             <if test="roadId!=null and roadId!=''">
-                AND `order`.road_id = #{roadId}
+                AND `t_order`.road_id = #{roadId}
             </if>
         </where>
 
@@ -155,14 +155,14 @@
         create_time AS date,
         order_number
         FROM
-        `order`
+        `t_order`
         <where>
             STATUS = 2
             <if test="startDate!=null and startDate!='' and endDate!=null and endDate!=''">
                 DATE (create_time) BETWEEN #{startDate} AND #{endDate}
             </if>
             <if test="roadId!=null and roadId!=''">
-                AND `order`.road_id = #{roadId}
+                AND `t_order`.road_id = #{roadId}
             </if>
         </where>
         ) AS t4 ON t1.create_time = t4.date
