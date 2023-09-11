@@ -3,22 +3,24 @@ package com.woniuxy.operator.controller;
 
 import cn.afterturn.easypoi.excel.ExcelExportUtil;
 import cn.afterturn.easypoi.excel.entity.ExportParams;
-import com.github.pagehelper.Page;
+import com.alibaba.excel.EasyExcel;
+import com.alibaba.excel.support.ExcelTypeEnum;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.dto.OrderDTO;
 import com.woniuxy.operator.pojos.ResponseResult;
-import com.woniuxy.operator.vo.*;
+import com.woniuxy.operator.vo.CarVO;
+import com.woniuxy.operator.vo.CountOrderVO;
+import com.woniuxy.operator.vo.OrderVO;
+import com.woniuxy.operator.vo.RoadOrderVO;
 import lombok.SneakyThrows;
 import org.apache.ibatis.annotations.Param;
-import org.apache.poi.ss.formula.functions.T;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.web.bind.annotation.*;
 
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.Date;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.List;
 
 import com.woniuxy.operator.entity.Order;
@@ -47,34 +49,13 @@ public class OrderController {
         this.orderServiceImpl = orderServiceImpl;
     }
 
-    // 支付统计饼图
-    @GetMapping("/payCount")
-    public ResponseResult payCount(@RequestParam("startTime") String startTime,
-                                   @RequestParam("endTime") String endTime) {
-
-        PayCountVO payCountVO = orderServiceImpl.payCount(startTime,endTime);
-        return ResponseResult.ok(payCountVO);
-    }
-
-    // 支付统计表单
-    @GetMapping("/payDate")
-    public ResponseResult payDate(@RequestParam("startTime") String startTime,
-                                  @RequestParam("endTime") String endTime,
-                                  @RequestParam("pageNum") Integer pageNum,
-                                  @RequestParam("pageSize") Integer pageSize) {
-        PageHelper.startPage(pageNum, pageSize);
-        List<PayDateVO> list = orderServiceImpl.payDate(startTime, endTime);
-        PageInfo<PayDateVO> pageInfo = new PageInfo<>(list);
-        return ResponseResult.ok(new PageVO<>(pageInfo.getTotal(), pageInfo.getList()));
-    }
-
     // 资金流水
     @GetMapping("/countOrder")
     public ResponseResult countOrder(@RequestParam("startTime") String startTime,
                                      @RequestParam("endTime") String endTime,
                                      @RequestParam("pageNum") Integer pageNum,
-                                     @RequestParam("pageSize") Integer pageSize) {
-        CountOrderVO countOrderVO = orderServiceImpl.countOrder(startTime, endTime, pageNum, pageSize);
+                                     @RequestParam("pageSize") Integer pageSize){
+        CountOrderVO countOrderVO = orderServiceImpl.countOrder(startTime,endTime,pageNum,pageSize);
         return ResponseResult.ok(countOrderVO);
     }
 
@@ -122,46 +103,14 @@ public class OrderController {
         return ResponseResult.ok(all);
     }
 
-    @GetMapping("/getRevenueInfoByKeyword")
-    public ResponseResult getRevenueInfoByKeyword(@RequestParam(required = false) String roadId,
-                                         @RequestParam(required = false) String startDate,
-                                         @RequestParam(required = false) String endDate) {
-        List<RevenueVO> list = orderServiceImpl.getRevenueInfo(roadId, startDate, endDate);
-        return ResponseResult.ok(list);
-    }
-    @GetMapping("/getOrderConversionVOByKeyword")
-    public ResponseResult getOrderConversionVOByKeyword(@RequestParam(required = false) String roadId,
-                                                        @RequestParam(required = false) String startDate,
-                                                        @RequestParam(required = false) String endDate) {
-        return ResponseResult.ok(orderServiceImpl.getOrderConversionVOByKeyword(roadId, startDate, endDate));
+    @GetMapping("/getRoadOrderList")
+    public ResponseResult getRoadOrderList(Integer pageSize,Integer pageNum,Integer roadId){
+        PageHelper.startPage(pageNum,pageSize);
+       List<RoadOrderVO> list= orderServiceImpl.getRoadOrderList(roadId);
+        PageInfo<RoadOrderVO> pageInfo = new PageInfo<>(list);
+       return ResponseResult.ok(pageInfo);
     }
 
 
-    @GetMapping("/orderStatusCount/{inspectorId}")
-    public ResponseResult orderStatusCount(@PathVariable("inspectorId") String inspectorId) {
-        OrderConversionVO orderConversionVO = orderServiceImpl.orderStatusCount(inspectorId);
-        return ResponseResult.ok(orderConversionVO);
-    }
 
-
-    @PostMapping("/findAllByInspectorId/{pageNum}/{pageSize}/{inspectorId}")
-    public ResponseResult findAllByInspectorId(
-            @PathVariable("pageNum") Integer pageNum,
-            @PathVariable("pageSize") Integer pageSize,
-            @PathVariable("inspectorId") String inspectorId,
-            @RequestBody OrderDTO orderDto) {
-        //封装分页请求对象
-        PageInfo<OrderVO> pageVO = orderServiceImpl.findAllByInspectorId(pageNum,pageSize,inspectorId, orderDto);
-        return ResponseResult.ok(pageVO);
-    }
-    @PostMapping("/findAll2ByInspectorId/{pageNum}/{pageSize}/{inspectorId}")
-    public ResponseResult findAll2ByInspectorId(
-            @PathVariable("pageNum") Integer pageNum,
-            @PathVariable("pageSize") Integer pageSize,
-            @PathVariable("inspectorId") String inspectorId,
-            @RequestBody OrderDTO orderDto) {
-        //封装分页请求对象
-        PageInfo<OrderVO> pageVO = orderServiceImpl.findAll2ByInspectorId(pageNum,pageSize,inspectorId, orderDto);
-        return ResponseResult.ok(pageVO);
-    }
 }

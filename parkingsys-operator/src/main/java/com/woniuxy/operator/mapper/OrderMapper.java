@@ -2,16 +2,16 @@ package com.woniuxy.operator.mapper;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.github.yulichang.base.MPJBaseMapper;
 import com.woniuxy.operator.dto.OrderDTO;
-import com.woniuxy.operator.vo.*;
+import com.woniuxy.operator.vo.OrderVO;
+import com.woniuxy.operator.vo.RoadOrderVO;
 import org.apache.ibatis.annotations.Mapper;
 import com.woniuxy.operator.entity.Order;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.Date;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -23,24 +23,20 @@ import java.util.List;
  * @since 2023-09-05
  */
 @Mapper
-public interface OrderMapper extends MPJBaseMapper<Order> {
+public interface OrderMapper extends BaseMapper<Order> {
 
     List<OrderVO> findAll();
 
     //自定义分页
-    List<OrderVO> findAllPage(@Param("orderDTO") OrderDTO orderDTO);
+    List<OrderVO> findAllPage( @Param("orderDTO") OrderDTO orderDTO);
 
-    List<RevenueVO> selectRevenueInfo(@Param("roadId") String roadId,
-                                      @Param("startDate") String startDate,
-                                      @Param("endDate") String endDate);
+    List<RoadOrderVO> getRoadOrderList(@Param("roadId") Integer roadId);
 
-    OrderConversionVO selectOrderConversionVOByKeyword(@Param("roadId") String roadId,
-                                                             @Param("startDate") String startDate,
-                                                             @Param("endDate") String endDate);
+    BigDecimal getPayAmount(@Param("createTime") LocalDate createTime,@Param("roadId") Integer roadId);
 
-    List<PayDateVO> payDate(@Param("startTime") String startTime,
-                            @Param("endTime") String endTime);
+    RoadOrderVO getRefund(@Param("createTime") LocalDate createTime,@Param("roadId") Integer roadId);
 
-    PayCountVO payCount(@Param("startTime") String startTime,
-                        @Param("endTime") String endTime);
+    RoadOrderVO getAbnormal(@Param("createTime") LocalDate createTime,@Param("roadId") Integer roadId);
+
+    Integer getPayCount(@Param("createTime") LocalDate createTime,@Param("roadId") Integer roadId);
 }

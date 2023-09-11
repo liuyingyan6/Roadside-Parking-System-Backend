@@ -1,26 +1,19 @@
 package com.woniuxy.operator.controller;
 
 import com.woniuxy.operator.dto.RoadDTO;
-import com.woniuxy.operator.pojos.ResponseResult;
-import com.woniuxy.operator.vo.RoadVO;
-import org.springframework.web.bind.annotation.*;
-import java.util.List;
 import com.woniuxy.operator.entity.Road;
+import com.woniuxy.operator.entity.User;
+import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.vo.PageVO;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.*;
 
 
 import com.woniuxy.operator.service.IRoadService;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * <p>
- *  前端控制器
- * </p>
- *
- * @author woniuxy
- * @since 2023-09-05
- */
+import java.util.List;
+
 @RestController
 @RequestMapping("/road")
 public class RoadController {
@@ -29,17 +22,6 @@ public class RoadController {
 
     public RoadController(IRoadService roadServiceImpl) {
         this.roadServiceImpl = roadServiceImpl;
-    }
-
-    @GetMapping("findAllByRoadName/{roadName}")
-    public ResponseResult findAllByRoadName(@PathVariable("roadName") String roadName) {
-        List<Road> list = roadServiceImpl.findAllByRoadName(roadName);
-        return ResponseResult.ok(list);
-    }
-    @GetMapping("/findRoad")
-    public ResponseResult findRoad(){
-        List<RoadVO> list = roadServiceImpl.findRoad();
-        return ResponseResult.ok(list);
     }
 
     /**
@@ -63,7 +45,7 @@ public class RoadController {
         roadServiceImpl.save(road);
         return ResponseResult.ok();
     }
-
+        
     /**
      * 删除
      */
@@ -91,8 +73,9 @@ public class RoadController {
         return ResponseResult.ok(road.getState());
     }
 
-    @GetMapping("/list")
-    public ResponseResult list(){
-        return ResponseResult.ok(roadServiceImpl.list());
+    @GetMapping("/getAll")
+    public ResponseResult getAll(){
+        List<Road> list = roadServiceImpl.list();
+        return ResponseResult.ok(list);
     }
 }

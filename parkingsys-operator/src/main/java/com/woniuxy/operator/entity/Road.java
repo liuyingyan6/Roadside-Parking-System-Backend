@@ -3,6 +3,7 @@ package com.woniuxy.operator.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -49,5 +50,6 @@ public class Road implements Serializable {
     private Date updateTime;
 
     @ApiModelProperty("逻辑删除")
+    @TableLogic
     private Integer logicDelete;
 }
