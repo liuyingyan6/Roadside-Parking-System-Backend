@@ -28,7 +28,7 @@ public class Inspector implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-      private Long id;
+      private String  id;
 
     @ApiModelProperty("巡检员名称")
     private String name;
@@ -57,7 +57,7 @@ public class Inspector implements Serializable {
     @TableField(fill = FieldFill.INSERT)
     private Date createTime;
 
-    @TableField(fill = FieldFill.UPDATE)
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private Date updateTime;
 
     @TableLogic

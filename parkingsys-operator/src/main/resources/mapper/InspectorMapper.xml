@@ -4,16 +4,15 @@
 
     <select id="findPage" resultType="com.woniuxy.operator.vo.InspectorVO">
         SELECT
-        i.*,
-        c.time_period
+        i.*
         FROM
-        inspector_road ir
-        LEFT JOIN inspector i ON ir.inspector_id = i.id
-        LEFT JOIN charge c ON i.charge_id = c.id
-
+        inspector i
+        LEFT JOIN inspector_road ir ON ir.inspector_id = i.id
+        LEFT JOIN road r ON ir.road_id = r.id
         <where>
+            i.logic_delete = 0
             <if test="inspectorDTO.roadName!=null and inspectorDTO.roadName!=''">
-                AND r.name LIKE CONCAT(#{inspectorDTO.roadName}, '%')
+                AND r.road_name LIKE CONCAT(#{inspectorDTO.roadName}, '%')
             </if>
             <if test="inspectorDTO.name!=null and inspectorDTO.name!=''">
                 AND i.name LIKE CONCAT(#{inspectorDTO.name}, '%')

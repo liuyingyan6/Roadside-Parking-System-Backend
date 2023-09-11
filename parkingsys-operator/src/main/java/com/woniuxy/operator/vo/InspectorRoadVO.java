@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class InspectorRoadVO {
     private Long id;
-    private Long inspectorId;
+    private String  inspectorId;
     private Long roadId;
     private String  roadName;
 

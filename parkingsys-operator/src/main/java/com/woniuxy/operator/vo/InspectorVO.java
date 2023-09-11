@@ -14,12 +14,14 @@ import java.util.List;
 @Data
 public class InspectorVO {
 
-    private Long id;
+    private String id;
 
     private String name;
     private String phone;
 
     private Integer state;
+    private Long chargeId;
+
     private String password;
     private List<InspectorRoadVO> inspectorRoadVO;
     private String timePeriod;
