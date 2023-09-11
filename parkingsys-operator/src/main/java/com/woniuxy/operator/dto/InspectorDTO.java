@@ -9,6 +9,6 @@ public class InspectorDTO {
 
     private String phone;
 
-    private String roadName;
+    private Integer state;  //状态
 
 }

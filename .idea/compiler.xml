@@ -13,8 +13,5 @@
         <module name="parking-common" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="parkingsys-oss" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

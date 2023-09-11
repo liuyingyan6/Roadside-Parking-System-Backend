@@ -6,6 +6,9 @@ import com.woniuxy.operator.service.IDepartmentService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
+
 /**
  * <p>
  *  服务实现类
@@ -23,4 +26,9 @@ public class DepartmentServiceImpl extends ServiceImpl<DepartmentMapper, Departm
         this.departmentMapper = departmentMapper;
     }
 
+    @Override
+    public List<Department> findAll() {
+        List<Department> departments = departmentMapper.selectList(null);
+        return departments;
+    }
 }

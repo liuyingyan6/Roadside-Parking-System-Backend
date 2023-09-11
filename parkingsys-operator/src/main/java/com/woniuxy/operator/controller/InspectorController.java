@@ -72,4 +72,9 @@ public class InspectorController {
         return ResponseResult.ok();
     }
 
+    @GetMapping("/list")
+    public ResponseResult list() {
+        List<Inspector> list = inspectorServiceImpl.list();
+        return ResponseResult.ok(list);
+    }
 }

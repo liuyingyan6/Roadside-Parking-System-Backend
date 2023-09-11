@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.woniuxy.operator.vo.MagnetometerVO;
 import com.woniuxy.operator.vo.PageVO;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务类
@@ -16,5 +18,5 @@ import com.woniuxy.operator.vo.PageVO;
  */
 public interface IMagnetometerService extends IService<Magnetometer> {
 
-    PageVO getPageByKeyword(Integer pageNum, Integer pageSize, String magnetometerName, String roadName);
+    List<MagnetometerVO> getByKeyword(String magnetometerName, String roadName);
 }

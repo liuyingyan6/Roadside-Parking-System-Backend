@@ -3,16 +3,20 @@ package com.woniuxy.operator.controller;
 
 import cn.afterturn.easypoi.excel.ExcelExportUtil;
 import cn.afterturn.easypoi.excel.entity.ExportParams;
+import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.dto.OrderDTO;
 import com.woniuxy.operator.pojos.ResponseResult;
-import com.woniuxy.operator.vo.OrderVO;
+import com.woniuxy.operator.vo.*;
 import lombok.SneakyThrows;
 import org.apache.ibatis.annotations.Param;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.web.bind.annotation.*;
 
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import com.woniuxy.operator.entity.Order;
@@ -39,6 +43,16 @@ public class OrderController {
 
     public OrderController(IOrderService orderServiceImpl) {
         this.orderServiceImpl = orderServiceImpl;
+    }
+
+    // 资金流水
+    @GetMapping("/countOrder")
+    public ResponseResult countOrder(@RequestParam("startTime") String startTime,
+                                     @RequestParam("endTime") String endTime,
+                                     @RequestParam("pageNum") Integer pageNum,
+                                     @RequestParam("pageSize") Integer pageSize) {
+        CountOrderVO countOrderVO = orderServiceImpl.countOrder(startTime, endTime, pageNum, pageSize);
+        return ResponseResult.ok(countOrderVO);
     }
 
     @GetMapping("/page")
@@ -85,4 +99,17 @@ public class OrderController {
         return ResponseResult.ok(all);
     }
 
+    @GetMapping("/getRevenueInfoByKeyword")
+    public ResponseResult getRevenueInfoByKeyword(@RequestParam(required = false) String roadId,
+                                         @RequestParam(required = false) String startDate,
+                                         @RequestParam(required = false) String endDate) {
+        List<RevenueVO> list = orderServiceImpl.getRevenueInfo(roadId, startDate, endDate);
+        return ResponseResult.ok(list);
+    }
+    @GetMapping("/getOrderConversionVOByKeyword")
+    public ResponseResult getOrderConversionVOByKeyword(@RequestParam(required = false) String roadId,
+                                                        @RequestParam(required = false) String startDate,
+                                                        @RequestParam(required = false) String endDate) {
+        return ResponseResult.ok(orderServiceImpl.getOrderConversionVOByKeyword(roadId, startDate, endDate));
+    }
 }

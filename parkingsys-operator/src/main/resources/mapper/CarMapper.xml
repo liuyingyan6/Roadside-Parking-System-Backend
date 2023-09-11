@@ -59,4 +59,36 @@
           AND car_number = #{carNumber}
     </select>
 
+    <select id="getCarOrderList" resultType="com.woniuxy.operator.vo.CarOrderVO">
+        SELECT
+            car.car_number,
+            t_order.order_number,
+            t_order.create_time,
+            t_order.order_amount,
+            t_order.`status`,
+            t_order.pay_type
+        FROM
+            car,
+            t_order
+        WHERE
+            car.id = t_order.car_id AND car.car_number=#{carNumber}
+    </select>
+
+    <update id="liftCar">
+        UPDATE `user`
+        SET `user`.car_id=NULL
+        WHERE `user`.id=#{userId}
+    </update>
+    <update id="liftUser">
+        UPDATE car
+        SET car.user_id=NULL
+        WHERE car.id=#{carId}
+    </update>
+
+    <select id="getCarInfo" resultType="Car">
+        SELECT *
+        FROM car
+        where car.car_number=#{carNumber}
+    </select>
+
 </mapper>

@@ -4,6 +4,8 @@ import cn.hutool.db.sql.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.dto.ManagerDTO;
 import com.woniuxy.operator.entity.Manager;
 import com.woniuxy.operator.entity.UrlPermission;
@@ -44,10 +46,10 @@ public class ManagerServiceImpl extends ServiceImpl<ManagerMapper, Manager> impl
     }
 
     @Override
-    public Page<ManagerVO> getAll(Page<ManagerVO> page,String account) {
-        List<ManagerVO> list = managerMapper.getAll();
-        page.setRecords(list);
-        page.setTotal(list.size());
-        return page;
+    public PageInfo<ManagerVO> getAll(Integer pageSize, Integer pageNum, String account) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<ManagerVO> list = managerMapper.getAll(account);
+
+        return new PageInfo<>(list);
     }
 }

@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.woniuxy.operator.mapper.OrderMapper">
-
-
-
     <select id="findAllPage" resultType="com.woniuxy.operator.vo.OrderVO">
         SELECT
         o.*,
@@ -20,7 +17,7 @@
         left JOIN
         road ro ON o.road_id = ro.id
         left JOIN
-        car  ON o.`car_id` = car.id
+        car ON o.`car_id` = car.id
         <where>
             <if test="orderDTO.orderNumber !=null and orderDTO.orderNumber !=''">
                 o.order_number = #{orderNumber}
@@ -28,6 +25,7 @@
         </where>
 
     </select>
+
     <select id="findAll" resultType="com.woniuxy.operator.vo.OrderVO">
         SELECT o.*,
                pa.number        AS parking_number,
@@ -43,5 +41,130 @@
              road ro ON o.road_id = ro.id
                  left JOIN
              car ON o.`car_id` = car.id
+    </select>
+
+    <select id="selectRevenueInfo" resultType="com.woniuxy.operator.vo.RevenueVO">
+        SELECT t1.date,
+        COALESCE(t1.order_count, 0) AS order_count,
+        COALESCE(t1.revenue, 0) AS revenue,
+        COALESCE(t2.refund_order_count, 0) AS refund_order_count,
+        COALESCE(t2.refund_amount, 0) AS refund_amount,
+        COALESCE(t3.abnormal_order_count, 0) AS abnormal_order_count,
+        COALESCE(t3.abnormal_amount, 0) AS abnormal_amount,
+        COALESCE(t1.user_increase_count, 0) AS user_increase_count
+        FROM (
+        SELECT DATE (create_time) AS date, COUNT(order_number) AS order_count, SUM(order_amount) AS revenue,
+        COUNT(DISTINCT car_id) AS user_increase_count
+        FROM `t_order`
+        <where>
+            <if test="startDate!=null and startDate!='' and endDate!=null and endDate!=''">
+                DATE (create_time) BETWEEN #{startDate} AND #{endDate}
+            </if>
+            <if test="roadId!=null and roadId!=''">
+                AND `t_order`.road_id = #{roadId}
+            </if>
+        </where>
+        GROUP BY DATE (create_time)
+        ) t1
+        LEFT JOIN (
+        SELECT DATE (create_time) AS date, COUNT(order_number) AS refund_order_count, SUM(order_amount) AS refund_amount
+        FROM `t_order`
+        <where>
+            status IN (3,4)
+            <if test="startDate!=null and startDate!='' and endDate!=null and endDate!=''">
+                AND DATE (create_time) BETWEEN #{startDate} AND #{endDate}
+            </if>
+            <if test="roadId!=null and roadId!=''">
+                AND `t_order`.road_id = #{roadId}
+            </if>
+        </where>
+        GROUP BY DATE (create_time)
+        ) t2
+        ON t1.date = t2.date
+        LEFT JOIN (
+        SELECT DATE (create_time) AS date, COUNT(order_number) AS abnormal_order_count, SUM(order_amount) AS
+        abnormal_amount
+        FROM `t_order`
+        <where>
+            status = 5
+            <if test="startDate!=null and startDate!='' and endDate!=null and endDate!=''">
+                AND DATE (create_time) BETWEEN #{startDate} AND #{endDate}
+            </if>
+            <if test="roadId!=null and roadId!=''">
+                AND `t_order`.road_id = #{roadId}
+            </if>
+        </where>
+        GROUP BY DATE (create_time)
+        ) t3
+        ON t1.date = t3.date
+        ORDER BY t1.date DESC
+    </select>
+
+    <select id="selectOrderConversionVOByKeyword" resultType="com.woniuxy.operator.vo.OrderConversionVO">
+        SELECT
+        COUNT(DISTINCT t1.order_number) AS total_order_count,
+        COUNT(DISTINCT t2.order_number) AS finished_parking_orderCount,
+        COUNT(DISTINCT t3.order_number) AS valid_order_count,
+        COUNT(DISTINCT t4.order_number) AS paid_order_count
+        FROM
+        `t_order`
+        <where>
+            <if test="startDate!=null and startDate!='' and endDate!=null and endDate!=''">
+                DATE (create_time) BETWEEN #{startDate} AND #{endDate}
+            </if>
+            <if test="roadId!=null and roadId!=''">
+                AND `t_order`.road_id = #{roadId}
+            </if>
+        </where>
+        AS t1
+        LEFT JOIN (
+        SELECT
+        create_time AS date,
+        order_number
+        FROM
+        `t_order`
+        <where>
+            STATUS IN (1, 2, 3, 4, 5)
+            <if test="startDate!=null and startDate!='' and endDate!=null and endDate!=''">
+                AND DATE (create_time) BETWEEN #{startDate} AND #{endDate}
+            </if>
+            <if test="roadId!=null and roadId!=''">
+                AND `t_order`.road_id = #{roadId}
+            </if>
+        </where>
+        ) AS t2 ON t1.create_time = t2.date
+        LEFT JOIN (
+        SELECT
+        create_time AS date,
+        order_number
+        FROM
+        `t_order`
+        <where>
+            STATUS IN (1, 2, 5)
+            <if test="startDate!=null and startDate!='' and endDate!=null and endDate!=''">
+                DATE (create_time) BETWEEN #{startDate} AND #{endDate}
+            </if>
+            <if test="roadId!=null and roadId!=''">
+                AND `t_order`.road_id = #{roadId}
+            </if>
+        </where>
+
+        ) AS t3 ON t1.create_time = t3.date
+        LEFT JOIN (
+        SELECT
+        create_time AS date,
+        order_number
+        FROM
+        `t_order`
+        <where>
+            STATUS = 2
+            <if test="startDate!=null and startDate!='' and endDate!=null and endDate!=''">
+                DATE (create_time) BETWEEN #{startDate} AND #{endDate}
+            </if>
+            <if test="roadId!=null and roadId!=''">
+                AND `t_order`.road_id = #{roadId}
+            </if>
+        </where>
+        ) AS t4 ON t1.create_time = t4.date
     </select>
 </mapper>
