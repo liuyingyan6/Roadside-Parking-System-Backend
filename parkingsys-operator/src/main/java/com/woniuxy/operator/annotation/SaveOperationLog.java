@@ -15,9 +15,4 @@ public @interface SaveOperationLog {
      * 描述
      */
     String description() default "";
-
-    /**
-     * 方法类型 INSERT DELETE UPDATE OTHER
-     */
-    String methodType() default "";
 }

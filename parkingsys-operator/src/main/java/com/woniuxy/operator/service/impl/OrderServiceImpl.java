@@ -55,7 +55,8 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 
     // 资金流水
     @Override
-    public CountOrderVO countOrder(String startTime, String endTime, Integer pageNum, Integer pageSize) {
+    public CountOrderVO countOrder(String startTime, String endTime,Integer pageNum, Integer pageSize) {
+
         CountOrderVO countOrderVO = new CountOrderVO();
 
         Page<Order> page = new Page<>(pageNum, pageSize);
@@ -85,6 +86,16 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         countOrderVO.setRefundAmount(refundAmount); // 将总出账set进countOrderVO中
 
         return countOrderVO;
+    }
+
+    @Override
+    public List<RevenueVO> getRevenueInfo(String roadId, String startDate, String endDate) {
+        return orderMapper.selectRevenueInfo(roadId, startDate, endDate);
+    }
+
+    @Override
+    public OrderConversionVO getOrderConversionVOByKeyword(String roadId, String startDate, String endDate) {
+        return orderMapper.selectOrderConversionVOByKeyword(roadId, startDate, endDate);
     }
 
 

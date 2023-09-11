@@ -1,5 +1,6 @@
 package com.woniuxy.operator.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.dto.InspectorDTO;
 import com.woniuxy.operator.pojos.ResponseResult;
@@ -43,4 +44,9 @@ public class InspectorController {
         return ResponseResult.ok(page);
     }
 
+    @GetMapping("/list")
+    public ResponseResult list() {
+        List<Inspector> list = inspectorServiceImpl.list();
+        return ResponseResult.ok(list);
+    }
 }

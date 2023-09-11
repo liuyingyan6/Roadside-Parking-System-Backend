@@ -2,23 +2,27 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.woniuxy.operator.mapper.PdaMapper">
     <select id="selectByKeyword" resultType="com.woniuxy.operator.vo.PdaVO">
-        select pda.id, pda.name, road.name as road_name, inspector.name as inspector_name, pda.`status`,
-        pda.create_time, road.id as road_id, inspector.id as inspector_id
-        from pda,
-        road,
-        inspector
+        SELECT pda.id, pda.name,
+        GROUP_CONCAT(road.name SEPARATOR ',') as road_names,
+        inspector.name as inspector_name,
+        pda.`status`,
+        pda.create_time,
+        pda.inspector_id
+        FROM pda
+        LEFT JOIN inspector ON pda.inspector_id = inspector.id
+        LEFT JOIN inspector_road ON inspector_road.inspector_id = pda.inspector_id
+        LEFT JOIN road ON inspector_road.road_id = road.id
         <where>
-        inspector.pda_id = pda.id
-        and inspector.road_id = road.id
+            <if test="pdaName !=null and pdaName!=''">
+                and pda.name like concat('%', #{pdaName}, '%')
+            </if>
+            <if test="inspectorName !=null and inspectorName!=''">
+                and inspector.name like concat('%', #{inspectorName}, '%')
+            </if>
+            <if test="roadName!=null and roadName!=''">
+                and road.name like concat('%', #{roadName}, '%')
+            </if>
         </where>
-        <if test="pdaName !=null and pdaName!=''">
-            and pda.name like concat('%', #{pdaName}, '%')
-        </if>
-        <if test="inspectorName !=null and inspectorName!=''">
-            and inspector.name like concat('%', #{inspectorName}, '%')
-        </if>
-        <if test="roadName!=null and roadName!=''">
-            and road.name like concat('%', #{roadName}, '%')
-        </if>
+        GROUP BY pda.id, inspector.id
     </select>
 </mapper>

@@ -38,10 +38,4 @@ public class LoginLogController {
         Page<LoginLog> page = loginLogServiceImpl.page(Page.of(pageNum, pageSize));
         return ResponseResult.ok(page);
     }
-
-    @DeleteMapping("/delete/{id}")
-    @SaveOperationLog(description = "登录日志", methodType = "删除")
-    public ResponseResult delete(@PathVariable Integer id) {
-        return ResponseResult.ok();
-    }
 }
