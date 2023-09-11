@@ -52,7 +52,7 @@ public class OperatorServiceImpl extends ServiceImpl<OperatorMapper, Operator> i
 
         nameList.forEach(e -> {
             Road road = new Road();
-            road.setName(e);
+            road.setRoadName(e);
             road.setAdminId(operator.getId());
             roadMapper.insert(road);
         });

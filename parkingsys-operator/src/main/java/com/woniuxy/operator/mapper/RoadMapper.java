@@ -1,5 +1,6 @@
 package com.woniuxy.operator.mapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.github.yulichang.base.MPJBaseMapper;
 import com.woniuxy.operator.dto.RoadDTO;
 import com.woniuxy.operator.vo.RoadVO;
 import org.apache.ibatis.annotations.Mapper;
@@ -10,7 +11,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 @Mapper
-public interface RoadMapper extends BaseMapper<Road> {
+public interface RoadMapper extends MPJBaseMapper<Road> {
 
     IPage<RoadDTO> selectRoadDTOPage(@Param("iPage")IPage iPage, @Param("name") String name,
                                      @Param("chargingRule") String chargingRule,

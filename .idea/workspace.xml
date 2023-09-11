@@ -5,27 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c62f2fd-38ae-4d1e-89c5-9340771697b0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/parking-common/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parking-common/src/main/java/com/woniuxy/common/ResponseResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parking-common/src/main/java/com/woniuxy/common/handler/Asserts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parking-common/src/main/java/com/woniuxy/common/handler/BusinessEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parking-common/src/main/java/com/woniuxy/common/handler/BusinessException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parking-common/src/main/java/com/woniuxy/common/handler/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parking-common/src/main/java/com/woniuxy/common/handler/IErrorCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parking-oss/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parking-oss/src/main/java/com/woniuxy/OssApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parking-oss/src/main/java/com/woniuxy/config/cors/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parking-oss/src/main/java/com/woniuxy/controller/OSSController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parking-oss/src/main/java/com/woniuxy/entity/FileInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parking-oss/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/resources/mapper/InformationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_5_10_14__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_5_10_14__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-generator/src/main/java/com/woniuxy/generator/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-generator/src/main/java/com/woniuxy/generator/CodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/DepartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/DepartmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/InformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/InformationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/InspectorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/InspectorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/InspectorFeedbackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/InspectorFeedbackController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/LoginLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/LoginLogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/MagnetometerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/MagnetometerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/MagnetometerLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/MagnetometerLogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/ManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/ManagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/OperationLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/OperationLogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/OperatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/OperatorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/ParkingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/ParkingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/PdaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/PdaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/RoadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/RoadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/RoleUrlPermissionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/RoleUrlPermissionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/UrlPermissionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/UrlPermissionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/UserFeedbackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/UserFeedbackController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/dto/InspectorDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/dto/InspectorDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/mapper/RoadMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/mapper/RoadMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/mapper/UserFeedbackMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/mapper/UserFeedbackMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/OperatorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/OperatorServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/RoadServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/RoadServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/UserFeedbackVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/UserFeedbackVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/resources/mapper/RoadMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/resources/mapper/RoadMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/ManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/ManagerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/UserFeedbackController.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/UserFeedbackController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +43,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="developer" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
@@ -53,6 +68,7 @@
     "RequestMappingsPanelWidth1": "75",
     "jdk.selected.JAVA_MODULE": "1.8",
     "last_opened_file_path": "E:/idea/parkingsys/parking-oss/src/main/java/com/woniuxy",
+    "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.38505748"
@@ -130,6 +146,8 @@
         <item itemvalue="Spring Boot.OperatorApplication" />
         <item itemvalue="Spring Boot.OssApplication (1)" />
         <item itemvalue="Application.CodeGenerator" />
+        <item itemvalue="Spring Boot.OperatorApplication" />
+        <item itemvalue="Spring Boot.OssApplication (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -187,5 +205,13 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge branch 'developer' into 刘展鹏&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/LoginLogController.class&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/OperationLogController.class&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/OrderController.class&#10;#&#9;parkingsys-operator/target/classes/mapper/OrderMapper.xml" />
     <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'developer' into 刘展鹏&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/LoginLogController.class&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/OperationLogController.class&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/OrderController.class&#10;#&#9;parkingsys-operator/target/classes/mapper/OrderMapper.xml" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.woniuxy.operator.vo.InspectorVO" memberName="createTime" />
+        <PinnedItemInfo parentTag="com.sun.proxy.$Proxy117" memberName="h" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

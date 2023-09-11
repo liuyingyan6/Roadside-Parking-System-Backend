@@ -15,7 +15,6 @@ public class UserFeedbackVO {
     private String result;
     private String feedbackOdd;
     private String feedbackText;
-    private String feedbackOdd;
 
     private String phone;
 

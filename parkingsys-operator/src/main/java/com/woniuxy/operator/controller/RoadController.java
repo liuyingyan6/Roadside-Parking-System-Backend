@@ -3,15 +3,11 @@ package com.woniuxy.operator.controller;
 import com.woniuxy.operator.dto.RoadDTO;
 import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.vo.RoadVO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import com.woniuxy.operator.entity.Road;
-import com.woniuxy.operator.entity.User;
-import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.vo.PageVO;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.*;
 
 
 import com.woniuxy.operator.service.IRoadService;
@@ -37,7 +33,6 @@ public class RoadController {
 
     @GetMapping("findAllByRoadName/{roadName}")
     public ResponseResult findAllByRoadName(@PathVariable("roadName") String roadName) {
-
         List<Road> list = roadServiceImpl.findAllByRoadName(roadName);
         return ResponseResult.ok(list);
     }

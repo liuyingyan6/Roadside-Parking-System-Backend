@@ -4,8 +4,6 @@ import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.dto.InspectorDTO;
 import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.vo.InspectorVO;
-import com.woniuxy.operator.vo.PageVO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

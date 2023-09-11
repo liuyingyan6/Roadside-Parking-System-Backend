@@ -1,7 +1,6 @@
 package com.woniuxy.operator.controller;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.dto.ManagerDTO;
 import com.woniuxy.operator.dto.ManagerRoleDTO;

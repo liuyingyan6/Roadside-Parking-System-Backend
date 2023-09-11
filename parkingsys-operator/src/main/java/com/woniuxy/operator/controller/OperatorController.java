@@ -3,7 +3,6 @@ package com.woniuxy.operator.controller;
 import cn.hutool.core.date.DateTime;
 import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.dto.OperatorDTO;
-import com.woniuxy.operator.entity.Magnetometer;
 import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.service.IRoadService;
 import com.woniuxy.operator.vo.OperatorVO;
