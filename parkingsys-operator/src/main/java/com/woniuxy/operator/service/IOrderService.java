@@ -30,4 +30,8 @@ public interface IOrderService extends IService<Order> {
     List<RevenueVO> getRevenueInfo(String roadId, String startDate, String endDate);
 
     OrderConversionVO getOrderConversionVOByKeyword(String roadId, String startDate, String endDate);
+
+    List<PayDateVO> payDate(String startTime, String endTime);
+
+    PayCountVO payCount(String startTime, String endTime);
 }

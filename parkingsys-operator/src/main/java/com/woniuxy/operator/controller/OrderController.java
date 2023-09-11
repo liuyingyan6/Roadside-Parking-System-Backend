@@ -3,6 +3,7 @@ package com.woniuxy.operator.controller;
 
 import cn.afterturn.easypoi.excel.ExcelExportUtil;
 import cn.afterturn.easypoi.excel.entity.ExportParams;
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.dto.OrderDTO;
@@ -10,6 +11,7 @@ import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.vo.*;
 import lombok.SneakyThrows;
 import org.apache.ibatis.annotations.Param;
+import org.apache.poi.ss.formula.functions.T;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.web.bind.annotation.*;
 
@@ -45,12 +47,34 @@ public class OrderController {
         this.orderServiceImpl = orderServiceImpl;
     }
 
+    // 支付统计饼图
+    @GetMapping("/payCount")
+    public ResponseResult payCount(@RequestParam("startTime") String startTime,
+                                   @RequestParam("endTime") String endTime) {
+
+        PayCountVO payCountVO = orderServiceImpl.payCount(startTime,endTime);
+        return ResponseResult.ok(payCountVO);
+    }
+
+    // 支付统计表单
+    @GetMapping("/payDate")
+    public ResponseResult payDate(@RequestParam("startTime") String startTime,
+                                  @RequestParam("endTime") String endTime,
+                                  @RequestParam("pageNum") Integer pageNum,
+                                  @RequestParam("pageSize") Integer pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<PayDateVO> list = orderServiceImpl.payDate(startTime, endTime);
+        PageInfo<PayDateVO> pageInfo = new PageInfo<>(list);
+        return ResponseResult.ok(new PageVO<>(pageInfo.getTotal(), pageInfo.getList()));
+    }
+
     // 资金流水
     @GetMapping("/countOrder")
     public ResponseResult countOrder(@RequestParam("startTime") String startTime,
                                      @RequestParam("endTime") String endTime,
                                      @RequestParam("pageNum") Integer pageNum,
                                      @RequestParam("pageSize") Integer pageSize) {
+
         CountOrderVO countOrderVO = orderServiceImpl.countOrder(startTime, endTime, pageNum, pageSize);
         return ResponseResult.ok(countOrderVO);
     }
@@ -59,7 +83,7 @@ public class OrderController {
     public ResponseResult page(@Param("pageNum") Integer pageNum,
                                @Param("pageSize") Integer pageSize,
                                @Param("orderDto") OrderDTO orderDto) {
-        //封装分页请求对象
+        // 封装分页请求对象
         PageInfo<OrderVO> pageVO = orderServiceImpl.findPage(pageNum, pageSize, orderDto);
         return ResponseResult.ok(pageVO);
     }
@@ -77,17 +101,17 @@ public class OrderController {
     @SneakyThrows
     @GetMapping("/exportExcel")
     public void exportExcel(HttpServletResponse response) {
-        //1.设置响应编码
+        // 1.设置响应编码
         response.setCharacterEncoding("utf-8");
-        //2.设置响应头 content-disposition：告诉浏览器如何处理当前的资源，是打开inline还是下载attachment
+        // 2.设置响应头 content-disposition：告诉浏览器如何处理当前的资源，是打开inline还是下载attachment
         response.setHeader("content-disposition", "attachment;filename=order.xlsx");
-        //3.调用业务层获取所有需要导出的数据
+        // 3.调用业务层获取所有需要导出的数据
         List<OrderVO> orderVOS = orderServiceImpl.findAll();
-        //4.创建导出参数。参数：第一行标题，Sheet工作表名称
+        // 4.创建导出参数。参数：第一行标题，Sheet工作表名称
         ExportParams exportParams = new ExportParams("订单列表", "订单数据");
-        //5.使用导出工具类导出，参数：导出参数，实体类类型，输出数据
+        // 5.使用导出工具类导出，参数：导出参数，实体类类型，输出数据
         Workbook workbook = ExcelExportUtil.exportExcel(exportParams, OrderVO.class, orderVOS);
-        //6.将Excel文件写到响应的输出流中
+        // 6.将Excel文件写到响应的输出流中
         ServletOutputStream outputStream = response.getOutputStream();
         workbook.write(outputStream);
     }
@@ -101,11 +125,12 @@ public class OrderController {
 
     @GetMapping("/getRevenueInfoByKeyword")
     public ResponseResult getRevenueInfoByKeyword(@RequestParam(required = false) String roadId,
-                                         @RequestParam(required = false) String startDate,
-                                         @RequestParam(required = false) String endDate) {
+                                                  @RequestParam(required = false) String startDate,
+                                                  @RequestParam(required = false) String endDate) {
         List<RevenueVO> list = orderServiceImpl.getRevenueInfo(roadId, startDate, endDate);
         return ResponseResult.ok(list);
     }
+
     @GetMapping("/getOrderConversionVOByKeyword")
     public ResponseResult getOrderConversionVOByKeyword(@RequestParam(required = false) String roadId,
                                                         @RequestParam(required = false) String startDate,

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.woniuxy.operator.mapper.OrderMapper">
+
     <select id="findAllPage" resultType="com.woniuxy.operator.vo.OrderVO">
         SELECT
         o.*,
@@ -166,5 +167,44 @@
             </if>
         </where>
         ) AS t4 ON t1.create_time = t4.date
+    </select>
+
+    <select id="payDate" resultType="com.woniuxy.operator.vo.PayDateVO">
+        SELECT
+        DATE(update_time) AS orderDate,
+            SUM(CASE WHEN pay_type = 0 THEN 1 ELSE 0 END) AS alipayCountDate,
+            SUM(CASE WHEN pay_type = 1 THEN 1 ELSE 0 END) AS wechatCountDate,
+            SUM(CASE WHEN pay_type = 2 THEN 1 ELSE 0 END) AS cashCountDate,
+            SUM(CASE WHEN pay_type = 0 THEN order_amount ELSE 0 END) AS alipayAmountDate,
+            SUM(CASE WHEN pay_type = 1 THEN order_amount ELSE 0 END) AS wechatAmountDate,
+            SUM(CASE WHEN pay_type = 2 THEN order_amount ELSE 0 END) AS cashAmountDate
+        FROM t_order
+        <where>
+            status = 2
+            <if test="startTime!=null and startTime!='' and endTime!=null and endTime!=''">
+                AND update_time &gt;= #{startTime}
+                AND update_time &lt;= #{endTime}
+            </if>
+        </where>
+        GROUP BY DATE(update_time)
+        ORDER BY DATE(update_time)
+    </select>
+
+    <select id="payCount" resultType="com.woniuxy.operator.vo.PayCountVO">
+        SELECT
+            SUM(CASE WHEN pay_type = 0 THEN 1 ELSE 0 END) AS alipayCount,
+            SUM(CASE WHEN pay_type = 1 THEN 1 ELSE 0 END) AS wechatCount,
+            SUM(CASE WHEN pay_type = 2 THEN 1 ELSE 0 END) AS cashCount,
+            SUM(CASE WHEN pay_type = 0 THEN order_amount ELSE 0 END) AS alipayAmount,
+            SUM(CASE WHEN pay_type = 1 THEN order_amount ELSE 0 END) AS wechatAmount,
+            SUM(CASE WHEN pay_type = 2 THEN order_amount ELSE 0 END) AS cashAmount
+        FROM t_order
+        <where>
+            status = 2
+            <if test="startTime!=null and startTime!='' and endTime!=null and endTime!=''">
+                AND update_time &gt;= #{startTime}
+                AND update_time &lt;= #{endTime}
+            </if>
+        </where>
     </select>
 </mapper>

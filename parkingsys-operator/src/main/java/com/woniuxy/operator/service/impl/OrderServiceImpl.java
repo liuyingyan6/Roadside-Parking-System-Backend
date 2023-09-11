@@ -12,10 +12,7 @@ import com.woniuxy.operator.mapper.OrderMapper;
 import com.woniuxy.operator.service.IOrderService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
-import com.woniuxy.operator.vo.CountOrderVO;
-import com.woniuxy.operator.vo.OrderConversionVO;
-import com.woniuxy.operator.vo.OrderVO;
-import com.woniuxy.operator.vo.RevenueVO;
+import com.woniuxy.operator.vo.*;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -39,6 +36,17 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         this.orderMapper = orderMapper;
     }
 
+    // 支付统计饼图
+    @Override
+    public PayCountVO payCount(String startTime, String endTime) {
+        return orderMapper.payCount(startTime,endTime);
+    }
+
+    // 支付统计表单
+    @Override
+    public List<PayDateVO> payDate(String startTime, String endTime) {
+        return orderMapper.payDate(startTime,endTime);
+    }
 
     @Override
     public List<OrderVO> findAll() {
@@ -99,6 +107,4 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     public OrderConversionVO getOrderConversionVOByKeyword(String roadId, String startDate, String endDate) {
         return orderMapper.selectOrderConversionVOByKeyword(roadId, startDate, endDate);
     }
-
-
 }
