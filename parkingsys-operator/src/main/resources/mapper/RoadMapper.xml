@@ -24,4 +24,9 @@
             </if>
         </where>
     </select>
+
+
+    <select id="selectRoad" resultType="com.woniuxy.operator.vo.RoadVO">
+        SELECT r.id,r.admin_id operatorId,r.name FROM road r GROUP BY r.name
+    </select>
 </mapper>

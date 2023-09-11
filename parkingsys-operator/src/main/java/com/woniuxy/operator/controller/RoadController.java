@@ -2,6 +2,7 @@ package com.woniuxy.operator.controller;
 
 import com.woniuxy.operator.dto.RoadDTO;
 import com.woniuxy.operator.pojos.ResponseResult;
+import com.woniuxy.operator.vo.RoadVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -32,6 +33,12 @@ public class RoadController {
 
     public RoadController(IRoadService roadServiceImpl) {
         this.roadServiceImpl = roadServiceImpl;
+    }
+
+    @GetMapping("/findRoad")
+    public ResponseResult findRoad(){
+        List<RoadVO> list = roadServiceImpl.findRoad();
+        return ResponseResult.ok(list);
     }
 
     /**

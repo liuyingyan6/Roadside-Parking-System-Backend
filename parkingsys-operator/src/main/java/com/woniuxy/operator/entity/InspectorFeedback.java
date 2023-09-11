@@ -44,7 +44,7 @@ public class InspectorFeedback implements Serializable {
       private Integer state;
 
       @ApiModelProperty("反馈图片")
-      private String imgSrc;
+      private Integer imgId;
 
       @ApiModelProperty("反馈信息")
       private String information;

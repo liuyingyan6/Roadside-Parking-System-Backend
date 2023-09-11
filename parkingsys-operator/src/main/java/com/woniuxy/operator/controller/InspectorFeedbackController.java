@@ -5,7 +5,9 @@ import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.dto.InformationDTO;
 import com.woniuxy.operator.dto.InspectorDTO;
 import com.woniuxy.operator.pojos.ResponseResult;
+import com.woniuxy.operator.vo.InspectorFeedbackDetailVO;
 import com.woniuxy.operator.vo.InspectorFeedbackVO;
+import com.woniuxy.operator.vo.PageVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -29,6 +31,15 @@ public class InspectorFeedbackController {
 
     public InspectorFeedbackController(IInspectorFeedbackService inspectorFeedbackServiceImpl){
         this.inspectorFeedbackServiceImpl = inspectorFeedbackServiceImpl;
+    }
+
+
+    @GetMapping("/inspectorFeedbackList")
+    public ResponseResult getDetail(Integer feedbackId){
+        System.out.println("feedbackId=========="+feedbackId);
+        System.out.println("getClass=========="+feedbackId.getClass());
+        InspectorFeedbackDetailVO detailVO = inspectorFeedbackServiceImpl.findDetail(feedbackId);
+        return ResponseResult.ok(detailVO);
     }
 
     @PostMapping("/findPage/{pageNum}/{pageSize}")

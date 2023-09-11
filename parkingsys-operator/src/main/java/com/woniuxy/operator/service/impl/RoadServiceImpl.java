@@ -11,9 +11,11 @@ import com.woniuxy.operator.mapper.RoadMapper;
 import com.woniuxy.operator.service.IRoadService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.woniuxy.operator.vo.PageVO;
+import com.woniuxy.operator.vo.RoadVO;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class RoadServiceImpl extends ServiceImpl<RoadMapper, Road> implements IRoadService {
@@ -46,5 +48,12 @@ public class RoadServiceImpl extends ServiceImpl<RoadMapper, Road> implements IR
         Road road = BeanUtil.copyProperties(roadDTO, Road.class);
         road.setCreateTime(new Date());
         roadMapper.insert(road);
+    }
+
+    @Override
+    public List<RoadVO> findRoad() {
+
+        List<RoadVO> roads = roadMapper.selectRoad();
+        return roads;
     }
 }

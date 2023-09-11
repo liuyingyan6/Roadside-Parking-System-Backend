@@ -1,5 +1,6 @@
 package com.woniuxy.operator.mapper;
 import com.woniuxy.operator.dto.InspectorDTO;
+import com.woniuxy.operator.vo.InspectorFeedbackDetailVO;
 import com.woniuxy.operator.vo.InspectorFeedbackVO;
 import org.apache.ibatis.annotations.Mapper;
 import com.woniuxy.operator.entity.InspectorFeedback;
@@ -20,4 +21,6 @@ import java.util.List;
 public interface InspectorFeedbackMapper extends BaseMapper<InspectorFeedback> {
 
     List<InspectorFeedbackVO> findPage(@Param("inspectorDTO") InspectorDTO inspectorDTO);
+
+    InspectorFeedbackDetailVO findDetail(Integer feedbackId);
 }

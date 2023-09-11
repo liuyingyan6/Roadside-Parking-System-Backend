@@ -32,4 +32,26 @@
             </if>
         </where>
     </select>
+
+
+    <select id="findDetail" resultType="com.woniuxy.operator.vo.InspectorFeedbackDetailVO">
+        SELECT
+            f.feedback_id,
+            i.name inspector_name,
+            p.magnetometer_id,
+            f.information,
+            f.state,
+            i.phone inspector_phone,
+            p.name parking_name,
+            GROUP_CONCAT(img.img_url) AS img_urls,
+            f.result_information
+        FROM
+            inspector_feedback f
+                LEFT JOIN inspector i ON f.inspector_id = i.id
+                LEFT JOIN parking p ON f.parking_id = p.id
+                LEFT JOIN feedback_img img ON f.feedback_id = img.inspector_feedback_id
+        WHERE f.feedback_id = #{feedbackId}
+        GROUP BY
+            f.feedback_id
+    </select>
 </mapper>

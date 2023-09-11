@@ -12,6 +12,7 @@ import com.woniuxy.operator.entity.InspectorFeedback;
 import com.woniuxy.operator.mapper.InspectorFeedbackMapper;
 import com.woniuxy.operator.service.IInspectorFeedbackService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.woniuxy.operator.vo.InspectorFeedbackDetailVO;
 import com.woniuxy.operator.vo.InspectorFeedbackVO;
 import org.springframework.stereotype.Service;
 
@@ -36,6 +37,12 @@ public class InspectorFeedbackServiceImpl extends ServiceImpl<InspectorFeedbackM
     }
 
     @Override
+    public InspectorFeedbackDetailVO findDetail(Integer feedbackId) {
+        InspectorFeedbackDetailVO detailVO = inspectorFeedbackMapper.findDetail(feedbackId);
+        return detailVO;
+    }
+
+    @Override
     public PageInfo<InspectorFeedbackVO> findPage(Integer pageNum, Integer pageSize, InspectorDTO inspectorDTO) {
         PageHelper.startPage(pageNum,pageSize);
         List<InspectorFeedbackVO> list = inspectorFeedbackMapper.findPage(inspectorDTO);
@@ -48,11 +55,6 @@ public class InspectorFeedbackServiceImpl extends ServiceImpl<InspectorFeedbackM
         InspectorFeedback inspectorFeedback = inspectorFeedbackMapper.selectOne(Wrappers.lambdaQuery(InspectorFeedback.class)
                 .eq(InspectorFeedback::getFeedbackId, fId));
 
-        // // 根据feedbackId查询符合条件的记录
-        // LambdaQueryWrapper<InspectorFeedback> queryWrapper = Wrappers.lambdaQuery();
-        // queryWrapper.eq(InspectorFeedback::getFeedbackId, feedbackId);
-        // InspectorFeedback feedback = this.getOne(queryWrapper);
-
         // 如果查询结果不为空，则将反馈信息添加到记录中
         if (inspectorFeedback != null) {
             inspectorFeedback.setResultInformation(information);
@@ -60,4 +62,5 @@ public class InspectorFeedbackServiceImpl extends ServiceImpl<InspectorFeedbackM
             this.updateById(inspectorFeedback);
         }
     }
+
 }
