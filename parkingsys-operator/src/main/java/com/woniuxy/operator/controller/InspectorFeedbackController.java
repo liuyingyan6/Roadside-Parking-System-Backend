@@ -33,6 +33,7 @@ public class InspectorFeedbackController {
         System.out.println("feedbackId=========="+feedbackId);
         System.out.println("getClass=========="+feedbackId.getClass());
         InspectorFeedbackDetailVO detailVO = inspectorFeedbackServiceImpl.findDetail(feedbackId);
+        System.out.println("detailVO==============="+detailVO);
         return ResponseResult.ok(detailVO);
     }
 

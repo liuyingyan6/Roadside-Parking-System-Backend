@@ -10,6 +10,7 @@ import com.woniuxy.operator.vo.ClockInVO;
 import java.util.List;
 import com.woniuxy.operator.vo.ClockInVO;
 import com.woniuxy.operator.vo.OrderVO;
+import com.woniuxy.operator.vo.PageVO;
 
 /**
  * <p>
@@ -23,5 +24,5 @@ public interface IClockInService extends IService<ClockIn> {
     List<ClockIn> findByInspetorId(String inspectorId, String month);
 
     ClockInVO findByInspectorIdCount(String inspectorId, String month);
-    PageInfo<ClockInVO> findPage(Integer pageNum, Integer pageSize, ClockInDTO clockInDTO);
+    PageVO<ClockInVO> findPage(Integer pageNum, Integer pageSize, ClockInDTO clockInDTO);
 }

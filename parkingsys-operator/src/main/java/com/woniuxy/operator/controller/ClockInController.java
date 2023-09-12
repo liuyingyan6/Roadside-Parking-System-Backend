@@ -1,8 +1,10 @@
 package com.woniuxy.operator.controller;
 
 import com.github.pagehelper.PageInfo;
+import com.woniuxy.operator.dto.ClockInDTO;
 import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.vo.ClockInVO;
+import com.woniuxy.operator.vo.PageVO;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,12 +32,12 @@ public class ClockInController {
         this.clockInServiceImpl = clockInServiceImpl;
     }
 
-    @GetMapping("/page")
-    public ResponseResult page(@Param("pageNum") Integer pageNum,
-                               @Param("pageSize") Integer pageSize,
-                               @Param("orderDto") ClockInDTO clockInDTO) {
+    @PostMapping("/page/{pageNum}/{pageSize}")
+    public ResponseResult page(@PathVariable("pageNum") Integer pageNum,
+                               @PathVariable("pageSize") Integer pageSize,
+                               @RequestBody ClockInDTO clockInDTO) {
         //封装分页请求对象
-        PageInfo<ClockInVO> pageVO = clockInServiceImpl.findPage(pageNum, pageSize, clockInDTO);
+        PageVO<ClockInVO> pageVO = clockInServiceImpl.findPage(pageNum, pageSize, clockInDTO);
         return ResponseResult.ok(pageVO);
     }
 
