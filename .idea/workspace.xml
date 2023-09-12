@@ -4,39 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0391134f-6000-462b-a660-cd6b4ba97d31" name="Changes" comment="0912/17:10后端">
-      <change afterPath="$PROJECT_DIR$/parking-common/target/classes/com/woniuxy/common/ResponseResult.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parking-common/target/classes/com/woniuxy/common/handler/Asserts.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parking-common/target/classes/com/woniuxy/common/handler/BusinessEnum.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parking-common/target/classes/com/woniuxy/common/handler/BusinessException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parking-common/target/classes/com/woniuxy/common/handler/GlobalExceptionHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parking-common/target/classes/com/woniuxy/common/handler/IErrorCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/ManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/ManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/handler/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/handler/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/IOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/IOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/ManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/ManagerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/OrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/ParkingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/ParkingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/handler/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/handler/GlobalExceptionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/mapper/ParkingMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/mapper/ParkingMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/IOrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/IOrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/IParkingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/IParkingService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/OrderServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/ParkingServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/ParkingServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/mapper/ParkingMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/mapper/ParkingMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/parkingsys-operator-1.0-SNAPSHOT.jar" beforeDir="false" />
-    </list>
+    <list default="true" id="0391134f-6000-462b-a660-cd6b4ba97d31" name="Changes" comment="0912/20:41后端" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -175,7 +143,7 @@
       <workItem from="1694506388273" duration="446000" />
       <workItem from="1694506843897" duration="1985000" />
       <workItem from="1694508857035" duration="1584000" />
-      <workItem from="1694510490528" duration="8484000" />
+      <workItem from="1694510490528" duration="8859000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <created>1694506441716</created>
@@ -198,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694509866848</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="0912/20:41后端">
+      <created>1694522517300</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1694522517300</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,6 +194,7 @@
     <MESSAGE value="Changes" />
     <MESSAGE value="0912/16:49后端" />
     <MESSAGE value="0912/17:10后端" />
-    <option name="LAST_COMMIT_MESSAGE" value="0912/17:10后端" />
+    <MESSAGE value="0912/20:41后端" />
+    <option name="LAST_COMMIT_MESSAGE" value="0912/20:41后端" />
   </component>
 </project>
