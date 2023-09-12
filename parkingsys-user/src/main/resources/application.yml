@@ -1,6 +1,6 @@
 server:
   port: 9091
-  host: localhost
+  host: 172.16.54.133
 spring:
   datasource:
     druid:
@@ -36,6 +36,16 @@ spring:
     port: 6379
     database: 0
     password: philredis
+
+  rabbitmq:
+    host: ${server.host}
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: parkingsys #指定虚拟主机
+    publisherConfirmType: correlated #确认消息已发送至交换机
+    publisherReturns: true #确认消息已发送至队列
+
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher

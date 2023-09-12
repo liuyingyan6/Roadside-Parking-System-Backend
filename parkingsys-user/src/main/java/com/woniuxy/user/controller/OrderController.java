@@ -1,10 +1,7 @@
 package com.woniuxy.user.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import java.util.List;
-import com.woniuxy.user.entity.TOrder;
-import com.woniuxy.user.service.ITOrderService;
+import com.woniuxy.user.service.IOrderService;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -17,11 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/t-order")
-public class TOrderController {
+public class OrderController {
 
-    private final ITOrderService tOrderServiceImpl;
+    private final IOrderService tOrderServiceImpl;
 
-    public TOrderController(ITOrderService tOrderServiceImpl){
+    public OrderController(IOrderService tOrderServiceImpl){
         this.tOrderServiceImpl = tOrderServiceImpl;
     }
 

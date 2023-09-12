@@ -1,6 +1,6 @@
 package com.woniuxy.user.mapper;
 import org.apache.ibatis.annotations.Mapper;
-import com.woniuxy.user.entity.TOrder;
+import com.woniuxy.user.entity.Order;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -12,6 +12,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @since 2023-09-12
  */
 @Mapper
-public interface TOrderMapper extends BaseMapper<TOrder> {
+public interface TOrderMapper extends BaseMapper<Order> {
 
 }

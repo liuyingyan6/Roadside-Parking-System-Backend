@@ -1,6 +1,6 @@
 package com.woniuxy.user.service;
 
-import com.woniuxy.user.entity.TOrder;
+import com.woniuxy.user.entity.Order;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author woniuxy
  * @since 2023-09-12
  */
-public interface ITOrderService extends IService<TOrder> {
+public interface IOrderService extends IService<Order> {
 
 }

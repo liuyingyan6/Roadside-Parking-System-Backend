@@ -41,10 +41,4 @@ public class MagnetometerLog implements Serializable {
     @TableField(fill = FieldFill.INSERT)
     private Date createTime;
 
-    @TableField(fill = FieldFill.UPDATE)
-    private Date updateTime;
-
-    private Integer logicDelete;
-
-
 }
