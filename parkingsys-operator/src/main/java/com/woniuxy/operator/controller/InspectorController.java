@@ -1,8 +1,8 @@
 package com.woniuxy.operator.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.dto.InspectorDTO;
-import com.woniuxy.operator.entity.Information;
 import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.vo.InspectorVO;
 import com.woniuxy.operator.vo.PageVO;
@@ -43,8 +43,9 @@ public class InspectorController {
         PageInfo<InspectorVO> page = inspectorServiceImpl.findPage(pageNum, pageSize, inspectorDTO);
         return ResponseResult.ok(page);
     }
+
     @GetMapping("/list")
-    public ResponseResult list(){
+    public ResponseResult list() {
         List<Inspector> list = inspectorServiceImpl.list();
         return ResponseResult.ok(list);
     }

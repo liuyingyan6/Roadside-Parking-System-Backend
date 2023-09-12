@@ -7,6 +7,7 @@ import com.alibaba.excel.support.ExcelTypeEnum;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.woniuxy.operator.annotation.SaveOperationLog;
 import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.vo.MagnetometerVO;
 import com.woniuxy.operator.vo.PageVO;
@@ -46,6 +47,7 @@ public class MagnetometerController {
         this.magnetometerServiceImpl = magnetometerServiceImpl;
     }
 
+    @SaveOperationLog(description = "添加地磁")
     @PostMapping("/add")
     public ResponseResult add(@RequestBody Magnetometer magnetometer) {
         magnetometer.setCreateTime(DateTime.now());
@@ -53,6 +55,7 @@ public class MagnetometerController {
         return ResponseResult.ok();
     }
 
+    @SaveOperationLog(description = "批量添加地磁")
     @SneakyThrows
     @PostMapping("/fileAdd")
     public ResponseResult fileAdd(@RequestPart("file") MultipartFile file) {
@@ -65,6 +68,7 @@ public class MagnetometerController {
         return ResponseResult.ok(saved);
     }
 
+    @SaveOperationLog(description = "删除地磁")
     @DeleteMapping("/delete")
     public ResponseResult delete(Integer id) {
         magnetometerServiceImpl.removeById(id);
@@ -85,6 +89,7 @@ public class MagnetometerController {
         return ResponseResult.ok();
     }
 
+    @SaveOperationLog(description = "修改地磁")
     @PutMapping("/update")
     public ResponseResult update(@RequestBody Magnetometer magnetometer) {
         magnetometer.setUpdateTime(DateTime.now());
@@ -95,7 +100,7 @@ public class MagnetometerController {
     @GetMapping("/export")
     public void export(HttpServletResponse response) throws IOException {
         setExcelRespProp(response, "地磁信息");
-        List<MagnetometerVO> list = magnetometerServiceImpl.getByKeyword("","");
+        List<MagnetometerVO> list = magnetometerServiceImpl.getByKeyword("", "");
         List<String> excludeColumnFiledNames = Arrays.asList("parkingId"); // 指定要忽略的属性名
         EasyExcel.write(response.getOutputStream())
                 .head(MagnetometerVO.class)
@@ -109,7 +114,7 @@ public class MagnetometerController {
     public void exportTemplate(HttpServletResponse response) throws IOException {
         setExcelRespProp(response, "地磁导入模版");
         List<Magnetometer> list = new ArrayList<>(); // 创建一个空的列表作为模板数据
-        List<String> excludeColumnFiledNames = Arrays.asList("createTime","updateTime","logicDelete"); // 指定要忽略的属性名
+        List<String> excludeColumnFiledNames = Arrays.asList("createTime", "updateTime", "logicDelete"); // 指定要忽略的属性名
         EasyExcel.write(response.getOutputStream())
                 .head(Magnetometer.class)
                 .excludeColumnFiledNames(excludeColumnFiledNames) // 指定要忽略的属性

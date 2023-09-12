@@ -12,12 +12,10 @@
         m.update_time,
         m.create_time,
         p.id as parking_id
-        from magnetometer as m,
-        parking as p,
-        road as r
+        from magnetometer as m
+        left join parking as p on m.parking_id = p.id
+        left join road as r on p.road_id = r.id
         <where>
-            m.parking_id = p.id
-            and p.road_id = r.id
             <if test="magnetometerName!=null and magnetometerName!=''">
                 and m.name like concat('%', #{magnetometerName}, '%')
             </if>

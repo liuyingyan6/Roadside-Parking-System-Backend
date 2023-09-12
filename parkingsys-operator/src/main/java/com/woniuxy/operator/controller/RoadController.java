@@ -84,7 +84,7 @@ public class RoadController {
     }
 
     @GetMapping("/list")
-    public ResponseResult list() {
+    public ResponseResult list(){
         return ResponseResult.ok(roadServiceImpl.list());
     }
 }

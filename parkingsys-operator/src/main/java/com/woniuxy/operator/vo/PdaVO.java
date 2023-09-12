@@ -14,7 +14,7 @@ public class PdaVO {
     private String name;
 
     @ExcelProperty("路段名称")
-    private String roadName;
+    private String roadNames;
 
     @ExcelProperty("巡检员名字")
     private String inspectorName;
@@ -23,7 +23,6 @@ public class PdaVO {
     private Integer status;
 
     @ExcelProperty("创建时间")
-    private Date creatTime;
-    private Integer roadId;
+    private Date createTime;
     private Integer inspectorId;
 }

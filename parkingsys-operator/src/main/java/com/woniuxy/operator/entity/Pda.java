@@ -36,9 +36,9 @@ public class Pda implements Serializable {
     @ExcelProperty("设备名称")
     private String name;
 
-    @ApiModelProperty("所属路段id")
-    @ExcelProperty("所属路段id")
-    private Long roadId;
+    @ApiModelProperty("巡检员id")
+    @ExcelProperty("巡检员id")
+    private Long inspectorId;
 
     @ApiModelProperty("设备状态：1-在线，0-离线")
     @ExcelProperty("设备状态：1-在线，0-离线")
