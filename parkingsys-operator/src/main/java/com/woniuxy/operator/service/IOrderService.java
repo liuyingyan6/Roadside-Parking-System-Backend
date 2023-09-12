@@ -29,4 +29,7 @@ public interface IOrderService extends IService<Order> {
     CountOrderVO countOrder(String startTime, String endTime, Integer pageNum, Integer pageSize);
 
     List<RoadOrderVO> getRoadOrderList(Integer roadId);
+
+    void createOrder(String parkingNum,Long carId);
+
 }

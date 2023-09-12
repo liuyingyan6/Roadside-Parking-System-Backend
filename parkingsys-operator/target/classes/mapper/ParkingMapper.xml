@@ -15,10 +15,4 @@
             </if>
         </where>
     </select>
-
-    <select id="getStatus" resultType="Integer">
-        SELECT parking.`status`
-        FROM parking
-        WHERE parking.number=#{parkingNumber}
-    </select>
 </mapper>

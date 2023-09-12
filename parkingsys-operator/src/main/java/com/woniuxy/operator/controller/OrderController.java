@@ -6,13 +6,13 @@ import cn.afterturn.easypoi.excel.entity.ExportParams;
 import cn.hutool.core.convert.NumberWithFormat;
 import cn.hutool.jwt.JWT;
 import cn.hutool.jwt.JWTUtil;
-import com.alibaba.excel.EasyExcel;
-import com.alibaba.excel.support.ExcelTypeEnum;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.dto.OrderDTO;
+import com.woniuxy.operator.entity.User;
 import com.woniuxy.operator.pojos.ResponseResult;
-import com.woniuxy.operator.vo.CarVO;
+import com.woniuxy.operator.service.IUserService;
 import com.woniuxy.operator.vo.CountOrderVO;
 import com.woniuxy.operator.vo.OrderVO;
 import com.woniuxy.operator.vo.RoadOrderVO;
@@ -22,9 +22,8 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.web.bind.annotation.*;
 
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.List;
+import java.util.Objects;
 
 import com.woniuxy.operator.entity.Order;
 import com.woniuxy.operator.service.IOrderService;
@@ -48,8 +47,11 @@ public class OrderController {
 
     private final IOrderService orderServiceImpl;
 
-    public OrderController(IOrderService orderServiceImpl) {
+    private final IUserService userServiceImpl;
+
+    public OrderController(IOrderService orderServiceImpl, IUserService userServiceImpl) {
         this.orderServiceImpl = orderServiceImpl;
+        this.userServiceImpl = userServiceImpl;
     }
 
     // 资金流水
@@ -115,15 +117,17 @@ public class OrderController {
     }
 
     @PostMapping("/createOrder")
-    public ResponseResult createOrder(@RequestHeader("Authorization")String token,String parkingNum){
-        //        从请求头中Authorization拿出token，并且将token前面的bear去掉
-        token= token.replace("Bearer ", "");
-
-//        使用jwt工具将token解析，并拿出userId
-        JWT jwt = JWTUtil.parseToken(token);
-        NumberWithFormat nwf = (NumberWithFormat)jwt.getPayload("id");
-        System.out.println("nwf = " + nwf);
-//        orderServiceImpl.createOrder(parkingNum);
+    public ResponseResult createOrder(@RequestParam Long userId,@RequestParam String parkingNum){
+//        //        从请求头中Authorization拿出token，并且将token前面的bear去掉
+//        token= token.replace("Bearer ", "");
+//
+////        使用jwt工具将token解析，并拿出userId
+//        JWT jwt = JWTUtil.parseToken(token);
+//        NumberWithFormat nwf = (NumberWithFormat)jwt.getPayload("id");
+//
+//        Long id = Long.valueOf(nwf.intValue());
+        Long carId = userServiceImpl.selectById(userId);
+        orderServiceImpl.createOrder(parkingNum,carId);
         return ResponseResult.ok();
 
     }

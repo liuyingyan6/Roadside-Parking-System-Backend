@@ -20,4 +20,6 @@ public interface IUserService extends IService<User> {
     PageVO<UserVO> findPage(Page<User> page, UserDTO userDTO);
 
     Integer updateState(User user);
+
+    Long selectById(Long id);
 }

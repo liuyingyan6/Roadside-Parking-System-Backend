@@ -37,6 +37,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     private final CarMapper carMapper;
     private final OrderMapper orderMapper;
 
+
+
     public UserServiceImpl(UserMapper userMapper, CarMapper carMapper, OrderMapper orderMapper){
         this.userMapper = userMapper;
         this.carMapper = carMapper;
@@ -92,5 +94,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             num=0;
         }
         return num;
+    }
+
+    @Override
+    public Long selectById(Long id) {
+        User user = userMapper.selectById(id);
+        Long carId = user.getCarId();
+        return carId;
     }
 }
