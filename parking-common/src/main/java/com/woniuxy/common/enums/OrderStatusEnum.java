@@ -1,4 +1,4 @@
-package com.woniuxy.operator.enums;
+package com.woniuxy.common.enums;
 
 import lombok.Getter;
 
@@ -12,8 +12,7 @@ public enum OrderStatusEnum {
     ALREADY_PAY(2,"已支付"),
     RETURNING_MONEY(3,"退款中"),
     ALREADY_RETURN(4,"已退款"),
-    OVERTIME_NO_PAY(5,"超时未支付"),
-    IN_PROGRESS(6,"进行中"),;
+    OVERTIME_NO_PAY(5,"超时未支付");
 
 
 

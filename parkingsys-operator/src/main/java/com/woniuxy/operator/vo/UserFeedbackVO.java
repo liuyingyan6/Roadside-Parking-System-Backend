@@ -11,7 +11,10 @@ public class UserFeedbackVO {
     private Long id;
 
     private String userName;
+
+    private String result;
     private String feedbackOdd;
+    private String feedbackText;
 
     private String phone;
 
@@ -22,4 +25,5 @@ public class UserFeedbackVO {
     private Date createTime;
 
     private Date updateTime;
+
 }

@@ -1,17 +1,11 @@
 package com.woniuxy.operator.controller;
 
-import cn.hutool.json.JSONUtil;
 import com.github.pagehelper.PageInfo;
-import com.woniuxy.operator.dto.InformationDTO;
 import com.woniuxy.operator.dto.InspectorDTO;
 import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.vo.InspectorFeedbackDetailVO;
 import com.woniuxy.operator.vo.InspectorFeedbackVO;
-import com.woniuxy.operator.vo.PageVO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import java.util.List;
-import com.woniuxy.operator.entity.InspectorFeedback;
 import com.woniuxy.operator.service.IInspectorFeedbackService;
 import org.springframework.web.bind.annotation.RestController;
 

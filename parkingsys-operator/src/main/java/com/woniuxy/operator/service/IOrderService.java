@@ -31,6 +31,12 @@ public interface IOrderService extends IService<Order> {
 
     OrderConversionVO getOrderConversionVOByKeyword(String roadId, String startDate, String endDate);
 
+    OrderConversionVO orderStatusCount(String inspectorId);
+
+    PageInfo<OrderVO> findAllByInspectorId(Integer pageNum, Integer pageSize, String inspectorId, OrderDTO orderDto);
+
+    PageInfo<OrderVO> findAll2ByInspectorId(Integer pageNum, Integer pageSize, String inspectorId, OrderDTO orderDto);
+
     List<PayDateVO> payDate(String startTime, String endTime);
 
     PayCountVO payCount(String startTime, String endTime);

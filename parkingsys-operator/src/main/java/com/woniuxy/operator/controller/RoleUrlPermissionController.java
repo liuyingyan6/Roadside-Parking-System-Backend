@@ -3,7 +3,6 @@ package com.woniuxy.operator.controller;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.woniuxy.operator.dto.AuthorizationDTO;
 import com.woniuxy.operator.pojos.ResponseResult;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.stream.Collectors;

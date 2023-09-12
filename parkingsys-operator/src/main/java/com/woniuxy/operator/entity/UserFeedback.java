@@ -34,12 +34,18 @@ public class UserFeedback implements Serializable {
       @ApiModelProperty("反馈用户id")
       private Long userId;
 
-      @ApiModelProperty("处理状态")
+      @ApiModelProperty("处理状态( 1 已处理  0 未处理)")
       private Integer state;
-
       @ApiModelProperty("反馈图片")
       private String imgSrc;
-
+      @ApiModelProperty("反馈单号")
+      private String feedbackOdd;
+      @ApiModelProperty("反馈内容")
+      private String feedbackText;
+      @ApiModelProperty("处理结果")
+      private String result;
+      @ApiModelProperty("图片数量")
+      private String imgCount;
       @ApiModelProperty("创建时间")
       @TableField(fill = FieldFill.INSERT)
       private Date createTime;

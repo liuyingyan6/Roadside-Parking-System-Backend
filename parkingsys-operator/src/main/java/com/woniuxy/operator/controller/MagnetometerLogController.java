@@ -9,11 +9,7 @@ import com.woniuxy.operator.entity.Parking;
 import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.service.IMagnetometerService;
 import com.woniuxy.operator.service.IParkingService;
-import com.woniuxy.operator.vo.PageVO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 import com.woniuxy.operator.entity.MagnetometerLog;
 import com.woniuxy.operator.service.IMagnetometerLogService;

@@ -8,9 +8,16 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-
+/**
+ * <p>
+ *  Mapper 接口
+ * </p>
+ *
+ * @author woniuxy
+ * @since 2023-09-05
+ */
 @Mapper
 public interface UserFeedbackMapper extends BaseMapper<UserFeedback> {
-
+    //分页
     List<UserFeedbackVO> findPage(@Param("userDTO") UserDTO userDTO);
 }

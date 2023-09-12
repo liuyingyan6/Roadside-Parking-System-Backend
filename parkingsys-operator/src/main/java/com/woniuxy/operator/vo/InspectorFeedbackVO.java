@@ -9,7 +9,6 @@ import java.util.Date;
 @Data
 public class InspectorFeedbackVO {
 
-    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     private Integer feedbackId;
