@@ -18,6 +18,7 @@ public class InspectorVO {
 
     private String name;
     private String phone;
+    private String url;
 
     private Integer state;
     private Long chargeId;

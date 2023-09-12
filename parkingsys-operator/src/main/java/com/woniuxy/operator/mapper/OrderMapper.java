@@ -2,6 +2,7 @@ package com.woniuxy.operator.mapper;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.github.yulichang.base.MPJBaseMapper;
 import com.woniuxy.operator.dto.OrderDTO;
 import com.woniuxy.operator.vo.OrderConversionVO;
 import com.woniuxy.operator.vo.OrderVO;
@@ -23,7 +24,7 @@ import java.util.List;
  * @since 2023-09-05
  */
 @Mapper
-public interface OrderMapper extends BaseMapper<Order> {
+public interface OrderMapper extends MPJBaseMapper<Order> {
 
     List<OrderVO> findAll();
 

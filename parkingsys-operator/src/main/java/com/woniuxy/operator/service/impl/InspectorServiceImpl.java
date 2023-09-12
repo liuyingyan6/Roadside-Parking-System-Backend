@@ -14,8 +14,10 @@ import com.woniuxy.operator.mapper.InspectorRoadMapper;
 import com.woniuxy.operator.mapper.OrderMapper;
 import com.woniuxy.operator.service.IInspectorService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.woniuxy.operator.service.IOrderService;
 import com.woniuxy.operator.vo.InspectorRoadVO;
 import com.woniuxy.operator.vo.InspectorVO;
+import com.woniuxy.operator.vo.OrderConversionVO;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -37,13 +39,13 @@ public class InspectorServiceImpl extends ServiceImpl<InspectorMapper, Inspector
 
     private final InspectorMapper inspectorMapper;
     private final InspectorRoadMapper inspectorRoadMapper;
-    private final OrderMapper orderMapper;
+    private final IOrderService orderServiceImpl;
     private final ChargeMapper chargeMapper;
 
-    public InspectorServiceImpl(InspectorMapper inspectorMapper, InspectorRoadMapper inspectorRoadMapper, OrderMapper orderMapper, ChargeMapper chargeMapper) {
+    public InspectorServiceImpl(InspectorMapper inspectorMapper, InspectorRoadMapper inspectorRoadMapper, IOrderService orderServiceImpl, ChargeMapper chargeMapper) {
         this.inspectorMapper = inspectorMapper;
         this.inspectorRoadMapper = inspectorRoadMapper;
-        this.orderMapper = orderMapper;
+        this.orderServiceImpl = orderServiceImpl;
         this.chargeMapper = chargeMapper;
     }
 
@@ -56,19 +58,11 @@ public class InspectorServiceImpl extends ServiceImpl<InspectorMapper, Inspector
         page.stream().forEach(e -> {
             Integer code = OrderStatusEnum.ALREADY_PAY.getCode();
 
-            Long ICount = orderMapper.selectCount(Wrappers.lambdaQuery(Order.class)
-                    .eq(Objects.nonNull(e.getId()), Order::getInspectorId, e.getId()));
-            Long IFailedCount = orderMapper.selectCount(Wrappers.lambdaQuery(Order.class)
-                    .eq(Objects.nonNull(e.getId()), Order::getInspectorId, e.getId())
-                    .eq(Objects.nonNull(code), Order::getStatus, code));
-            if (ICount == 0L || IFailedCount == 0L) {
-                e.setOrderPercentage("0%");
-            } else {
-                BigDecimal divide = BigDecimal.valueOf(IFailedCount * 100).divide(BigDecimal.valueOf(ICount), 2, RoundingMode.HALF_UP);
-                e.setOrderPercentage(divide + "%");
+            OrderConversionVO orderConversionVO = orderServiceImpl.orderStatusCount(e.getId());
 
-            }
-
+            BigDecimal divide = BigDecimal.valueOf(orderConversionVO.getPaidOrderCount() * 100)
+                    .divide(BigDecimal.valueOf(orderConversionVO.getTotalOrderCount()), 2, RoundingMode.HALF_UP);
+            e.setOrderPercentage(divide + "%");
             Charge charge = chargeMapper.selectById(e.getChargeId());
             e.setTimePeriod(charge.getTimePeriod());
 

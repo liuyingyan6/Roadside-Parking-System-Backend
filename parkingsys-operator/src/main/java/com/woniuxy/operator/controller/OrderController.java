@@ -97,15 +97,45 @@ public class OrderController {
 
     @GetMapping("/getRevenueInfoByKeyword")
     public ResponseResult getRevenueInfoByKeyword(@RequestParam(required = false) String roadId,
-                                         @RequestParam(required = false) String startDate,
-                                         @RequestParam(required = false) String endDate) {
+                                                  @RequestParam(required = false) String startDate,
+                                                  @RequestParam(required = false) String endDate) {
         List<RevenueVO> list = orderServiceImpl.getRevenueInfo(roadId, startDate, endDate);
         return ResponseResult.ok(list);
     }
+
     @GetMapping("/getOrderConversionVOByKeyword")
     public ResponseResult getOrderConversionVOByKeyword(@RequestParam(required = false) String roadId,
                                                         @RequestParam(required = false) String startDate,
                                                         @RequestParam(required = false) String endDate) {
         return ResponseResult.ok(orderServiceImpl.getOrderConversionVOByKeyword(roadId, startDate, endDate));
+    }
+
+
+    @GetMapping("/orderStatusCount/{inspectorId}")
+    public ResponseResult orderStatusCount(@PathVariable("inspectorId") String inspectorId) {
+        OrderConversionVO orderConversionVO = orderServiceImpl.orderStatusCount(inspectorId);
+        return ResponseResult.ok(orderConversionVO);
+    }
+
+
+    @PostMapping("/findAllByInspectorId/{pageNum}/{pageSize}/{inspectorId}")
+    public ResponseResult findAllByInspectorId(
+            @PathVariable("pageNum") Integer pageNum,
+            @PathVariable("pageSize") Integer pageSize,
+            @PathVariable("inspectorId") String inspectorId,
+            @RequestBody OrderDTO orderDto) {
+        //封装分页请求对象
+        PageInfo<OrderVO> pageVO = orderServiceImpl.findAllByInspectorId(pageNum,pageSize,inspectorId, orderDto);
+        return ResponseResult.ok(pageVO);
+    }
+    @PostMapping("/findAll2ByInspectorId/{pageNum}/{pageSize}/{inspectorId}")
+    public ResponseResult findAll2ByInspectorId(
+            @PathVariable("pageNum") Integer pageNum,
+            @PathVariable("pageSize") Integer pageSize,
+            @PathVariable("inspectorId") String inspectorId,
+            @RequestBody OrderDTO orderDto) {
+        //封装分页请求对象
+        PageInfo<OrderVO> pageVO = orderServiceImpl.findAll2ByInspectorId(pageNum,pageSize,inspectorId, orderDto);
+        return ResponseResult.ok(pageVO);
     }
 }

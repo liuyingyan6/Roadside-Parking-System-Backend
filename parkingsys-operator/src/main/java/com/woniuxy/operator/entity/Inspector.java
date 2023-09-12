@@ -36,6 +36,8 @@ public class Inspector implements Serializable {
     private String phone;
  @ApiModelProperty("密码")
     private String password;
+ @ApiModelProperty("头像")
+    private String url;
 
 
     @ApiModelProperty("巡检员状态")
