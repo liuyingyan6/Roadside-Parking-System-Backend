@@ -6,7 +6,7 @@
         SELECT
             o.operator_name,
             o.phone,
-            GROUP_CONCAT(r.`name`) AS names,
+            GROUP_CONCAT(r.road_name) AS names,
 	        o.area,
 	        o.state
         FROM
