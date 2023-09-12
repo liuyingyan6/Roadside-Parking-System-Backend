@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f61c6637-cc57-4da6-b8eb-7da3e9e74998" name="Changes" comment="" />
+    <list default="true" id="f61c6637-cc57-4da6-b8eb-7da3e9e74998" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/resources/mapper/MagnetometerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/resources/mapper/MagnetometerMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/resources/mapper/PdaMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/resources/mapper/PdaMapper.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -144,6 +149,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.CodeGenerator" />
+      <item itemvalue="JUnit.com.woniuxy.operator.vo in parkingsys-operator" />
+      <item itemvalue="Spring Boot.OperatorApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.OperatorApplication" />
@@ -241,5 +251,13 @@
     <MESSAGE value="0912/01:15后端" />
     <MESSAGE value="0912/17:31后端" />
     <option name="LAST_COMMIT_MESSAGE" value="0912/17:31后端" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.woniuxy.operator.vo.InspectorVO" memberName="createTime" />
+        <PinnedItemInfo parentTag="com.sun.proxy.$Proxy117" memberName="h" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
