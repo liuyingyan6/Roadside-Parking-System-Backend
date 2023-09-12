@@ -1,0 +1,180 @@
+Index: parkingsys-operator/src/main/java/com/woniuxy/operator/controller/OrderController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.woniuxy.operator.controller;\r\n\r\n\r\nimport cn.afterturn.easypoi.excel.ExcelExportUtil;\r\nimport cn.afterturn.easypoi.excel.entity.ExportParams;\r\nimport com.alibaba.excel.EasyExcel;\r\nimport com.alibaba.excel.support.ExcelTypeEnum;\r\nimport com.github.pagehelper.PageHelper;\r\nimport com.github.pagehelper.PageInfo;\r\nimport com.woniuxy.operator.dto.OrderDTO;\r\nimport com.woniuxy.operator.pojos.ResponseResult;\r\nimport com.woniuxy.operator.vo.CarVO;\r\nimport com.woniuxy.operator.vo.CountOrderVO;\r\nimport com.woniuxy.operator.vo.OrderVO;\r\nimport com.woniuxy.operator.vo.RoadOrderVO;\r\nimport lombok.SneakyThrows;\r\nimport org.apache.ibatis.annotations.Param;\r\nimport org.apache.poi.ss.usermodel.Workbook;\r\nimport org.springframework.web.bind.annotation.*;\r\n\r\n\r\nimport java.io.UnsupportedEncodingException;\r\nimport java.net.URLEncoder;\r\nimport java.util.List;\r\n\r\nimport com.woniuxy.operator.entity.Order;\r\nimport com.woniuxy.operator.service.IOrderService;\r\nimport org.springframework.web.bind.annotation.RestController;\r\n\r\nimport javax.servlet.ServletOutputStream;\r\nimport javax.servlet.http.HttpServletResponse;\r\n\r\n/**\r\n * <p>\r\n * 前端控制器\r\n * </p>\r\n * 订单表\r\n *\r\n * @author woniuxy\r\n * @since 2023-09-05\r\n */\r\n@RestController\r\n@RequestMapping(\"/order\")\r\npublic class OrderController {\r\n\r\n    private final IOrderService orderServiceImpl;\r\n\r\n    public OrderController(IOrderService orderServiceImpl) {\r\n        this.orderServiceImpl = orderServiceImpl;\r\n    }\r\n\r\n    // 资金流水\r\n    @GetMapping(\"/countOrder\")\r\n    public ResponseResult countOrder(@RequestParam(\"startTime\") String startTime,\r\n                                     @RequestParam(\"endTime\") String endTime,\r\n                                     @RequestParam(\"pageNum\") Integer pageNum,\r\n                                     @RequestParam(\"pageSize\") Integer pageSize){\r\n        CountOrderVO countOrderVO = orderServiceImpl.countOrder(startTime,endTime,pageNum,pageSize);\r\n        return ResponseResult.ok(countOrderVO);\r\n    }\r\n\r\n    @GetMapping(\"/page\")\r\n    public ResponseResult page(@Param(\"pageNum\") Integer pageNum,\r\n                               @Param(\"pageSize\") Integer pageSize,\r\n                               @Param(\"orderDto\") OrderDTO orderDto) {\r\n        //封装分页请求对象\r\n        PageInfo<OrderVO> pageVO = orderServiceImpl.findPage(pageNum, pageSize, orderDto);\r\n        return ResponseResult.ok(pageVO);\r\n    }\r\n\r\n    @PostMapping(\"/add\")\r\n    public ResponseResult add(@RequestBody Order order) {\r\n        orderServiceImpl.save(order);\r\n        return ResponseResult.ok(\"添加成功\");\r\n    }\r\n\r\n    /**\r\n     * 导出Excel\r\n     * 参数使用响应对象\r\n     */\r\n    @SneakyThrows\r\n    @GetMapping(\"/exportExcel\")\r\n    public void exportExcel(HttpServletResponse response) {\r\n        //1.设置响应编码\r\n        response.setCharacterEncoding(\"utf-8\");\r\n        //2.设置响应头 content-disposition：告诉浏览器如何处理当前的资源，是打开inline还是下载attachment\r\n        response.setHeader(\"content-disposition\", \"attachment;filename=order.xlsx\");\r\n        //3.调用业务层获取所有需要导出的数据\r\n        List<OrderVO> orderVOS = orderServiceImpl.findAll();\r\n        //4.创建导出参数。参数：第一行标题，Sheet工作表名称\r\n        ExportParams exportParams = new ExportParams(\"订单列表\", \"订单数据\");\r\n        //5.使用导出工具类导出，参数：导出参数，实体类类型，输出数据\r\n        Workbook workbook = ExcelExportUtil.exportExcel(exportParams, OrderVO.class, orderVOS);\r\n        //6.将Excel文件写到响应的输出流中\r\n        ServletOutputStream outputStream = response.getOutputStream();\r\n        workbook.write(outputStream);\r\n    }\r\n\r\n\r\n    @GetMapping(\"findAll\")\r\n    public ResponseResult findAll() {\r\n        List<OrderVO> all = orderServiceImpl.findAll();\r\n        return ResponseResult.ok(all);\r\n    }\r\n\r\n    @GetMapping(\"/getRoadOrderList\")\r\n    public ResponseResult getRoadOrderList(Integer pageSize,Integer pageNum,Integer roadId){\r\n        PageHelper.startPage(pageNum,pageSize);\r\n       List<RoadOrderVO> list= orderServiceImpl.getRoadOrderList(roadId);\r\n        PageInfo<RoadOrderVO> pageInfo = new PageInfo<>(list);\r\n       return ResponseResult.ok(pageInfo);\r\n    }\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/OrderController.java b/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/OrderController.java
+--- a/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/OrderController.java	
++++ b/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/OrderController.java	
+@@ -3,6 +3,9 @@
+ 
+ import cn.afterturn.easypoi.excel.ExcelExportUtil;
+ import cn.afterturn.easypoi.excel.entity.ExportParams;
++import cn.hutool.core.convert.NumberWithFormat;
++import cn.hutool.jwt.JWT;
++import cn.hutool.jwt.JWTUtil;
+ import com.alibaba.excel.EasyExcel;
+ import com.alibaba.excel.support.ExcelTypeEnum;
+ import com.github.pagehelper.PageHelper;
+@@ -111,6 +114,21 @@
+        return ResponseResult.ok(pageInfo);
+     }
+ 
++    @PostMapping("/createOrder")
++    public ResponseResult createOrder(@RequestHeader("accessToken")String token,@RequestHeader("id")String id,String parkingNum){
++        //        从请求头中Authorization拿出token，并且将token前面的bear去掉
++        token= token.replace("Bearer ", "");
++
++//        使用jwt工具将token解析，并拿出userId
++        JWT jwt = JWTUtil.parseToken(token);
++        NumberWithFormat nwf = (NumberWithFormat)jwt.getPayload("id");
++        System.out.println("nwf = " + nwf);
++//        orderServiceImpl.createOrder(parkingNum);
++        return ResponseResult.ok();
++
++    }
++
++
+ 
+ 
+ }
+Index: parkingsys-operator/src/main/java/com/woniuxy/operator/service/IParkingService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.woniuxy.operator.service;\r\n\r\nimport com.woniuxy.operator.dto.ParkingDTO;\r\nimport com.woniuxy.operator.dto.RoadDTO;\r\nimport com.woniuxy.operator.entity.Parking;\r\nimport com.baomidou.mybatisplus.extension.service.IService;\r\nimport com.woniuxy.operator.vo.PageVO;\r\n\r\nimport java.util.List;\r\n\r\n\r\npublic interface IParkingService extends IService<Parking> {\r\n    int parkingCount(Integer id);\r\n    PageVO<ParkingDTO> findByPage(Integer current, Integer size, ParkingDTO parkingDTO);\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/parkingsys-operator/src/main/java/com/woniuxy/operator/service/IParkingService.java b/parkingsys-operator/src/main/java/com/woniuxy/operator/service/IParkingService.java
+--- a/parkingsys-operator/src/main/java/com/woniuxy/operator/service/IParkingService.java	
++++ b/parkingsys-operator/src/main/java/com/woniuxy/operator/service/IParkingService.java	
+@@ -12,4 +12,6 @@
+ public interface IParkingService extends IService<Parking> {
+     int parkingCount(Integer id);
+     PageVO<ParkingDTO> findByPage(Integer current, Integer size, ParkingDTO parkingDTO);
++
++    Integer getStatus(String parkingNum);
+ }
+Index: parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/OrderServiceImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.woniuxy.operator.service.impl;\r\n\r\n\r\nimport com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;\r\nimport com.baomidou.mybatisplus.core.metadata.IPage;\r\nimport com.baomidou.mybatisplus.extension.plugins.pagination.Page;\r\nimport com.github.pagehelper.PageHelper;\r\nimport com.github.pagehelper.PageInfo;\r\nimport com.woniuxy.operator.dto.OrderDTO;\r\nimport com.woniuxy.operator.entity.Order;\r\nimport com.woniuxy.operator.mapper.OrderMapper;\r\nimport com.woniuxy.operator.service.IOrderService;\r\nimport com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;\r\n\r\nimport com.woniuxy.operator.vo.CountOrderVO;\r\nimport com.woniuxy.operator.vo.OrderVO;\r\nimport com.woniuxy.operator.vo.RoadOrderVO;\r\nimport org.springframework.stereotype.Service;\r\n\r\nimport java.math.BigDecimal;\r\nimport java.util.List;\r\n\r\n\r\n/**\r\n * <p>\r\n * 服务实现类\r\n * </p>\r\n *\r\n * @author woniuxy\r\n * @since 2023-09-05\r\n */\r\n@Service\r\npublic class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements IOrderService {\r\n\r\n    private final OrderMapper orderMapper;\r\n\r\n    public OrderServiceImpl(OrderMapper orderMapper) {\r\n        this.orderMapper = orderMapper;\r\n    }\r\n\r\n\r\n    @Override\r\n    public List<OrderVO> findAll() {\r\n\r\n        return orderMapper.findAll();\r\n    }\r\n\r\n    @Override\r\n    public PageInfo<OrderVO> findPage(Integer pageNum, Integer pageSize, OrderDTO orderDto) {\r\n        PageHelper.startPage(pageNum, pageSize);\r\n\r\n        List<OrderVO> orderVOList = orderMapper.findAllPage(orderDto);\r\n\r\n        return new PageInfo<>(orderVOList);\r\n    }\r\n\r\n    @Override\r\n    public CountOrderVO countOrder(String startTime, String endTime,Integer pageNum, Integer pageSize) {\r\n\r\n        CountOrderVO countOrderVO = new CountOrderVO();\r\n\r\n        Page<Order> page = new Page<>(pageNum,pageSize);\r\n\r\n        // 分页查询时间范围内的所有订单\r\n        IPage<Order> orderPage = orderMapper.selectPage(page, new QueryWrapper<Order>()\r\n                .ge(\"create_time\", startTime)\r\n                .lt(\"create_time\", endTime));\r\n\r\n        List<Order> orders = orderPage.getRecords();\r\n        countOrderVO.setOrderList(orders);\r\n\r\n        BigDecimal totalAmount = BigDecimal.ZERO; // 总入账\r\n        BigDecimal refundAmount = BigDecimal.ZERO; // 总出账\r\n\r\n        for (Order order : orders) {\r\n            if (order.getStatus() == 0){\r\n                totalAmount = totalAmount.add(order.getOrderAmount()); // 累加满足条件的订单金额\r\n            }\r\n            if (order.getStatus() == 3){\r\n                refundAmount = refundAmount.add(order.getOrderAmount()); // 累加满足条件的订单金额\r\n            }\r\n        }\r\n\r\n        countOrderVO.setTotalAmount(totalAmount); // 将总入账set进countOrderVO中\r\n        countOrderVO.setRefundAmount(refundAmount); // 将总出账set进countOrderVO中\r\n\r\n        return countOrderVO;\r\n    }\r\n\r\n    @Override\r\n    public List<RoadOrderVO> getRoadOrderList(Integer roadId) {\r\n        List<RoadOrderVO> list= orderMapper.getRoadOrderList(roadId);\r\n        list.forEach(e->{\r\n            BigDecimal payAmount = orderMapper.getPayAmount(e.getOrderDate(),roadId);\r\n            e.setPayAmount(payAmount);\r\n            RoadOrderVO roadOrderVO = orderMapper.getRefund(e.getOrderDate(),roadId);\r\n            e.setRefundCount(roadOrderVO.getRefundCount());\r\n            e.setRefundAmount(roadOrderVO.getRefundAmount());\r\n            RoadOrderVO abnormal = orderMapper.getAbnormal(e.getOrderDate(),roadId);\r\n            e.setAbnormalCount(abnormal.getAbnormalCount());\r\n            e.setAbnormalAmount(abnormal.getAbnormalAmount());\r\n            Integer payCount = orderMapper.getPayCount(e.getOrderDate(), roadId);\r\n            e.setPayCount(payCount);\r\n        });\r\n        return list;\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/OrderServiceImpl.java b/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/OrderServiceImpl.java
+--- a/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/OrderServiceImpl.java	
++++ b/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/OrderServiceImpl.java	
+@@ -105,5 +105,10 @@
+         return list;
+     }
+ 
++    @Override
++    public void createOrder(String parkingNum) {
++
++    }
++
+ 
+ }
+Index: parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/ParkingServiceImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.woniuxy.operator.service.impl;\r\n\r\nimport com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;\r\nimport com.baomidou.mybatisplus.core.metadata.IPage;\r\nimport com.baomidou.mybatisplus.extension.plugins.pagination.Page;\r\nimport com.woniuxy.operator.dto.ParkingDTO;\r\nimport com.woniuxy.operator.entity.Parking;\r\nimport com.woniuxy.operator.mapper.ParkingMapper;\r\nimport com.woniuxy.operator.service.IParkingService;\r\nimport com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;\r\nimport com.woniuxy.operator.vo.PageVO;\r\nimport org.springframework.stereotype.Service;\r\n\r\n\r\n@Service\r\npublic class ParkingServiceImpl extends ServiceImpl<ParkingMapper, Parking> implements IParkingService {\r\n\r\n    private final ParkingMapper parkingMapper;\r\n\r\n    public ParkingServiceImpl(ParkingMapper parkingMapper){\r\n        this.parkingMapper = parkingMapper;\r\n    }\r\n\r\n    /**\r\n     * 统计车位数\r\n     */\r\n    @Override\r\n    public int parkingCount(Integer id) {\r\n        QueryWrapper<Parking> queryWrapper = new QueryWrapper<>();\r\n        queryWrapper.eq(\"id\",id);\r\n        int count = parkingMapper.selectCount(queryWrapper).intValue();\r\n        return count;\r\n    }\r\n\r\n    @Override\r\n    public PageVO<ParkingDTO> findByPage(Integer current, Integer size, ParkingDTO parkingDTO) {\r\n        IPage iPage=new Page<>(current,size);\r\n\r\n        String name = parkingDTO.getName();\r\n\r\n        IPage<ParkingDTO> page = baseMapper.selectParkDTOPage(iPage, name);\r\n\r\n        return PageVO.<ParkingDTO>builder()\r\n                .records(page.getRecords())\r\n                .total(page.getTotal())\r\n                .build();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/ParkingServiceImpl.java b/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/ParkingServiceImpl.java
+--- a/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/ParkingServiceImpl.java	
++++ b/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/ParkingServiceImpl.java	
+@@ -45,4 +45,10 @@
+                 .total(page.getTotal())
+                 .build();
+     }
++
++    @Override
++    public Integer getStatus(String parkingNum) {
++       Integer status =  parkingMapper.getStatus(parkingNum);
++        return status;
++    }
+ }
+Index: parkingsys-operator/src/main/java/com/woniuxy/operator/mapper/ParkingMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.woniuxy.operator.mapper;\r\nimport com.baomidou.mybatisplus.core.metadata.IPage;\r\nimport com.woniuxy.operator.dto.ParkingDTO;\r\nimport com.woniuxy.operator.dto.RoadDTO;\r\nimport org.apache.ibatis.annotations.Mapper;\r\nimport com.woniuxy.operator.entity.Parking;\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport org.apache.ibatis.annotations.Param;\r\n\r\n@Mapper\r\npublic interface ParkingMapper extends BaseMapper<Parking> {\r\n    IPage<ParkingDTO> selectParkDTOPage(@Param(\"iPage\")IPage iPage,\r\n                                        @Param(\"name\") String name);\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/parkingsys-operator/src/main/java/com/woniuxy/operator/mapper/ParkingMapper.java b/parkingsys-operator/src/main/java/com/woniuxy/operator/mapper/ParkingMapper.java
+--- a/parkingsys-operator/src/main/java/com/woniuxy/operator/mapper/ParkingMapper.java	
++++ b/parkingsys-operator/src/main/java/com/woniuxy/operator/mapper/ParkingMapper.java	
+@@ -11,4 +11,6 @@
+ public interface ParkingMapper extends BaseMapper<Parking> {
+     IPage<ParkingDTO> selectParkDTOPage(@Param("iPage")IPage iPage,
+                                         @Param("name") String name);
++
++    Integer getStatus(@Param("parkingNumber") String parkingNum);
+ }
+Index: parkingsys-operator/src/main/resources/mapper/ParkingMapper.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<!DOCTYPE mapper PUBLIC \"-//mybatis.org//DTD Mapper 3.0//EN\" \"http://mybatis.org/dtd/mybatis-3-mapper.dtd\">\r\n<mapper namespace=\"com.woniuxy.operator.mapper.ParkingMapper\">\r\n\r\n    <select id=\"selectParkDTOPage\" resultType=\"com.woniuxy.operator.dto.ParkingDTO\">\r\n        SELECT\r\n        p.*,\r\n        g.name as pdaName,\r\n        g.create_time as pdaTime\r\n        FROM parking p\r\n        LEFT JOIN pda g ON p.magnetometer_id = g.id\r\n        <where>\r\n            <if test=\"name!= null and name!=''\">\r\n                AND p.name LIKE CONCAT('%',#{name},'%')\r\n            </if>\r\n        </where>\r\n    </select>\r\n</mapper>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/parkingsys-operator/src/main/resources/mapper/ParkingMapper.xml b/parkingsys-operator/src/main/resources/mapper/ParkingMapper.xml
+--- a/parkingsys-operator/src/main/resources/mapper/ParkingMapper.xml	
++++ b/parkingsys-operator/src/main/resources/mapper/ParkingMapper.xml	
+@@ -15,4 +15,10 @@
+             </if>
+         </where>
+     </select>
++
++    <select id="getStatus" resultType="Integer">
++        SELECT parking.`status`
++        FROM parking
++        WHERE parking.number=#{parkingNumber}
++    </select>
+ </mapper>
+Index: parkingsys-operator/src/main/java/com/woniuxy/operator/controller/ParkingController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.woniuxy.operator.controller;\r\n\r\nimport com.woniuxy.operator.dto.ParkingDTO;\r\nimport com.woniuxy.operator.dto.RoadDTO;\r\nimport com.woniuxy.operator.pojos.ResponseResult;\r\nimport com.woniuxy.operator.vo.PageVO;\r\nimport io.swagger.annotations.ApiOperation;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.web.bind.annotation.*;\r\n\r\nimport java.util.List;\r\n\r\nimport com.woniuxy.operator.entity.Parking;\r\nimport com.woniuxy.operator.service.IParkingService;\r\nimport org.springframework.web.bind.annotation.RestController;\r\n\r\n\r\n@RestController\r\n@RequestMapping(\"/parking\")\r\npublic class ParkingController {\r\n\r\n    private final IParkingService parkingServiceImpl;\r\n\r\n    public ParkingController(IParkingService parkingServiceImpl) {\r\n        this.parkingServiceImpl = parkingServiceImpl;\r\n    }\r\n\r\n    /**\r\n     * 分页查询\r\n     */\r\n    @PostMapping(\"/page/{pageNum}/{pageSize}\")\r\n    @ApiOperation(\"分页查询\")\r\n    public ResponseResult findByPage(\r\n            @PathVariable(\"pageNum\") Integer pageNum,\r\n            @PathVariable(\"pageSize\") Integer pageSize,\r\n            @RequestBody ParkingDTO parkingDTO) {\r\n        PageVO<ParkingDTO> pageVO = parkingServiceImpl.findByPage(pageNum, pageSize, parkingDTO);\r\n        return ResponseResult.ok(pageVO);\r\n    }\r\n\r\n    /**\r\n     * 统计车位数\r\n     */\r\n    @GetMapping(\"/count\")\r\n    public int parkingCount(@RequestParam Integer id) {\r\n        return parkingServiceImpl.parkingCount(id);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/ParkingController.java b/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/ParkingController.java
+--- a/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/ParkingController.java	
++++ b/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/ParkingController.java	
+@@ -45,4 +45,13 @@
+     public int parkingCount(@RequestParam Integer id) {
+         return parkingServiceImpl.parkingCount(id);
+     }
++
++    @GetMapping("/getStatus")
++    public ResponseResult getStatus(String parkingNum){
++        Integer status = parkingServiceImpl.getStatus(parkingNum);
++        if (status==1){
++            return ResponseResult.ok("确认停车");
++        }
++        return ResponseResult.ok("车位已占用");
++    }
+ }
+Index: parkingsys-operator/src/main/java/com/woniuxy/operator/service/IOrderService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.woniuxy.operator.service;\r\n\r\nimport com.baomidou.mybatisplus.extension.plugins.pagination.Page;\r\nimport com.github.pagehelper.PageInfo;\r\nimport com.woniuxy.operator.dto.OrderDTO;\r\nimport com.woniuxy.operator.entity.Order;\r\nimport com.baomidou.mybatisplus.extension.service.IService;\r\nimport com.woniuxy.operator.vo.CountOrderVO;\r\nimport com.woniuxy.operator.vo.OrderVO;\r\nimport com.woniuxy.operator.vo.PageVO;\r\nimport com.woniuxy.operator.vo.RoadOrderVO;\r\n\r\nimport java.util.List;\r\n\r\n\r\n/**\r\n * <p>\r\n *  服务类\r\n * </p>\r\n *\r\n * @author woniuxy\r\n * @since 2023-09-05\r\n */\r\npublic interface IOrderService extends IService<Order> {\r\n\r\n    List<OrderVO> findAll();\r\n    PageInfo<OrderVO> findPage(Integer pageNum, Integer pageSize, OrderDTO orderDto);\r\n\r\n    CountOrderVO countOrder(String startTime, String endTime, Integer pageNum, Integer pageSize);\r\n\r\n    List<RoadOrderVO> getRoadOrderList(Integer roadId);\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/parkingsys-operator/src/main/java/com/woniuxy/operator/service/IOrderService.java b/parkingsys-operator/src/main/java/com/woniuxy/operator/service/IOrderService.java
+--- a/parkingsys-operator/src/main/java/com/woniuxy/operator/service/IOrderService.java	
++++ b/parkingsys-operator/src/main/java/com/woniuxy/operator/service/IOrderService.java	
+@@ -29,4 +29,6 @@
+     CountOrderVO countOrder(String startTime, String endTime, Integer pageNum, Integer pageSize);
+ 
+     List<RoadOrderVO> getRoadOrderList(Integer roadId);
++
++    void createOrder(String parkingNum);
+ }

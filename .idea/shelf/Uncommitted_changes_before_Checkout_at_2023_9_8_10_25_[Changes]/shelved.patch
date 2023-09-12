@@ -1,0 +1,269 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f61c6637-cc57-4da6-b8eb-7da3e9e74998\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/parkingsys-operator/src/main/resources/application.yml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/parkingsys-operator/src/main/resources/application.yml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/LoginLogController.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/OperationLogController.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/OrderController.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/parkingsys-operator/target/classes/mapper/OrderMapper.xml\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"刘展鹏\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"localRepository\" value=\"D:\\develop\\repository\" />\r\n        <option name=\"mavenHome\" value=\"$PROJECT_DIR$/../../Java/apache-maven-3.8.3\" />\r\n        <option name=\"useMavenConfig\" value=\"true\" />\r\n        <option name=\"userSettingsFile\" value=\"D:\\Java\\apache-maven-3.8.3\\conf\\settings.xml\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2Uy1NXsAtI87R5p0xkq0x0KHHLw\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,\r\n    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,\r\n    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,\r\n    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,\r\n    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2548298&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,\r\n    &quot;spring.configuration.checksum&quot;: &quot;6f6c003414420c2a3278e30ec991598b&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ReactorSettings\">\r\n    <option name=\"notificationShown\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"com.woniuxy.operator.vo\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunDashboard\">\r\n    <option name=\"configurationTypes\">\r\n      <set>\r\n        <option value=\"SpringBootApplicationConfigurationType\" />\r\n      </set>\r\n    </option>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Spring Boot.OperatorApplication\">\r\n    <configuration name=\"OperatorApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"parkingsys-operator\" />\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"com.woniuxy.operator.OperatorApplication\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.woniuxy.operator.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"OssApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"parking-oss\" />\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"com.woniuxy.OssApplication\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.woniuxy.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Spring Boot.OperatorApplication\" />\r\n      <item itemvalue=\"Spring Boot.OssApplication\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Spring Boot.OperatorApplication\" />\r\n        <item itemvalue=\"Spring Boot.OssApplication\" />\r\n        <item itemvalue=\"Spring Boot.OperatorApplication\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f61c6637-cc57-4da6-b8eb-7da3e9e74998\" name=\"Changes\" comment=\"\" />\r\n      <created>1693896967615</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1693896967615</updated>\r\n      <workItem from=\"1693896969414\" duration=\"358000\" />\r\n      <workItem from=\"1693897334568\" duration=\"5505000\" />\r\n      <workItem from=\"1693963358927\" duration=\"1854000\" />\r\n      <workItem from=\"1693968314276\" duration=\"18562000\" />\r\n      <workItem from=\"1694088848961\" duration=\"442000\" />\r\n      <workItem from=\"1694089318147\" duration=\"839000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"9.6\">\r\n      <created>1693968410384</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1693968410384</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"9.6\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"9.6\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -11,6 +11,10 @@
+       <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/OperationLogController.class" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/OrderController.class" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/mapper/OrderMapper.xml" beforeDir="false" />
++    <list default="true" id="f61c6637-cc57-4da6-b8eb-7da3e9e74998" name="Changes" comment="9.7/21:23">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/resources/application.yml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/application.yml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -21,13 +25,14 @@
+     <option name="RECENT_TEMPLATES">
+       <list>
+         <option value="Class" />
++        <option value="Interface" />
+       </list>
+     </option>
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="刘展鹏" />
++        <entry key="$PROJECT_DIR$" value="developer" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -38,78 +43,64 @@
+   <component name="MavenImportPreferences">
+     <option name="generalSettings">
+       <MavenGeneralSettings>
+-        <option name="localRepository" value="D:\develop\repository" />
+-        <option name="mavenHome" value="$PROJECT_DIR$/../../Java/apache-maven-3.8.3" />
++        <option name="localRepository" value="D:\maven" />
++        <option name="mavenHome" value="$PROJECT_DIR$/../../../apache-maven-3.9.0" />
+         <option name="useMavenConfig" value="true" />
+-        <option name="userSettingsFile" value="D:\Java\apache-maven-3.8.3\conf\settings.xml" />
++        <option name="userSettingsFile" value="D:\apache-maven-3.9.0\conf\settings.xml" />
+       </MavenGeneralSettings>
+     </option>
+   </component>
+-  <component name="ProjectId" id="2Uy1NXsAtI87R5p0xkq0x0KHHLw" />
++  <component name="ProjectId" id="2UxSaMLtRbt53bFfSiVHkLc2f60" />
+   <component name="ProjectLevelVcsManager">
+     <ConfirmationsSetting value="2" id="Add" />
+   </component>
+   <component name="ProjectViewState">
+-    <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
+-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.2548298&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+-    &quot;spring.configuration.checksum&quot;: &quot;6f6c003414420c2a3278e30ec991598b&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
++    "RequestMappingsPanelOrder0": "0",
++    "RequestMappingsPanelOrder1": "1",
++    "RequestMappingsPanelWidth0": "75",
++    "RequestMappingsPanelWidth1": "75",
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
++    "WebServerToolWindowFactoryState": "false",
++    "last_opened_file_path": "D:/mycode/p3/parkingsys1",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "project.structure.last.edited": "Modules",
++    "project.structure.proportion": "0.0",
++    "project.structure.side.proportion": "0.0",
++    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
++    "spring.configuration.checksum": "becab8549caeace34d03c85c1ff793fa"
+   }
+-}</component>
++}]]></component>
+   <component name="ReactorSettings">
+     <option name="notificationShown" value="true" />
+   </component>
+-  <component name="RecentsManager">
+-    <key name="CopyClassDialog.RECENTS_KEY">
+-      <recent name="com.woniuxy.operator.vo" />
+-    </key>
+-  </component>
+-  <component name="RunDashboard">
+-    <option name="configurationTypes">
+-      <set>
+-        <option value="SpringBootApplicationConfigurationType" />
+-      </set>
+-    </option>
+-  </component>
+-  <component name="RunManager" selected="Spring Boot.OperatorApplication">
+-    <configuration name="OperatorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+-      <module name="parkingsys-operator" />
+-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.woniuxy.operator.OperatorApplication" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="com.woniuxy.operator.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
++  <component name="RunManager">
++    <configuration default="true" type="JetRunConfigurationType">
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
++      <option name="filePath" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="OssApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+-      <module name="parking-oss" />
+-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.woniuxy.OssApplication" />
++    <configuration name="OperatorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
++      <module name="parkingsys-operator" />
++      <option name="SPRING_BOOT_MAIN_CLASS" value="com.woniuxy.operator.OperatorApplication" />
+       <extension name="coverage">
+         <pattern>
+-          <option name="PATTERN" value="com.woniuxy.*" />
++          <option name="PATTERN" value="com.woniuxy.operator.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+@@ -117,14 +108,8 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <list>
+-      <item itemvalue="Spring Boot.OperatorApplication" />
+-      <item itemvalue="Spring Boot.OssApplication" />
+-    </list>
+     <recent_temporary>
+       <list>
+-        <item itemvalue="Spring Boot.OperatorApplication" />
+-        <item itemvalue="Spring Boot.OssApplication" />
+         <item itemvalue="Spring Boot.OperatorApplication" />
+       </list>
+     </recent_temporary>
+@@ -132,33 +117,30 @@
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+-      <changelist id="f61c6637-cc57-4da6-b8eb-7da3e9e74998" name="Changes" comment="" />
+-      <created>1693896967615</created>
++      <changelist id="ba0f919d-268b-45ca-acdd-487ab603c4fa" name="Changes" comment="" />
++      <created>1693879800505</created>
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+-      <updated>1693896967615</updated>
+-      <workItem from="1693896969414" duration="358000" />
+-      <workItem from="1693897334568" duration="5505000" />
+-      <workItem from="1693963358927" duration="1854000" />
+-      <workItem from="1693968314276" duration="18562000" />
+-      <workItem from="1694088848961" duration="442000" />
+-      <workItem from="1694089318147" duration="839000" />
++      <updated>1693879800505</updated>
++      <workItem from="1693879802428" duration="329000" />
++      <workItem from="1693880144157" duration="328000" />
++      <workItem from="1693880546129" duration="48000" />
++      <workItem from="1693880651571" duration="17799000" />
+     </task>
+-    <task id="LOCAL-00001" summary="9.6">
+-      <created>1693968410384</created>
+-      <option name="number" value="00001" />
+-      <option name="presentableId" value="LOCAL-00001" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1693968410384</updated>
+-    </task>
+-    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
+-  <component name="VcsManagerConfiguration">
+-    <MESSAGE value="9.6" />
+-    <option name="LAST_COMMIT_MESSAGE" value="9.6" />
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
+   </component>
+ </project>
+\ No newline at end of file
+Index: parkingsys-operator/target/classes/application.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>server:\r\n  port: 9090\r\nspring:\r\n  datasource:\r\n    druid:\r\n      url: jdbc:mysql://localhost:3306/wn_parking?useSSL=false&charaterEncode=utf-8&serverTimezone=GMT%2B8\r\n      username: root\r\n      password: root\r\n      initial-size: 5 #初始化连接数\r\n      max-active: 50 #最大连接数\r\n      max-wait: 6000 #获得连接的超时时间\r\n      min-idle: 5 #最小空闲数\r\n      time-between-eviction-runs-millis: 60000 #间隔1分钟检查一次空闲连接\r\n      min-evictable-idle-time-millis: 300000 #超过空闲5分钟以上的连接，都会被物理关闭\r\n      pool-prepared-statements: true #运行缓存预编译对象\r\n      max-pool-prepared-statement-per-connection-size: 50 #允许缓存50个连接\r\n      useGlobalDataSourceStat: true\r\n      connectionProperties: druid.stat.mergeSql=true;druid.stat.logSlowSql=true;druid.stat.slowSqlMillis=1000;\r\n      filters: stat,wall,slf4j\r\n      web-stat-filter:\r\n        enabled: true #开启德鲁伊的web监控\r\n        url-pattern: /*\r\n        exclusions: /druid/*,*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,*.html\r\n      stat-view-servlet:\r\n        enabled: true #德鲁伊的web监控界面\r\n        url-pattern: /druid/* #http://localhost:8080/druid/\r\n        reset-enable: false #不需要重置SQL数据\r\n        login-username: admin\r\n        login-password: 123456\r\n        allow: #设置白名单\r\n        deny: #设置黑名单\r\n      aop-patterns: com.woniuxy.operator.* #监控url请求路径\r\n  redis:\r\n    host: 192.168.200.130\r\n    port: 6379\r\n    database: 0\r\n    password: philredis\r\n  mvc:\r\n    pathmatch:\r\n      matching-strategy: ant_path_matcher\r\n  jackson:\r\n    date-format: yyyy-MM-dd HH:mm:ss\r\n    time-zone: GMT+8\r\n  elasticsearch:\r\n    uris: http://192.168.200.130:9200 #配置ES的连接地址\r\njwt:\r\n  signature: woniu\r\n  accessTime: 5 #短令牌有效期 单位：分钟\r\n  refreshTime: 7 #长令牌有效期 单位：天\r\nmybatis-plus:\r\n  configuration:\r\n    map-underscore-to-camel-case: true #尊重驼峰命名规则\r\n    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl\r\n  type-aliases-package: com.woniuxy.operator.entity\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/parkingsys-operator/target/classes/application.yml b/parkingsys-operator/target/classes/application.yml
+--- a/parkingsys-operator/target/classes/application.yml	
++++ b/parkingsys-operator/target/classes/application.yml	
+@@ -1,9 +1,10 @@
+ server:
+   port: 9090
++  host: localhost
+ spring:
+   datasource:
+     druid:
+-      url: jdbc:mysql://localhost:3306/wn_parking?useSSL=false&charaterEncode=utf-8&serverTimezone=GMT%2B8
++      url: jdbc:mysql://localhost:3306/wn_parking3?useSSL=false&charaterEncode=utf-8&serverTimezone=GMT%2B8
+       username: root
+       password: root
+       initial-size: 5 #初始化连接数
+@@ -31,21 +32,22 @@
+         deny: #设置黑名单
+       aop-patterns: com.woniuxy.operator.* #监控url请求路径
+   redis:
+-    host: 192.168.200.130
++    host: ${server.host}
+     port: 6379
+     database: 0
+     password: philredis
+   mvc:
+     pathmatch:
+       matching-strategy: ant_path_matcher
++
+   jackson:
+     date-format: yyyy-MM-dd HH:mm:ss
+     time-zone: GMT+8
+   elasticsearch:
+-    uris: http://192.168.200.130:9200 #配置ES的连接地址
++    uris: http://${server.host}:9200 #配置ES的连接地址
+ jwt:
+   signature: woniu
+-  accessTime: 5 #短令牌有效期 单位：分钟
++  accessTime: 60 #短令牌有效期 单位：分钟
+   refreshTime: 7 #长令牌有效期 单位：天
+ mybatis-plus:
+   configuration:

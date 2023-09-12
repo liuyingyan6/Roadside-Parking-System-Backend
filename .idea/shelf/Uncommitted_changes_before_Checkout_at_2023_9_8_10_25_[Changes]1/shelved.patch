@@ -1,0 +1,42 @@
+Index: parkingsys-operator/parkingsys-operator.iml
+===================================================================
+diff --git a/parkingsys-operator/parkingsys-operator.iml b/parkingsys-operator/parkingsys-operator.iml
+deleted file mode 100644
+--- a/parkingsys-operator/parkingsys-operator.iml	
++++ /dev/null	
+@@ -1,13 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module version="4">
+-  <component name="FacetManager">
+-    <facet type="web" name="Web">
+-      <configuration>
+-        <webroots />
+-      </configuration>
+-    </facet>
+-    <facet type="Spring" name="Spring">
+-      <configuration />
+-    </facet>
+-  </component>
+-</module>
+\ No newline at end of file
+Index: parkingsys-generator/parkingsys-generator.iml
+===================================================================
+diff --git a/parkingsys-generator/parkingsys-generator.iml b/parkingsys-generator/parkingsys-generator.iml
+deleted file mode 100644
+--- a/parkingsys-generator/parkingsys-generator.iml	
++++ /dev/null	
+@@ -1,13 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module version="4">
+-  <component name="FacetManager">
+-    <facet type="web" name="Web">
+-      <configuration>
+-        <webroots />
+-      </configuration>
+-    </facet>
+-    <facet type="Spring" name="Spring">
+-      <configuration />
+-    </facet>
+-  </component>
+-</module>
+\ No newline at end of file

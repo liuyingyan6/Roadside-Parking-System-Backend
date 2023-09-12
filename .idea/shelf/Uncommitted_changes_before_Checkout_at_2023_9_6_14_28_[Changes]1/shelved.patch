@@ -1,0 +1,183 @@
+Index: .idea/libraries/Maven__com_alibaba_druid_1_2_16.xml
+===================================================================
+diff --git a/.idea/libraries/Maven__com_alibaba_druid_1_2_16.xml b/.idea/libraries/Maven__com_alibaba_druid_1_2_16.xml
+deleted file mode 100644
+--- a/.idea/libraries/Maven__com_alibaba_druid_1_2_16.xml	
++++ /dev/null	
+@@ -1,13 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Maven: com.alibaba:druid:1.2.16">
+-    <CLASSES>
+-      <root url="jar://$PROJECT_DIR$/../../../maven/com/alibaba/druid/1.2.16/druid-1.2.16.jar!/" />
+-    </CLASSES>
+-    <JAVADOC>
+-      <root url="jar://$PROJECT_DIR$/../../../maven/com/alibaba/druid/1.2.16/druid-1.2.16-javadoc.jar!/" />
+-    </JAVADOC>
+-    <SOURCES>
+-      <root url="jar://$PROJECT_DIR$/../../../maven/com/alibaba/druid/1.2.16/druid-1.2.16-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_5.xml
+===================================================================
+diff --git a/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_5.xml b/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_5.xml
+deleted file mode 100644
+--- a/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_5.xml	
++++ /dev/null	
+@@ -1,13 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Maven: org.mybatis:mybatis-spring:2.0.5">
+-    <CLASSES>
+-      <root url="jar://$PROJECT_DIR$/../../../maven/org/mybatis/mybatis-spring/2.0.5/mybatis-spring-2.0.5.jar!/" />
+-    </CLASSES>
+-    <JAVADOC>
+-      <root url="jar://$PROJECT_DIR$/../../../maven/org/mybatis/mybatis-spring/2.0.5/mybatis-spring-2.0.5-javadoc.jar!/" />
+-    </JAVADOC>
+-    <SOURCES>
+-      <root url="jar://$PROJECT_DIR$/../../../maven/org/mybatis/mybatis-spring/2.0.5/mybatis-spring-2.0.5-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/libraries/Maven__org_projectlombok_lombok_1_18_20.xml
+===================================================================
+diff --git a/.idea/libraries/Maven__org_projectlombok_lombok_1_18_20.xml b/.idea/libraries/Maven__org_projectlombok_lombok_1_18_20.xml
+deleted file mode 100644
+--- a/.idea/libraries/Maven__org_projectlombok_lombok_1_18_20.xml	
++++ /dev/null	
+@@ -1,13 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Maven: org.projectlombok:lombok:1.18.20">
+-    <CLASSES>
+-      <root url="jar://$PROJECT_DIR$/../../../maven/org/projectlombok/lombok/1.18.20/lombok-1.18.20.jar!/" />
+-    </CLASSES>
+-    <JAVADOC>
+-      <root url="jar://$PROJECT_DIR$/../../../maven/org/projectlombok/lombok/1.18.20/lombok-1.18.20-javadoc.jar!/" />
+-    </JAVADOC>
+-    <SOURCES>
+-      <root url="jar://$PROJECT_DIR$/../../../maven/org/projectlombok/lombok/1.18.20/lombok-1.18.20-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_2_1_3.xml
+===================================================================
+diff --git a/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_2_1_3.xml b/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_2_1_3.xml
+deleted file mode 100644
+--- a/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_2_1_3.xml	
++++ /dev/null	
+@@ -1,13 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.3">
+-    <CLASSES>
+-      <root url="jar://$PROJECT_DIR$/../../../maven/org/mybatis/spring/boot/mybatis-spring-boot-starter/2.1.3/mybatis-spring-boot-starter-2.1.3.jar!/" />
+-    </CLASSES>
+-    <JAVADOC>
+-      <root url="jar://$PROJECT_DIR$/../../../maven/org/mybatis/spring/boot/mybatis-spring-boot-starter/2.1.3/mybatis-spring-boot-starter-2.1.3-javadoc.jar!/" />
+-    </JAVADOC>
+-    <SOURCES>
+-      <root url="jar://$PROJECT_DIR$/../../../maven/org/mybatis/spring/boot/mybatis-spring-boot-starter/2.1.3/mybatis-spring-boot-starter-2.1.3-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/libraries/Maven__org_mybatis_mybatis_3_5_5.xml
+===================================================================
+diff --git a/.idea/libraries/Maven__org_mybatis_mybatis_3_5_5.xml b/.idea/libraries/Maven__org_mybatis_mybatis_3_5_5.xml
+deleted file mode 100644
+--- a/.idea/libraries/Maven__org_mybatis_mybatis_3_5_5.xml	
++++ /dev/null	
+@@ -1,13 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Maven: org.mybatis:mybatis:3.5.5">
+-    <CLASSES>
+-      <root url="jar://$PROJECT_DIR$/../../../maven/org/mybatis/mybatis/3.5.5/mybatis-3.5.5.jar!/" />
+-    </CLASSES>
+-    <JAVADOC>
+-      <root url="jar://$PROJECT_DIR$/../../../maven/org/mybatis/mybatis/3.5.5/mybatis-3.5.5-javadoc.jar!/" />
+-    </JAVADOC>
+-    <SOURCES>
+-      <root url="jar://$PROJECT_DIR$/../../../maven/org/mybatis/mybatis/3.5.5/mybatis-3.5.5-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_2_1_3.xml
+===================================================================
+diff --git a/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_2_1_3.xml b/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_2_1_3.xml
+deleted file mode 100644
+--- a/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_2_1_3.xml	
++++ /dev/null	
+@@ -1,13 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure:2.1.3">
+-    <CLASSES>
+-      <root url="jar://$PROJECT_DIR$/../../../maven/org/mybatis/spring/boot/mybatis-spring-boot-autoconfigure/2.1.3/mybatis-spring-boot-autoconfigure-2.1.3.jar!/" />
+-    </CLASSES>
+-    <JAVADOC>
+-      <root url="jar://$PROJECT_DIR$/../../../maven/org/mybatis/spring/boot/mybatis-spring-boot-autoconfigure/2.1.3/mybatis-spring-boot-autoconfigure-2.1.3-javadoc.jar!/" />
+-    </JAVADOC>
+-    <SOURCES>
+-      <root url="jar://$PROJECT_DIR$/../../../maven/org/mybatis/spring/boot/mybatis-spring-boot-autoconfigure/2.1.3/mybatis-spring-boot-autoconfigure-2.1.3-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: parkingsys-operator/src/main/java/com/woniuxy/operator/advice/LoginLogAdvice.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.woniuxy.operator.advice;\r\n\r\nimport cn.hutool.core.date.DateTime;\r\nimport com.woniuxy.operator.entity.LoginLog;\r\nimport com.woniuxy.operator.pojos.ResponseResult;\r\nimport com.woniuxy.operator.service.ILoginLogService;\r\nimport com.woniuxy.operator.util.IPUtil;\r\nimport com.woniuxy.operator.vo.TokenVO;\r\nimport org.aspectj.lang.JoinPoint;\r\nimport org.aspectj.lang.annotation.*;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.stereotype.Component;\r\nimport org.springframework.web.context.request.RequestAttributes;\r\nimport org.springframework.web.context.request.RequestContextHolder;\r\nimport org.springframework.web.context.request.ServletRequestAttributes;\r\n\r\nimport javax.servlet.http.HttpServletRequest;\r\n\r\n@Aspect\r\n@Component\r\npublic class LoginLogAdvice {\r\n    @Autowired\r\n    ILoginLogService iLoginLogService;\r\n\r\n    @Pointcut(value = \"execution(* com.woniuxy.operator.controller.ManagerController.login(..))\")\r\n    public void loginPointCut() {\r\n    }\r\n\r\n    /**\r\n     * 后置通知，保存登录成功 日志\r\n     */\r\n    @AfterReturning(pointcut = \"loginPointCut()\", returning = \"result\")\r\n    public void loginSucceed(JoinPoint joinPoint, ResponseResult result) {\r\n        // 获取当前请求的 HttpServletRequest 对象\r\n        RequestAttributes ra = RequestContextHolder.getRequestAttributes();\r\n        ServletRequestAttributes sra = (ServletRequestAttributes) ra;\r\n        HttpServletRequest request = sra.getRequest();\r\n\r\n        // 获取方法的返回结果\r\n        TokenVO datas = (TokenVO) result.getDatas();\r\n\r\n        String ip = IPUtil.getIpAddress(request); // 获取ip，如果用localhost发请求会得到ip：0:0:0:0:0:0:0:1\r\n        String location = IPUtil.getCityInfoByFile(ip);\r\n        String browser = request.getHeader(\"User-Agent\");\r\n        System.out.println(\"browser = \" + browser);\r\n        String[] infos = browser.split(\"/\");\r\n        browser = infos[0];\r\n        LoginLog loginLog = new LoginLog(null, datas.getId(), 0, ip, DateTime.now(),0,location,browser); // 登录日志实体类\r\n        iLoginLogService.save(loginLog); // 保存登录成功日志\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/parkingsys-operator/src/main/java/com/woniuxy/operator/advice/LoginLogAdvice.java b/parkingsys-operator/src/main/java/com/woniuxy/operator/advice/LoginLogAdvice.java
+--- a/parkingsys-operator/src/main/java/com/woniuxy/operator/advice/LoginLogAdvice.java	
++++ b/parkingsys-operator/src/main/java/com/woniuxy/operator/advice/LoginLogAdvice.java	
+@@ -37,7 +37,7 @@
+         HttpServletRequest request = sra.getRequest();
+ 
+         // 获取方法的返回结果
+-        TokenVO datas = (TokenVO) result.getDatas();
++        TokenVO datas = (TokenVO) result.getData();
+ 
+         String ip = IPUtil.getIpAddress(request); // 获取ip，如果用localhost发请求会得到ip：0:0:0:0:0:0:0:1
+         String location = IPUtil.getCityInfoByFile(ip);
+Index: parkingsys-operator/src/main/resources/mapper/CarMapper.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<!DOCTYPE mapper PUBLIC \"-//mybatis.org//DTD Mapper 3.0//EN\" \"http://mybatis.org/dtd/mybatis-3-mapper.dtd\">\r\n<mapper namespace=\"com.woniuxy.operator.mapper.CarMapper\">\r\n    <select id=\"getCar\" resultType=\"CarVO\">\r\n        SELECT car.car_number,car_type.car_type_name,`user`.user_name,\r\n               `order`.create_time\r\n        FROM car,`order`,car_type,`user`\r\n        WHERE car.id=`order`.car_id AND car.car_type=car_type.id AND car.user_id=`user`.id\r\n            <if test=\"carNumber != null\">\r\n                AND car_number = #{carNumber}\r\n            </if>\r\n        GROUP BY car_number\r\n    </select>\r\n\r\n    <select id=\"getCarOrderCount\" resultType=\"Integer\">\r\n        -- 查询已缴费未缴费订单总数量\r\n        SELECT  COUNT(*) AS ouder_count\r\n        FROM `order`,car\r\n        where car.id=`order`.car_id AND car_number=#{carNumber}\r\n    </select>\r\n\r\n    <select id=\"getNotPayAmount\" resultType=\"BigDecimal\">\r\n        -- 查询未缴费订单金额\r\n        SELECT SUM(order_amount) AS not_pay_amount\r\n        FROM car,`order`\r\n        where `order`.`status`=1 AND car.id=`order`.car_id AND car_number=#{carNumber}\r\n    </select>\r\n\r\n    <select id=\"getNotPayCount\" resultType=\"Integer\">\r\n        -- 查询未缴费订单数量\r\n        SELECT COUNT(*) AS not_pay_count\r\n        FROM car,`order`\r\n        where `order`.`status`=1 AND car.id=`order`.car_id AND car_number=#{carNumber}\r\n    </select>\r\n\r\n    <select id=\"getPayAmount\" resultType=\"BigDecimal\">\r\n        -- 查询消费金额\r\n        SELECT SUM(order_amount) AS not_pay_amount\r\n        FROM car,`order`\r\n        where `order`.`status`=0 AND car.id=`order`.car_id AND car_number=#{carNumber}\r\n    </select>\r\n\r\n</mapper>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/parkingsys-operator/src/main/resources/mapper/CarMapper.xml b/parkingsys-operator/src/main/resources/mapper/CarMapper.xml
+--- a/parkingsys-operator/src/main/resources/mapper/CarMapper.xml	
++++ b/parkingsys-operator/src/main/resources/mapper/CarMapper.xml	
+@@ -13,7 +13,6 @@
+     </select>
+ 
+     <select id="getCarOrderCount" resultType="Integer">
+-        -- 查询已缴费未缴费订单总数量
+         SELECT  COUNT(*) AS ouder_count
+         FROM `order`,car
+         where car.id=`order`.car_id AND car_number=#{carNumber}
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"CompilerConfiguration\">\r\n    <annotationProcessing>\r\n      <profile name=\"Maven default annotation processors profile\" enabled=\"true\">\r\n        <sourceOutputDir name=\"target/generated-sources/annotations\" />\r\n        <sourceTestOutputDir name=\"target/generated-test-sources/test-annotations\" />\r\n        <outputRelativeToContentRoot value=\"true\" />\r\n        <module name=\"parkingsys-generator\" />\r\n        <module name=\"parkingsys-operator\" />\r\n      </profile>\r\n    </annotationProcessing>\r\n    <bytecodeTargetLevel>\r\n      <module name=\"parkingsys\" target=\"1.8\" />\r\n      <module name=\"parkingsys-generator\" target=\"1.8\" />\r\n      <module name=\"parkingsys-operator\" target=\"1.8\" />\r\n    </bytecodeTargetLevel>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	
++++ b/.idea/compiler.xml	
+@@ -6,8 +6,8 @@
+         <sourceOutputDir name="target/generated-sources/annotations" />
+         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+         <outputRelativeToContentRoot value="true" />
+-        <module name="parkingsys-generator" />
+         <module name="parkingsys-operator" />
++        <module name="parkingsys-generator" />
+       </profile>
+     </annotationProcessing>
+     <bytecodeTargetLevel>

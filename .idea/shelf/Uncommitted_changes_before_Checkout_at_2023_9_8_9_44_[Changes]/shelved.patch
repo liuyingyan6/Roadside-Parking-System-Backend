@@ -1,0 +1,25 @@
+Index: parkingsys-operator/target/classes/mapper/CarMapper.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<!DOCTYPE mapper PUBLIC \"-//mybatis.org//DTD Mapper 3.0//EN\" \"http://mybatis.org/dtd/mybatis-3-mapper.dtd\">\r\n<mapper namespace=\"com.woniuxy.operator.mapper.CarMapper\">\r\n    <select id=\"getCar\" resultType=\"com.woniuxy.operator.vo.CarVO\">\r\n        SELECT car.car_number,car_type.car_type_name,`user`.user_name,car.create_time\r\n        FROM car,car_type,`user`\r\n        <where>\r\n            AND car.car_type=car_type.id\r\n            AND car.user_id=`user`.id\r\n            <if test=\"carNumber != null and carNumber!=''\">\r\n                AND car_number = #{carNumber}\r\n            </if>\r\n        </where>\r\n    </select>\r\n\r\n\r\n    <!--查询已缴费未缴费订单总数量-->\r\n    <select id=\"getCarOrderCount\" resultType=\"Integer\">\r\n        SELECT COUNT(*) AS ouder_count\r\n        FROM t_order,\r\n             car\r\n        where car.id = t_order.car_id\r\n          AND car_number = #{carNumber}\r\n    </select>\r\n\r\n\r\n    <!--查询未缴费订单金额-->\r\n    <select id=\"getNotPayAmount\" resultType=\"BigDecimal\">\r\n\r\n        SELECT SUM(order_amount) AS not_pay_amount\r\n        FROM car,\r\n             t_order\r\n        where t_order.`status` = 1\r\n          AND car.id = t_order.car_id\r\n          AND car_number = #{carNumber}\r\n    </select>\r\n\r\n\r\n    <!--查询未缴费订单数量-->\r\n    <select id=\"getNotPayCount\" resultType=\"Integer\">\r\n\r\n        SELECT COUNT(*) AS not_pay_count\r\n        FROM car,\r\n             t_order\r\n        where t_order.`status` = 1\r\n          AND car.id = t_order.car_id\r\n          AND car_number = #{carNumber}\r\n    </select>\r\n\r\n\r\n    <!--查询消费金额-->\r\n    <select id=\"getPayAmount\" resultType=\"BigDecimal\">\r\n\r\n        SELECT SUM(order_amount) AS not_pay_amount\r\n        FROM car,\r\n             t_order\r\n        where t_order.`status` = 0\r\n          AND car.id = t_order.car_id\r\n          AND car_number = #{carNumber}\r\n        FROM car,t_order\r\n        where t_order.`status`=0 AND car.id=t_order.car_id AND car_number=#{carNumber}\r\n    </select>\r\n\r\n    <select id=\"getCarOrderList\" resultType=\"com.woniuxy.operator.vo.CarOrderVO\">\r\n        SELECT\r\n            car.car_number,\r\n            t_order.order_number,\r\n            t_order.create_time,\r\n            t_order.order_amount,\r\n            t_order.`status`,\r\n            t_order.pay_type\r\n        FROM\r\n            car,\r\n            t_order\r\n        WHERE\r\n            car.id = t_order.car_id AND car.car_number=#{carNumber}\r\n    </select>\r\n\r\n    <update id=\"liftCar\">\r\n        UPDATE `user`\r\n        SET `user`.car_id=NULL\r\n        WHERE `user`.id=#{userId}\r\n    </update>\r\n    <update id=\"liftUser\">\r\n        UPDATE car\r\n        SET car.user_id=NULL\r\n        WHERE car.id=#{carId}\r\n    </update>\r\n\r\n    <select id=\"getCarInfo\" resultType=\"Car\">\r\n        SELECT *\r\n        FROM car\r\n        where car.car_number=#{carNumber}\r\n    </select>\r\n\r\n</mapper>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/parkingsys-operator/target/classes/mapper/CarMapper.xml b/parkingsys-operator/target/classes/mapper/CarMapper.xml
+--- a/parkingsys-operator/target/classes/mapper/CarMapper.xml	
++++ b/parkingsys-operator/target/classes/mapper/CarMapper.xml	
+@@ -52,13 +52,10 @@
+     <select id="getPayAmount" resultType="BigDecimal">
+ 
+         SELECT SUM(order_amount) AS not_pay_amount
+-        FROM car,
+-             t_order
++        FROM car,t_order
+         where t_order.`status` = 0
+           AND car.id = t_order.car_id
+           AND car_number = #{carNumber}
+-        FROM car,t_order
+-        where t_order.`status`=0 AND car.id=t_order.car_id AND car_number=#{carNumber}
+     </select>
+ 
+     <select id="getCarOrderList" resultType="com.woniuxy.operator.vo.CarOrderVO">

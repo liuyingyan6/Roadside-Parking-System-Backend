@@ -1,0 +1,84 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_2023_9_6_14_28_[Changes]1" date="1693981784233" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_6_14_28_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 2023/9/6 14:28 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/service/IUrlPermissionService.class" />
+    <option name="AFTER_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/service/IUrlPermissionService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_6_14_28_[Changes]1/IUrlPermissionService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/OperatorApplication.class" />
+    <option name="AFTER_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/OperatorApplication.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_6_14_28_[Changes]1/OperatorApplication.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/entity/Order.class" />
+    <option name="AFTER_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/entity/Order.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_6_14_28_[Changes]1/Order.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/entity/Car.class" />
+    <option name="AFTER_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/entity/Car.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_6_14_28_[Changes]1/Car.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/entity/User.class" />
+    <option name="AFTER_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/entity/User.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_6_14_28_[Changes]1/User.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/controller/OperationLogController.class" />
+    <option name="AFTER_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/controller/OperationLogController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_6_14_28_[Changes]1/OperationLogController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/entity/Manager.class" />
+    <option name="AFTER_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/entity/Manager.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_6_14_28_[Changes]1/Manager.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/entity/LoginLog.class" />
+    <option name="AFTER_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/entity/LoginLog.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_6_14_28_[Changes]1/LoginLog.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/controller/LoginLogController.class" />
+    <option name="AFTER_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/controller/LoginLogController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_6_14_28_[Changes]1/LoginLogController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/controller/UrlPermissionController.class" />
+    <option name="AFTER_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/controller/UrlPermissionController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_6_14_28_[Changes]1/UrlPermissionController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/mapper/UrlPermissionMapper.class" />
+    <option name="AFTER_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/mapper/UrlPermissionMapper.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_6_14_28_[Changes]1/UrlPermissionMapper.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/ManagerServiceImpl.class" />
+    <option name="AFTER_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/ManagerServiceImpl.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_6_14_28_[Changes]1/ManagerServiceImpl.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/entity/Parking.class" />
+    <option name="AFTER_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/entity/Parking.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_6_14_28_[Changes]1/Parking.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/entity/OperationLog.class" />
+    <option name="AFTER_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/entity/OperationLog.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_6_14_28_[Changes]1/OperationLog.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/pojos/ResponseResult.class" />
+    <option name="AFTER_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/pojos/ResponseResult.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_6_14_28_[Changes]1/ResponseResult.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/UrlPermissionServiceImpl.class" />
+    <option name="AFTER_PATH" value="parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/UrlPermissionServiceImpl.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_6_14_28_[Changes]1/UrlPermissionServiceImpl.class" />
+  </binary>
+</changelist>
