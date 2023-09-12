@@ -1,7 +1,14 @@
 package com.woniuxy.operator.mapper;
+import com.woniuxy.operator.dto.ClockInDTO;
+import com.woniuxy.operator.dto.OrderDTO;
+import com.woniuxy.operator.vo.ClockInVO;
+import com.woniuxy.operator.vo.OrderVO;
 import org.apache.ibatis.annotations.Mapper;
 import com.woniuxy.operator.entity.ClockIn;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,5 +20,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 @Mapper
 public interface ClockInMapper extends BaseMapper<ClockIn> {
-
+    //自定义分页
+    List<ClockInVO> findAllPage(@Param("clockInDTO") ClockInDTO clockInDTO);
 }

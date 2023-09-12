@@ -5,9 +5,11 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.woniuxy.operator.entity.Magnetometer;
+import com.woniuxy.operator.entity.Order;
 import com.woniuxy.operator.entity.Parking;
 import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.service.IMagnetometerService;
+import com.woniuxy.operator.service.IOrderService;
 import com.woniuxy.operator.service.IParkingService;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,11 +32,13 @@ public class MagnetometerLogController {
     private final IMagnetometerLogService magnetometerLogServiceImpl;
     private final IMagnetometerService magnetometerServiceImpl;
     private final IParkingService parkingServiceImpl;
+    private final IOrderService orderServiceImpl;
 
-    public MagnetometerLogController(IMagnetometerLogService magnetometerLogServiceImpl, IMagnetometerService magnetometerServiceImpl, IParkingService parkingServiceImpl) {
+    public MagnetometerLogController(IMagnetometerLogService magnetometerLogServiceImpl, IMagnetometerService magnetometerServiceImpl, IParkingService parkingServiceImpl, IOrderService orderServiceImpl) {
         this.magnetometerLogServiceImpl = magnetometerLogServiceImpl;
         this.magnetometerServiceImpl = magnetometerServiceImpl;
         this.parkingServiceImpl = parkingServiceImpl;
+        this.orderServiceImpl = orderServiceImpl;
     }
 
     //    @Transactional

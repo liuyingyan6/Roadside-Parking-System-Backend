@@ -37,4 +37,5 @@ public class InformationController {
         informationServiceImpl.saveOrUpdate(information);
         return ResponseResult.ok();
     }
+
 }

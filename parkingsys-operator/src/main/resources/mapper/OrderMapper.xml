@@ -7,7 +7,7 @@
         o.*,
         pa.number AS parking_number,
         ins.name AS inspector_name ,
-        ro.`name` AS road_name,
+        ro.`road_name` AS road_name,
         car.`car_number`
         FROM
         `t_order` o
@@ -21,7 +21,7 @@
         car ON o.`car_id` = car.id
         <where>
             <if test="orderDTO.orderNumber !=null and orderDTO.orderNumber !=''">
-                o.order_number = #{orderNumber}
+                o.order_number = #{orderDTO.orderNumber}
             </if>
         </where>
 
