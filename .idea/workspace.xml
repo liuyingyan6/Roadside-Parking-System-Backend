@@ -5,16 +5,83 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f61c6637-cc57-4da6-b8eb-7da3e9e74998" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/enums/OrderStatusEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/UserApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/config/WebMvcConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/config/mp/MyMetaObjectHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/config/mp/MybatisPlusConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/config/mp/PageOverflowInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/config/redis/BloomFilterConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/config/redis/RedisConfigure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/config/swagger/SwaggerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/controller/CarController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/controller/MagnetometerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/controller/MagnetometerLogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/controller/ParkingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/controller/RoadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/controller/TOrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/controller/UserFeedbackController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/entity/Car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/entity/Magnetometer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/entity/MagnetometerLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/entity/Parking.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/entity/Road.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/entity/TOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/entity/UserFeedback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/handler/Asserts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/handler/BusinessEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/handler/BusinessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/handler/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/handler/IErrorCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/interceptor/LoginInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/mapper/CarMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/mapper/MagnetometerLogMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/mapper/MagnetometerMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/mapper/ParkingMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/mapper/RoadMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/mapper/TOrderMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/mapper/UserFeedbackMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/pojos/ResponseResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/pojos/TokenRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/pojos/TokenResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/service/ICarService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/service/IMagnetometerLogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/service/IMagnetometerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/service/IParkingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/service/IRoadService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/service/ITOrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/service/IUserFeedbackService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/service/IUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/service/impl/CarServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/service/impl/MagnetometerLogServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/service/impl/MagnetometerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/service/impl/ParkingServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/service/impl/RoadServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/service/impl/TOrderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/service/impl/UserFeedbackServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user/util/TokenUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/resources/mapper/CarMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/resources/mapper/MagnetometerLogMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/resources/mapper/MagnetometerMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/resources/mapper/ParkingMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/resources/mapper/RoadMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/resources/mapper/TOrderMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/resources/mapper/UserFeedbackMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parkingsys-user/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/mapper/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/mapper/OrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/IOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/IOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/OrderFunnelVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/OrderConversionVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/RevenueVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/RevenueVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/resources/mapper/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/resources/mapper/OrderMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-generator/src/main/java/com/woniuxy/generator/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-generator/src/main/java/com/woniuxy/generator/CodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/MagnetometerLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/MagnetometerLogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,10 +111,10 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="localRepository" value="E:\coding\mavenRepository" />
-        <option name="mavenHome" value="E:/coding/apache-maven-3.9.3" />
+        <option name="localRepository" value="$USER_HOME$/maven/repo" />
+        <option name="mavenHome" value="/Library/maven3.9.0" />
         <option name="useMavenConfig" value="true" />
-        <option name="userSettingsFile" value="E:\coding\apache-maven-3.9.3\conf\settings.xml" />
+        <option name="userSettingsFile" value="/Library/maven3.9.0/conf/settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -60,6 +127,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -69,7 +137,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/IDEA_JavaCode/parkingsys/parkingsys-operator/src/main/resources/mapper",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "/Users/yy/IdeaProjects/parkingsys/parkingsys-user/src/main/java/com/woniuxy/user",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -88,12 +157,30 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/parkingsys-user/src/main/java/com/woniuxy/user" />
+      <recent name="$PROJECT_DIR$/parkingsys-user/src/main/resources" />
+      <recent name="$PROJECT_DIR$/parkingsys-user/src/main/java" />
       <recent name="D:\IDEA_JavaCode\parkingsys\parkingsys-operator\src\main\resources\mapper" />
       <recent name="D:\IDEA_JavaCode\parkingsys\parkingsys-operator\src\main\java\com\woniuxy\operator\entity" />
-      <recent name="D:\IDEA_JavaCode\parkingsys\parkingsys-operator\src\main\java\com\woniuxy\operator\dto" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.woniuxy.user" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.UserApplication">
+    <configuration name="CodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.woniuxy.generator.CodeGenerator" />
+      <module name="parkingsys-generator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.woniuxy.generator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -119,8 +206,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="parkingsys-user" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.woniuxy.user.UserApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.woniuxy.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.UserApplication" />
+        <item itemvalue="Application.CodeGenerator" />
         <item itemvalue="Spring Boot.OperatorApplication" />
       </list>
     </recent_temporary>
@@ -141,6 +243,9 @@
       <workItem from="1694158951313" duration="2280000" />
       <workItem from="1694251310151" duration="2309000" />
       <workItem from="1694304263755" duration="18977000" />
+      <workItem from="1694400209635" duration="1243000" />
+      <workItem from="1694416795205" duration="3748000" />
+      <workItem from="1694482028067" duration="3965000" />
     </task>
     <task id="LOCAL-00001" summary="0908/9:41">
       <created>1694137327895</created>
@@ -181,6 +286,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="0908/9:41" />
     <MESSAGE value="0908/10:00" />
     <MESSAGE value="0908/10:19  新增order资金流水" />
