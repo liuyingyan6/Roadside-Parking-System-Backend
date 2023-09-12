@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f61c6637-cc57-4da6-b8eb-7da3e9e74998" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/PayCountVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/PayDateVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/MagnetometerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/MagnetometerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/mapper/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/mapper/OrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/IOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/IOrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/resources/mapper/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/resources/mapper/OrderMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/OrderServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -184,7 +175,8 @@
       <workItem from="1694304263755" duration="18977000" />
       <workItem from="1694399455747" duration="11127000" />
       <workItem from="1694431270578" duration="9479000" />
-      <workItem from="1694445225263" duration="5459000" />
+      <workItem from="1694445225263" duration="5686000" />
+      <workItem from="1694498239185" duration="3398000" />
     </task>
     <task id="LOCAL-00001" summary="0908/9:41">
       <created>1694137327895</created>
@@ -214,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694404223758</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="0912/01:15后端">
+      <created>1694452526724</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1694452526724</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +235,7 @@
     <MESSAGE value="0908/10:00" />
     <MESSAGE value="0908/10:19  新增order资金流水" />
     <MESSAGE value="0911/11:49" />
-    <option name="LAST_COMMIT_MESSAGE" value="0911/11:49" />
+    <MESSAGE value="0912/01:15后端" />
+    <option name="LAST_COMMIT_MESSAGE" value="0912/01:15后端" />
   </component>
 </project>

@@ -84,10 +84,10 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         BigDecimal refundAmount = BigDecimal.ZERO; // 总出账
 
         for (Order order : orders) {
-            if (order.getStatus() == 0) {
+            if (order.getStatus() == 2) {
                 totalAmount = totalAmount.add(order.getOrderAmount()); // 累加满足条件的订单金额
             }
-            if (order.getStatus() == 3) {
+            if (order.getStatus() == 4) {
                 refundAmount = refundAmount.add(order.getOrderAmount()); // 累加满足条件的订单金额
             }
         }
