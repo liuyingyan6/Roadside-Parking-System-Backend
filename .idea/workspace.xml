@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c62f2fd-38ae-4d1e-89c5-9340771697b0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/ClockInVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/ClockInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/ClockInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/dto/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/dto/OrderDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/entity/Inspector.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/entity/Inspector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/enums/OrderStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/enums/OrderStatusEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/mapper/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/mapper/OrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/IClockInService.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/IClockInService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/IOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/IOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/ClockInServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/ClockInServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/InspectorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/InspectorServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/InspectorFeedbackVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/InspectorFeedbackVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/InspectorVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/InspectorVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/OrderConversionVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/OrderConversionVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/OrderVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/OrderVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/OrderServiceImpl.class" afterDir="false" />
-    </list>
+    <list default="true" id="9c62f2fd-38ae-4d1e-89c5-9340771697b0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,7 +32,7 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">{
@@ -213,13 +194,21 @@
       <option name="project" value="LOCAL" />
       <updated>1694417616896</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="9.12/17:42">
+      <created>1694511782138</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1694511782138</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge branch 'developer' into 刘展鹏&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/LoginLogController.class&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/OperationLogController.class&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/OrderController.class&#10;#&#9;parkingsys-operator/target/classes/mapper/OrderMapper.xml" />
     <MESSAGE value="9.11" />
-    <option name="LAST_COMMIT_MESSAGE" value="9.11" />
+    <MESSAGE value="9.12/17:42" />
+    <option name="LAST_COMMIT_MESSAGE" value="9.12/17:42" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
