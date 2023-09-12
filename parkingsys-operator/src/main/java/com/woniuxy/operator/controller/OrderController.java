@@ -3,6 +3,9 @@ package com.woniuxy.operator.controller;
 
 import cn.afterturn.easypoi.excel.ExcelExportUtil;
 import cn.afterturn.easypoi.excel.entity.ExportParams;
+import cn.hutool.core.convert.NumberWithFormat;
+import cn.hutool.jwt.JWT;
+import cn.hutool.jwt.JWTUtil;
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.support.ExcelTypeEnum;
 import com.github.pagehelper.PageHelper;
@@ -110,6 +113,21 @@ public class OrderController {
         PageInfo<RoadOrderVO> pageInfo = new PageInfo<>(list);
        return ResponseResult.ok(pageInfo);
     }
+
+    @PostMapping("/createOrder")
+    public ResponseResult createOrder(@RequestHeader("Authorization")String token,String parkingNum){
+        //        从请求头中Authorization拿出token，并且将token前面的bear去掉
+        token= token.replace("Bearer ", "");
+
+//        使用jwt工具将token解析，并拿出userId
+        JWT jwt = JWTUtil.parseToken(token);
+        NumberWithFormat nwf = (NumberWithFormat)jwt.getPayload("id");
+        System.out.println("nwf = " + nwf);
+//        orderServiceImpl.createOrder(parkingNum);
+        return ResponseResult.ok();
+
+    }
+
 
 
 

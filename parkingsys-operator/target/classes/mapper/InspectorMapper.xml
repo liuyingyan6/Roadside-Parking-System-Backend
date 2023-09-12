@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.woniuxy.operator.mapper.InspectorMapper">
+
+    <select id="findPage" resultType="com.woniuxy.operator.vo.InspectorVO">
+        SELECT i.*,
+        r.name road_name
+        FROM inspector_road ir
+        INNER JOIN inspector i ON ir.inspector_id = i.id
+        INNER JOIN road r ON ir.road_id = r.id
+        <where>
+            <if test="inspectorDTO.roadName!=null and inspectorDTO.roadName!=''">
+                AND r.name LIKE CONCAT(#{inspectorDTO.roadName}, '%')
+            </if>
+            <if test="inspectorDTO.name!=null and inspectorDTO.name!=''">
+                AND i.name LIKE CONCAT(#{inspectorDTO.name}, '%')
+            </if>
+            <if test="inspectorDTO.phone!=null and inspectorDTO.phone!=''">
+                AND i.phone LIKE CONCAT(#{inspectorDTO.phone}, '%')
+            </if>
+        </where>
+    </select>
+</mapper>
