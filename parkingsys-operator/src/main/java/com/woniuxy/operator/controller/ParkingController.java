@@ -2,16 +2,9 @@ package com.woniuxy.operator.controller;
 
 import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.dto.ParkingDTO;
-import com.woniuxy.operator.dto.RoadDTO;
-import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.vo.PageVO;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-
-import com.woniuxy.operator.entity.Parking;
 import com.woniuxy.operator.service.IParkingService;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,6 +30,7 @@ public class ParkingController {
     public ResponseResult list() {
         return ResponseResult.ok(parkingServiceImpl.list());
     }
+
     /**
      * 分页查询
      */
@@ -57,4 +51,5 @@ public class ParkingController {
     public int parkingCount(@RequestParam Integer id) {
         return parkingServiceImpl.parkingCount(id);
     }
+
 }

@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/t-order")
 public class OrderController {
 
-    private final IOrderService tOrderServiceImpl;
+    private final IOrderService orderServiceImpl;
 
-    public OrderController(IOrderService tOrderServiceImpl){
-        this.tOrderServiceImpl = tOrderServiceImpl;
+    public OrderController(IOrderService orderServiceImpl){
+        this.orderServiceImpl = orderServiceImpl;
     }
 
 }
