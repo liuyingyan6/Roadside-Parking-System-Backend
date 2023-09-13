@@ -14,6 +14,7 @@
         <module>parking-common</module>
         <module>parking-oss</module>
         <module>parkingsys-user</module>
+        <module>parkingsys-inspector</module>
     </modules>
 
     <properties>

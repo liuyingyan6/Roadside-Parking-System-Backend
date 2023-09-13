@@ -23,13 +23,15 @@ public class CodeGenerator {
                             .fileOverride() // 覆盖已生成文件
                             .dateType(DateType.ONLY_DATE).disableOpenDir().outputDir("D:\\code\\java"); // 指定输出目录
                 }).packageConfig(builder -> {
-                    builder.parent("com.woniuxy.operator") // 设置父包名
+                    builder.parent("com.woniuxy.inspector") // 设置父包名
                             .moduleName(null) // 设置父包模块名
                             .pathInfo(Collections.singletonMap(OutputFile.xml, "D:\\code\\resources\\mapper")); // 设置mapperXml生成路径
                 }).strategyConfig(builder -> {
                     builder.entityBuilder().enableLombok(); // 允许使用Lombok注解
                     builder.controllerBuilder().enableHyphenStyle().enableRestStyle();
-                    builder.addInclude("operator"); // 设置需要生成的表名
+                    builder.addInclude("car","car_type","charge","clock_in","feedback_img","inspector",
+                                        "inspector_feedback","inspector_road","magnetometer","magnetometer_log",
+                                        "parking","pda","road","t_order","user"); // 设置需要生成的表名
                 })
                 .execute();
 

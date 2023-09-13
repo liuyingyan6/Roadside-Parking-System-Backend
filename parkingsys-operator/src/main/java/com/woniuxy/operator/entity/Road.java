@@ -44,6 +44,10 @@ public class Road implements Serializable {
     @ApiModelProperty("限制车位数")
     private Integer parkingLimit;
 
+    private String roadLongtitude;
+
+    private String roadLatitude;
+
     private Date createTime;
 
     private Date updateTime;
