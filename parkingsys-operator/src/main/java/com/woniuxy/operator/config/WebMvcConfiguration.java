@@ -3,6 +3,7 @@ package com.woniuxy.operator.config;
 import com.woniuxy.operator.interceptor.LoginInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -12,6 +13,12 @@ import java.util.List;
 
 @Configuration
 public class WebMvcConfiguration implements WebMvcConfigurer {
+
+    //RestTemplate Rest风格的模版类
+    @Bean
+    public RestTemplate restTemplate(){
+        return new RestTemplate();
+    }
 
     @Bean
     public LoginInterceptor loginInterceptor(){
