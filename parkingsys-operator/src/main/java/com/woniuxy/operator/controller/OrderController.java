@@ -3,16 +3,22 @@ package com.woniuxy.operator.controller;
 
 import cn.afterturn.easypoi.excel.ExcelExportUtil;
 import cn.afterturn.easypoi.excel.entity.ExportParams;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.dto.OrderDTO;
 import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.vo.*;
 import lombok.SneakyThrows;
 import org.apache.ibatis.annotations.Param;
+import org.apache.poi.ss.formula.functions.T;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.web.bind.annotation.*;
 
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import com.woniuxy.operator.entity.Order;
@@ -39,6 +45,27 @@ public class OrderController {
 
     public OrderController(IOrderService orderServiceImpl) {
         this.orderServiceImpl = orderServiceImpl;
+    }
+
+    // 支付统计饼图
+    @GetMapping("/payCount")
+    public ResponseResult payCount(@RequestParam("startTime") String startTime,
+                                   @RequestParam("endTime") String endTime) {
+
+        PayCountVO payCountVO = orderServiceImpl.payCount(startTime,endTime);
+        return ResponseResult.ok(payCountVO);
+    }
+
+    // 支付统计表单
+    @GetMapping("/payDate")
+    public ResponseResult payDate(@RequestParam("startTime") String startTime,
+                                  @RequestParam("endTime") String endTime,
+                                  @RequestParam("pageNum") Integer pageNum,
+                                  @RequestParam("pageSize") Integer pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<PayDateVO> list = orderServiceImpl.payDate(startTime, endTime);
+        PageInfo<PayDateVO> pageInfo = new PageInfo<>(list);
+        return ResponseResult.ok(new PageVO<>(pageInfo.getTotal(), pageInfo.getList()));
     }
 
     // 资金流水
@@ -97,12 +124,11 @@ public class OrderController {
 
     @GetMapping("/getRevenueInfoByKeyword")
     public ResponseResult getRevenueInfoByKeyword(@RequestParam(required = false) String roadId,
-                                                  @RequestParam(required = false) String startDate,
-                                                  @RequestParam(required = false) String endDate) {
+                                         @RequestParam(required = false) String startDate,
+                                         @RequestParam(required = false) String endDate) {
         List<RevenueVO> list = orderServiceImpl.getRevenueInfo(roadId, startDate, endDate);
         return ResponseResult.ok(list);
     }
-
     @GetMapping("/getOrderConversionVOByKeyword")
     public ResponseResult getOrderConversionVOByKeyword(@RequestParam(required = false) String roadId,
                                                         @RequestParam(required = false) String startDate,

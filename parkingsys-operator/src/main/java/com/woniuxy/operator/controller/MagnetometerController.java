@@ -74,6 +74,7 @@ public class MagnetometerController {
 
     @GetMapping("/getPageByKeyword")
     public ResponseResult getPageByKeyword(Integer pageNum, Integer pageSize, String magnetometerName, String roadName) {
+
         PageHelper.startPage(pageNum, pageSize);
         List<MagnetometerVO> list = magnetometerServiceImpl.getByKeyword(magnetometerName, roadName);
         PageInfo pageInfo = new PageInfo(list);

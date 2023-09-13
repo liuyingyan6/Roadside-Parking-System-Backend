@@ -10,6 +10,7 @@
         <module name="parkingsys-operator" />
         <module name="parking-oss" />
         <module name="parkingsys-generator" />
+        <module name="parkingsys-user" />
         <module name="parking-common" />
       </profile>
     </annotationProcessing>

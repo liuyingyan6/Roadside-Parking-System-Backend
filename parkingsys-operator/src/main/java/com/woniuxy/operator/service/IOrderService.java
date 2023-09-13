@@ -1,11 +1,13 @@
 package com.woniuxy.operator.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.dto.OrderDTO;
 import com.woniuxy.operator.entity.Order;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.woniuxy.operator.vo.*;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -34,4 +36,8 @@ public interface IOrderService extends IService<Order> {
     PageInfo<OrderVO> findAllByInspectorId(Integer pageNum, Integer pageSize, String inspectorId, OrderDTO orderDto);
 
     PageInfo<OrderVO> findAll2ByInspectorId(Integer pageNum, Integer pageSize, String inspectorId, OrderDTO orderDto);
+
+    List<PayDateVO> payDate(String startTime, String endTime);
+
+    PayCountVO payCount(String startTime, String endTime);
 }

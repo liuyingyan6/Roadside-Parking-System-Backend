@@ -13,6 +13,7 @@
         <module>parkingsys-operator</module>
         <module>parking-common</module>
         <module>parking-oss</module>
+        <module>parkingsys-user</module>
     </modules>
 
     <properties>

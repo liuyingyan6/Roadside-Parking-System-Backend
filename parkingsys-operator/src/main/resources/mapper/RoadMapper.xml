@@ -27,6 +27,6 @@
 
 
     <select id="selectRoad" resultType="com.woniuxy.operator.vo.RoadVO">
-        SELECT r.id,r.admin_id operatorId,r.road_name FROM road r GROUP BY r.road_name
+        SELECT r.id,r.admin_id operatorId,r.road_name name FROM road r GROUP BY r.road_name
     </select>
 </mapper>

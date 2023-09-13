@@ -18,6 +18,7 @@ import com.woniuxy.operator.mapper.OrderMapper;
 import com.woniuxy.operator.service.IOrderService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
+
 import com.woniuxy.operator.vo.*;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -45,6 +46,17 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         this.orderMapper = orderMapper;
     }
 
+    // 支付统计饼图
+    @Override
+    public PayCountVO payCount(String startTime, String endTime) {
+        return orderMapper.payCount(startTime,endTime);
+    }
+
+    // 支付统计表单
+    @Override
+    public List<PayDateVO> payDate(String startTime, String endTime) {
+        return orderMapper.payDate(startTime,endTime);
+    }
 
     @Override
     public List<OrderVO> findAll() {
@@ -82,10 +94,10 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         BigDecimal refundAmount = BigDecimal.ZERO; // 总出账
 
         for (Order order : orders) {
-            if (order.getStatus() == 0) {
+            if (order.getStatus() == 2) {
                 totalAmount = totalAmount.add(order.getOrderAmount()); // 累加满足条件的订单金额
             }
-            if (order.getStatus() == 3) {
+            if (order.getStatus() == 4) {
                 refundAmount = refundAmount.add(order.getOrderAmount()); // 累加满足条件的订单金额
             }
         }

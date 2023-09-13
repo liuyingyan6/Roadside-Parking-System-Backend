@@ -1,17 +1,29 @@
 package com.woniuxy.operator.service.impl;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.github.pagehelper.PageInfo;
+import com.github.yulichang.wrapper.MPJLambdaWrapper;
+import com.woniuxy.operator.dto.ClockInDTO;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.woniuxy.operator.entity.ClockIn;
+import com.woniuxy.operator.entity.Inspector;
+import com.woniuxy.operator.entity.InspectorRoad;
+import com.woniuxy.operator.entity.Road;
 import com.woniuxy.operator.mapper.ClockInMapper;
 import com.woniuxy.operator.service.IClockInService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.woniuxy.operator.vo.ClockInVO;
+import com.woniuxy.operator.vo.PageVO;
 import org.springframework.stereotype.Service;
+
+import java.util.Date;
+import java.util.List;
+
 import org.springframework.util.StringUtils;
 
 import java.time.LocalDate;
 import java.time.YearMonth;
-import java.util.List;
+import java.util.Objects;
 
 /**
  * <p>
@@ -28,6 +40,48 @@ public class ClockInServiceImpl extends ServiceImpl<ClockInMapper, ClockIn> impl
 
     public ClockInServiceImpl(ClockInMapper clockInMapper) {
         this.clockInMapper = clockInMapper;
+    }
+
+    @Override
+    public PageVO<ClockInVO> findPage(Integer pageNum, Integer pageSize, ClockInDTO clockInDTO) {
+        Page of = Page.of(pageNum, pageSize);
+        Date startTime = clockInDTO.getStartTime();
+        Date endTime = clockInDTO.getEndTime();
+
+        MPJLambdaWrapper<ClockIn> wrapper = new MPJLambdaWrapper<ClockIn>()
+                .selectAll(ClockIn.class)// 查询InspectorRoad表全部字段
+                .select(Road::getRoadName)
+                .selectAs(Inspector::getName,ClockInVO::getInspectorName)
+                .leftJoin(Inspector.class, Inspector::getId, ClockIn::getInspectorId)
+                .leftJoin(InspectorRoad.class, InspectorRoad::getInspectorId, ClockIn::getInspectorId)
+                .leftJoin(Road.class, Road::getId, InspectorRoad::getRoadId)
+                .ge(Objects.nonNull(startTime), ClockIn::getCreateTime, startTime)
+                .le(Objects.nonNull(endTime), ClockIn::getCreateTime, endTime);
+        Page<ClockInVO> page = clockInMapper.selectJoinPage(of, ClockInVO.class, wrapper);
+
+
+        page.getRecords().stream().forEach(e->{
+            String inspectorId = e.getInspectorId();
+            // 在查询时添加日期范围的条件
+            Long normalWorkingCount = clockInMapper.selectCount(Wrappers.lambdaQuery(ClockIn.class)
+                    .eq(StringUtils.hasLength(inspectorId), ClockIn::getInspectorId, inspectorId)
+                    .eq(ClockIn::getClockInStatus, 1));
+            e.setNormalWorkingCount(normalWorkingCount);
+
+            Long attendanceDayCount = clockInMapper.selectCount(Wrappers.lambdaQuery(ClockIn.class)
+                    .eq(StringUtils.hasLength(inspectorId), ClockIn::getInspectorId, inspectorId));
+            e.setAttendanceDayCount(attendanceDayCount);
+
+            Long abnormalWorkCount = clockInMapper.selectCount(Wrappers.lambdaQuery(ClockIn.class)
+                    .eq(StringUtils.hasLength(inspectorId), ClockIn::getInspectorId, inspectorId)
+                    .eq(ClockIn::getClockInStatus, 0));
+            e.setAbnormalWorkCount(abnormalWorkCount);
+        });
+
+
+        return PageVO.<ClockInVO>builder()
+                .records(page.getRecords())
+                .total(page.getTotal()).build();
     }
 
     @Override
