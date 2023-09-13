@@ -30,41 +30,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class MagnetometerLogController {
 
     private final IMagnetometerLogService magnetometerLogServiceImpl;
-    private final IMagnetometerService magnetometerServiceImpl;
-    private final IParkingService parkingServiceImpl;
-    private final IOrderService orderServiceImpl;
 
     public MagnetometerLogController(IMagnetometerLogService magnetometerLogServiceImpl, IMagnetometerService magnetometerServiceImpl, IParkingService parkingServiceImpl, IOrderService orderServiceImpl) {
         this.magnetometerLogServiceImpl = magnetometerLogServiceImpl;
-        this.magnetometerServiceImpl = magnetometerServiceImpl;
-        this.parkingServiceImpl = parkingServiceImpl;
-        this.orderServiceImpl = orderServiceImpl;
-    }
-
-    //    @Transactional
-    @PostMapping("/carIn")
-    public ResponseResult carIn(Integer id) {
-        Magnetometer magnetometer = magnetometerServiceImpl.getById(id);
-        magnetometerLogServiceImpl.save(new MagnetometerLog(null, id, magnetometer.getStatus(), 0, DateTime.now(), DateTime.now(), 0));
-        parkingServiceImpl.update(new UpdateWrapper<Parking>()
-                .eq("geomagnetic_id", id)
-                .set("status", 0));
-        return ResponseResult.ok();
-    }
-
-    //    @Transactional
-    @PostMapping("/carOut")
-    public ResponseResult carOut(Integer id) {
-        Magnetometer magnetometer = magnetometerServiceImpl.getById(id);
-        magnetometerLogServiceImpl.save(new MagnetometerLog(null, id, magnetometer.getStatus(), 1, DateTime.now(), DateTime.now(), 0));
-        parkingServiceImpl.update(new UpdateWrapper<Parking>()
-                .eq("geomagnetic_id", id)
-                .set("status", 1));
-        return ResponseResult.ok();
     }
 
     @GetMapping("/getPageById")
-    public ResponseResult getPageById(Integer pageNum, Integer pageSize,Integer id) {
+    public ResponseResult getPageById(Integer pageNum, Integer pageSize, Integer id) {
         Page<MagnetometerLog> pageData = new Page<>(pageNum, pageSize);
         Page<MagnetometerLog> page = magnetometerLogServiceImpl.page(pageData, new QueryWrapper<MagnetometerLog>().eq("magnetometer_id", id));
         return ResponseResult.ok(page);

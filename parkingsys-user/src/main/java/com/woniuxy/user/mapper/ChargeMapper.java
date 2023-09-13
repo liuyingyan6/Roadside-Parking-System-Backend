@@ -1,6 +1,6 @@
 package com.woniuxy.user.mapper;
 import org.apache.ibatis.annotations.Mapper;
-import com.woniuxy.user.entity.Order;
+import com.woniuxy.user.entity.Charge;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -9,9 +9,9 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author woniuxy
- * @since 2023-09-12
+ * @since 2023-09-13
  */
 @Mapper
-public interface TOrderMapper extends BaseMapper<Order> {
+public interface ChargeMapper extends BaseMapper<Charge> {
 
 }

@@ -25,7 +25,7 @@ import lombok.ToString;
 @ToString
   @TableName("t_order")
 @ApiModel(value = "TOrder对象", description = "")
-public class TOrder implements Serializable {
+public class Order implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
