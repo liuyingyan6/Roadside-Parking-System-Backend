@@ -5,24 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c62f2fd-38ae-4d1e-89c5-9340771697b0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/ClockInVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/ClockInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/ClockInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/dto/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/dto/OrderDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/entity/Inspector.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/entity/Inspector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/enums/OrderStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/enums/OrderStatusEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/mapper/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/mapper/OrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/IClockInService.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/IClockInService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/IOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/IOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/ClockInServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/ClockInServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/InspectorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/InspectorServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/InspectorFeedbackVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/InspectorFeedbackVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/InspectorVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/InspectorVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/OrderConversionVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/OrderConversionVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/OrderVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/java/com/woniuxy/operator/vo/OrderVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/OrderServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/src/main/resources/mapper/OperatorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parkingsys-operator/src/main/resources/mapper/OperatorMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/ManagerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/controller/UserFeedbackController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/mapper/ManagerMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/mapper/UserFeedbackMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/IManagerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/IUserFeedbackService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/ManagerServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/OrderServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/com/woniuxy/operator/service/impl/UserFeedbackServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/mapper/ManagerMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parkingsys-operator/target/classes/mapper/UserFeedbackMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,12 +44,20 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
+        <option name="localRepository" value="C:\Users\lzp20\.m2\repository" />
+        <option name="mavenHome" value="D:/java/lzp/wed/apache-maven-3.8.3" />
         <option name="useMavenConfig" value="true" />
+        <option name="userSettingsFile" value="C:\Users\lzp20\.m2\settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProjectId" id="2VI4zztXBewNWECG2pOqe3C2Q2w" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
@@ -60,12 +65,20 @@
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "1.8",
     "last_opened_file_path": "E:/idea/parkingsys/parking-oss/src/main/java/com/woniuxy",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.38505748"
+    "project.structure.side.proportion": "0.38505748",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "spring.configuration.checksum": "99d69ca2a70dfd36e58109df3b581400",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="ReactorSettings">
@@ -145,6 +158,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="Merge branch 'developer' into 刘展鹏&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/LoginLogController.class&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/OperationLogController.class&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/OrderController.class&#10;#&#9;parkingsys-operator/target/classes/mapper/OrderMapper.xml">
       <created>1694060741268</created>
@@ -178,6 +192,7 @@
       <workItem from="1694224345648" duration="20338000" />
       <workItem from="1694343301271" duration="9368000" />
       <workItem from="1694395118878" duration="6071000" />
+      <workItem from="1694510531192" duration="2534000" />
     </task>
     <task id="LOCAL-00004" summary="Merge branch 'developer' into 刘展鹏&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/LoginLogController.class&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/OperationLogController.class&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/OrderController.class&#10;#&#9;parkingsys-operator/target/classes/mapper/OrderMapper.xml">
       <created>1694226571487</created>
@@ -200,8 +215,18 @@
       <option name="project" value="LOCAL" />
       <updated>1694417616896</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="9.11">
+      <created>1694506449340</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1694506449340</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge branch 'developer' into 刘展鹏&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/LoginLogController.class&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/OperationLogController.class&#10;#&#9;parkingsys-operator/target/classes/com/woniuxy/operator/controller/OrderController.class&#10;#&#9;parkingsys-operator/target/classes/mapper/OrderMapper.xml" />
