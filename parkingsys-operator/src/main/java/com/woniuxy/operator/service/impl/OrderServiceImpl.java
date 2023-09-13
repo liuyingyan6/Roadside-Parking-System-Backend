@@ -17,9 +17,7 @@ import com.woniuxy.operator.mapper.ParkingMapper;
 import com.woniuxy.operator.service.IOrderService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
-import com.woniuxy.operator.vo.CountOrderVO;
-import com.woniuxy.operator.vo.OrderVO;
-import com.woniuxy.operator.vo.RoadOrderVO;
+import com.woniuxy.operator.vo.*;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -39,9 +37,7 @@ import java.util.List;
 public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements IOrderService {
 
     private final OrderMapper orderMapper;
-
     private final ParkingMapper parkingMapper;
-
     private final MagnetometerLogMapper magnetometerLogMapper;
 
     public OrderServiceImpl(OrderMapper orderMapper, ParkingMapper parkingMapper, MagnetometerLogMapper magnetometerLogMapper) {
@@ -100,6 +96,16 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     }
 
     @Override
+    public List<RevenueVO> getRevenueInfo(String roadId, String startDate, String endDate) {
+        return orderMapper.selectRevenueInfo(roadId, startDate, endDate);
+    }
+
+    @Override
+    public OrderConversionVO getOrderConversionVOByKeyword(String roadId, String startDate, String endDate) {
+        return orderMapper.selectOrderConversionVOByKeyword(roadId, startDate, endDate);
+    }
+
+    @Override
     public List<RoadOrderVO> getRoadOrderList(Integer roadId) {
         List<RoadOrderVO> list= orderMapper.getRoadOrderList(roadId);
         list.forEach(e->{
@@ -117,27 +123,6 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         return list;
     }
 
-    @Override
-    public void createOrder(String parkingNum,Long carId) {
-        //通过parkingNum查询路段id,parkingId
-        Parking park = parkingMapper.selectOne(Wrappers.lambdaQuery(Parking.class).eq(Parking::getNumber, parkingNum));
-        Long roadId = park.getRoadId();
-        Long parkingId = park.getId();
-        Integer magnetometerId = park.getMagnetometerId();
-        MagnetometerLog magnetometerLog = magnetometerLogMapper.selectOne(Wrappers.lambdaQuery(MagnetometerLog.class)
-                .eq(MagnetometerLog::getMagnetometerId, magnetometerId)
-                .orderByAsc(MagnetometerLog::getId)
-                .last("LIMIT 1"));
-        Date magnetometerLogCreateTime = magnetometerLog.getCreateTime();
-
-        Order order=new Order();
-        order.setCarId(carId);
-        order.setRoadId(roadId);
-        order.setStatus(1);
-        order.setParkingId(parkingId);
-        order.setCreateTime(magnetometerLogCreateTime);
-        orderMapper.insert(order);
-    }
 
 
 }

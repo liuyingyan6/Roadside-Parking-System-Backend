@@ -21,5 +21,4 @@ public interface IUserService extends IService<User> {
 
     Integer updateState(User user);
 
-    Long selectById(Long id);
 }

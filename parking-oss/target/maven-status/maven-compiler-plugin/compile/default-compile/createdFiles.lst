@@ -1,0 +1,5 @@
+com\woniuxy\controller\OSSController.class
+com\woniuxy\config\cors\CorsConfig.class
+com\woniuxy\entity\FileInfo$FileInfoBuilder.class
+com\woniuxy\entity\FileInfo.class
+com\woniuxy\OssApplication.class

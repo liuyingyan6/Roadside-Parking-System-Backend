@@ -34,7 +34,7 @@ public class SwaggerConfig {
                 .build()
         );
         // 扫描的API路径
-        docket.select()         .apis(RequestHandlerSelectors.basePackage("com.woniuxy.operator.controller"))
+        docket.select()         .apis(RequestHandlerSelectors.basePackage("com.woniuxy.user.controller"))
                 // 设置对指定路径下的任意类生成文档
                 .paths(PathSelectors.any())
                 .build();

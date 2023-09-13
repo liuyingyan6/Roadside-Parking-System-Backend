@@ -13,4 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IParkingService extends IService<Parking> {
 
+    Long getParkingStatus(String parkingNum);
 }

@@ -13,4 +13,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ITOrderService extends IService<TOrder> {
 
+    void createOrder(String parkingNum,Long carId);
+
 }

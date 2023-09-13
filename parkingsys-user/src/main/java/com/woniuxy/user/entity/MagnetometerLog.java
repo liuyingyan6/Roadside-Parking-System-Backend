@@ -1,7 +1,11 @@
 package com.woniuxy.user.entity;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
+import java.util.Date;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -34,6 +38,14 @@ public class MagnetometerLog implements Serializable {
 
       @ApiModelProperty("车位状态：0有车，1无车，2未激活")
       private Integer parkingStatus;
+
+    @TableField(fill = FieldFill.INSERT)
+    private Date createTime;
+
+    @TableField(fill = FieldFill.UPDATE)
+    private Date updateTime;
+
+    private Integer logicDelete;
 
 
 }

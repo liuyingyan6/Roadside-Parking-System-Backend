@@ -2,39 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.woniuxy.operator.mapper.MagnetometerMapper">
 
-    <select id="selectPageByKeyword" resultType="com.woniuxy.operator.vo.MagnetometerVO">
+    <select id="selectByKeyword" resultType="com.woniuxy.operator.vo.MagnetometerVO">
         select m.id,
-        m.name as magnetometer_name,
+        m.name as name,
         r.name as road_name,
         p.name as parking_name,
         p.status as parking_status,
-        m.status as magnetometer_status,
+        m.status as status,
         m.update_time,
-        m.create_time
-        from magnetometer as m,
-        parking as p,
-        road as r
+        m.create_time,
+        p.id as parking_id
+        from magnetometer as m
+        left join parking as p on m.parking_id = p.id
+        left join road as r on p.road_id = r.id
         <where>
-            m.parking_id = p.id
-            and p.road_id = r.id
-            <if test="magnetometerName!=null and magnetometerName!=''">
-                and m.name like concat('%', #{magnetometerName}, '%')
-            </if>
-            <if test="roadName!=null and roadName!=''">
-                and r.name like concat('%', #{roadName}, '%')
-            </if>
-        </where>
-        limit #{skipRow}, #{pageSize}
-    </select>
-
-    <select id="selectTotalCount" resultType="Long">
-        select count(0)
-        from magnetometer as m,
-        parking as p,
-        road as r
-        <where>
-            m.parking_id = p.id
-            and p.road_id = r.id
             <if test="magnetometerName!=null and magnetometerName!=''">
                 and m.name like concat('%', #{magnetometerName}, '%')
             </if>

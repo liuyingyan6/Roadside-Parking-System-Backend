@@ -23,4 +23,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         this.userMapper = userMapper;
     }
 
+    @Override
+    public Long selectById(Long id) {
+        User user = userMapper.selectById(id);
+        Long carId = user.getCarId();
+        return carId;
+    }
+
 }

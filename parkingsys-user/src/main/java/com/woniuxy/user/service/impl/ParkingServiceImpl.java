@@ -1,5 +1,6 @@
 package com.woniuxy.user.service.impl;
 
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.woniuxy.user.entity.Parking;
 import com.woniuxy.user.mapper.ParkingMapper;
 import com.woniuxy.user.service.IParkingService;
@@ -23,4 +24,11 @@ public class ParkingServiceImpl extends ServiceImpl<ParkingMapper, Parking> impl
         this.parkingMapper = parkingMapper;
     }
 
+    @Override
+    public Long getParkingStatus(String parkingNum) {
+        Parking park = parkingMapper.selectOne(Wrappers.lambdaQuery(Parking.class)
+                .eq(Parking::getNumber, parkingNum));
+        Long status = park.getStatus();
+        return status;
+    }
 }

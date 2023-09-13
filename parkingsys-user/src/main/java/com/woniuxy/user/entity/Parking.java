@@ -2,11 +2,11 @@ package com.woniuxy.user.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 /**
  * <p>
@@ -19,6 +19,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+@Data
   @ApiModel(value = "Parking对象", description = "")
 public class Parking implements Serializable {
 
@@ -45,7 +46,7 @@ public class Parking implements Serializable {
       @ApiModelProperty("激活时间")
       private Date createTime;
 
-    private Date updateTime;
+      private Date updateTime;
 
       @ApiModelProperty("逻辑删除")
       private Integer logicDelete;

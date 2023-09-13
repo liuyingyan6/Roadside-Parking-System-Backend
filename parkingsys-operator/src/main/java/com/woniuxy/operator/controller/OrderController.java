@@ -3,19 +3,15 @@ package com.woniuxy.operator.controller;
 
 import cn.afterturn.easypoi.excel.ExcelExportUtil;
 import cn.afterturn.easypoi.excel.entity.ExportParams;
-import cn.hutool.core.convert.NumberWithFormat;
-import cn.hutool.jwt.JWT;
-import cn.hutool.jwt.JWTUtil;
-import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.dto.OrderDTO;
-import com.woniuxy.operator.entity.User;
 import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.service.IUserService;
 import com.woniuxy.operator.vo.CountOrderVO;
 import com.woniuxy.operator.vo.OrderVO;
 import com.woniuxy.operator.vo.RoadOrderVO;
+import com.woniuxy.operator.vo.*;
 import lombok.SneakyThrows;
 import org.apache.ibatis.annotations.Param;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -23,7 +19,6 @@ import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
-import java.util.Objects;
 
 import com.woniuxy.operator.entity.Order;
 import com.woniuxy.operator.service.IOrderService;
@@ -46,7 +41,6 @@ import javax.servlet.http.HttpServletResponse;
 public class OrderController {
 
     private final IOrderService orderServiceImpl;
-
     private final IUserService userServiceImpl;
 
     public OrderController(IOrderService orderServiceImpl, IUserService userServiceImpl) {
@@ -108,6 +102,19 @@ public class OrderController {
         return ResponseResult.ok(all);
     }
 
+    @GetMapping("/getRevenueInfoByKeyword")
+    public ResponseResult getRevenueInfoByKeyword(@RequestParam(required = false) String roadId,
+                                         @RequestParam(required = false) String startDate,
+                                         @RequestParam(required = false) String endDate) {
+        List<RevenueVO> list = orderServiceImpl.getRevenueInfo(roadId, startDate, endDate);
+        return ResponseResult.ok(list);
+    }
+    @GetMapping("/getOrderConversionVOByKeyword")
+    public ResponseResult getOrderConversionVOByKeyword(@RequestParam(required = false) String roadId,
+                                                        @RequestParam(required = false) String startDate,
+                                                        @RequestParam(required = false) String endDate) {
+        return ResponseResult.ok(orderServiceImpl.getOrderConversionVOByKeyword(roadId, startDate, endDate));
+    }
     @GetMapping("/getRoadOrderList")
     public ResponseResult getRoadOrderList(Integer pageSize,Integer pageNum,Integer roadId){
         PageHelper.startPage(pageNum,pageSize);
@@ -115,24 +122,5 @@ public class OrderController {
         PageInfo<RoadOrderVO> pageInfo = new PageInfo<>(list);
        return ResponseResult.ok(pageInfo);
     }
-
-    @PostMapping("/createOrder")
-    public ResponseResult createOrder(@RequestParam Long userId,@RequestParam String parkingNum){
-//        //        从请求头中Authorization拿出token，并且将token前面的bear去掉
-//        token= token.replace("Bearer ", "");
-//
-////        使用jwt工具将token解析，并拿出userId
-//        JWT jwt = JWTUtil.parseToken(token);
-//        NumberWithFormat nwf = (NumberWithFormat)jwt.getPayload("id");
-//
-//        Long id = Long.valueOf(nwf.intValue());
-        Long carId = userServiceImpl.selectById(userId);
-        orderServiceImpl.createOrder(parkingNum,carId);
-        return ResponseResult.ok();
-
-    }
-
-
-
 
 }

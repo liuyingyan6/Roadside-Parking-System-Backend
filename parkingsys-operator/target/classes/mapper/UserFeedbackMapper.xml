@@ -2,25 +2,4 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.woniuxy.operator.mapper.UserFeedbackMapper">
 
-    <select id="findPage" resultType="com.woniuxy.operator.vo.UserFeedbackVO">
-        SELECT
-        f.*,
-        u.user_name,
-        u.phone
-        FROM
-        user_feedback f
-        LEFT JOIN `user` u ON f.user_id = u.id
-        <where>
-            <if test="userDTO.state!=null">
-                AND f.state = #{userDTO.state}
-            </if>
-            <if test="userDTO.userName!=null and userDTO.userName!=''">
-                AND u.user_name LIKE CONCAT(#{userDTO.userName}, '%')
-            </if>
-            <if test="userDTO.phone!=null and userDTO.phone!=''">
-                AND u.phone LIKE CONCAT(#{userDTO.phone}, '%')
-            </if>
-        </where>
-
-    </select>
 </mapper>
