@@ -49,6 +49,7 @@ public class OrderVO implements Serializable {
     @Excel(name = "订单金额")
     @ApiModelProperty("订单金额")
     private BigDecimal orderAmount;
+
    // @Excel(name = "支付类型")
     @ApiModelProperty("0-支付宝，1-微信")
     private Integer payType;

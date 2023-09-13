@@ -23,6 +23,10 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
     @Override
     public void updateFill(MetaObject metaObject) {
         log.info("start update fill ....");
+        Object createTime = getFieldValByName("createTime", metaObject);
+        if (Objects.isNull(createTime)) {
+            this.setFieldValByName("createTime",new Date(),metaObject);
+        }
         Object updateTime = getFieldValByName("updateTime", metaObject);
         if (Objects.isNull(updateTime)) {
             this.setFieldValByName("updateTime",new Date(),metaObject);

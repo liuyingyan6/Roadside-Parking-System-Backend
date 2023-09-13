@@ -1,7 +1,10 @@
 package com.woniuxy.user.mapper;
+import com.woniuxy.user.vo.OrderVO;
 import org.apache.ibatis.annotations.Mapper;
 import com.woniuxy.user.entity.TOrder;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,5 +16,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 @Mapper
 public interface TOrderMapper extends BaseMapper<TOrder> {
-
+List<OrderVO> findOrder(String carNumber);
 }

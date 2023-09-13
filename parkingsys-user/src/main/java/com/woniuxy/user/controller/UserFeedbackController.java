@@ -1,5 +1,6 @@
 package com.woniuxy.user.controller;
 
+import com.woniuxy.user.pojos.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -16,13 +17,19 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2023-09-12
  */
 @RestController
-@RequestMapping("/user-feedback")
+@RequestMapping("/userFeedback")
 public class UserFeedbackController {
 
     private final IUserFeedbackService userFeedbackServiceImpl;
 
     public UserFeedbackController(IUserFeedbackService userFeedbackServiceImpl){
         this.userFeedbackServiceImpl = userFeedbackServiceImpl;
+    }
+    //意见反馈
+    @PostMapping("/add")
+    public ResponseResult add(@RequestBody UserFeedback userFeedback){
+        userFeedbackServiceImpl.save(userFeedback);
+        return ResponseResult.ok("提交成功");
     }
 
 }

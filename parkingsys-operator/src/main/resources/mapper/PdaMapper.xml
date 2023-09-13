@@ -3,7 +3,7 @@
 <mapper namespace="com.woniuxy.operator.mapper.PdaMapper">
     <select id="selectByKeyword" resultType="com.woniuxy.operator.vo.PdaVO">
         SELECT pda.id, pda.name,
-        GROUP_CONCAT(road.name SEPARATOR ',') as road_names,
+        GROUP_CONCAT(road.road_name SEPARATOR ',') as road_names,
         inspector.name as inspector_name,
         pda.`status`,
         pda.create_time,
@@ -20,7 +20,7 @@
                 and inspector.name like concat('%', #{inspectorName}, '%')
             </if>
             <if test="roadName!=null and roadName!=''">
-                and road.name like concat('%', #{roadName}, '%')
+                and road.road_name like concat('%', #{roadName}, '%')
             </if>
         </where>
         GROUP BY pda.id, inspector.id

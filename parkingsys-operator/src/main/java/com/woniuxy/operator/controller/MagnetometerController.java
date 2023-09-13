@@ -1,10 +1,8 @@
 package com.woniuxy.operator.controller;
 
-import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.date.DateTime;
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.support.ExcelTypeEnum;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.woniuxy.operator.annotation.SaveOperationLog;
@@ -12,7 +10,6 @@ import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.vo.MagnetometerVO;
 import com.woniuxy.operator.vo.PageVO;
 import lombok.SneakyThrows;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -77,6 +74,7 @@ public class MagnetometerController {
 
     @GetMapping("/getPageByKeyword")
     public ResponseResult getPageByKeyword(Integer pageNum, Integer pageSize, String magnetometerName, String roadName) {
+
         PageHelper.startPage(pageNum, pageSize);
         List<MagnetometerVO> list = magnetometerServiceImpl.getByKeyword(magnetometerName, roadName);
         PageInfo pageInfo = new PageInfo(list);

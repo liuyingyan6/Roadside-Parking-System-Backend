@@ -1,5 +1,7 @@
 package com.woniuxy.user.controller;
 
+import com.woniuxy.user.pojos.ResponseResult;
+import com.woniuxy.user.vo.OrderVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -25,4 +27,11 @@ public class TOrderController {
         this.tOrderServiceImpl = tOrderServiceImpl;
     }
 
+
+    //通过车牌号搜索订单
+    @PostMapping("/findOrder")
+    public ResponseResult findOrder(String carNumber){
+        List<OrderVO> order = tOrderServiceImpl.findOrder(carNumber);
+        return ResponseResult.ok(order);
+    }
 }

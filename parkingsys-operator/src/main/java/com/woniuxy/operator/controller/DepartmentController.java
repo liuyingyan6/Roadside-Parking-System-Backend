@@ -1,6 +1,6 @@
 package com.woniuxy.operator.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.woniuxy.operator.pojos.ResponseResult;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import com.woniuxy.operator.entity.Department;
@@ -25,4 +25,10 @@ public class DepartmentController {
         this.departmentServiceImpl = departmentServiceImpl;
     }
 
+    // 查询全部
+    @GetMapping("/all")
+    public ResponseResult all(){
+        List<Department> list = departmentServiceImpl.findAll();
+        return ResponseResult.ok(list);
+    }
 }

@@ -33,7 +33,7 @@ public class Road implements Serializable {
     private Long chargeId;
 
     @ApiModelProperty("路段名称")
-    private String name;
+    private String roadName;
 
     @ApiModelProperty("路段状态（0-正常，1-禁用）")
     private Integer state;

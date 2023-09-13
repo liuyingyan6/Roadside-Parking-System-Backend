@@ -20,7 +20,7 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-  @TableName("login_log")
+@TableName("login_log")
 @ApiModel(value = "LoginLog对象", description = "")
 @AllArgsConstructor
 @NoArgsConstructor
@@ -28,13 +28,13 @@ public class LoginLog implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-      @TableId(value = "id", type = IdType.AUTO)
-      private Integer id;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
 
     private Long userId;
 
-      @ApiModelProperty("0-登录，1-退出")
-      private Integer log;
+    @ApiModelProperty("0-登录，1-退出")
+    private Integer log;
 
     private String ip;
 

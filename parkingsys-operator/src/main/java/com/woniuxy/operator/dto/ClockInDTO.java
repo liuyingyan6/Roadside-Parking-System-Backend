@@ -10,5 +10,6 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ClockInDTO {
-    private Date createTime;
+    private Date startTime;
+    private Date endTime;
 }

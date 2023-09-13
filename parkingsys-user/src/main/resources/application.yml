@@ -1,6 +1,6 @@
 server:
   port: 9091
-  host: localhost
+  host: 192.168.7.23
 spring:
   datasource:
     druid:
@@ -49,6 +49,7 @@ jwt:
   signature: woniu
   accessTime: 60 #短令牌有效期 单位：分钟
   refreshTime: 7 #长令牌有效期 单位：天
+  timeout: 30 #设定令牌默认的超时时间为：30分钟
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true #尊重驼峰命名规则

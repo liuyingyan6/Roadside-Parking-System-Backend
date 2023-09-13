@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.woniuxy.operator.mapper.OperatorMapper">
+
+    <select id="findPage" resultType="com.woniuxy.operator.vo.OperatorVO">
+        SELECT
+            o.operator_name,
+            o.phone,
+            GROUP_CONCAT(r.road_name) AS names,
+	        o.area,
+	        o.state
+        FROM
+            operator o
+            LEFT JOIN road r ON o.id = r.admin_id
+         <where>
+             <if test="operatorDTO.name!=null and operatorDTO.name!=''">
+                 AND o.operator_name LIKE CONCAT(#{operatorDTO.name},'%')
+             </if>
+
+             <if test="operatorDTO.phone!=null and operatorDTO.phone!=''">
+                 AND o.phone LIKE CONCAT(#{operatorDTO.phone},'%')
+             </if>
+
+             <if test="operatorDTO.state!=null">
+                 AND o.state = #{operatorDTO.state}
+             </if>
+         </where>
+         GROUP BY o.operator_name
+    </select>
+</mapper>
