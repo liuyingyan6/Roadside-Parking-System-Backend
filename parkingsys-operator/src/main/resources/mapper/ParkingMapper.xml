@@ -5,11 +5,14 @@
     <select id="selectParkDTOPage" resultType="com.woniuxy.operator.dto.ParkingDTO">
         SELECT
         p.*,
-        g.name as pdaName,
-        g.create_time as pdaTime
+        r.road_name as roadName,
+        m.name as magnetometerName,
+        m.create_time as magnetometerTime
         FROM parking p
-        LEFT JOIN pda g ON p.pda_id = g.id
+        LEFT JOIN magnetometer m ON p.magnetometer_id = m.id
+        LEFT JOIN road r ON p.road_id = r.id
         <where>
+            p.logic_delete=0
             <if test="name!= null and name!=''">
                 AND p.name LIKE CONCAT('%',#{name},'%')
             </if>

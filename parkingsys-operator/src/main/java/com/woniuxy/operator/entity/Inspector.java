@@ -14,7 +14,7 @@ import lombok.ToString;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author woniuxy
@@ -23,12 +23,12 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-  @ApiModel(value = "Inspector对象", description = "")
+@ApiModel(value = "Inspector对象", description = "")
 public class Inspector implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-      private Long id;
+    private Long id;
 
     @ApiModelProperty("巡检员名称")
     private String name;
@@ -45,11 +45,11 @@ public class Inspector implements Serializable {
     @ApiModelProperty("设备id")
     private Long pdaId;
 
-      @ApiModelProperty("地址id")
-      private Long chinaId;
+    @ApiModelProperty("地址id")
+    private Long chinaId;
 
-      @ApiModelProperty("路段id")
-      private Long roadId;
+    @ApiModelProperty("路段id")
+    private Long roadId;
 
     @TableField(fill = FieldFill.INSERT)
     private Date createTime;

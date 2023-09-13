@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.List;
+import java.util.Map;
 
 import com.woniuxy.operator.entity.Magnetometer;
 import com.woniuxy.operator.service.IMagnetometerService;
@@ -23,14 +24,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * <p>
- * 前端控制器
- * </p>
- *
- * @author woniuxy
- * @since 2023-09-05
- */
+
 @RestController
 @RequestMapping("/magnetometer")
 public class MagnetometerController {
@@ -40,7 +34,17 @@ public class MagnetometerController {
     public MagnetometerController(IMagnetometerService magnetometerServiceImpl) {
         this.magnetometerServiceImpl = magnetometerServiceImpl;
     }
+    /**
+     * 模糊查询
+     */
+    @GetMapping("/findsByName")
+    public List<Magnetometer>findsByName(@RequestParam String name){
+        return magnetometerServiceImpl.findsByName(name);
+    }
 
+    /**
+     * 添加
+     */
     @PostMapping("/add")
     public ResponseResult add(@RequestBody Magnetometer magnetometer) {
         magnetometer.setCreateTime(DateTime.now());
@@ -60,6 +64,9 @@ public class MagnetometerController {
         return ResponseResult.ok(saved);
     }
 
+    /**
+     * 删除
+     */
     @DeleteMapping("/delete")
     public ResponseResult delete(Integer id) {
         magnetometerServiceImpl.removeById(id);

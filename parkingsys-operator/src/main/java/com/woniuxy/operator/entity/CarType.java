@@ -12,14 +12,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-/**
- * <p>
- *
- * </p>
- *
- * @author woniuxy
- * @since 2023-09-05
- */
+
 @Getter
 @Setter
 @ToString

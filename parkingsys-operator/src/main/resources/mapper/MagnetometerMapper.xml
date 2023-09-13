@@ -2,15 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.woniuxy.operator.mapper.MagnetometerMapper">
 
+    <!-- 分页查询 -->
     <select id="selectPageByKeyword" resultType="com.woniuxy.operator.vo.MagnetometerVO">
-        select m.id,
-        m.name as magnetometer_name,
+        select m.*,
         r.name as road_name,
         p.name as parking_name,
-        p.status as parking_status,
-        m.status as magnetometer_status,
-        m.update_time,
-        m.create_time
+        p.status as parking_status
         from magnetometer as m,
         parking as p,
         road as r
@@ -40,6 +37,16 @@
             </if>
             <if test="roadName!=null and roadName!=''">
                 and r.name like concat('%', #{roadName}, '%')
+            </if>
+        </where>
+    </select>
+
+    <!-- 模糊查询 -->
+    <select id="findByName" resultType="com.woniuxy.operator.entity.Magnetometer">
+        select *from magnetometer
+        <where>
+            <if test="name!=null and name!=''">
+                AND name LIKE CONCAT('%',#{name},'%')
             </if>
         </where>
     </select>

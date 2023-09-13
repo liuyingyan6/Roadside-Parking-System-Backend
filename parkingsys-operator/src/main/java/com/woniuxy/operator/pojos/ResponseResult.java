@@ -1,38 +1,41 @@
 package com.woniuxy.operator.pojos;
 
+import com.woniuxy.operator.handler.BusinessEnum;
 import com.woniuxy.operator.handler.IErrorCode;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * @Description: ResponseResult
- * @Date 2023/8/4 22:26
- * @Version 1.0
- */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class ResponseResult<T> {
-    // 业务状态码 200-成功
+
+    @ApiModelProperty("响应状态码")
     private Integer code;
-    // 业务状态码的描述
-    private String msg;
-    // 响应给前端的数据
+    @ApiModelProperty("响应数据")
     private T data;
+    @ApiModelProperty("返回信息")
+    private String message;
+
 
     public static ResponseResult ok(){
-        return new ResponseResult(200,"ok",null);
+        return new ResponseResult(200,null,"ok");
     }
 
     public static <T> ResponseResult ok(T data){
-        return new ResponseResult(200,"ok",data);
+        return new ResponseResult(200,data,"ok");
     }
 
     /**
+     * 操作失败
+     */
+    public static <T> ResponseResult <T> error() {
+        return new ResponseResult(500,null,"ok");
+    }
+    /**
      * 处理错误信息
-     * @param errorCode
-     * @return
      */
     public static ResponseResult fail(IErrorCode errorCode){
         return new ResponseResult(errorCode.getCode(),errorCode.getMessage(),null);

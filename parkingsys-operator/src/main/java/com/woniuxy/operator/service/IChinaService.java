@@ -3,14 +3,10 @@ package com.woniuxy.operator.service;
 import com.woniuxy.operator.entity.China;
 import com.baomidou.mybatisplus.extension.service.IService;
 
-/**
- * <p>
- *  服务类
- * </p>
- *
- * @author woniuxy
- * @since 2023-09-05
- */
-public interface IChinaService extends IService<China> {
+import java.util.List;
+import java.util.Map;
 
+
+public interface IChinaService extends IService<China> {
+    List<China> findByChinaName(String name);
 }

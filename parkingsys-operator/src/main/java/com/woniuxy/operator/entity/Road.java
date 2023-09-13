@@ -3,6 +3,7 @@ package com.woniuxy.operator.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -27,13 +28,13 @@ public class Road implements Serializable {
     private Long inspectorId;
 
     @ApiModelProperty("运维员id")
-    private Long adminId;
+    private Long operatorId;
 
     @ApiModelProperty("收费标准id(收费类型)")
     private Long chargeId;
 
     @ApiModelProperty("路段名称")
-    private String name;
+    private String roadName;
 
     @ApiModelProperty("路段状态（0-正常，1-禁用）")
     private Integer state;
@@ -49,5 +50,6 @@ public class Road implements Serializable {
     private Date updateTime;
 
     @ApiModelProperty("逻辑删除")
+    @TableLogic
     private Integer logicDelete;
 }

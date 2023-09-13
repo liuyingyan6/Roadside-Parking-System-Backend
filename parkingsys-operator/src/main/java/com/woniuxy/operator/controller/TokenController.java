@@ -3,9 +3,10 @@ package com.woniuxy.operator.controller;
 import cn.hutool.core.convert.NumberWithFormat;
 import cn.hutool.jwt.JWT;
 import cn.hutool.jwt.JWTUtil;
-import com.woniuxy.operator.dto.TokenRequest;
-import com.woniuxy.operator.dto.TokenResponse;
+
 import com.woniuxy.operator.entity.Manager;
+import com.woniuxy.operator.pojos.TokenRequest;
+import com.woniuxy.operator.pojos.TokenResponse;
 import com.woniuxy.operator.util.TokenUtil;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -20,12 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-/**
- * @Description: TokenController
- * @Author Phil
- * @Date 2023/8/30 14:24
- * @Version 1.0
- */
+
 @RequestMapping("/token")
 @RestController
 public class TokenController {

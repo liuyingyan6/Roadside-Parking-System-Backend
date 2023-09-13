@@ -15,11 +15,6 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import javax.annotation.Resource;
 
-/**
- * @Description: RedisConfigure
- * @Date 2023/8/14 18:58
- * @Version 1.0
- */
 @Configuration
 public class RedisConfigure {
 

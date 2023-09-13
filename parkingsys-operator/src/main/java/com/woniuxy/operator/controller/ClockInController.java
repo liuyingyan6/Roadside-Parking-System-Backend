@@ -7,14 +7,7 @@ import com.woniuxy.operator.entity.ClockIn;
 import com.woniuxy.operator.service.IClockInService;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * <p>
- *  前端控制器
- * </p>
- *
- * @author woniuxy
- * @since 2023-09-05
- */
+
 @RestController
 @RequestMapping("/clockIn")
 public class ClockInController {

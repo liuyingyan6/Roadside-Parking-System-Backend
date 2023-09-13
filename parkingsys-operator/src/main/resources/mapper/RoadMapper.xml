@@ -5,16 +5,19 @@
     <select id="selectRoadDTOPage" resultType="com.woniuxy.operator.dto.RoadDTO">
         SELECT
         r.*,
-        cr.charging_rule,
+        cr.charging_rule as chargingRule,
         c.name as chinaName,
-        i.name as inspectorName
+        i.name as inspectorName,
+        o.operator_name as operatorName
         FROM road r
         LEFT JOIN charge cr ON r.charge_id = cr.id
         LEFT JOIN inspector i ON r.inspector_id = i.id
         LEFT JOIN china c ON r.china_id = c.id
+        LEFT JOIN operator o ON r.operator_id = o.id
         <where>
-            <if test="name!= null and name!=''">
-                AND r.name LIKE CONCAT('%',#{name},'%')
+            r.logic_delete=0
+            <if test="roadName!= null and roadName!=''">
+                AND r.road_name LIKE CONCAT('%',#{roadName},'%')
             </if>
             <if test="chargingRule!= null and chargingRule!=''">
                 AND cr.charging_rule LIKE CONCAT('%',#{chargingRule},'%')
@@ -24,4 +27,42 @@
             </if>
         </where>
     </select>
+
+    <!-- 方法2，整个对象 -->
+    <select id="findByPage" resultType="com.woniuxy.operator.vo.RoadVO">
+        SELECT
+        r.*
+        FROM road r
+        LEFT JOIN charge cr ON r.charge_id = cr.id
+        LEFT JOIN inspector i ON r.inspector_id = i.id
+        <where>
+            r.logic_delete=0
+            <if test="roadDTO.roadName!= null and roadDTO.roadName!=''">
+                AND r.road_name LIKE CONCAT('%',#{roadName},'%')
+            </if>
+            <if test="roadDTO.chargingRule!= null and roadDTO.chargingRule!=''">
+                AND cr.charging_rule LIKE CONCAT('%',#{chargingRule},'%')
+            </if>
+            <if test="roadDTO.inspectorName!=null and roadDTO.inspectorName!=''">
+                AND i.name LIKE CONCAT('%',#{inspectorName},'%')
+            </if>
+        </where>
+    </select>
+
+    <select id="selectRoad" resultType="com.woniuxy.operator.vo.RoadVO">
+        SELECT r.id, r.operator_id operatorId, r.road_name
+        FROM road r
+        GROUP BY r.road_name
+    </select>
+
+
+    <!--    <select id="findByRoadName" resultType="com.woniuxy.operator.entity.Road">-->
+    <!--        select *from road-->
+    <!--        <where>-->
+    <!--            <if test="roadName!=null and roadName!=''">-->
+    <!--                AND road_name LIKE CONCAT('%',#{roadName},'%')-->
+    <!--            </if>-->
+    <!--        </where>-->
+    <!--    </select>-->
+
 </mapper>

@@ -19,14 +19,6 @@ import org.springframework.util.StringUtils;
 
 import java.util.List;
 
-/**
- * <p>
- *  服务实现类
- * </p>
- *
- * @author woniuxy
- * @since 2023-09-05
- */
 @Service
 public class ManagerServiceImpl extends ServiceImpl<ManagerMapper, Manager> implements IManagerService {
 

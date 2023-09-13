@@ -1,23 +1,18 @@
 package com.woniuxy.operator.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.woniuxy.operator.entity.Magnetometer;
 import com.woniuxy.operator.mapper.MagnetometerMapper;
 import com.woniuxy.operator.service.IMagnetometerService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.woniuxy.operator.vo.MagnetometerVO;
 import com.woniuxy.operator.vo.PageVO;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
-/**
- * <p>
- * 服务实现类
- * </p>
- *
- * @author woniuxy
- * @since 2023-09-05
- */
 @Service
 public class MagnetometerServiceImpl extends ServiceImpl<MagnetometerMapper, Magnetometer> implements IMagnetometerService {
 
@@ -32,5 +27,11 @@ public class MagnetometerServiceImpl extends ServiceImpl<MagnetometerMapper, Mag
         List<MagnetometerVO> list = magnetometerMapper.selectPageByKeyword((pageNum - 1) * pageSize, pageSize, magnetometerName, roadName);
         Long total = magnetometerMapper.selectTotalCount(magnetometerName, roadName);
         return new PageVO(total, list);
+    }
+
+    @Override
+    public List<Magnetometer> findsByName(String name) {
+        List<Magnetometer> list = magnetometerMapper.findByName(name);
+        return list;
     }
 }

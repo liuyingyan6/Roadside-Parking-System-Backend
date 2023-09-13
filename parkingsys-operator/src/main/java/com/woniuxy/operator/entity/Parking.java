@@ -3,9 +3,7 @@ package com.woniuxy.operator.entity;
 import java.io.Serializable;
 import java.util.Date;
 
-import com.baomidou.mybatisplus.annotation.FieldFill;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -21,16 +19,14 @@ public class Parking implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty("车位内部id")
+    @TableId(type= IdType.AUTO)
     private Long id;
 
     @ApiModelProperty("路段id")
     private Long roadId;
 
-    @ApiModelProperty("用户id")
-    private Long userId;
-
     @ApiModelProperty("地磁id")
-    private Integer geomagneticId;
+    private Long magnetometerId;
 
     @ApiModelProperty("车位编号，类似A-112")
     private String number;
@@ -40,9 +36,6 @@ public class Parking implements Serializable {
 
     @ApiModelProperty("0有车，1无车，2未激活")
     private Integer status;
-
-    @ApiModelProperty("备注")
-    private String remarks;
 
     @ApiModelProperty("创建时间")
     @TableField(fill = FieldFill.INSERT)
