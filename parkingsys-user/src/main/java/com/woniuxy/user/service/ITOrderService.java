@@ -2,6 +2,9 @@ package com.woniuxy.user.service;
 
 import com.woniuxy.user.entity.TOrder;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.woniuxy.user.vo.OrderVO;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ITOrderService extends IService<TOrder> {
 
+    List<OrderVO>findOrder(String carNumber);
 }

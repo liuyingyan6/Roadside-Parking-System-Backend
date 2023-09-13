@@ -31,6 +31,9 @@ public class InspectorFeedback implements Serializable {
         @TableId(value = "id", type = IdType.AUTO)
       private Long id;
 
+      @ApiModelProperty("反馈单号")
+      private Long feedbackId;
+
       @ApiModelProperty("反馈用户id")
       private Long inspectorId;
 
@@ -41,7 +44,13 @@ public class InspectorFeedback implements Serializable {
       private Integer state;
 
       @ApiModelProperty("反馈图片")
-      private String imgSrc;
+      private Integer imgId;
+
+      @ApiModelProperty("反馈信息")
+      private String information;
+
+      @ApiModelProperty("详细处理结果")
+      private String resultInformation;
 
       @ApiModelProperty("创建时间")
       @TableField(fill = FieldFill.INSERT)

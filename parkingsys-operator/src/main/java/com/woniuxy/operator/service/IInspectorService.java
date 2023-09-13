@@ -17,4 +17,10 @@ import com.woniuxy.operator.vo.InspectorVO;
 public interface IInspectorService extends IService<Inspector> {
 
     PageInfo<InspectorVO> findPage(Integer pageNum, Integer pageSize, InspectorDTO inspectorDTO);
+
+    void saveInspector(InspectorVO inspectorVO);
+
+    void updateInspector(InspectorVO inspectorVO);
+
+    void deleteById(String id);
 }

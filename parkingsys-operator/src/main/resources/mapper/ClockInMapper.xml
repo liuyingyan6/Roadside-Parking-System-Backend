@@ -2,16 +2,4 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.woniuxy.operator.mapper.ClockInMapper">
 
-    <select id="findAllPage" resultType="ClockInVO">
-
-        SELECT c.*, ins.name AS Inspector_name, ro.`road_name` AS road_name
-        FROM `clock_in` c
-                 LEFT JOIN Inspector ins ON c.inspector_id = ins.id
-                 LEFT JOIN road ro ON c.road_id = ro.id
-        <where>
-            <if test="clockInDTO.createTime !=null and clockInDTO.createTime !=''">
-                c.create_time = #{createTime}
-            </if>
-        </where>
-    </select>
 </mapper>

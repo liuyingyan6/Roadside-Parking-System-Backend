@@ -6,9 +6,10 @@ import lombok.Data;
 public class InspectorDTO {
 
     private String name;
+    private String roadName;
 
     private String phone;
 
-    private String roadName;
+    private Integer state;  //状态
 
 }

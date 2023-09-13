@@ -1,4 +1,5 @@
 package com.woniuxy.operator.mapper;
+import com.github.yulichang.base.MPJBaseMapper;
 import com.woniuxy.operator.dto.ClockInDTO;
 import com.woniuxy.operator.dto.OrderDTO;
 import com.woniuxy.operator.vo.ClockInVO;
@@ -19,7 +20,5 @@ import java.util.List;
  * @since 2023-09-05
  */
 @Mapper
-public interface ClockInMapper extends BaseMapper<ClockIn> {
-    //自定义分页
-    List<ClockInVO> findAllPage(@Param("clockInDTO") ClockInDTO clockInDTO);
+public interface ClockInMapper extends MPJBaseMapper<ClockIn> {
 }

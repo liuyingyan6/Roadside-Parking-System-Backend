@@ -5,14 +5,10 @@ import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.support.ExcelTypeEnum;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.woniuxy.operator.entity.Magnetometer;
 import com.woniuxy.operator.pojos.ResponseResult;
-import com.woniuxy.operator.vo.MagnetometerVO;
 import com.woniuxy.operator.vo.PageVO;
 import com.woniuxy.operator.vo.PdaVO;
 import lombok.SneakyThrows;
-import org.apache.ibatis.annotations.Param;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
