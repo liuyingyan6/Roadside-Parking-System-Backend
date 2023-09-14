@@ -6,14 +6,10 @@ import com.woniuxy.operator.service.IChinaService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
-/**
- * <p>
- *  服务实现类
- * </p>
- *
- * @author woniuxy
- * @since 2023-09-05
- */
+
+import java.util.List;
+import java.util.Map;
+
 @Service
 public class ChinaServiceImpl extends ServiceImpl<ChinaMapper, China> implements IChinaService {
 
@@ -23,4 +19,8 @@ public class ChinaServiceImpl extends ServiceImpl<ChinaMapper, China> implements
         this.chinaMapper = chinaMapper;
     }
 
+    @Override
+    public List<China> findByChinaName(String name) {
+        return chinaMapper.findByChinaName(name);
+    }
 }

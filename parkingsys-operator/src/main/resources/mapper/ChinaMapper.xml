@@ -3,7 +3,7 @@
 <mapper namespace="com.woniuxy.operator.mapper.ChinaMapper">
 
     <select id="findByChinaName" resultType="com.woniuxy.operator.entity.China">
-        select *from China
+        select * from china
         <where>
             <if test="name!=null and name!=''">
                 AND name LIKE CONCAT('%',#{name},'%')
