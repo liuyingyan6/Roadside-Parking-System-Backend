@@ -1,5 +1,7 @@
 package com.woniuxy.operator.service;
 
+import com.github.pagehelper.PageInfo;
+import com.woniuxy.operator.dto.InspectorDTO;
 import com.woniuxy.operator.dto.RoadDTO;
 import com.woniuxy.operator.entity.Road;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -7,23 +9,13 @@ import com.woniuxy.operator.vo.PageVO;
 import com.woniuxy.operator.vo.RoadVO;
 
 import java.util.List;
+import java.util.Map;
 
-import java.util.List;
-
-/**
- * <p>
- *  服务类
- * </p>
- *
- * @author woniuxy
- * @since 2023-09-05
- */
 
 public interface IRoadService extends IService<Road> {
-
-    List<Road> findAllByRoadName(String roadName);
-    PageVO<RoadDTO> findByPage(Integer current, Integer size, RoadDTO roadDTO);
+    PageVO<RoadDTO> selectRoadDTOPage(Integer pageNum, Integer pageSize, RoadDTO roadDTO);
     void saveRoad(RoadDTO roadDTO);
-
+    void updateByRoadType(Road road);
+    List<Road>findByRoadName(String roadName);
     List<RoadVO> findRoad();
 }

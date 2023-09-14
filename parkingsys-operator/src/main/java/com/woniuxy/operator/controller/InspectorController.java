@@ -30,7 +30,6 @@ public class InspectorController {
         this.inspectorServiceImpl = inspectorServiceImpl;
     }
 
-
     @PostMapping("/findPage/{pageNum}/{pageSize}")
     public ResponseResult findPage(
             @PathVariable("pageNum") Integer pageNum,

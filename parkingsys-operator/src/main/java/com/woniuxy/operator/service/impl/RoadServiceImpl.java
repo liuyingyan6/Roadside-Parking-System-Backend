@@ -1,31 +1,29 @@
 package com.woniuxy.operator.service.impl;
 
-
 import cn.hutool.core.bean.BeanUtil;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.github.yulichang.wrapper.MPJLambdaWrapper;
+import com.woniuxy.operator.dto.InspectorDTO;
 import com.woniuxy.operator.dto.RoadDTO;
+import com.woniuxy.operator.entity.Parking;
 import com.woniuxy.operator.entity.Road;
 import com.woniuxy.operator.mapper.RoadMapper;
 import com.woniuxy.operator.service.IRoadService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.woniuxy.operator.vo.PageVO;
 import com.woniuxy.operator.vo.RoadVO;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
-/**
- * <p>
- *  服务实现类
- * </p>
- *
- * @author woniuxy
- * @since 2023-09-05
- */
 @Service
 public class RoadServiceImpl extends ServiceImpl<RoadMapper, Road> implements IRoadService {
 
@@ -36,18 +34,10 @@ public class RoadServiceImpl extends ServiceImpl<RoadMapper, Road> implements IR
     }
 
     @Override
-    public List<Road> findAllByRoadName(String roadName) {
-        MPJLambdaWrapper<Road> wrapper = new MPJLambdaWrapper<Road>()
-                .selectAll(Road.class)//查询InspectorRoad表全部字段
-                .likeRight(StringUtils.hasLength(roadName), Road::getRoadName, roadName);
-        List<Road> roads = roadMapper.selectList(wrapper);
-        return roads;
-    }
-    @Override
-    public PageVO findByPage(Integer current, Integer size, RoadDTO roadDTO) {
+    public PageVO selectRoadDTOPage(Integer current, Integer size, RoadDTO roadDTO) {
         IPage iPage=new Page<>(current,size);
 
-        String name = roadDTO.getName();
+        String name = roadDTO.getRoadName();
         String chargingRule=roadDTO.getChargingRule();
         String inspectorName = roadDTO.getInspectorName();
 
@@ -68,8 +58,23 @@ public class RoadServiceImpl extends ServiceImpl<RoadMapper, Road> implements IR
     }
 
     @Override
-    public List<RoadVO> findRoad() {
+    @Transactional
+    public void updateByRoadType(Road road) {
+        roadMapper.updateById(road);
+    }
 
+    @Override
+    public List<Road> findByRoadName(String roadName) {
+        //查询InspectorRoad表全部字段
+        MPJLambdaWrapper<Road> wrapper = new MPJLambdaWrapper<Road>()
+                .selectAll(Road.class)
+                .likeRight(StringUtils.hasLength(roadName), Road::getRoadName, roadName);
+        List<Road> roads = roadMapper.selectList(wrapper);
+        return roads;
+    }
+
+    @Override
+    public List<RoadVO> findRoad() {
         List<RoadVO> roads = roadMapper.selectRoad();
         return roads;
     }

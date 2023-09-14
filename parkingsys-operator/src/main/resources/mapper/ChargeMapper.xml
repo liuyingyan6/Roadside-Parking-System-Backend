@@ -2,4 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.woniuxy.operator.mapper.ChargeMapper">
 
+    <select id="findByChargeId" resultType="com.woniuxy.operator.entity.Charge">
+        SELECT c.charging_rule chargingRule, a.*
+        from charge a
+        inner join charge c on a.cid = c.id
+        <where>
+            <if test="id != null">
+                c.id=#{id}
+            </if>
+        </where>
+    </select>
 </mapper>

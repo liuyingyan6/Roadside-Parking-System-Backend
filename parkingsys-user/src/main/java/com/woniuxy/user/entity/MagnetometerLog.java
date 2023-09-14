@@ -1,12 +1,12 @@
 package com.woniuxy.user.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.io.Serializable;
+import java.util.Date;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 /**
  * <p>
@@ -21,19 +21,26 @@ import lombok.ToString;
 @ToString
   @TableName("magnetometer_log")
 @ApiModel(value = "MagnetometerLog对象", description = "")
+@NoArgsConstructor
+@AllArgsConstructor
 public class MagnetometerLog implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-      private Integer id;
+  @TableId(type = IdType.AUTO)
+  private Integer id;
 
     private Integer magnetometerId;
 
       @ApiModelProperty("地磁状态：0-在线，1-离线，2-未激活")
       private Integer magnetometerStatus;
 
-      @ApiModelProperty("车位状态：0有车，1无车，2未激活")
+      @ApiModelProperty("车位状态：0有车，1无车")
       private Integer parkingStatus;
+
+      @ApiModelProperty("创建时间")
+      @TableField(fill = FieldFill.INSERT)
+      private Date createTime;
 
 
 }
