@@ -2,4 +2,29 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.woniuxy.user.mapper.TOrderMapper">
 
+
+    <select id="findOrder" resultType="com.woniuxy.user.vo.OrderVO">
+        SELECT
+
+            o.`order_number`,
+            o.`order_amount`,
+            o.`create_time`,
+            o.`status`,
+            pa.number AS parking_number,
+            ins.name AS inspector_name ,
+            ro.`road_name` AS road_name,
+            car.`car_number`
+        FROM
+            `t_order` o
+                LEFT JOIN
+            parking pa ON o.parking_id = pa.id
+                LEFT JOIN
+            inspector ins ON o.inspector_id = ins.id
+                LEFT JOIN
+            road ro ON o.road_id = ro.id
+                LEFT JOIN
+            car ON o.`car_id` = car.id
+        WHERE
+            car.`car_number` = #{carNumber};
+    </select>
 </mapper>

@@ -1,7 +1,10 @@
 package com.woniuxy.user.mapper;
+import com.woniuxy.user.vo.CarVO;
 import org.apache.ibatis.annotations.Mapper;
 import com.woniuxy.user.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+
+import java.util.List;
 
 /**
  * <p>
@@ -14,4 +17,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 @Mapper
 public interface UserMapper extends BaseMapper<User> {
 
+List<CarVO>list(Long id);
 }
