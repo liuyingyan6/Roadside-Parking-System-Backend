@@ -1,6 +1,8 @@
 package com.woniuxy.inspector.controller;
 
+import com.woniuxy.inspector.pojos.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import com.woniuxy.inspector.entity.InspectorFeedback;
@@ -16,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2023-09-13
  */
 @RestController
-@RequestMapping("/inspector-feedback")
+@RequestMapping("/inspectorFeedback")
 public class InspectorFeedbackController {
 
     private final IInspectorFeedbackService inspectorFeedbackServiceImpl;
@@ -24,5 +26,9 @@ public class InspectorFeedbackController {
     public InspectorFeedbackController(IInspectorFeedbackService inspectorFeedbackServiceImpl){
         this.inspectorFeedbackServiceImpl = inspectorFeedbackServiceImpl;
     }
-
+@PostMapping("/add")
+    public ResponseResult add(@RequestBody  InspectorFeedback inspectorFeedback){
+inspectorFeedbackServiceImpl.save(inspectorFeedback);
+        return ResponseResult.ok("提交成功");
+}
 }

@@ -2,6 +2,9 @@ package com.woniuxy.inspector.service;
 
 import com.woniuxy.inspector.entity.Parking;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.woniuxy.inspector.vo.ParkingVO;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IParkingService extends IService<Parking> {
 
+    List<ParkingVO>find();
 }

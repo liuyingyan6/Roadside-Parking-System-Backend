@@ -4,8 +4,12 @@ import com.woniuxy.inspector.entity.Parking;
 import com.woniuxy.inspector.mapper.ParkingMapper;
 import com.woniuxy.inspector.service.IParkingService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.woniuxy.inspector.vo.ParkingVO;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
+
 /**
  * <p>
  *  服务实现类
@@ -23,4 +27,9 @@ public class ParkingServiceImpl extends ServiceImpl<ParkingMapper, Parking> impl
         this.parkingMapper = parkingMapper;
     }
 
+    @Override
+    public List<ParkingVO> find() {
+
+        return parkingMapper.find();
+    }
 }

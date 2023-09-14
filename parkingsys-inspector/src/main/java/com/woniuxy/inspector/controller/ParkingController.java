@@ -1,5 +1,7 @@
 package com.woniuxy.inspector.controller;
 
+import com.woniuxy.inspector.pojos.ResponseResult;
+import com.woniuxy.inspector.vo.ParkingVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -25,4 +27,10 @@ public class ParkingController {
         this.parkingServiceImpl = parkingServiceImpl;
     }
 
+    //故障设备远程搜索
+    @GetMapping("/find")
+    public ResponseResult find(){
+        List<ParkingVO> parkingVOS = parkingServiceImpl.find();
+        return ResponseResult.ok(parkingVOS);
+    }
 }
