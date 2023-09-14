@@ -42,10 +42,5 @@ public class UrlPermissionController {
         return ResponseResult.ok(list);
     }
 
-    // home左边框，根据用户id进行权限分配可以看到哪些
-    // @GetMapping("/findPermission")
-    // public ResponseResult findPermission(Long managerId){
-    //     List<PermissionMenuVO> permissions = urlPermissionServiceImpl.listByManagerId(managerId);
-    //     return ResponseResult.ok(permissions);
-    // }
+
 }

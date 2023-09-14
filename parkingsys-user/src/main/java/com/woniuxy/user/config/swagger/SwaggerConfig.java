@@ -21,23 +21,18 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SwaggerConfig {
     /**
      * 创建在线文档摘要对象
+     *
      * @return
      */
     @Bean // 创建对象，加入ioc容器
     public Docket createDocket() {
         Docket docket = new Docket(DocumentationType.SWAGGER_2);
         // 设置文档摘要信息：标题、版本、描述
-        docket.apiInfo(new ApiInfoBuilder()
-                .title("智慧停车系统")
-                .version("1.0")
-                .description("Api描述")
-                .build()
-        );
+        docket.apiInfo(new ApiInfoBuilder().title("智慧停车系统").version("1.0").description("Api描述").build());
         // 扫描的API路径
-        docket.select()         .apis(RequestHandlerSelectors.basePackage("com.woniuxy.operator.controller"))
+        docket.select().apis(RequestHandlerSelectors.basePackage("com.woniuxy.user.controller"))
                 // 设置对指定路径下的任意类生成文档
-                .paths(PathSelectors.any())
-                .build();
+                .paths(PathSelectors.any()).build();
         return docket;
     }
 }

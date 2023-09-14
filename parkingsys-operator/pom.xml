@@ -93,12 +93,6 @@
             <version>4.4.0</version>
         </dependency>
 
-        <!-- MyBatis的分页插件 -->
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper-spring-boot-starter</artifactId>
-            <version>1.4.4</version>
-        </dependency>
 
         <!--EasyExcel相关依赖-->
         <dependency>

@@ -1,7 +1,7 @@
 package com.woniuxy.user.mapper;
+import com.github.yulichang.base.MPJBaseMapper;
 import org.apache.ibatis.annotations.Mapper;
-import com.woniuxy.user.entity.TOrder;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.woniuxy.user.entity.Order;
 
 /**
  * <p>
@@ -12,6 +12,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @since 2023-09-12
  */
 @Mapper
-public interface TOrderMapper extends BaseMapper<TOrder> {
+public interface OrderMapper extends MPJBaseMapper<Order> {
 
 }

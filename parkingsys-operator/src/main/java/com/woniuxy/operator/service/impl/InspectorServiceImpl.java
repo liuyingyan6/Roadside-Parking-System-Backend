@@ -63,8 +63,9 @@ public class InspectorServiceImpl extends ServiceImpl<InspectorMapper, Inspector
             BigDecimal divide = BigDecimal.valueOf(orderConversionVO.getPaidOrderCount() * 100)
                     .divide(BigDecimal.valueOf(orderConversionVO.getTotalOrderCount()), 2, RoundingMode.HALF_UP);
             e.setOrderPercentage(divide + "%");
-            Charge charge = chargeMapper.selectById(e.getChargeId());
-            e.setTimePeriod(charge.getTimePeriod());
+
+//            Charge charge = chargeMapper.selectById(e.getChargeId());
+            e.setTimePeriod("9:00-17:00");
 
             MPJLambdaWrapper<InspectorRoad> wrapper = new MPJLambdaWrapper<InspectorRoad>()
                     .selectAll(InspectorRoad.class)//查询InspectorRoad表全部字段
