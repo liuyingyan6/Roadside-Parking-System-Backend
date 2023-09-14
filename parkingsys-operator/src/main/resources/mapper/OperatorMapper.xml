@@ -11,7 +11,7 @@
 	        o.state
         FROM
             operator o
-            LEFT JOIN road r ON o.id = r.admin_id
+            LEFT JOIN road r ON o.id = r.operator_id
          <where>
              <if test="operatorDTO.name!=null and operatorDTO.name!=''">
                  AND o.operator_name LIKE CONCAT(#{operatorDTO.name},'%')

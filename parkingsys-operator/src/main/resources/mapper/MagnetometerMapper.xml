@@ -24,4 +24,31 @@
             </if>
         </where>
     </select>
+
+    <select id="selectTotalCount" resultType="Long">
+        select count(0)
+        from magnetometer as m,
+        parking as p,
+        road as r
+        <where>
+            m.parking_id = p.id
+            and p.road_id = r.id
+            <if test="magnetometerName!=null and magnetometerName!=''">
+                and m.name like concat('%', #{magnetometerName}, '%')
+            </if>
+            <if test="roadName!=null and roadName!=''">
+                and r.name like concat('%', #{roadName}, '%')
+            </if>
+        </where>
+    </select>
+
+    <!-- 模糊查询 -->
+    <select id="findByName" resultType="com.woniuxy.operator.entity.Magnetometer">
+        select *from magnetometer
+        <where>
+            <if test="name!=null and name!=''">
+                AND name LIKE CONCAT('%',#{name},'%')
+            </if>
+        </where>
+    </select>
 </mapper>

@@ -1,42 +1,35 @@
 package com.woniuxy.operator.controller;
 
-import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.dto.ParkingDTO;
-import com.woniuxy.operator.dto.RoadDTO;
+import com.woniuxy.operator.entity.Magnetometer;
+
 import com.woniuxy.operator.pojos.ResponseResult;
+import com.woniuxy.operator.service.IMagnetometerService;
 import com.woniuxy.operator.vo.PageVO;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import org.springframework.beans.BeanUtils;
+import org.springframework.web.bind.annotation.*;
 
 import com.woniuxy.operator.entity.Parking;
 import com.woniuxy.operator.service.IParkingService;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * <p>
- * 前端控制器
- * </p>
- *
- * @author woniuxy
- * @since 2023-09-05
- */
+import java.math.BigInteger;
+
+
 @RestController
 @RequestMapping("/parking")
 public class ParkingController {
 
     private final IParkingService parkingServiceImpl;
+    private final IMagnetometerService magnetometerServiceImpl;
 
-    public ParkingController(IParkingService parkingServiceImpl) {
+    public ParkingController(IParkingService parkingServiceImpl, IMagnetometerService magnetometerServiceImpl) {
         this.parkingServiceImpl = parkingServiceImpl;
+        this.magnetometerServiceImpl = magnetometerServiceImpl;
     }
 
-    @GetMapping("/list")
-    public ResponseResult list() {
-        return ResponseResult.ok(parkingServiceImpl.list());
-    }
     /**
      * 分页查询
      */
@@ -48,6 +41,49 @@ public class ParkingController {
             @RequestBody ParkingDTO parkingDTO) {
         PageVO<ParkingDTO> pageVO = parkingServiceImpl.findByPage(pageNum, pageSize, parkingDTO);
         return ResponseResult.ok(pageVO);
+    }
+
+    /**
+     * 连表添加
+     */
+    @PutMapping("/saveOrUpdate")
+    public ResponseResult saveOrUpdate(@RequestBody ParkingDTO parkingDTO) {
+        Parking parking = new Parking();
+        Magnetometer magnetometer = new Magnetometer();
+
+        BeanUtils.copyProperties(parkingDTO, parking);
+        parkingServiceImpl.saveOrUpdate(parking);
+
+        BeanUtils.copyProperties(parkingDTO, magnetometer);
+        // 从parking对象中获取生成的ID，并放到magnetometer对象中
+        magnetometer.setParkingId(parking.getId());
+        magnetometer.setName(parkingDTO.getMagnetometerName());
+        magnetometerServiceImpl.saveOrUpdate(magnetometer);
+
+        // 从magnetometer对象中获取生成的ID，并设置回parking对象中
+        parking.setMagnetometerId(magnetometer.getId());
+        // 更新parking对象
+        parkingServiceImpl.saveOrUpdate(parking);
+
+        return ResponseResult.ok();
+    }
+
+    /**
+     * 连表编辑
+     */
+    @PutMapping("/update")
+    public ResponseResult updatePark(@RequestBody ParkingDTO parkingDTO) {
+        parkingServiceImpl.updatePark(parkingDTO);
+        return ResponseResult.ok();
+    }
+
+    /**
+     * 删除
+     */
+    @DeleteMapping("/delete/{id}")
+    public ResponseResult delete(@PathVariable("id") Long id) {
+        parkingServiceImpl.removeById(id);
+        return ResponseResult.ok();
     }
 
     /**

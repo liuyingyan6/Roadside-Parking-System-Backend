@@ -27,4 +27,6 @@ public interface IOperatorService extends IService<Operator> {
     void updateState(OperatorVO operatorVO);
 
     void deleteOperator(OperatorVO operatorVO);
+
+    List<Operator> findByOperatorName(String operatorName);
 }

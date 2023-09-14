@@ -8,18 +8,14 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-/**
- * <p>
- * Mapper 接口
- * </p>
- *
- * @author woniuxy
- * @since 2023-09-05
- */
 @Mapper
 public interface MagnetometerMapper extends BaseMapper<Magnetometer> {
+
     List<MagnetometerVO> selectByKeyword(@Param("magnetometerName") String magnetometerName,
                                          @Param("roadName") String roadName);
 
+    Long selectTotalCount(@Param("magnetometerName") String magnetometerName,
+                          @Param("roadName") String roadName);
 
+    List<Magnetometer>findByName(String name);
 }

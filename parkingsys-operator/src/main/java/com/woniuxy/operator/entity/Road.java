@@ -27,7 +27,7 @@ public class Road implements Serializable {
     private Long inspectorId;
 
     @ApiModelProperty("运维员id")
-    private Long adminId;
+    private Long operatorId;
 
     @ApiModelProperty("收费标准id(收费类型)")
     private Long chargeId;

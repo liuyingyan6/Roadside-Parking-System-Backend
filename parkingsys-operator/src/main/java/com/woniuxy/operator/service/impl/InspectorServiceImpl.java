@@ -26,14 +26,7 @@ import java.math.RoundingMode;
 import java.util.List;
 import java.util.Objects;
 
-/**
- * <p>
- * 服务实现类
- * </p>
- *
- * @author woniuxy
- * @since 2023-09-05
- */
+
 @Service
 public class InspectorServiceImpl extends ServiceImpl<InspectorMapper, Inspector> implements IInspectorService {
 
@@ -63,8 +56,8 @@ public class InspectorServiceImpl extends ServiceImpl<InspectorMapper, Inspector
             BigDecimal divide = BigDecimal.valueOf(orderConversionVO.getPaidOrderCount() * 100)
                     .divide(BigDecimal.valueOf(orderConversionVO.getTotalOrderCount()), 2, RoundingMode.HALF_UP);
             e.setOrderPercentage(divide + "%");
-            Charge charge = chargeMapper.selectById(e.getChargeId());
-            e.setTimePeriod(charge.getTimePeriod());
+
+            e.setTimePeriod("9:00-19:00");
 
             MPJLambdaWrapper<InspectorRoad> wrapper = new MPJLambdaWrapper<InspectorRoad>()
                     .selectAll(InspectorRoad.class)//查询InspectorRoad表全部字段
@@ -114,5 +107,14 @@ public class InspectorServiceImpl extends ServiceImpl<InspectorMapper, Inspector
         inspectorMapper.deleteById(id);
         inspectorRoadMapper.delete(Wrappers.lambdaQuery(InspectorRoad.class)
                 .eq(StringUtils.hasLength(id), InspectorRoad::getInspectorId, id));
+    }
+
+    @Override
+    public List<Inspector> findByInspectorName(String inspectorName) {
+        MPJLambdaWrapper<Inspector> wrapper = new MPJLambdaWrapper<Inspector>()
+                .selectAll(Inspector.class)//查询InspectorRoad表全部字段
+                .likeRight(StringUtils.hasLength(inspectorName), Inspector::getName, inspectorName);
+        List<Inspector> inspectors = inspectorMapper.selectList(wrapper);
+        return inspectors;
     }
 }
