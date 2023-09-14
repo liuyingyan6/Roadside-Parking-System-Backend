@@ -52,6 +52,24 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         return orderMapper.payCount(startTime,endTime);
     }
 
+    @Override
+    public List<RoadOrderVO> getRoadOrderList(Integer roadId) {
+        List<RoadOrderVO> list= orderMapper.getRoadOrderList(roadId);
+        list.forEach(e->{
+            BigDecimal payAmount = orderMapper.getPayAmount(e.getOrderDate(),roadId);
+            e.setPayAmount(payAmount);
+            RoadOrderVO roadOrderVO = orderMapper.getRefund(e.getOrderDate(),roadId);
+            e.setRefundCount(roadOrderVO.getRefundCount());
+            e.setRefundAmount(roadOrderVO.getRefundAmount());
+            RoadOrderVO abnormal = orderMapper.getAbnormal(e.getOrderDate(),roadId);
+            e.setAbnormalCount(abnormal.getAbnormalCount());
+            e.setAbnormalAmount(abnormal.getAbnormalAmount());
+            Integer payCount = orderMapper.getPayCount(e.getOrderDate(), roadId);
+            e.setPayCount(payCount);
+        });
+        return list;
+    }
+
     // 支付统计表单
     @Override
     public List<PayDateVO> payDate(String startTime, String endTime) {

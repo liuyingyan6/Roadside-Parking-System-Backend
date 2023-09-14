@@ -4,6 +4,7 @@ import com.woniuxy.operator.vo.CarOrderVO;
 import org.apache.ibatis.annotations.Mapper;
 import com.woniuxy.operator.entity.Car;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -38,4 +39,6 @@ public interface CarMapper extends BaseMapper<Car> {
 
 
     Car getCarInfo(String carNumber);
+
+    List<String> getTime(@Param("startDate") String startDate,@Param("endDate") String endDate);
 }

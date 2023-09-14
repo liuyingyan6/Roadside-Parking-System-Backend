@@ -2,6 +2,67 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.woniuxy.operator.mapper.OrderMapper">
 
+    <!--    查询每天订单数量-->
+    <select id="getRoadOrderList" resultType="com.woniuxy.operator.vo.RoadOrderVO">
+        SELECT DATE(t_order.create_time) AS orderDate,COUNT(*) as orderCount
+        FROM t_order
+        <where>
+            <if test="roadId != null and roadId!=''">
+                AND road_id=#{roadId}
+            </if>
+        </where>
+        GROUP BY DATE(create_time)
+    </select>
+
+    <!--    按时间查询当天营收额-->
+    <select id="getPayAmount" resultType="BigDecimal">
+        SELECT SUM(t_order.order_amount) AS pay_amount
+        FROM t_order
+        <where>
+            `status`=2 AND DATE(create_time)=#{createTime}
+            <if test="roadId != null and roadId!=''">
+                AND road_id=#{roadId}
+            </if>
+        </where>
+        GROUP BY DATE(create_time)
+    </select>
+
+    <!--    按时间查询当天退款订单数量和金额-->
+    <select id="getRefund" resultType="com.woniuxy.operator.vo.RoadOrderVO">
+        SELECT COUNT(*) as refund_count,SUM(t_order.order_amount) as refund_amount
+        FROM t_order
+        <where>
+            `status`=3 AND DATE(create_time)=#{createTime}
+            <if test="roadId != null and roadId!=''">
+                AND road_id=#{roadId}
+            </if>
+        </where>
+    </select>
+
+    <!--    按时间查询当天异常订单数量和金额-->
+    <select id="getAbnormal" resultType="com.woniuxy.operator.vo.RoadOrderVO">
+        SELECT COUNT(*) as abnormal_count,SUM(t_order.order_amount) as abnormal_amount
+        FROM t_order
+        <where>
+            `status`=5  AND DATE(create_time)=#{createTime}
+            <if test="roadId != null and roadId!=''">
+                AND road_id=#{roadId}
+            </if>
+        </where>
+    </select>
+
+    <select id="getPayCount" resultType="Integer">
+        SELECT COUNT(*) as pay_count
+        FROM t_order
+        <where>
+            `status`=2 AND DATE(t_order.create_time)=#{createTime}
+            <if test="roadId != null and roadId!=''">
+                AND road_id=#{roadId}
+            </if>
+        </where>
+        GROUP BY  DATE(t_order.create_time)
+    </select>
+
     <select id="findAllPage" resultType="com.woniuxy.operator.vo.OrderVO">
         SELECT
         o.*,

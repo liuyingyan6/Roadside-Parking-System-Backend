@@ -25,6 +25,12 @@ public class RoadController {
         this.roadServiceImpl = roadServiceImpl;
     }
 
+
+    @GetMapping("/getAll")
+    public ResponseResult getAll(){
+        List<Road> list = roadServiceImpl.list();
+        return ResponseResult.ok(list);
+    }
     /**
      * 分页查询
      */

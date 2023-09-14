@@ -70,6 +70,13 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     }
 
     @Override
+    public Long selectById(Long id) {
+        User user = userMapper.selectById(id);
+        Long carId = user.getCarId();
+        return carId;
+    }
+
+    @Override
     public List<CarVO> findAll(Long id) {
 
         return userMapper.list(id);

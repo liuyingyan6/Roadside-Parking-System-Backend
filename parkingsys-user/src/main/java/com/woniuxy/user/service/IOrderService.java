@@ -17,4 +17,8 @@ import java.util.List;
 public interface IOrderService extends IService<Order> {
 
     List<OrderVO>findOrder(String carNumber);
+
+    void createOrder(String parkingNum, Long carId);
+
+    List<OrderVO> findByUserId(Long userId, Integer status);
 }

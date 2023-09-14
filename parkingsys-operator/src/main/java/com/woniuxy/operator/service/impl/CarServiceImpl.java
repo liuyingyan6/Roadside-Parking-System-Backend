@@ -68,4 +68,11 @@ public class CarServiceImpl extends ServiceImpl<CarMapper, Car> implements ICarS
        Car car= carMapper.getCarInfo(carNumber);
         return car;
     }
+
+    @Override
+    public List<String> getTime(String start, String end) {
+        List<String> list= carMapper.getTime(start,end);
+        System.out.println("list = " + list);
+        return list;
+    }
 }

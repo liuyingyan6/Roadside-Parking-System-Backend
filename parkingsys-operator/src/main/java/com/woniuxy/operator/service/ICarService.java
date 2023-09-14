@@ -26,4 +26,6 @@ public interface ICarService extends IService<Car> {
     void liftCar(Integer carId,Integer userId);
 
     Car getCarInfo(String carNumber);
+
+    List<String> getTime(String startDate, String endDate);
 }

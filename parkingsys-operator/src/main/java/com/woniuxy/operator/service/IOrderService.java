@@ -40,4 +40,6 @@ public interface IOrderService extends IService<Order> {
     List<PayDateVO> payDate(String startTime, String endTime);
 
     PayCountVO payCount(String startTime, String endTime);
+
+    List<RoadOrderVO> getRoadOrderList(Integer roadId);
 }

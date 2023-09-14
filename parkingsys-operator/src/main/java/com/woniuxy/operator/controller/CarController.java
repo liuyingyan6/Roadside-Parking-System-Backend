@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.text.ParseException;
 import java.util.List;
 
 import com.woniuxy.operator.service.ICarService;
@@ -97,5 +98,13 @@ public class CarController {
     }
 
 
+    @GetMapping("/getTime")
+    public ResponseResult getTime(@RequestParam("startDate") String startDate,@RequestParam("endDate") String endDate){
+        System.out.println("startDate = " + startDate);
+        System.out.println("endDate = " + endDate);
+
+        List<String> list = carServiceImpl.getTime(startDate, endDate);
+        return ResponseResult.ok(list);
+    }
 
 }

@@ -11,6 +11,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -24,6 +26,16 @@ import java.util.List;
  */
 @Mapper
 public interface OrderMapper extends MPJBaseMapper<Order> {
+
+    List<RoadOrderVO> getRoadOrderList(@Param("roadId") Integer roadId);
+
+    BigDecimal getPayAmount(@Param("createTime") LocalDate createTime, @Param("roadId") Integer roadId);
+
+    RoadOrderVO getRefund(@Param("createTime") LocalDate createTime,@Param("roadId") Integer roadId);
+
+    RoadOrderVO getAbnormal(@Param("createTime") LocalDate createTime,@Param("roadId") Integer roadId);
+
+    Integer getPayCount(@Param("createTime") LocalDate createTime,@Param("roadId") Integer roadId);
 
     List<OrderVO> findAll();
 

@@ -91,4 +91,8 @@
         where car.car_number=#{carNumber}
     </select>
 
+    <select id="getTime" resultType="String">
+        SELECT order_number FROM t_order
+        WHERE create_time >= #{startDate} AND #{endDate} >= create_time;
+    </select>
 </mapper>

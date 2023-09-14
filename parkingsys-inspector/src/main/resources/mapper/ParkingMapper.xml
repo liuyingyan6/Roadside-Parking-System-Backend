@@ -2,4 +2,29 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.woniuxy.inspector.mapper.ParkingMapper">
 
+    <select id="find" resultType="com.woniuxy.inspector.vo.ParkingVO">
+        SELECT
+            p.`number`,
+            r.`road_name`
+        FROM
+            `parking` p
+                LEFT JOIN
+            `road` r ON p.`road_id` = r.`id`
+    </select>
+
+    <select id="findAllPage" resultType="com.woniuxy.inspector.entity.vo.OrderVO">
+        SELECT
+            o.*,
+            c.`car_number` AS carNumber,
+            p.number AS parkingNumber,
+            r.`road_name` AS roadName
+        FROM
+            `t_order` o
+                left JOIN
+            parking p ON o.parking_id = p.id
+                left JOIN
+            road r ON o.road_id = r.id
+                left JOIN
+            car c ON o.`car_id` = c.id
+    </select>
 </mapper>

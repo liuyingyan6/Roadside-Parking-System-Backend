@@ -47,6 +47,14 @@ public class OrderController {
         this.orderServiceImpl = orderServiceImpl;
     }
 
+    @GetMapping("/getRoadOrderList")
+    public ResponseResult getRoadOrderList(Integer pageSize,Integer pageNum,Integer roadId){
+        PageHelper.startPage(pageNum,pageSize);
+        List<RoadOrderVO> list= orderServiceImpl.getRoadOrderList(roadId);
+        PageInfo<RoadOrderVO> pageInfo = new PageInfo<>(list);
+        return ResponseResult.ok(pageInfo);
+    }
+
     // 支付统计饼图
     @GetMapping("/payCount")
     public ResponseResult payCount(@RequestParam("startTime") String startTime,

@@ -20,4 +20,7 @@ public interface IUserService extends IService<User> {
     List<CarVO> findAll(Long id);
     User login(UserDTO userDTO);
 boolean send(Map map,String phone);
+
+    Long selectById(Long userId);
+
 }
