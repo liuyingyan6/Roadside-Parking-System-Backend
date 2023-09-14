@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="289ab487-0b07-415a-890e-95d3626e63d7" name="Changes" comment="9.6">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_6_10_44_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_6_10_44__Changes_1.xml" beforeDir="false" />
+    <list default="true" id="289ab487-0b07-415a-890e-95d3626e63d7" name="Changes" comment="Merge branch 'developer' into 陈济桓&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;09013">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,26 +49,26 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/IDEA_JavaCode/parkingsys/parkingsys-operator/src/main/java/com/woniuxy/operator/entity&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;service.view.auto.scroll.to.source&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;4012f1197512ab63013cf772cca67937&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/IDEA_JavaCode/parkingsys/parkingsys-operator/src/main/java/com/woniuxy/operator/entity",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "service.view.auto.scroll.to.source": "true",
+    "settings.editor.selected.configurable": "com.gitee.ui.GiteeSettingsConfigurable",
+    "spring.configuration.checksum": "4012f1197512ab63013cf772cca67937",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -224,7 +222,7 @@
       <workItem from="1694416795205" duration="3748000" />
       <workItem from="1694482028067" duration="3965000" />
       <workItem from="1694505274986" duration="3175000" />
-      <workItem from="1694657125495" duration="1196000" />
+      <workItem from="1694657125495" duration="4605000" />
     </task>
     <task id="LOCAL-00001" summary="0908/9:41">
       <created>1694137327895</created>
@@ -247,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694139593541</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Merge branch 'developer' into 陈济桓&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;09013">
+      <created>1694671577481</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1694671577481</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +274,9 @@
     <MESSAGE value="0908/9:41" />
     <MESSAGE value="0908/10:00" />
     <MESSAGE value="0908/10:19  新增order资金流水" />
-    <option name="LAST_COMMIT_MESSAGE" value="0908/10:19  新增order资金流水" />
+    <MESSAGE value="9.6" />
+    <MESSAGE value="Merge branch 'developer' into 陈济桓&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;09013" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'developer' into 陈济桓&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;09013" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
