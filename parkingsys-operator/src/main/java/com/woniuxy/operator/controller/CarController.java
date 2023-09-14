@@ -88,7 +88,6 @@ public class CarController {
     public ResponseResult lift(@RequestParam("carId") Integer carId,@RequestParam("userId") Integer userId){
         carServiceImpl.liftCar(carId,userId);
         return ResponseResult.ok();
-
     }
 
     @GetMapping("/getCarInfo")

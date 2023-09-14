@@ -1,33 +1,21 @@
 package com.woniuxy.user.controller;
 
-import cn.hutool.jwt.JWTUtil;
-import cn.hutool.jwt.signers.JWTSigner;
-import cn.hutool.jwt.signers.JWTSignerUtil;
-import com.google.code.kaptcha.Constants;
-import com.woniuxy.user.dto.UserDTO;
 import com.woniuxy.user.entity.User;
-import com.woniuxy.user.handler.Asserts;
-import com.woniuxy.user.handler.BusinessEnum;
 import com.woniuxy.user.pojos.ResponseResult;
-import com.woniuxy.user.util.BookConstant;
 import com.woniuxy.user.util.RandomUtil;
 import com.woniuxy.user.vo.CarVO;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 import com.woniuxy.user.service.IUserService;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpSession;
 
 /**
  * <p>
@@ -72,19 +60,7 @@ public class UserController {
             System.out.println("fail");
         }
     }
-//    @PostMapping("/login")
-//    public ResponseResult login(@RequestBody UserDTO userDto, HttpSession session) {
-//        //判断下验证码是否正常
-//        Asserts.fail(!StringUtils.hasLength(userDto.getCode()), BusinessEnum.VALIDATE_CODE_IS_NULL);
-//        Asserts.fail(!userDto.getCode().equalsIgnoreCase((String) session.getAttribute(Constants.KAPTCHA_SESSION_KEY)),
-//                BusinessEnum.VALIDATE_CODE_ERROR);
-//        //查询数据库判断用户是否存在
-//        User user = userServiceImpl.login(userDto);
-//        Asserts.fail(Objects.isNull(user), BusinessEnum.ACCOUNT_PASSWORD_ERROR);
-//        session.setAttribute("user", user);
-//
-//        return ResponseResult.ok("验证成功");
-//    }
+
   //修改手机号码
     @PostMapping("/update")
     public ResponseResult  update(@RequestBody  User user){
