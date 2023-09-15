@@ -5,6 +5,7 @@ import com.woniuxy.operator.entity.Road;
 import com.woniuxy.operator.entity.User;
 import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.vo.PageVO;
+import com.woniuxy.operator.vo.RoadVO;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,6 +26,12 @@ public class RoadController {
         this.roadServiceImpl = roadServiceImpl;
     }
 
+    @GetMapping("/findRoad")
+    public ResponseResult findRoad(){
+        List<RoadVO> list = roadServiceImpl.findRoad();
+        System.out.println(list);
+        return ResponseResult.ok(list);
+    }
 
     @GetMapping("/getAll")
     public ResponseResult getAll(){
@@ -56,8 +63,17 @@ public class RoadController {
      * 模糊查询
      */
     @GetMapping("/findByRoadName")
-    public List<Road>findByRoadName(@RequestParam String roadName){
-        return roadServiceImpl.findByRoadName(roadName);
+    public ResponseResult findByRoadName (@RequestParam String roadName){
+        System.out.println("========================"+roadName);
+        System.out.println("getClass========================"+roadName.getClass());
+        List<Road> list = roadServiceImpl.findAllByRoadName(roadName);
+        return ResponseResult.ok(list);
+    }
+
+    @GetMapping("findAllByRoadName/{roadName}")
+    public ResponseResult findAllByRoadName(@PathVariable("roadName") String roadName) {
+        List<Road> list = roadServiceImpl.findAllByRoadName(roadName);
+        return ResponseResult.ok(list);
     }
 
     /**

@@ -11,7 +11,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 @Mapper
-public interface RoadMapper extends BaseMapper<Road> {
+public interface RoadMapper extends MPJBaseMapper<Road> {
 
     IPage<RoadDTO> selectRoadDTOPage(@Param("iPage")IPage iPage, @Param("roadName") String roadName,
                                      @Param("chargingRule") String chargingRule,

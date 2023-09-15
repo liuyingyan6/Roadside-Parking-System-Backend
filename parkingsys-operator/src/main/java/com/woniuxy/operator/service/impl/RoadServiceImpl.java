@@ -63,19 +63,19 @@ public class RoadServiceImpl extends ServiceImpl<RoadMapper, Road> implements IR
         roadMapper.updateById(road);
     }
 
-    @Override
-    public List<Road> findByRoadName(String roadName) {
-        //查询InspectorRoad表全部字段
-        MPJLambdaWrapper<Road> wrapper = new MPJLambdaWrapper<Road>()
-                .selectAll(Road.class)
-                .likeRight(StringUtils.hasLength(roadName), Road::getRoadName, roadName);
-        List<Road> roads = roadMapper.selectList(wrapper);
-        return roads;
-    }
 
     @Override
     public List<RoadVO> findRoad() {
         List<RoadVO> roads = roadMapper.selectRoad();
+        return roads;
+    }
+
+    @Override
+    public List<Road> findAllByRoadName(String roadName) {
+        MPJLambdaWrapper<Road> wrapper = new MPJLambdaWrapper<Road>()
+                .selectAll(Road.class)//查询InspectorRoad表全部字段
+                .likeRight(StringUtils.hasLength(roadName), Road::getRoadName, roadName);
+        List<Road> roads = roadMapper.selectList(wrapper);
         return roads;
     }
 }

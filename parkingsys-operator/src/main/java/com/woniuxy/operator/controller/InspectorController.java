@@ -30,6 +30,14 @@ public class InspectorController {
         this.inspectorServiceImpl = inspectorServiceImpl;
     }
 
+    /**
+     * 模糊查询
+     */
+    @GetMapping("/findByInspectorName")
+    public ResponseResult findByInspectorName (@RequestParam String inspectorName){
+        return ResponseResult.ok(inspectorServiceImpl.findByInspectorName(inspectorName));
+    }
+
     @PostMapping("/findPage/{pageNum}/{pageSize}")
     public ResponseResult findPage(
             @PathVariable("pageNum") Integer pageNum,

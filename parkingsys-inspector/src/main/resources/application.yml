@@ -32,10 +32,23 @@ spring:
         deny: #设置黑名单
       aop-patterns: com.woniuxy.user.* #监控url请求路径
   redis:
-    host: ${server.host}
+    host: 192.168.200.130
     port: 6379
     database: 0
     password: philredis
+  rabbitmq:
+    host: 192.168.200.130
+    port: 5672
+    username: admin
+    password: philrabbitmq
+    virtual-host: parkingsys
+    publisherConfirmType: correlated #确认消息是否已发送至交换机
+    publisherReturns: true #确认消息是否已发送至队列
+    listener:
+      direct:
+        acknowledge-mode: manual #通过交换机过来的信息开启手动确认
+      simple:
+        acknowledge-mode: manual #不通过交换机过来的信息也开启手动确认
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher

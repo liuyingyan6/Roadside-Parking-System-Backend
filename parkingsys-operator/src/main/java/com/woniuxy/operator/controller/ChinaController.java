@@ -1,5 +1,6 @@
 package com.woniuxy.operator.controller;
 
+import com.woniuxy.operator.pojos.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -23,7 +24,7 @@ public class ChinaController {
      * 模糊查询
      */
     @GetMapping("/findsByName")
-    public List<China>findsByName(@RequestParam String name){
-        return chinaServiceImpl.findByChinaName(name);
+    public ResponseResult findsByName(@RequestParam String name){
+        return ResponseResult.ok(chinaServiceImpl.findByChinaName(name));
     }
 }

@@ -146,12 +146,12 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         //查询已支付的订单数量
         Long paidOrderCount = orderMapper.selectCount(Wrappers.lambdaQuery(Order.class)
                 .eq(StringUtils.hasLength(inspectorId), Order::getInspectorId, inspectorId)
-                .eq(Order::getStatus, OrderStatusEnum.ALREADY_PAY));
+                .eq(Order::getStatus, OrderStatusEnum.ALREADY_PAY.getCode()));
         orderConversionVO.setPaidOrderCount(paidOrderCount);
         //查询异常订单数量
         Long unusualOrderCount = orderMapper.selectCount(Wrappers.lambdaQuery(Order.class)
                 .eq(StringUtils.hasLength(inspectorId), Order::getInspectorId, inspectorId)
-                .eq(Order::getStatus, OrderStatusEnum.OVERTIME_NO_PAY));
+                .eq(Order::getStatus, OrderStatusEnum.OVERTIME_NO_PAY.getCode()));
         orderConversionVO.setUnusualOrderCount(unusualOrderCount);
         return orderConversionVO;
     }

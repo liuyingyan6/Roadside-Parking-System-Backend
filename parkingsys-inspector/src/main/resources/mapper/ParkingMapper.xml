@@ -12,7 +12,7 @@
             `road` r ON p.`road_id` = r.`id`
     </select>
 
-    <select id="findAllPage" resultType="com.woniuxy.inspector.entity.vo.OrderVO">
+    <select id="findAllPage" resultType="com.woniuxy.inspector.vo.OrderVO">
         SELECT
             o.*,
             c.`car_number` AS carNumber,

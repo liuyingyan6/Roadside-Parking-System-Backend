@@ -16,6 +16,8 @@ public interface IRoadService extends IService<Road> {
     PageVO<RoadDTO> selectRoadDTOPage(Integer pageNum, Integer pageSize, RoadDTO roadDTO);
     void saveRoad(RoadDTO roadDTO);
     void updateByRoadType(Road road);
-    List<Road>findByRoadName(String roadName);
+
     List<RoadVO> findRoad();
+
+    List<Road> findAllByRoadName(String roadName);
 }

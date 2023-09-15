@@ -2,13 +2,16 @@ package com.woniuxy.operator.controller;
 
 import cn.hutool.core.date.DateTime;
 import com.github.pagehelper.PageInfo;
+import com.github.yulichang.wrapper.MPJLambdaWrapper;
 import com.woniuxy.operator.dto.OperatorDTO;
+import com.woniuxy.operator.entity.Road;
 import com.woniuxy.operator.pojos.ResponseResult;
 import com.woniuxy.operator.service.IRoadService;
 import com.woniuxy.operator.vo.OperatorVO;
 import java.util.List;
 import com.woniuxy.operator.entity.Operator;
 import com.woniuxy.operator.service.IOperatorService;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -30,6 +33,14 @@ public class OperatorController {
     public OperatorController(IOperatorService operatorServiceImpl, IRoadService roadServiceImpl){
         this.operatorServiceImpl = operatorServiceImpl;
         this.roadServiceImpl = roadServiceImpl;
+    }
+
+    /**
+     * 模糊查询
+     */
+    @GetMapping("/findByOperatorName")
+    public ResponseResult findByOperatorName (@RequestParam String operatorName){
+        return ResponseResult.ok(operatorServiceImpl.findByOperatorName(operatorName));
     }
 
     @PostMapping("/delete")
@@ -54,6 +65,7 @@ public class OperatorController {
 
     @PutMapping("/update")
     public ResponseResult update(@RequestBody OperatorVO operatorVO) {
+        System.out.println("operatorVO================"+operatorVO);
         operatorServiceImpl.updateOperator(operatorVO);
         return ResponseResult.ok();
     }

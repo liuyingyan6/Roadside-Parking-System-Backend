@@ -65,6 +65,12 @@ public class OperatorServiceImpl extends ServiceImpl<OperatorMapper, Operator> i
         operatorMapper.update(operator,
                 Wrappers.<Operator>lambdaUpdate()
                         .eq(Operator::getOperatorName, operatorVO.getOperatorName()));
+        Operator operator1 = operatorMapper.selectOne(Wrappers.lambdaQuery(Operator.class)
+                .eq(Operator::getOperatorName, operatorVO.getOperatorName()));
+        roadMapper.delete(Wrappers.lambdaQuery(Road.class)
+                .eq(Road::getOperatorId,operator1.getId()));
+        List<String> nameList = operatorVO.getNameList();
+        saveRoad(nameList,operator1.getAccount());
     }
 
     @Override

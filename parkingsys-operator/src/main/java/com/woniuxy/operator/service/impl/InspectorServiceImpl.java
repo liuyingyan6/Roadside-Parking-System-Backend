@@ -53,9 +53,15 @@ public class InspectorServiceImpl extends ServiceImpl<InspectorMapper, Inspector
 
             OrderConversionVO orderConversionVO = orderServiceImpl.orderStatusCount(e.getId());
 
-            BigDecimal divide = BigDecimal.valueOf(orderConversionVO.getPaidOrderCount() * 100)
+            BigDecimal divide;
+            if (orderConversionVO.getTotalOrderCount() != null && orderConversionVO.getTotalOrderCount() != 0) {
+            divide = BigDecimal.valueOf(orderConversionVO.getPaidOrderCount() * 100)
                     .divide(BigDecimal.valueOf(orderConversionVO.getTotalOrderCount()), 2, RoundingMode.HALF_UP);
-            e.setOrderPercentage(divide + "%");
+            } else {
+                divide = BigDecimal.ZERO; // 或者赋其他默认值
+            }
+
+                e.setOrderPercentage(divide + "%");
 
             e.setTimePeriod("9:00-19:00");
 

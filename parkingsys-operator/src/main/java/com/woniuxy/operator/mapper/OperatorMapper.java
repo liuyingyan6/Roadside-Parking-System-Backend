@@ -1,4 +1,5 @@
 package com.woniuxy.operator.mapper;
+import com.github.yulichang.base.MPJBaseMapper;
 import com.woniuxy.operator.dto.OperatorDTO;
 import com.woniuxy.operator.vo.OperatorVO;
 import org.apache.ibatis.annotations.Mapper;
@@ -17,7 +18,7 @@ import java.util.List;
  * @since 2023-09-10
  */
 @Mapper
-public interface OperatorMapper extends BaseMapper<Operator> {
+public interface OperatorMapper extends MPJBaseMapper<Operator> {
 
     List<OperatorVO> findPage(@Param("operatorDTO") OperatorDTO operatorDTO);
 }
