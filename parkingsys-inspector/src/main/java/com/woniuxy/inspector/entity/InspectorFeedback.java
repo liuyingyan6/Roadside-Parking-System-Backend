@@ -1,8 +1,7 @@
 package com.woniuxy.inspector.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.io.Serializable;
 import java.util.Date;
 import io.swagger.annotations.ApiModel;
@@ -53,6 +52,7 @@ public class InspectorFeedback implements Serializable {
       @ApiModelProperty("处理结果")
       private String resultInformation;
 
+  @TableField(fill = FieldFill.INSERT)
       @ApiModelProperty("创建时间")
       private Date createTime;
 
