@@ -56,7 +56,7 @@ public class InspectorServiceImpl extends ServiceImpl<InspectorMapper, Inspector
             BigDecimal divide;
             if (orderConversionVO.getTotalOrderCount() != null && orderConversionVO.getTotalOrderCount() != 0) {
             divide = BigDecimal.valueOf(orderConversionVO.getPaidOrderCount() * 100)
-                    .divide(BigDecimal.valueOf(orderConversionVO.getTotalOrderCount()), 2, RoundingMode.HALF_UP);
+                    .divide(BigDecimal.valueOf(orderConversionVO.getTotalOrderCount()), code, RoundingMode.HALF_UP);
             } else {
                 divide = BigDecimal.ZERO; // 或者赋其他默认值
             }
