@@ -6,5 +6,52 @@
 
     <select id="findAllPage" resultType="com.woniuxy.operator.dto.UserDTO"></select>
 
+    <!-- 车辆绑定数-->
+    <select id="carNum" resultType="Integer">
+        SELECT  COUNT(*) AS car_count
+        FROM `user`,car
+        WHERE user.`car_id` = car.`user_id` AND user_id=#{id}
+    </select>
+
+    <!-- 订单数量-->
+    <select id="orderNum" resultType="Integer">
+        SELECT COUNT(*) AS order_counnt
+        FROM car,t_order o,`user` u
+        WHERE car.`id` = o.car_id
+          AND car.user_id = u.id
+          AND u.id =#{id}
+    </select>
+
+    <!-- 消费金额-->
+    <select id="expenseMoney" resultType="Long">
+        SELECT SUM(order_amount) AS money
+        FROM `user`,car,t_order
+        WHERE t_order.`status` = 0
+          AND t_order.`car_id` = car.`id`
+          AND car.`user_id` = user.`id`
+          AND user.`id` = #{id}
+    </select>
+
+    <!-- 未交费订单-->
+    <select id="notPayOrder" resultType="Integer">
+        SELECT COUNT(*) AS notOrder
+        FROM `user`,car,t_order
+        WHERE t_order.`status` = 1
+          AND t_order.`car_id` = car.`id`
+          AND car.`user_id` = user.`id`
+          AND user.`id` = #{id}
+    </select>
+
+    <!-- 待缴费金额-->
+    <select id="notExpenseMoney" resultType="Long">
+        SELECT SUM(order_amount) AS money
+        FROM `user`,car,t_order
+        WHERE t_order.`status` = 1
+          AND t_order.`car_id` = car.`id`
+          AND car.`user_id` = user.`id`
+          AND user.`id` = #{id}
+    </select>
+
+
 
 </mapper>

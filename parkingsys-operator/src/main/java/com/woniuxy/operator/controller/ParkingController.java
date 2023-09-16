@@ -16,6 +16,7 @@ import com.woniuxy.operator.service.IParkingService;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigInteger;
+import java.util.List;
 
 
 @RestController
@@ -28,6 +29,12 @@ public class ParkingController {
     public ParkingController(IParkingService parkingServiceImpl, IMagnetometerService magnetometerServiceImpl) {
         this.parkingServiceImpl = parkingServiceImpl;
         this.magnetometerServiceImpl = magnetometerServiceImpl;
+    }
+
+    @GetMapping("/list")
+    public ResponseResult parkingList(){
+        List<Parking> list = parkingServiceImpl.query().list();
+        return ResponseResult.ok(list);
     }
 
     /**

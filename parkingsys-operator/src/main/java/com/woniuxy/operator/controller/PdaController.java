@@ -64,6 +64,7 @@ public class PdaController {
 
     @DeleteMapping("/delete")
     public ResponseResult delete(Integer id) {
+        System.out.println("id================="+id);
         pdaServiceImpl.removeById(id);
         return ResponseResult.ok();
     }

@@ -1,4 +1,5 @@
 package com.woniuxy.operator.mapper;
+import com.github.yulichang.base.MPJBaseMapper;
 import com.woniuxy.operator.vo.CarVO;
 import com.woniuxy.operator.vo.CarOrderVO;
 import org.apache.ibatis.annotations.Mapper;
@@ -19,7 +20,7 @@ import java.util.Map;
  * @since 2023-09-05
  */
 @Mapper
-public interface CarMapper extends BaseMapper<Car> {
+public interface CarMapper extends MPJBaseMapper<Car> {
 
     List<CarVO> getCar(String carNumber);
 

@@ -1,9 +1,10 @@
 package com.woniuxy.operator.controller;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.woniuxy.operator.dto.CarConditionDTO;
+import com.woniuxy.operator.dto.OrderRecordDTO;
 import com.woniuxy.operator.dto.UserDTO;
 import com.woniuxy.operator.pojos.ResponseResult;
-import com.woniuxy.operator.vo.PageVO;
-import com.woniuxy.operator.vo.UserVO;
+import com.woniuxy.operator.vo.*;
 import org.springframework.web.bind.annotation.*;
 import com.woniuxy.operator.entity.User;
 import com.woniuxy.operator.service.IUserService;
@@ -20,7 +21,39 @@ public class UserController {
         this.userServiceImpl = userServiceImpl;
     }
 
-    //用户——导出
+    //用户——订单记录
+    @PostMapping("/orderRecordPage/{pageNum}/{pageSize}/{userId}")
+    public ResponseResult orderRecordPage(@PathVariable("pageNum") Integer pageNum,
+                                           @PathVariable("pageSize")Integer pageSize,
+                                           @PathVariable("userId")Long userId,
+                                           @RequestBody OrderRecordDTO orderRecordDTO){
+
+        PageVO<OrderRecordVO> VO = userServiceImpl.orderRecordPage(pageNum, pageSize, userId, orderRecordDTO);
+        return ResponseResult.ok(VO);
+
+    }
+
+
+
+
+    //用户——车辆情况
+    @PostMapping("/carConditionPage/{pageNum}/{pageSize}/{userId}")
+    public ResponseResult carConditionPage(@PathVariable("pageNum") Integer pageNum,
+                                       @PathVariable("pageSize")Integer pageSize,
+                                       @PathVariable("userId")Long userId,
+                                       @RequestBody CarConditionDTO carConditionDTO){
+
+        PageVO<CarConditionVO> VO = userServiceImpl.carConditionPage(pageNum, pageSize, userId, carConditionDTO);
+        return ResponseResult.ok(VO);
+
+    }
+
+    //用户——账户信息
+    @GetMapping("/accountPage/{id}")
+    public ResponseResult accountPage(@PathVariable("id") Long id){
+        AccountVO accountVO = userServiceImpl.accountPage(id);
+        return ResponseResult.ok(accountVO);
+    }
 
     //用户——分页
     @PostMapping("/findPage/{pageNum}/{pageSize}")
@@ -32,8 +65,7 @@ public class UserController {
         return ResponseResult.ok(vo);
     }
 
-
-    //用户——删除
+    //用户——禁用
     @PutMapping("/update")
     public ResponseResult update(@RequestBody User user){
         Integer num;
@@ -47,5 +79,4 @@ public class UserController {
         userServiceImpl.updateById(user);
         return ResponseResult.ok(user.getState());
     }
-
 }

@@ -30,7 +30,7 @@ public class Pda implements Serializable {
     @ApiModelProperty("pda编号")
     @TableId(value = "id", type = IdType.AUTO)
     @ExcelProperty("编号")
-    private Long id;
+    private Integer id;
 
     @ApiModelProperty("设备名称")
     @ExcelProperty("设备名称")

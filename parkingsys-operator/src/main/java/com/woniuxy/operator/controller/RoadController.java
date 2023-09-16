@@ -26,6 +26,11 @@ public class RoadController {
         this.roadServiceImpl = roadServiceImpl;
     }
 
+    @GetMapping("/list")
+    public ResponseResult list(){
+        return ResponseResult.ok(roadServiceImpl.list());
+    }
+
     @GetMapping("/findRoad")
     public ResponseResult findRoad(){
         List<RoadVO> list = roadServiceImpl.findRoad();

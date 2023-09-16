@@ -13,6 +13,7 @@
         LEFT JOIN inspector_road ON inspector_road.inspector_id = pda.inspector_id
         LEFT JOIN road ON inspector_road.road_id = road.id
         <where>
+            pda.logic_delete = 0
             <if test="pdaName !=null and pdaName!=''">
                 and pda.name like concat('%', #{pdaName}, '%')
             </if>
