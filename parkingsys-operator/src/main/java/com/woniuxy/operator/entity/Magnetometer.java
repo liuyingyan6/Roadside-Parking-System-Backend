@@ -33,8 +33,8 @@ public class Magnetometer implements Serializable {
 
     @ApiModelProperty("地磁编号")
     @ExcelProperty("地磁编号")
-    @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
+    @TableId
+    private Long id;
 
     @ApiModelProperty("地磁名称")
     @ExcelProperty("地磁名称")

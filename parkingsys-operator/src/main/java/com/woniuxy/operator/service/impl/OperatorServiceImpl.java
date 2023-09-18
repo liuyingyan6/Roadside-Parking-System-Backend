@@ -62,15 +62,23 @@ public class OperatorServiceImpl extends ServiceImpl<OperatorMapper, Operator> i
         operator.setArea(operatorVO.getArea());
         operator.setState(operatorVO.getState());
 
+        Operator operator1 = operatorMapper.selectOne(Wrappers.lambdaQuery(Operator.class)
+                .eq(Operator::getOperatorName, operatorVO.getOperatorName()));
+
+        // 删除原有路段
+        roadMapper.delete(Wrappers.<Road>lambdaQuery()
+                .eq(Road::getOperatorId, operator1.getId()));
+
+        operatorVO.getNameList().forEach(e -> {
+            Road road = new Road();
+            road.setOperatorId(operator1.getId());
+            road.setRoadName(e);
+            roadMapper.insert(road);
+        });
+
         operatorMapper.update(operator,
                 Wrappers.<Operator>lambdaUpdate()
                         .eq(Operator::getOperatorName, operatorVO.getOperatorName()));
-        Operator operator1 = operatorMapper.selectOne(Wrappers.lambdaQuery(Operator.class)
-                .eq(Operator::getOperatorName, operatorVO.getOperatorName()));
-        roadMapper.delete(Wrappers.lambdaQuery(Road.class)
-                .eq(Road::getOperatorId,operator1.getId()));
-        List<String> nameList = operatorVO.getNameList();
-        saveRoad(nameList,operator1.getAccount());
     }
 
     @Override

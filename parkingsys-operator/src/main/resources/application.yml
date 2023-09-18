@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     druid:
-      url: jdbc:mysql://localhost:3306/wn_parking?charaterEncode=utf8&serverTimezone=GMT%2B8
+      url: jdbc:mysql://localhost:3306/exam?charaterEncode=utf8&serverTimezone=GMT%2B8
       username: root
       password: root
       initial-size: 5 #初始化连接数
@@ -39,7 +39,3 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true #不尊重驼峰命名规则
   type-aliases-package: com.woniuxy.operator.entity ,com.woniuxy.operator.vo
-jwt:
-  signature: Ken
-  accessTime: 5 #短令牌有效时间,单位:分钟
-  refreshTime: 7 #长令牌有效时间,单位:天

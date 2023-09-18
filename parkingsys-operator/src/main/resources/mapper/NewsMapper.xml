@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.woniuxy.operator.mapper.NewsMapper">
+
+    <select id="getAll" resultType="com.woniuxy.operator.entity.News">
+        SELECT n.news_title, n.fk_category_id, n.news_content, n.news_source, n.news_time, n.views
+        FROM news n
+                 JOIN news_category nc ON n.fk_category_id = nc.category_id
+        <where>
+            AND n.logic_delete = 0
+            <if test="newsDTO.newsTitle!=null and newsDTO.newsTitle!=''">
+                AND n.news_title LIKE CONCAT(#{newsDTO.newsTitle},'%')
+            </if>
+            <if test="newsDTO.fkCategoryId!=null">
+                AND n.fk_category_id = #{newsDTO.fkCategoryId}
+            </if>
+        </where>
+    </select>
+</mapper>

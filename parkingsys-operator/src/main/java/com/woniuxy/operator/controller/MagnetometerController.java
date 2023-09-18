@@ -44,7 +44,7 @@ public class MagnetometerController {
         this.magnetometerServiceImpl = magnetometerServiceImpl;
     }
 
-    // @SaveOperationLog(description = "添加地磁")
+    @SaveOperationLog(description = "添加地磁")
     @PostMapping("/add")
     public ResponseResult add(@RequestBody Magnetometer magnetometer) {
         magnetometer.setCreateTime(DateTime.now());
@@ -52,7 +52,7 @@ public class MagnetometerController {
         return ResponseResult.ok();
     }
 
-    // @SaveOperationLog(description = "批量添加地磁")
+    @SaveOperationLog(description = "批量添加地磁")
     @SneakyThrows
     @PostMapping("/fileAdd")
     public ResponseResult fileAdd(@RequestPart("file") MultipartFile file) {
@@ -87,7 +87,7 @@ public class MagnetometerController {
         return ResponseResult.ok();
     }
 
-    // @SaveOperationLog(description = "修改地磁")
+    @SaveOperationLog(description = "修改地磁")
     @PutMapping("/update")
     public ResponseResult update(@RequestBody Magnetometer magnetometer) {
         magnetometer.setUpdateTime(DateTime.now());
