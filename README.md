@@ -2,7 +2,7 @@
 
 The Roadside Parking Management System is a comprehensive solution designed to manage parking on city streets using magnetic sensors and handheld PDA devices. This system consists of three main components: an Operational Management System, a User-Side Mini-App, and an Inspector's Mini-App.
 <br>
-**PS: This repository is only for back end codes.**
+**PS: This repository is only for back end codes. Front end => https://github.com/liuyingyan6/Roadside-Parking-System-Frontend**
 
 ## Project Overview
 
